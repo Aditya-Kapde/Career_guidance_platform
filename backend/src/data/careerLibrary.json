@@ -1,0 +1,251 @@
+[
+  {
+    "id": "software_engineer",
+    "name": "Software Engineer",
+    "description": "Designs, writes, and debugs software applications and system utilities.",
+    "requiredTraits": {
+      "logicalThinking": 5,
+      "problemSolving": 5,
+      "analyticalThinking": 4,
+      "curiosity": 4,
+      "attentionToDetail": 3,
+      "learningStyle": 3
+    }
+  },
+  {
+    "id": "data_scientist",
+    "name": "Data Scientist",
+    "description": "Analyzes complex datasets using mathematics, statistics, and machine learning models to extract business intelligence.",
+    "requiredTraits": {
+      "analyticalThinking": 5,
+      "logicalThinking": 5,
+      "problemSolving": 4,
+      "curiosity": 4,
+      "attentionToDetail": 4,
+      "communication": 3
+    }
+  },
+  {
+    "id": "cloud_engineer",
+    "name": "Cloud Engineer",
+    "description": "Architects, maintains, and secures remote database servers and enterprise cloud networks.",
+    "requiredTraits": {
+      "logicalThinking": 5,
+      "problemSolving": 5,
+      "planning": 4,
+      "attentionToDetail": 4,
+      "adaptability": 3
+    }
+  },
+  {
+    "id": "cybersecurity_analyst",
+    "name": "Cybersecurity Analyst",
+    "description": "Protects company networks and user data from security breaches, hacking attempts, and malware.",
+    "requiredTraits": {
+      "problemSolving": 5,
+      "attentionToDetail": 5,
+      "logicalThinking": 4,
+      "riskTaking": 3,
+      "planning": 3
+    }
+  },
+  {
+    "id": "ai_engineer",
+    "name": "AI Engineer",
+    "description": "Builds and trains artificial intelligence neural network models, chat systems, and computer vision systems.",
+    "requiredTraits": {
+      "logicalThinking": 5,
+      "curiosity": 5,
+      "problemSolving": 5,
+      "learningStyle": 4,
+      "analyticalThinking": 4,
+      "creativity": 3
+    }
+  },
+  {
+    "id": "doctor",
+    "name": "Doctor / Medical Practitioner",
+    "description": "Diagnoses, treats, and supports patients, restoring health and preventing illnesses.",
+    "requiredTraits": {
+      "empathy": 5,
+      "problemSolving": 5,
+      "attentionToDetail": 5,
+      "decisionMaking": 4,
+      "communication": 4,
+      "analyticalThinking": 3
+    }
+  },
+  {
+    "id": "lawyer",
+    "name": "Lawyer / Legal Counselor",
+    "description": "Advises clients on legal rights, drafts contracts, and represents individuals or groups in legal courts.",
+    "requiredTraits": {
+      "communication": 5,
+      "analyticalThinking": 5,
+      "logicalThinking": 4,
+      "attentionToDetail": 4,
+      "decisionMaking": 3,
+      "empathy": 3
+    }
+  },
+  {
+    "id": "teacher",
+    "name": "Teacher / Educator",
+    "description": "Plans schedules, guides lessons, and simplifies complex concepts to support student development.",
+    "requiredTraits": {
+      "communication": 5,
+      "empathy": 5,
+      "planning": 4,
+      "teamwork": 3,
+      "creativity": 3,
+      "adaptability": 3
+    }
+  },
+  {
+    "id": "psychologist",
+    "name": "Psychologist",
+    "description": "Studies human behaviors, emotions, and thoughts to counsel individuals and support mental well-being.",
+    "requiredTraits": {
+      "empathy": 5,
+      "communication": 5,
+      "curiosity": 4,
+      "attentionToDetail": 3,
+      "decisionMaking": 3
+    }
+  },
+  {
+    "id": "architect",
+    "name": "Architect",
+    "description": "Plans, visualizes, and drafts structural designs for buildings and aesthetic functional spaces.",
+    "requiredTraits": {
+      "creativity": 5,
+      "planning": 5,
+      "attentionToDetail": 4,
+      "logicalThinking": 3,
+      "communication": 3
+    }
+  },
+  {
+    "id": "chartered_accountant",
+    "name": "Chartered Accountant",
+    "description": "Audits corporate accounting statements, manages tax filing calculations, and monitors compliance regulations.",
+    "requiredTraits": {
+      "analyticalThinking": 5,
+      "attentionToDetail": 5,
+      "logicalThinking": 4,
+      "planning": 4,
+      "decisionMaking": 3
+    }
+  },
+  {
+    "id": "financial_analyst",
+    "name": "Financial Analyst",
+    "description": "Analyzes market rates, performs investment risk checks, and updates asset spreadsheets.",
+    "requiredTraits": {
+      "analyticalThinking": 5,
+      "logicalThinking": 4,
+      "attentionToDetail": 4,
+      "planning": 3,
+      "riskTaking": 3
+    }
+  },
+  {
+    "id": "investment_banker",
+    "name": "Investment Banker",
+    "description": "Helps clients raise capital through corporate financing and provides strategic merger recommendations.",
+    "requiredTraits": {
+      "analyticalThinking": 5,
+      "communication": 5,
+      "riskTaking": 4,
+      "planning": 4,
+      "leadership": 4,
+      "logicalThinking": 3
+    }
+  },
+  {
+    "id": "business_analyst",
+    "name": "Business Analyst",
+    "description": "Bridges corporate gaps by analyzing metrics to suggest efficiency steps to management.",
+    "requiredTraits": {
+      "problemSolving": 5,
+      "communication": 5,
+      "analyticalThinking": 4,
+      "planning": 3,
+      "teamwork": 3
+    }
+  },
+  {
+    "id": "entrepreneur",
+    "name": "Entrepreneur / Start-up Founder",
+    "description": "Launches business startups, directs core strategy, raises funds, and directs operations.",
+    "requiredTraits": {
+      "riskTaking": 5,
+      "leadership": 5,
+      "adaptability": 5,
+      "decisionMaking": 4,
+      "planning": 4,
+      "communication": 4
+    }
+  },
+  {
+    "id": "ux_designer",
+    "name": "UX/UI Designer",
+    "description": "Maps client requirements to draft visual interfaces, app wireframes, and user research models.",
+    "requiredTraits": {
+      "creativity": 5,
+      "empathy": 4,
+      "attentionToDetail": 4,
+      "communication": 4,
+      "curiosity": 3,
+      "learningStyle": 2
+    }
+  },
+  {
+    "id": "graphic_designer",
+    "name": "Graphic Designer",
+    "description": "Creates visual assets, logos, and promotional sketches for marketing campaigns and publications.",
+    "requiredTraits": {
+      "creativity": 5,
+      "attentionToDetail": 4,
+      "adaptability": 3,
+      "communication": 3,
+      "curiosity": 2
+    }
+  },
+  {
+    "id": "mechanical_engineer",
+    "name": "Mechanical Engineer",
+    "description": "Builds and runs mechanical apparatuses, vehicle models, engine tools, and gears.",
+    "requiredTraits": {
+      "problemSolving": 5,
+      "logicalThinking": 4,
+      "learningStyle": 4,
+      "attentionToDetail": 3,
+      "teamwork": 3
+    }
+  },
+  {
+    "id": "civil_engineer",
+    "name": "Civil Engineer",
+    "description": "Directs public sector infrastructure construction, including bridge foundations, highway maps, and structural safety grids.",
+    "requiredTraits": {
+      "planning": 5,
+      "logicalThinking": 4,
+      "analyticalThinking": 4,
+      "leadership": 3,
+      "teamwork": 3
+    }
+  },
+  {
+    "id": "digital_marketer",
+    "name": "Digital Marketer",
+    "description": "Manages brand social networks, targets advertising, and tracks campaign metric percentages.",
+    "requiredTraits": {
+      "communication": 5,
+      "creativity": 4,
+      "analyticalThinking": 4,
+      "adaptability": 3,
+      "riskTaking": 3
+    }
+  }
+]

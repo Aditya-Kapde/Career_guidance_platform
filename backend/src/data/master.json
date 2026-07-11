@@ -1,0 +1,809 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "totalQuestions": 25,
+    "description": "Professional scenario-based career guidance questions for students Class 8 to Undergraduate."
+  },
+  "traits": [
+    { "id": "logicalThinking", "name": "Logical Thinking", "description": "Analyzing structures, formulas, and numeric patterns." },
+    { "id": "problemSolving", "name": "Problem Solving", "description": "Diagnosing errors, debugging code, and fixing bottlenecks." },
+    { "id": "creativity", "name": "Creativity", "description": "Original artistic creation, visual layouts, and out-of-the-box ideas." },
+    { "id": "leadership", "name": "Leadership", "description": "Taking charge, managing schedules, and motivating teams." },
+    { "id": "communication", "name": "Communication", "description": "Articulating complex topics, storytelling, and active listening." },
+    { "id": "curiosity", "name": "Curiosity", "description": "Deep questioning, exploring topics, and technical research." },
+    { "id": "teamwork", "name": "Teamwork", "description": "Cooperating with peers, distributing tasks, and compromise." },
+    { "id": "decisionMaking", "name": "Decision Making", "description": "Choosing pathways under constraints and evaluating trade-offs." },
+    { "id": "adaptability", "name": "Adaptability", "description": "Adjusting to sudden change and learning new tools quickly." },
+    { "id": "planning", "name": "Planning", "description": "Organizing milestones, maintaining schedules, and structuring details." },
+    { "id": "attentionToDetail", "name": "Attention to Detail", "description": "Catching small grammar flaws, visual bugs, or calculations." },
+    { "id": "riskTaking", "name": "Risk Taking", "description": "Stepping out of comfort zones and pitching bold experiments." },
+    { "id": "analyticalThinking", "name": "Analytical Thinking", "description": "Reading metrics, charts, spreadsheets, and logic patterns." },
+    { "id": "empathy", "name": "Empathy", "description": "Understanding user challenges and supporting emotional needs." },
+    { "id": "learningStyle", "name": "Learning Style", "description": "Hands-on construction versus academic reading and lectures." }
+  ],
+  "educationLevels": [
+    { "id": "class-8", "name": "Class 8" },
+    { "id": "class-9", "name": "Class 9" },
+    { "id": "class-10", "name": "Class 10" },
+    { "id": "puc", "name": "PUC (11th & 12th)" },
+    { "id": "diploma", "name": "Diploma" },
+    { "id": "undergraduate", "name": "Undergraduate" }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "Problem Solving",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "Your school is organizing a science exhibition, and the main model setup suddenly stops working just an hour before the guests arrive. What is your immediate reaction?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["logicalThinking", "problemSolving", "creativity", "leadership"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I study the circuit or instruction booklet to find out exactly where the system breakdown happened.",
+          "traitScores": { "logicalThinking": 3, "problemSolving": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I ask my teammates to help me quickly test different components to narrow it down.",
+          "traitScores": { "teamwork": 3, "problemSolving": 2 }
+        },
+        {
+          "id": "C",
+          "text": "I think of a creative workaround using spare materials to bypass the broken part.",
+          "traitScores": { "creativity": 3, "problemSolving": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I coordinate the team, assigning diagnostic roles to keep everyone calm and productive.",
+          "traitScores": { "leadership": 3, "decisionMaking": 2 }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Leadership",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "Your group is assigned to complete a research project by next week. The team cannot agree on how to divide the work. How do you step in?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["planning", "leadership", "decisionMaking", "empathy"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I create a task list with clear deadlines and ask members to pick what matches their strengths.",
+          "traitScores": { "planning": 3, "leadership": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I suggest we vote on the best approach and document everyone's agreement.",
+          "traitScores": { "decisionMaking": 3, "teamwork": 2 }
+        },
+        {
+          "id": "C",
+          "text": "I listen to everyone's ideas and suggest a combined theme that satisfies most people.",
+          "traitScores": { "empathy": 3, "communication": 2 }
+        },
+        {
+          "id": "D",
+          "text": "I volunteer to take the most challenging section to inspire the rest of the group.",
+          "traitScores": { "riskTaking": 3, "teamwork": 1 }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Communication",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You need to explain a complex topic (like gravity or artificial intelligence) to a class of younger students. How do you prepare?",
+      "estimatedTime": "1m",
+      "traitsMeasured": ["communication", "creativity", "analyticalThinking", "learningStyle"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I write a script using metaphors and stories to make it feel like a fun story.",
+          "traitScores": { "communication": 3, "creativity": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I compile clear diagrams and structural slides displaying the main facts.",
+          "traitScores": { "analyticalThinking": 3, "communication": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I build a hands-on activity or game so they can experience the concept physically.",
+          "traitScores": { "learningStyle": 3, "problemSolving": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I research multiple articles to ensure I can answer any unexpected questions they raise.",
+          "traitScores": { "curiosity": 3, "attentionToDetail": 2 }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category": "Creativity",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "Your club needs a flyer to invite students to an upcoming event. You are in charge of designing it. What is your process?",
+      "estimatedTime": "1m",
+      "traitsMeasured": ["creativity", "analyticalThinking", "communication", "attentionToDetail"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I sketch several original artistic layouts and play with vibrant color palettes.",
+          "traitScores": { "creativity": 3, "attentionToDetail": 1 }
+        },
+        {
+          "id": "B",
+          "text": "I look at successful templates online to analyze which fonts and layouts get the most attention.",
+          "traitScores": { "analyticalThinking": 3, "curiosity": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I write an engaging text description that clearly details all event benefits.",
+          "traitScores": { "communication": 3, "planning": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I check if there are guidelines we must follow and focus on checking details like dates and names.",
+          "traitScores": { "attentionToDetail": 3, "planning": 2 }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "Decision Making",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You have been given a budget of $50 to buy supplies for a classroom science model. How do you decide what to buy?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["analyticalThinking", "planning", "riskTaking", "teamwork"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I write down all item prices in a list to choose the cheapest combination that works.",
+          "traitScores": { "analyticalThinking": 3, "decisionMaking": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I buy the essential parts first, and save the rest of the budget for unexpected needs.",
+          "traitScores": { "planning": 3, "decisionMaking": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I invest in one premium, high-quality component even if it means compromises elsewhere.",
+          "traitScores": { "riskTaking": 3, "decisionMaking": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I discuss with my classmates to find out what supplies they think are most important.",
+          "traitScores": { "teamwork": 3, "empathy": 2 }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "Learning Style",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You have to learn a completely new skill (like playing a musical instrument or coding). What is your preferred way to start?",
+      "estimatedTime": "1m",
+      "traitsMeasured": ["learningStyle", "logicalThinking", "teamwork", "curiosity"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I immediately jump in and try to play a simple song or write a small program.",
+          "traitScores": { "learningStyle": 3, "riskTaking": 1 }
+        },
+        {
+          "id": "B",
+          "text": "I read a guidebook or watch video tutorials to learn the fundamental rules first.",
+          "traitScores": { "logicalThinking": 3, "attentionToDetail": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I join a group class or forum where I can ask questions and study with others.",
+          "traitScores": { "teamwork": 3, "communication": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I experiment with different settings to see what happens when I alter things.",
+          "traitScores": { "curiosity": 3, "adaptability": 2 }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category": "Curiosity",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You walk past an abandoned science laboratory or old archive room. What goes through your mind?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["curiosity", "analyticalThinking", "creativity", "attentionToDetail"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I want to explore the room to find out what projects were researched there.",
+          "traitScores": { "curiosity": 3, "riskTaking": 1 }
+        },
+        {
+          "id": "B",
+          "text": "I wonder about the history of the building and look up historical facts on my phone.",
+          "traitScores": { "analyticalThinking": 3, "curiosity": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I think about how this space could be redesigned into a modern computer lab or creative studio.",
+          "traitScores": { "creativity": 3, "planning": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I check if it is safe to enter and ensure we don't break any regulations.",
+          "traitScores": { "attentionToDetail": 3, "decisionMaking": 2 }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category": "Teamwork",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "During a group activity, a teammate is working slowly, putting your timeline at risk. What do you do?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["empathy", "planning", "communication", "attentionToDetail"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I sit down with them to understand if they are struggling with a difficult task.",
+          "traitScores": { "empathy": 3, "teamwork": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I suggest dividing their tasks among other members to ensure we hit the deadline.",
+          "traitScores": { "planning": 3, "leadership": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I show them a faster way or tool that I use to complete that specific work.",
+          "traitScores": { "communication": 3, "problemSolving": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I take charge and do their portion myself after school to make sure it's correct.",
+          "traitScores": { "attentionToDetail": 3, "leadership": 1 }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category": "Work Preference",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You are given a choice of how to spend your Friday afternoon. Which option do you select?",
+      "estimatedTime": "1m",
+      "traitsMeasured": ["creativity", "logicalThinking", "communication", "planning"],
+      "options": [
+        {
+          "id": "A",
+          "text": "Writing a script, drawing a digital illustration, or writing music alone.",
+          "traitScores": { "creativity": 3, "learningStyle": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Assembling a robot kit, writing a program, or solving complex equations.",
+          "traitScores": { "logicalThinking": 3, "problemSolving": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Participating in a group debate, debate club, or volunteering project.",
+          "traitScores": { "communication": 3, "teamwork": 2 }
+        },
+        {
+          "id": "D",
+          "text": "Organizing a closet, updating a calendar planner, or mapping out study goals.",
+          "traitScores": { "planning": 3, "attentionToDetail": 2 }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category": "Personality",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You receive constructive feedback that your design project or essay is too confusing. How do you handle it?",
+      "estimatedTime": "1m",
+      "traitsMeasured": ["adaptability", "communication", "creativity", "analyticalThinking"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I ask for specific examples of what is confusing so I can edit those lines.",
+          "traitScores": { "adaptability": 3, "attentionToDetail": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I explain the thought process behind my work to see if that resolves the confusion.",
+          "traitScores": { "communication": 3, "logicalThinking": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I try a completely different layout or write from a new perspective.",
+          "traitScores": { "creativity": 3, "riskTaking": 2 }
+        },
+        {
+          "id": "D",
+          "text": "I look at high-scoring examples to see how they structured their work.",
+          "traitScores": { "analyticalThinking": 3, "learningStyle": 1 }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "category": "Problem Solving",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You notice that the school computer software runs extremely slowly every time students log in. What do you do?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["logicalThinking", "curiosity", "communication", "leadership"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I test different login sequences to see if a specific program is causing the lag.",
+          "traitScores": { "logicalThinking": 3, "problemSolving": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I research online to see if other schools faced this issue and how they fixed it.",
+          "traitScores": { "curiosity": 3, "analyticalThinking": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I report it to the teacher with a written list of suggestions on how to improve the software.",
+          "traitScores": { "communication": 3, "planning": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I organize a group of tech-savvy friends to help clean up the system files.",
+          "traitScores": { "leadership": 3, "teamwork": 2 }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "category": "Leadership",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You are selected to lead a school tour for parents of new students. How do you approach this?",
+      "estimatedTime": "1m",
+      "traitsMeasured": ["planning", "communication", "creativity", "curiosity"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I outline a structured schedule of the tour points and keep everyone on time.",
+          "traitScores": { "planning": 3, "leadership": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I share stories about the school's achievements and answer questions warmly.",
+          "traitScores": { "communication": 3, "empathy": 2 }
+        },
+        {
+          "id": "C",
+          "text": "I plan a fun interactive map or scavenger hunt to make the tour memorable.",
+          "traitScores": { "creativity": 3, "leadership": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I research deep historical facts about the school to share during the walk.",
+          "traitScores": { "curiosity": 3, "attentionToDetail": 1 }
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "category": "Communication",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "Your friend is feeling stressed about an upcoming examination and asks for your advice. How do you help them?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["empathy", "planning", "communication", "logicalThinking"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I listen quietly first to let them express their worries before saying anything.",
+          "traitScores": { "empathy": 3, "communication": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I help them write down a daily study planner to cover all key subjects.",
+          "traitScores": { "planning": 3, "teamwork": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I explain difficult concepts using simplified diagrams or study notes.",
+          "traitScores": { "communication": 3, "learningStyle": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I suggest testing them with flashcards to find exactly what they need to study.",
+          "traitScores": { "logicalThinking": 3, "problemSolving": 1 }
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "category": "Creativity",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You are asked to write an original script for a school play. Where do you look for inspiration?",
+      "estimatedTime": "1m",
+      "traitsMeasured": ["empathy", "creativity", "logicalThinking", "teamwork"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I observe daily human situations and draw from real feelings and stories.",
+          "traitScores": { "empathy": 3, "creativity": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I combine ideas from science fiction, fantasy, and futuristic technology.",
+          "traitScores": { "creativity": 3, "curiosity": 2 }
+        },
+        {
+          "id": "C",
+          "text": "I study classic story structures and plot formulas to ensure the flow is logical.",
+          "traitScores": { "logicalThinking": 3, "attentionToDetail": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I discuss with classmates to find out what themes they would enjoy acting out.",
+          "traitScores": { "teamwork": 3, "communication": 1 }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "category": "Decision Making",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You have to choose between a safe, familiar topic for a project and a risky, complex topic that you know nothing about. What is your choice?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["riskTaking", "decisionMaking", "analyticalThinking", "communication"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I choose the risky topic because learning something completely new sounds exciting.",
+          "traitScores": { "riskTaking": 3, "curiosity": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I choose the safe topic to ensure I get a high grade and avoid mistakes.",
+          "traitScores": { "decisionMaking": 3, "planning": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I research the risky topic for an hour first to evaluate if I can handle it.",
+          "traitScores": { "analyticalThinking": 3, "decisionMaking": 2 }
+        },
+        {
+          "id": "D",
+          "text": "I ask my teacher which topic they recommend based on my past work.",
+          "traitScores": { "communication": 3, "adaptability": 1 }
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "category": "Learning Style",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "When preparing for a final exam in history, which study method works best for you?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["learningStyle", "attentionToDetail", "communication", "problemSolving"],
+      "options": [
+        {
+          "id": "A",
+          "text": "Drawing timelines and colored mind-maps to link historical events visually.",
+          "traitScores": { "learningStyle": 3, "creativity": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Reading the textbook chapter-by-chapter and highlighting important dates.",
+          "traitScores": { "attentionToDetail": 3, "logicalThinking": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Explaining the main events aloud to a friend or study partner.",
+          "traitScores": { "communication": 3, "teamwork": 2 }
+        },
+        {
+          "id": "D",
+          "text": "Answering mock practice questions to see which details I get wrong.",
+          "traitScores": { "problemSolving": 3, "analyticalThinking": 1 }
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "category": "Curiosity",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You see a bug report or error message when trying to play an online game. What do you do?",
+      "estimatedTime": "1m",
+      "traitsMeasured": ["curiosity", "logicalThinking", "communication", "adaptability"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I search for the error code online to understand what system files are causing it.",
+          "traitScores": { "curiosity": 3, "problemSolving": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I restart the game and change settings step-by-step to see what triggers the bug.",
+          "traitScores": { "logicalThinking": 3, "attentionToDetail": 2 }
+        },
+        {
+          "id": "C",
+          "text": "I write a detailed bug report to the developers explaining what happened.",
+          "traitScores": { "communication": 3, "analyticalThinking": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I look for a different game to play and move on.",
+          "traitScores": { "adaptability": 3, "decisionMaking": 1 }
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "category": "Teamwork",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "Your team is building a model rocket, but the parachute keeps failing to deploy. How does the group fix it?",
+      "estimatedTime": "1m",
+      "traitsMeasured": ["teamwork", "attentionToDetail", "creativity", "analyticalThinking"],
+      "options": [
+        {
+          "id": "A",
+          "text": "We split the project: one checks the design drawings, another tests the triggers.",
+          "traitScores": { "teamwork": 3, "planning": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I look closely at the folding mechanism to find any tiny snags in the string.",
+          "traitScores": { "attentionToDetail": 3, "problemSolving": 2 }
+        },
+        {
+          "id": "C",
+          "text": "We search online for alternative parachute designs using cheap materials.",
+          "traitScores": { "creativity": 3, "curiosity": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I lead a testing session where we record deployment rates for different designs.",
+          "traitScores": { "analyticalThinking": 3, "leadership": 1 }
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "category": "Work Preference",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "If you were to join a technology company, which role appeals to you the most?",
+      "estimatedTime": "1m",
+      "traitsMeasured": ["logicalThinking", "planning", "creativity", "analyticalThinking"],
+      "options": [
+        {
+          "id": "A",
+          "text": "The developer writing code, building systems, and fixing software bugs.",
+          "traitScores": { "logicalThinking": 3, "problemSolving": 2 }
+        },
+        {
+          "id": "B",
+          "text": "The manager coordinating project timelines and assigning team tasks.",
+          "traitScores": { "planning": 3, "leadership": 2 }
+        },
+        {
+          "id": "C",
+          "text": "The designer sketching user interfaces and deciding on brand colors.",
+          "traitScores": { "creativity": 3, "attentionToDetail": 1 }
+        },
+        {
+          "id": "D",
+          "text": "The analyst writing client reports and building spreadsheet projections.",
+          "traitScores": { "analyticalThinking": 3, "communication": 1 }
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "category": "Personality",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You have a disagreement with your friend about who should present your joint presentation. How do you resolve it?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["teamwork", "empathy", "decisionMaking", "planning"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I suggest we split the slides so both of us get to present equal portions.",
+          "traitScores": { "teamwork": 3, "empathy": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I volunteer to let them present and offer to focus on designing the presentation slides.",
+          "traitScores": { "empathy": 3, "creativity": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I propose a quick mock presentation in front of another classmate to let them decide.",
+          "traitScores": { "decisionMaking": 3, "communication": 2 }
+        },
+        {
+          "id": "D",
+          "text": "I write a detailed script to make sure we both know exactly what to say.",
+          "traitScores": { "planning": 3, "communication": 1 }
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "category": "Problem Solving",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You are setting up a smart device at home, but it refuses to connect to the local internet network. What is your process?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["logicalThinking", "analyticalThinking", "attentionToDetail", "adaptability"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I check the router log, connection parameters, and IP settings step-by-step.",
+          "traitScores": { "logicalThinking": 3, "problemSolving": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I test if other devices connect, narrowing down if the issue is the device or network.",
+          "traitScores": { "analyticalThinking": 3, "problemSolving": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I read the manual troubleshooting page to verify the LED blink codes.",
+          "traitScores": { "attentionToDetail": 3, "learningStyle": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I reset the system parameters and start configuration again from scratch.",
+          "traitScores": { "adaptability": 3, "problemSolving": 1 }
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "category": "Leadership",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "Your science teacher asks you to organize a study group for classmates who are struggling with science. How do you schedule this?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["planning", "empathy", "creativity", "leadership"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I prepare a weekly syllabus covering specific chapters and set clear rules.",
+          "traitScores": { "planning": 3, "leadership": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I ask students what topics they find hardest and prioritize those.",
+          "traitScores": { "empathy": 3, "communication": 2 }
+        },
+        {
+          "id": "C",
+          "text": "I create quiz games and challenges to make studying science fun.",
+          "traitScores": { "creativity": 3, "learningStyle": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I assign stronger students to partner with those who need help.",
+          "traitScores": { "leadership": 3, "teamwork": 2 }
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "category": "Communication",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You are asked to pitch an idea for a new school club to the school Principal. How do you present it?",
+      "estimatedTime": "1m",
+      "traitsMeasured": ["communication", "creativity", "analyticalThinking", "planning"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I prepare a short, persuasive slide presentation focusing on the benefits for students.",
+          "traitScores": { "communication": 3, "planning": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I bring a visual design mock-up or logo of the club to show them.",
+          "traitScores": { "creativity": 3, "communication": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I compile statistics showing student interest in this topic from a survey.",
+          "traitScores": { "analyticalThinking": 3, "attentionToDetail": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I outline the exact budget and resource requirements needed to start.",
+          "traitScores": { "planning": 3, "logicalThinking": 1 }
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "category": "Curiosity",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You are reading an article about a new space mission to Mars. What do you want to learn next?",
+      "estimatedTime": "1m",
+      "traitsMeasured": ["logicalThinking", "empathy", "creativity", "curiosity"],
+      "options": [
+        {
+          "id": "A",
+          "text": "The technical details of the rocket engines, trajectory calculations, and physics.",
+          "traitScores": { "logicalThinking": 3, "curiosity": 2 }
+        },
+        {
+          "id": "B",
+          "text": "The challenges astronauts face and the psychological impact of space travel.",
+          "traitScores": { "empathy": 3, "curiosity": 1 }
+        },
+        {
+          "id": "C",
+          "text": "How they will design the shelters, spacesuits, and visual UI of the systems.",
+          "traitScores": { "creativity": 3, "curiosity": 1 }
+        },
+        {
+          "id": "D",
+          "text": "The history of Mars exploration and how past space missions succeeded.",
+          "traitScores": { "curiosity": 3, "analyticalThinking": 1 }
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "category": "Decision Making",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "type": "single",
+      "question": "You have two tests tomorrow: Math and History. You only have 3 hours tonight to study. How do you divide your time?",
+      "estimatedTime": "45s",
+      "traitsMeasured": ["planning", "decisionMaking", "riskTaking", "teamwork"],
+      "options": [
+        {
+          "id": "A",
+          "text": "I split it: 1.5 hours on Math solving formulas, and 1.5 hours reading History.",
+          "traitScores": { "planning": 3, "decisionMaking": 2 }
+        },
+        {
+          "id": "B",
+          "text": "I spend 2.5 hours on the subject I am weaker in, and quickly review the other.",
+          "traitScores": { "decisionMaking": 3, "analyticalThinking": 1 }
+        },
+        {
+          "id": "C",
+          "text": "I spend 3 hours on Math since it requires practice, and read History notes tomorrow morning.",
+          "traitScores": { "riskTaking": 3, "adaptability": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I ask my friend what topics they are studying to see if we can cover them together.",
+          "traitScores": { "teamwork": 3, "communication": 1 }
+        }
+      ]
+    }
+  ]
+}

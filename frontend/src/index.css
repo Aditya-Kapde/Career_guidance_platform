@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-brand-light: #EEF2FF;
+  --color-brand: #6366F1;
+  --color-brand-dark: #4F46E5;
+  --color-brand-purple: #8B5CF6;
+  --color-brand-purple-dark: #7C3AED;
+  --border-radius-xl-card: 1.5rem;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@utility glassmorphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@utility glassmorphism-dark {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom base body styling */
+html, body {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(243, 244, 246, 1) 0, transparent 50%), 
+    radial-gradient(at 50% 0%, rgba(238, 242, 255, 1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, rgba(245, 243, 255, 1) 0, transparent 50%);
+  background-attachment: fixed;
+  background-color: #f8fafc; /* bg-slate-50 equivalent */
+  color: #020617; /* text-slate-950 equivalent */
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
