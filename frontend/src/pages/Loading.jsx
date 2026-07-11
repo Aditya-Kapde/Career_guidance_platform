@@ -21,8 +21,8 @@ export default function Loading() {
         traitScores
       };
       
-      const response = await api.post('/assessment/analyze', payload);
-      setAssessmentReport(response);
+      const response = await api.post('/api/assessment/analyze', payload);
+      setAssessmentReport(response.report || response);
       navigate('/results');
     } catch (err) {
       console.error("Analysis API failed:", err);
