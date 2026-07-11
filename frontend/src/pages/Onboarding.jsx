@@ -32,7 +32,7 @@ export default function Onboarding() {
 
   useEffect(() => {
     // Verify frontend-backend connectivity using Axios
-    api.get('/health')
+    api.get('/api/health')
       .then((data) => {
         if (data.status === 'ok') {
           setBackendStatus('connected');
