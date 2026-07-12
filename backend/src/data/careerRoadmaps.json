@@ -1,0 +1,4676 @@
+[
+  {
+    "id": "software-engineer",
+    "title": "Software Engineer",
+    "icon": "Code",
+    "description": "Designs, writes, and debugs software applications and system utilities.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹4 LPA - ₹8 LPA",
+        "midLevel": "₹10 LPA - ₹20 LPA",
+        "seniorLevel": "₹25 LPA - ₹50 LPA+",
+        "currency": "INR"
+      },
+      "growth": "Very High",
+      "degree": "Bachelor's Degree in Computer Science / IT (B.E. / B.Tech or BCA/MCA)",
+      "workEnvironment": "Remote / Office (Desk-based, high-collaboration software teams)",
+      "careerType": "STEM / IT",
+      "difficulty": "Medium",
+      "futureDemand": "Very High"
+    },
+    "entranceExams": [
+      "JEE Main",
+      "JEE Advanced",
+      "BITSAT",
+      "VITEEE",
+      "State-level Engineering Entrances (e.g., MHT CET, COMEDK, WBJEE)"
+    ],
+    "industries": [
+      "Technology & Software Development",
+      "Finance & Fintech",
+      "E-commerce",
+      "Healthcare Tech",
+      "Automotive & Aerospace"
+    ],
+    "dayInLife": [
+      "Writing clean, scalable code in languages like JavaScript, Java, Python, or C++.",
+      "Participating in daily stand-up meetings to coordinate with product managers and designers.",
+      "Debugging issues, reviewing peer code, and writing unit tests.",
+      "Designing software architecture and database schemas."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Learn Coding Foundations",
+          "description": "Start with visual programming languages like Scratch or basic Python.",
+          "duration": "6 months",
+          "type": "Skill Development"
+        },
+        {
+          "title": "Develop Logical Reasoning",
+          "description": "Participate in math contests, puzzles, and basic algorithmic games.",
+          "duration": "Ongoing",
+          "type": "Cognitive Training"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Choose Computer Electives",
+          "description": "Opt for computer science or coding electives under CBSE/ICSE boards.",
+          "duration": "1 year",
+          "type": "Academic Coursework"
+        },
+        {
+          "title": "Build Simple Utilities",
+          "description": "Create command-line applications like calculators or text adventures.",
+          "duration": "3 months",
+          "type": "Project Practice"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Study Computer Science with Math",
+          "description": "Select the PCM (Physics, Chemistry, Math) stream with Computer Science.",
+          "duration": "2 years",
+          "type": "Academic Foundation"
+        },
+        {
+          "title": "Prepare for Engineering Entrances",
+          "description": "Prepare for exams like JEE Main, BITSAT, and state CETs.",
+          "duration": "2 years",
+          "type": "Exam Preparation"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Computer Engineering",
+          "description": "Pursue a 3-year polytechnic diploma focusing on hardware, networking, and programming.",
+          "duration": "3 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Learn Web Development",
+          "description": "Acquire skills in HTML, CSS, and basic JavaScript.",
+          "duration": "6 months",
+          "type": "Web Skills"
+        },
+        {
+          "title": "Lateral Entry Preparation",
+          "description": "Prepare for state lateral entry exams to enter engineering college in the 2nd year.",
+          "duration": "6 months",
+          "type": "Exam Preparation"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Bachelor's in CSE, IT, or BCA/MCA",
+          "description": "Complete a B.Tech/B.E. in Computer Science or a BCA+MCA track.",
+          "duration": "3-4 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Master Data Structures & Algorithms",
+          "description": "Solve problems on LeetCode/GeeksforGeeks to clear technical interviews.",
+          "duration": "Ongoing",
+          "type": "Interview Prep"
+        },
+        {
+          "title": "Industry Internship",
+          "description": "Complete a 3-6 month software development internship.",
+          "duration": "6 months",
+          "type": "Professional Experience"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Data Structures & Algorithms",
+        "level": "Expert"
+      },
+      {
+        "name": "Front-end Development (HTML/CSS/React)",
+        "level": "Advanced"
+      },
+      {
+        "name": "Back-end Development & Databases (SQL/NoSQL)",
+        "level": "Advanced"
+      },
+      {
+        "name": "System Design & Cloud Basics",
+        "level": "Intermediate"
+      },
+      {
+        "name": "Version Control (Git/GitHub)",
+        "level": "Expert"
+      }
+    ],
+    "tools": [
+      "Visual Studio Code",
+      "Git",
+      "Docker",
+      "Jira",
+      "Postman",
+      "AWS"
+    ],
+    "certifications": [
+      {
+        "name": "AWS Certified Developer",
+        "issuingBody": "Amazon Web Services",
+        "description": "Validates technical expertise in developing and maintaining applications on AWS."
+      },
+      {
+        "name": "Oracle Certified Professional Java SE",
+        "issuingBody": "Oracle",
+        "description": "Demonstrates deep knowledge of Java programming language and APIs."
+      },
+      {
+        "name": "Certified Kubernetes Administrator (CKA)",
+        "issuingBody": "Cloud Native Computing Foundation (CNCF)",
+        "description": "Verifies ability to configure and manage production-grade Kubernetes clusters."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Institute of Technology (IIT) Madras",
+        "location": "Chennai, India",
+        "rank": "NIRF Rank #1"
+      },
+      {
+        "name": "BITS Pilani",
+        "location": "Pilani, India",
+        "rank": "Premier Private University"
+      },
+      {
+        "name": "International Institute of Information Technology (IIIT) Hyderabad",
+        "location": "Hyderabad, India",
+        "rank": "Top Computer Science Specialization"
+      },
+      {
+        "name": "National Institute of Technology (NIT) Trichy",
+        "location": "Tiruchirappalli, India",
+        "rank": "Top Ranked NIT"
+      }
+    ],
+    "resources": [
+      {
+        "title": "GeeksforGeeks Computer Science Portal",
+        "type": "Educational Web Resource"
+      },
+      {
+        "title": "LeetCode / HackerRank Practice Platforms",
+        "type": "Coding Practice Sandbox"
+      },
+      {
+        "title": "freeCodeCamp Interactive Tutorials",
+        "type": "Interactive Bootcamp"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Junior Developer / Software Engineer Trainee",
+        "duration": "1-2 years",
+        "responsibilities": "Coding specific features, debugging issues, and learning the software development lifecycle under supervision."
+      },
+      {
+        "stage": "Software Engineer / SDE II",
+        "duration": "2-5 years",
+        "responsibilities": "Owning feature modules, writing clean code, reviewing peers' PRs, and designing minor sub-systems."
+      },
+      {
+        "stage": "Senior Software Engineer",
+        "duration": "5-8 years",
+        "responsibilities": "Designing end-to-end software architecture, mentoring junior developers, and leading sprint planning."
+      },
+      {
+        "stage": "Tech Lead / Engineering Manager",
+        "duration": "8+ years",
+        "responsibilities": "Defining technical vision, managing engineering teams, and aligning business requirements with system engineering."
+      }
+    ],
+    "relatedCareers": [
+      "data-scientist",
+      "cloud-engineer",
+      "cybersecurity-analyst",
+      "ai-engineer",
+      "ux-designer"
+    ]
+  },
+  {
+    "id": "data-scientist",
+    "title": "Data Scientist",
+    "icon": "Database",
+    "description": "Analyzes complex datasets using mathematics, statistics, and machine learning models to extract business intelligence.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹5 LPA - ₹10 LPA",
+        "midLevel": "₹12 LPA - ₹22 LPA",
+        "seniorLevel": "₹25 LPA - ₹45 LPA+",
+        "currency": "INR"
+      },
+      "growth": "Very High",
+      "degree": "Bachelor's Degree in Data Science, Statistics, Computer Science, or Mathematics",
+      "workEnvironment": "Office / Hybrid (Highly analytical desk job focusing on data engineering and machine learning)",
+      "careerType": "STEM / Analytics",
+      "difficulty": "High",
+      "futureDemand": "Very High"
+    },
+    "entranceExams": [
+      "JEE Main",
+      "JEE Advanced",
+      "GATE (Computer Science/Data Science)",
+      "ISI Entrance Exam",
+      "CMI Entrance Exam"
+    ],
+    "industries": [
+      "E-commerce & Retail",
+      "Finance & Fintech",
+      "Healthcare & Pharmaceuticals",
+      "Consulting & Analytics Firms",
+      "Marketing Tech"
+    ],
+    "dayInLife": [
+      "Cleaning and pre-processing raw data from multiple databases.",
+      "Building and fine-tuning predictive models using machine learning libraries.",
+      "Writing SQL queries to extract data and performing exploratory data analysis (EDA).",
+      "Creating interactive dashboards to present findings to company stakeholders."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Excel in Statistics and Probability",
+          "description": "Focus on mathematical concepts like averages, percentages, and basic data distributions.",
+          "duration": "1 year",
+          "type": "Academic Foundation"
+        },
+        {
+          "title": "Learn Spreadsheet Software",
+          "description": "Practice sorting, filtering, and writing formulas in Microsoft Excel or Google Sheets.",
+          "duration": "3 months",
+          "type": "Skill Building"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Build Quantitative Aptitude",
+          "description": "Excel in algebraic equations and analytical reasoning.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Begin Learning Python",
+          "description": "Start with Python programming basics, focusing on syntax and basic calculations.",
+          "duration": "6 months",
+          "type": "Skill Building"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Take Science with Mathematics",
+          "description": "Excel in high school calculus, linear algebra, and advanced probability.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Participate in Math Olympiads",
+          "description": "Develop deep logical thinking and mathematical problem-solving skills.",
+          "duration": "Ongoing",
+          "type": "Extracurricular"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Computer Engineering / IT",
+          "description": "Enroll in polytechnic, prioritizing database management systems (DBMS) and math modules.",
+          "duration": "3 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Learn SQL Basics",
+          "description": "Take online courses to learn relational database queries and operations.",
+          "duration": "3-6 months",
+          "type": "Skill Building"
+        },
+        {
+          "title": "Lateral Entry Exams",
+          "description": "Prepare for direct entry into second-year engineering courses.",
+          "duration": "6 months",
+          "type": "Transition Phase"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Pursue B.Tech in Data Science/CS or B.Sc in Statistics/Math",
+          "description": "Focus on linear algebra, multivariate calculus, probability theory, and database systems.",
+          "duration": "3-4 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Learn ML Frameworks & Python Libraries",
+          "description": "Master Pandas, NumPy, Scikit-learn, TensorFlow, and SQL.",
+          "duration": "Ongoing",
+          "type": "Skill Building"
+        },
+        {
+          "title": "Participate in Kaggle Competitions",
+          "description": "Work on real-world datasets and showcase predictions on Kaggle.",
+          "duration": "Ongoing",
+          "type": "Portfolio Development"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Statistics & Mathematical Modeling",
+        "level": "Expert"
+      },
+      {
+        "name": "Machine Learning & Deep Learning",
+        "level": "Advanced"
+      },
+      {
+        "name": "SQL & Relational Databases",
+        "level": "Expert"
+      },
+      {
+        "name": "Python & R Programming",
+        "level": "Advanced"
+      },
+      {
+        "name": "Data Visualization (Tableau/Power BI)",
+        "level": "Advanced"
+      }
+    ],
+    "tools": [
+      "Jupyter Notebook",
+      "Python",
+      "SQL Server",
+      "Tableau",
+      "Power BI",
+      "Kaggle"
+    ],
+    "certifications": [
+      {
+        "name": "IBM Data Science Professional Certificate",
+        "issuingBody": "IBM",
+        "description": "Comprehensive introduction to data science, data analysis, and Python libraries."
+      },
+      {
+        "name": "Microsoft Certified: Power BI Data Analyst Associate",
+        "issuingBody": "Microsoft",
+        "description": "Verifies competence in processing, analyzing, and visualizing data using Power BI."
+      },
+      {
+        "name": "Google Data Analytics Professional Certificate",
+        "issuingBody": "Google",
+        "description": "Foundational certificate covering data cleaning, analysis, and visualization."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Statistical Institute (ISI)",
+        "location": "Kolkata, India",
+        "rank": "Premier Statistics Institution"
+      },
+      {
+        "name": "IIT Kharagpur",
+        "location": "Kharagpur, India",
+        "rank": "Top Ranked Engineering Institution"
+      },
+      {
+        "name": "Chennai Mathematical Institute (CMI)",
+        "location": "Chennai, India",
+        "rank": "Top Tier Mathematics & Computer Science"
+      },
+      {
+        "name": "BITS Pilani",
+        "location": "Pilani, India",
+        "rank": "Premier Private University"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Kaggle Datasets & Competitions",
+        "type": "Data Science Sandbox"
+      },
+      {
+        "title": "Towards Data Science (Medium Publication)",
+        "type": "Industry Blog"
+      },
+      {
+        "title": "StatQuest with Josh Starmer YouTube channel",
+        "type": "Educational Video Channel"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Associate Data Analyst / Junior Data Scientist",
+        "duration": "1-2 years",
+        "responsibilities": "Querying databases, cleaning data, and creating visualization reports."
+      },
+      {
+        "stage": "Data Scientist",
+        "duration": "2-5 years",
+        "responsibilities": "Building machine learning models, deploying APIs, and designing experiments."
+      },
+      {
+        "stage": "Senior Data Scientist",
+        "duration": "5-9 years",
+        "responsibilities": "Designing analytics architecture, managing production models, and aligning with business strategy."
+      },
+      {
+        "stage": "Lead Data Scientist / Chief Data Officer",
+        "duration": "9+ years",
+        "responsibilities": "Directing overall enterprise data strategies and leading data science departments."
+      }
+    ],
+    "relatedCareers": [
+      "software-engineer",
+      "ai-engineer",
+      "business-analyst",
+      "financial-analyst"
+    ]
+  },
+  {
+    "id": "cloud-engineer",
+    "title": "Cloud Engineer",
+    "icon": "Cloud",
+    "description": "Architects, maintains, and secures remote database servers and enterprise cloud networks.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹4 LPA - ₹7 LPA",
+        "midLevel": "₹9 LPA - ₹18 LPA",
+        "seniorLevel": "₹20 LPA - ₹35 LPA+",
+        "currency": "INR"
+      },
+      "growth": "High",
+      "degree": "Bachelor's Degree in Computer Science, IT, or related fields",
+      "workEnvironment": "Office / Remote (Desk job focused on cloud deployment, networking, and system administration)",
+      "careerType": "STEM / IT",
+      "difficulty": "Medium",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "JEE Main",
+      "JEE Advanced",
+      "BITSAT",
+      "State-level Engineering Entrances"
+    ],
+    "industries": [
+      "Cloud Consulting & IT Services",
+      "SaaS Companies",
+      "Telecommunications",
+      "E-commerce",
+      "Financial Services & Banking"
+    ],
+    "dayInLife": [
+      "Configuring and deploying cloud servers and container systems.",
+      "Monitoring cloud systems for performance, reliability, and scaling issues.",
+      "Writing script pipelines for automated software builds (CI/CD).",
+      "Optimizing cloud resource usage to reduce infrastructure billing."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Learn Computer Basics & Networking Principles",
+          "description": "Understand how computers communicate and how the internet functions at a basic level.",
+          "duration": "6 months",
+          "type": "Foundational Skill"
+        },
+        {
+          "title": "Develop logical thinking",
+          "description": "Strengthen analytical and logical troubleshooting skills.",
+          "duration": "Ongoing",
+          "type": "Cognitive Training"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Study Computer Science Basics",
+          "description": "Choose computer applications/informatics electives and study hardware and operating systems.",
+          "duration": "1 year",
+          "type": "Academic Coursework"
+        },
+        {
+          "title": "Learn Basic Linux Commands",
+          "description": "Familiarize yourself with the Linux command line interface using virtual machines.",
+          "duration": "3 months",
+          "type": "Practical Skill"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Physics, Chemistry, and Mathematics (PCM)",
+          "description": "Build high quantitative skills to support computational thinking.",
+          "duration": "2 years",
+          "type": "Academic Foundation"
+        },
+        {
+          "title": "Explore Basic Scripting",
+          "description": "Learn scripting languages like Python or Bash.",
+          "duration": "6 months",
+          "type": "Coding Skills"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Computer Science / Information Technology",
+          "description": "Acquire polytechnic training in system administration, networking, and security.",
+          "duration": "3 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Obtain Foundational Cloud Certifications",
+          "description": "Study and clear AWS Cloud Practitioner or Azure Fundamentals exam.",
+          "duration": "3 months",
+          "type": "Certification"
+        },
+        {
+          "title": "Prepare for Lateral Engineering Admission",
+          "description": "Focus on engineering entrance syllabus for entry into direct 2nd-year B.E./B.Tech courses.",
+          "duration": "6 months",
+          "type": "Exam Preparation"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Pursue B.Tech in CSE / IT / Cloud Computing",
+          "description": "Study computer networks, virtualization, operating systems, and cryptography.",
+          "duration": "4 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Master DevOps & Automation Tools",
+          "description": "Learn Docker, Kubernetes, Terraform, and CI/CD pipelines.",
+          "duration": "Ongoing",
+          "type": "Technical Skill"
+        },
+        {
+          "title": "Complete Cloud Projects and Internships",
+          "description": "Deploy websites or APIs to cloud providers and complete internships with tech companies.",
+          "duration": "6-12 months",
+          "type": "Industry Training"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Cloud Architecture (AWS / Azure / GCP)",
+        "level": "Advanced"
+      },
+      {
+        "name": "Linux System Administration",
+        "level": "Expert"
+      },
+      {
+        "name": "DevOps & CI/CD Pipelines",
+        "level": "Advanced"
+      },
+      {
+        "name": "Infrastructure as Code (Terraform)",
+        "level": "Intermediate"
+      },
+      {
+        "name": "Network Security & Virtualization",
+        "level": "Advanced"
+      }
+    ],
+    "tools": [
+      "AWS Console",
+      "Terraform",
+      "Jenkins",
+      "Docker",
+      "Linux",
+      "Ansible"
+    ],
+    "certifications": [
+      {
+        "name": "AWS Certified Solutions Architect - Associate",
+        "issuingBody": "Amazon Web Services",
+        "description": "Verifies ability to design and deploy secure and robust applications on AWS technologies."
+      },
+      {
+        "name": "Microsoft Certified: Azure Administrator Associate",
+        "issuingBody": "Microsoft",
+        "description": "Demonstrates capabilities in managing cloud services, including storage, security, and networking."
+      },
+      {
+        "name": "Associate Cloud Engineer",
+        "issuingBody": "Google Cloud",
+        "description": "Validates ability to deploy applications, monitor operations, and manage enterprise Google Cloud assets."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Institute of Technology (IIT) Delhi",
+        "location": "New Delhi, India",
+        "rank": "Top Tier engineering institute"
+      },
+      {
+        "name": "National Institute of Technology (NIT) Trichy",
+        "location": "Tiruchirappalli, India",
+        "rank": "Top National Institute"
+      },
+      {
+        "name": "Vellore Institute of Technology (VIT)",
+        "location": "Vellore, India",
+        "rank": "High Reputation Private College"
+      },
+      {
+        "name": "BITS Pilani",
+        "location": "Pilani, India",
+        "rank": "Premier Private University"
+      }
+    ],
+    "resources": [
+      {
+        "title": "AWS Skill Builder Learning Pathways",
+        "type": "Interactive Platform"
+      },
+      {
+        "title": "KodeKloud DevOps and Kubernetes Courses",
+        "type": "Practical Sandbox Tutorials"
+      },
+      {
+        "title": "The Phoenix Project (DevOps Business Novel)",
+        "type": "Book"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Associate Cloud Engineer / SysOps Trainee",
+        "duration": "1-2 years",
+        "responsibilities": "Monitoring cloud infrastructure, handling access logs, and executing deploy scripts under guidance."
+      },
+      {
+        "stage": "Cloud Operations Engineer",
+        "duration": "2-5 years",
+        "responsibilities": "Managing database scaling, maintaining system backups, setting up security firewalls, and automating routine tasks."
+      },
+      {
+        "stage": "DevOps Architect / Cloud Solutions Architect",
+        "duration": "5-10 years",
+        "responsibilities": "Designing high-availability hybrid clouds, directing deployment plans, and supervising DevOps engineers."
+      },
+      {
+        "stage": "Principal Cloud Architect / Director of Infrastructure",
+        "duration": "10+ years",
+        "responsibilities": "Directing overall IT infrastructure strategy, managing multi-vendor cloud relationships, and ensuring enterprise-wide system uptime."
+      }
+    ],
+    "relatedCareers": [
+      "software-engineer",
+      "cybersecurity-analyst",
+      "ai-engineer",
+      "data-scientist"
+    ]
+  },
+  {
+    "id": "cybersecurity-analyst",
+    "title": "Cybersecurity Analyst",
+    "icon": "ShieldAlert",
+    "description": "Protects company networks and user data from security breaches, hacking attempts, and malware.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹4 LPA - ₹6.5 LPA",
+        "midLevel": "₹8 LPA - ₹15 LPA",
+        "seniorLevel": "₹18 LPA - ₹30 LPA+",
+        "currency": "INR"
+      },
+      "growth": "Very High",
+      "degree": "Bachelor's Degree in Computer Science, IT, or Cybersecurity",
+      "workEnvironment": "Office / Security Operations Center (SOC) (High-alert environments monitoring real-time attacks)",
+      "careerType": "STEM / IT Security",
+      "difficulty": "High",
+      "futureDemand": "Very High"
+    },
+    "entranceExams": [
+      "JEE Main",
+      "JEE Advanced",
+      "BITSAT",
+      "GATE (for CSE/Security specializations)"
+    ],
+    "industries": [
+      "Banking, Financial Services & Insurance (BFSI)",
+      "IT Consulting & Managed Security Services (MSSP)",
+      "Defense & Government Agencies",
+      "E-commerce & Retail Tech",
+      "Healthcare Providers"
+    ],
+    "dayInLife": [
+      "Analyzing security logs and alerts for suspicious traffic patterns.",
+      "Conducting vulnerability assessments and penetration testing of applications.",
+      "Responding to active security incidents and isolating compromised servers.",
+      "Drafting and enforcing company-wide information security policies."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Learn Computer Networking Fundamentals",
+          "description": "Understand basic protocols like IP addresses, routing, and DNS.",
+          "duration": "6 months",
+          "type": "Skill Building"
+        },
+        {
+          "title": "Join Hacking/Cybersecurity Interest Groups",
+          "description": "Explore entry-level forums and watch ethical hacking tutorials.",
+          "duration": "Ongoing",
+          "type": "Extracurricular"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Master Linux Command Line",
+          "description": "Learn filesystem commands, script utilities, and file permission setups.",
+          "duration": "6 months",
+          "type": "Practical Skill"
+        },
+        {
+          "title": "Academic Stream Preparation",
+          "description": "Score well in mathematics to develop logical modeling skills.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Physics, Chemistry, and Mathematics (PCM)",
+          "description": "Focus on discrete math and logic, which are essential for cryptography.",
+          "duration": "2 years",
+          "type": "Academic Foundation"
+        },
+        {
+          "title": "Practice basic programming",
+          "description": "Learn languages like Python and C++ for scripting security tools.",
+          "duration": "6 months",
+          "type": "Skill Building"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Cyber Security / Computer Engineering",
+          "description": "Enroll in a polytechnic program focusing on computer networks, cryptography, and server admin.",
+          "duration": "3 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "CompTIA Security+ Certification",
+          "description": "Study core cybersecurity principles and obtain this globally recognized certificate.",
+          "duration": "3 months",
+          "type": "Certification Prep"
+        },
+        {
+          "title": "Prepare for Direct Engineering Entry",
+          "description": "Study lateral entry exam syllabus for undergraduate engineering.",
+          "duration": "6 months",
+          "type": "Exam Prep"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "B.Tech in CSE / Information Security",
+          "description": "Complete engineering studies specializing in network security, database management, and operating systems.",
+          "duration": "4 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Participate in Capture The Flag (CTF) Challenges",
+          "description": "Compete in online security contests to practice hacking and defense skills.",
+          "duration": "Ongoing",
+          "type": "Competition"
+        },
+        {
+          "title": "Secure Security Internships",
+          "description": "Work as a security trainee in a SOC team or corporate IT audit department.",
+          "duration": "6 months",
+          "type": "Practical Training"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Network Security & Firewalls",
+        "level": "Expert"
+      },
+      {
+        "name": "Penetration Testing (Ethical Hacking)",
+        "level": "Advanced"
+      },
+      {
+        "name": "Threat Intelligence & Logging",
+        "level": "Advanced"
+      },
+      {
+        "name": "Cryptography & Hash Functions",
+        "level": "Intermediate"
+      },
+      {
+        "name": "Incident Response & Forensic Basics",
+        "level": "Advanced"
+      }
+    ],
+    "tools": [
+      "Wireshark",
+      "Metasploit",
+      "Nmap",
+      "Burp Suite",
+      "Splunk",
+      "Kali Linux"
+    ],
+    "certifications": [
+      {
+        "name": "Certified Ethical Hacker (CEH)",
+        "issuingBody": "EC-Council",
+        "description": "Validates credentials in finding vulnerabilities in target systems using hacker tools."
+      },
+      {
+        "name": "CompTIA Security+",
+        "issuingBody": "CompTIA",
+        "description": "Establish core security knowledge required for IT security roles."
+      },
+      {
+        "name": "Certified Information Systems Security Professional (CISSP)",
+        "issuingBody": "(ISC)²",
+        "description": "Elite certification proving deep design, implementation, and management capabilities in cybersecurity."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "National Forensic Sciences University (NFSU)",
+        "location": "Gandhinagar, India",
+        "rank": "Premier Forensic & Cybersecurity College"
+      },
+      {
+        "name": "IIT Bombay",
+        "location": "Mumbai, India",
+        "rank": "Top Tier Engineering & Cryptography Lab"
+      },
+      {
+        "name": "Indian Institute of Information Technology (IIIT) Allahabad",
+        "location": "Allahabad, India",
+        "rank": "Highly Ranked IT Specializations"
+      },
+      {
+        "name": "Motilal Nehru National Institute of Technology (MNNIT)",
+        "location": "Allahabad, India",
+        "rank": "Reputed Computer Science Hub"
+      }
+    ],
+    "resources": [
+      {
+        "title": "TryHackMe / Hack The Box Labs",
+        "type": "Interactive Practice Sandbox"
+      },
+      {
+        "title": "PortSwigger Web Security Academy",
+        "type": "Free Training Platform"
+      },
+      {
+        "title": "Krebs on Security (Cybersecurity investigative blog)",
+        "type": "Industry Publication"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Junior SOC Analyst / Security Trainee",
+        "duration": "1-2 years",
+        "responsibilities": "Monitoring system alarms, performing basic log checks, and escalating suspicious activities."
+      },
+      {
+        "stage": "Penetration Tester / Security Consultant",
+        "duration": "2-5 years",
+        "responsibilities": "Running audits, scanning system vulnerabilities, mock-hacking infrastructure, and writing security patches."
+      },
+      {
+        "stage": "Security Architect / Incident Responder Specialist",
+        "duration": "5-10 years",
+        "responsibilities": "Designing defense architectures, directing disaster recovery during active breaches, and mentoring analysts."
+      },
+      {
+        "stage": "Chief Information Security Officer (CISO)",
+        "duration": "10+ years",
+        "responsibilities": "Managing overall corporate security budget, reporting risks to the board, and designing company-wide privacy rules."
+      }
+    ],
+    "relatedCareers": [
+      "software-engineer",
+      "cloud-engineer",
+      "network-engineer",
+      "systems-administrator"
+    ]
+  },
+  {
+    "id": "ai-engineer",
+    "title": "AI Engineer",
+    "icon": "Cpu",
+    "description": "Builds and trains artificial intelligence neural network models, chat systems, and computer vision systems.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹6 LPA - ₹12 LPA",
+        "midLevel": "₹14 LPA - ₹25 LPA",
+        "seniorLevel": "₹30 LPA - ₹60 LPA+",
+        "currency": "INR"
+      },
+      "growth": "Very High",
+      "degree": "Bachelor's/Master's Degree in Computer Science, AI, or Mathematics",
+      "workEnvironment": "Office / Hybrid (Intense desk job focusing on neural architecture training and math computation)",
+      "careerType": "STEM / AI Research",
+      "difficulty": "High",
+      "futureDemand": "Very High"
+    },
+    "entranceExams": [
+      "JEE Main",
+      "JEE Advanced",
+      "GATE (Computer Science / Data Science)",
+      "BITSAT"
+    ],
+    "industries": [
+      "Consumer Tech & AI Startups",
+      "Autonomous Vehicles & Robotics",
+      "Healthcare AI & Genomics",
+      "Finance & Algorithmic Trading",
+      "Industrial Automation & Manufacturing"
+    ],
+    "dayInLife": [
+      "Designing and testing neural network architectures.",
+      "Optimizing model training datasets and adjusting hyperparameters.",
+      "Writing pipeline scripts to deploy machine learning models to cloud services.",
+      "Reading research papers to implement state-of-the-art AI algorithms."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Master Geometry, Linear Equations, and Basic Logic",
+          "description": "Strengthen mathematics as it is the foundation of computer science and neural networks.",
+          "duration": "1 year",
+          "type": "Academic Foundation"
+        },
+        {
+          "title": "Learn Scratch Coding & Basic Robotics",
+          "description": "Understand logic gates, loops, and conditions using interactive block programming.",
+          "duration": "6 months",
+          "type": "Skill Building"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Choose Higher Mathematics and Computer Science",
+          "description": "Focus on scoring well in boards to take PCM streams.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Introductory Programming in Python",
+          "description": "Learn syntax, basic lists, dictionaries, and file I/O in Python.",
+          "duration": "6 months",
+          "type": "Skill Building"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Focus on Advanced Mathematics",
+          "description": "Study calculus, linear algebra, vectors, and coordinate geometry deeply.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "JEE / Competitive Entrance Prep",
+          "description": "Prepare for elite engineering college admission tests.",
+          "duration": "2 years",
+          "type": "Entrance Preparation"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Computer Technology",
+          "description": "Enroll in a 3-year diploma focusing on system design, logic networks, and coding.",
+          "duration": "3 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Study Python Libraries",
+          "description": "Self-study NumPy, Pandas, and Matplotlib libraries.",
+          "duration": "6 months",
+          "type": "Skill Development"
+        },
+        {
+          "title": "Lateral Entry Exam Prep",
+          "description": "Prepare for entry directly into the second year of B.E./B.Tech programs.",
+          "duration": "6 months",
+          "type": "Exam Prep"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "B.Tech in Artificial Intelligence / Computer Science",
+          "description": "Pursue a 4-year degree focusing on Machine Learning, Deep Learning, NLP, and Computer Vision.",
+          "duration": "4 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Build Neural Network Projects",
+          "description": "Create image classifiers, recommendation systems, or chatbot assistants using PyTorch or TensorFlow.",
+          "duration": "Ongoing",
+          "type": "Portfolio Work"
+        },
+        {
+          "title": "Apply for AI Research Internships",
+          "description": "Gain industrial experience by interning with tech companies or university research labs.",
+          "duration": "6 months",
+          "type": "Practical Experience"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Machine Learning Algorithms",
+        "level": "Expert"
+      },
+      {
+        "name": "Deep Learning & Neural Networks (PyTorch/TensorFlow)",
+        "level": "Expert"
+      },
+      {
+        "name": "Natural Language Processing (NLP)",
+        "level": "Advanced"
+      },
+      {
+        "name": "Computer Vision & OpenCV",
+        "level": "Advanced"
+      },
+      {
+        "name": "Model Deployment & MLOps",
+        "level": "Intermediate"
+      }
+    ],
+    "tools": [
+      "PyTorch",
+      "TensorFlow",
+      "Hugging Face",
+      "OpenCV",
+      "Git",
+      "Google Colab"
+    ],
+    "certifications": [
+      {
+        "name": "TensorFlow Developer Certificate",
+        "issuingBody": "Google (TensorFlow Network)",
+        "description": "Validates entry-level competence in building models and deploying deep learning tools."
+      },
+      {
+        "name": "DeepLearning.AI Deep Learning Specialization",
+        "issuingBody": "DeepLearning.AI",
+        "description": "Demonstrates mastery of building convolutional neural networks, sequence models, and AI architectures."
+      },
+      {
+        "name": "Google Cloud Professional Machine Learning Engineer",
+        "issuingBody": "Google Cloud",
+        "description": "Proves capabilities to build, train, deploy, and scale machine learning models on GCP infrastructure."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "IIT Hyderabad",
+        "location": "Kandi, India",
+        "rank": "First IIT to offer B.Tech in AI"
+      },
+      {
+        "name": "IIT Madras",
+        "location": "Chennai, India",
+        "rank": "Leading Tech and Research Hub"
+      },
+      {
+        "name": "Indian Institute of Science (IISc)",
+        "location": "Bengaluru, India",
+        "rank": "Premier Postgraduate & AI Research Institute"
+      },
+      {
+        "name": "IIIT Hyderabad",
+        "location": "Hyderabad, India",
+        "rank": "Renowned for AI and Computer Vision labs"
+      }
+    ],
+    "resources": [
+      {
+        "title": "DeepLearning.AI Courses by Andrew Ng",
+        "type": "Online Course Platform"
+      },
+      {
+        "title": "Hugging Face Interactive NLP Course",
+        "type": "Free Training Platform"
+      },
+      {
+        "title": "Stanford CS231n: Convolutional Neural Networks",
+        "type": "University Lectures Online"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "AI Engineer Trainee / Junior ML Developer",
+        "duration": "1-2 years",
+        "responsibilities": "Formatting raw datasets, running model tests, checking performance metrics, and learning framework code."
+      },
+      {
+        "stage": "AI Engineer / Machine Learning Specialist",
+        "duration": "2-5 years",
+        "responsibilities": "Building deep learning architectures, tuning hyper-parameters, deploying models via APIs, and optimizing inference speeds."
+      },
+      {
+        "stage": "Senior AI Architect / Research Lead",
+        "duration": "5-10 years",
+        "responsibilities": "Designing large-scale generative AI workflows, conducting advanced algorithm research, and guiding junior engineers."
+      },
+      {
+        "stage": "VP of Artificial Intelligence / Chief AI Scientist",
+        "duration": "10+ years",
+        "responsibilities": "Directing overall enterprise AI strategy, defining ethical AI guidelines, and leading AI development divisions."
+      }
+    ],
+    "relatedCareers": [
+      "software-engineer",
+      "data-scientist",
+      "robotics-engineer",
+      "research-scientist"
+    ]
+  },
+  {
+    "id": "doctor",
+    "title": "Doctor / Medical Practitioner",
+    "icon": "Stethoscope",
+    "description": "Diagnoses, treats, and supports patients, restoring health and preventing illnesses.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹6 LPA - ₹10 LPA (MBBS)",
+        "midLevel": "₹12 LPA - ₹24 LPA (MD/MS)",
+        "seniorLevel": "₹30 LPA - ₹60 LPA+",
+        "currency": "INR"
+      },
+      "growth": "High",
+      "degree": "MBBS followed by MD/MS / DNB specialization",
+      "workEnvironment": "Hospitals / Private Clinics (High-pressure environment with long hours and shift work)",
+      "careerType": "Healthcare / Medical",
+      "difficulty": "Very High",
+      "futureDemand": "Very High"
+    },
+    "entranceExams": [
+      "NEET UG (for MBBS)",
+      "NEET PG (for MD/MS)",
+      "INI CET (for AIIMS / premium national institutes)"
+    ],
+    "industries": [
+      "Hospitals (Government & Private)",
+      "Diagnostics & Clinical Labs",
+      "Pharmaceutical Research",
+      "Public Health Organizations",
+      "Telemedicine Platforms"
+    ],
+    "dayInLife": [
+      "Examining patients, checking symptoms, and analyzing diagnostic reports.",
+      "Prescribing medicines, counseling patients, and monitoring treatment courses.",
+      "Performing or assisting in surgical procedures (for surgical specialties).",
+      "Responding to emergency ward calls and handling ward rounds."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Excel in Biological Sciences",
+          "description": "Develop a deep curiosity about human anatomy, plant biology, and chemistry.",
+          "duration": "1 year",
+          "type": "Academic Foundation"
+        },
+        {
+          "title": "First Aid & Health Volunteering",
+          "description": "Participate in local health awareness camp drives or basic first aid training.",
+          "duration": "Ongoing",
+          "type": "Co-curricular Activity"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Excel in Board Examinations",
+          "description": "Maintain high grades in Science (Biology, Chemistry, Physics) to qualify for the medical stream.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Explore Basic Human Physiology",
+          "description": "Read introductory books on human organ systems to check interest alignment.",
+          "duration": "6 months",
+          "type": "Exploration"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Select Physics, Chemistry, and Biology (PCB) Stream",
+          "description": "Study advanced topics in Botany, Zoology, organic chemistry, and mechanics.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Intense NEET UG Entrance Preparation",
+          "description": "Practice mock tests, solve biology objective sheets, and clear concepts in Physics and Chemistry.",
+          "duration": "2 years",
+          "type": "Exam Preparation"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in General Nursing / Paramedical Sciences",
+          "description": "Enroll in allied health diplomas (alternative path for clinical/support roles).",
+          "duration": "2-3 years",
+          "type": "Allied Health Education"
+        },
+        {
+          "title": "Practical Clinical Internships",
+          "description": "Work in hospitals learning basic nursing, diagnostic, or emergency care protocols.",
+          "duration": "6 months",
+          "type": "Clinical Training"
+        },
+        {
+          "title": "Attempt NEET UG for MBBS Transition",
+          "description": "Prepare and write NEET UG for transition into medical school if aiming for Doctor designation.",
+          "duration": "1 year",
+          "type": "Transition Preparation"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Complete Bachelor of Medicine & Bachelor of Surgery (MBBS)",
+          "description": "Complete 4.5 years of academic lectures and 1 year of compulsory rotating internship.",
+          "duration": "5.5 years",
+          "type": "Medical Education"
+        },
+        {
+          "title": "State Medical Council Registration",
+          "description": "Register with the state medical board to practice legally in India.",
+          "duration": "1 month",
+          "type": "Licensure"
+        },
+        {
+          "title": "Prepare for NEET PG / Specialty Entrance",
+          "description": "Study medical board syllabus to secure residency seats for MD or MS specialization.",
+          "duration": "1-2 years",
+          "type": "Exam Preparation"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Medical Diagnosis & Assessment",
+        "level": "Expert"
+      },
+      {
+        "name": "Pharmacology & Therapeutics",
+        "level": "Expert"
+      },
+      {
+        "name": "Patient Counseling & Empathy",
+        "level": "Expert"
+      },
+      {
+        "name": "Emergency Medical Care",
+        "level": "Advanced"
+      },
+      {
+        "name": "Surgical/Procedural Precision",
+        "level": "Advanced"
+      }
+    ],
+    "tools": [
+      "Stethoscope",
+      "Sphygmomanometer",
+      "Ophthalmoscope",
+      "Electrocardiogram (ECG)",
+      "Surgical Scalpel & Sutures",
+      "Electronic Health Record Software"
+    ],
+    "certifications": [
+      {
+        "name": "Registration with National Medical Commission (NMC)",
+        "issuingBody": "NMC / State Medical Council",
+        "description": "Mandatory license required to practice medicine in India."
+      },
+      {
+        "name": "Advanced Cardiovascular Life Support (ACLS)",
+        "issuingBody": "American Heart Association (AHA)",
+        "description": "Standard medical credential validating capability in managing cardiac emergencies."
+      },
+      {
+        "name": "Membership/Fellowship of Royal Colleges (MRCP/MRCS)",
+        "issuingBody": "Royal Colleges (UK)",
+        "description": "Prestigious international medical post-graduate qualification recognized globally."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "All India Institute of Medical Sciences (AIIMS)",
+        "location": "New Delhi, India",
+        "rank": "NIRF Medical Rank #1"
+      },
+      {
+        "name": "Maulana Azad Medical College (MAMC)",
+        "location": "New Delhi, India",
+        "rank": "Top Tier Government Medical School"
+      },
+      {
+        "name": "Christian Medical College (CMC)",
+        "location": "Vellore, India",
+        "rank": "Top Private Medical College"
+      },
+      {
+        "name": "Armed Forces Medical College (AFMC)",
+        "location": "Pune, India",
+        "rank": "Elite Military Medical Training"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Medscape Medical News & Clinical Reference",
+        "type": "Reference Portal"
+      },
+      {
+        "title": "UpToDate Evidence-Based Clinical Decision Support",
+        "type": "Clinical Database"
+      },
+      {
+        "title": "Gray's Anatomy (Students Edition)",
+        "type": "Textbook"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Junior Resident / Medical Officer",
+        "duration": "1-3 years",
+        "responsibilities": "Handling basic outpatient chambers, monitoring ward patients, and assisting senior registrars."
+      },
+      {
+        "stage": "Senior Resident / Registrar (Specialist)",
+        "duration": "3-6 years",
+        "responsibilities": "Managing complex case diagnoses, conducting routine surgical procedures, and supervising interns."
+      },
+      {
+        "stage": "Consultant / Head of Specialization",
+        "duration": "6-12 years",
+        "responsibilities": "Leading hospital department units, deciding overall surgical/treatment lines, and conducting clinical research."
+      },
+      {
+        "stage": "Chief Medical Officer (CMO) / Hospital Director",
+        "duration": "12+ years",
+        "responsibilities": "Overseeing overall hospital operations, managing medical budgets, and representing the medical facility in regulatory audits."
+      }
+    ],
+    "relatedCareers": [
+      "dentist",
+      "pharmacist",
+      "veterinarian",
+      "clinical-researcher"
+    ]
+  },
+  {
+    "id": "lawyer",
+    "title": "Lawyer / Legal Counselor",
+    "icon": "Scale",
+    "description": "Advises clients on legal rights, drafts contracts, and represents individuals or groups in legal courts.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹3 LPA - ₹6 LPA",
+        "midLevel": "₹8 LPA - ₹18 LPA",
+        "seniorLevel": "₹20 LPA - ₹50 LPA+",
+        "currency": "INR"
+      },
+      "growth": "High",
+      "degree": "Integrated B.A. LL.B (5-year) or LL.B (3-year)",
+      "workEnvironment": "Office / Courtrooms (Intellectually demanding, high pressure, heavy reading and documentation)",
+      "careerType": "Legal",
+      "difficulty": "High",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "CLAT UG",
+      "AILET (for NLU Delhi)",
+      "LSAT-India",
+      "AIBE (All India Bar Examination - for license)",
+      "CLAT PG (for LL.M)"
+    ],
+    "industries": [
+      "Corporate Law Firms",
+      "Independent Litigation Practice",
+      "In-house Legal Departments (Corporate/MNCs)",
+      "Judiciary & Civil Services",
+      "Non-Profit Organizations & Human Rights Labs"
+    ],
+    "dayInLife": [
+      "Researching case laws and statutes using digital legal databases.",
+      "Drafting legal briefs, contracts, agreements, and notices.",
+      "Representing clients and presenting arguments in courtroom hearings.",
+      "Meeting clients, negotiating settlement terms, and offering legal advice."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Develop Reading Habits",
+          "description": "Read quality literature, news articles, and editorials to build strong comprehension.",
+          "duration": "Ongoing",
+          "type": "Skill Development"
+        },
+        {
+          "title": "Participate in Debates & Elocutions",
+          "description": "Build public speaking confidence and logical structuring of verbal arguments.",
+          "duration": "1 year",
+          "type": "Extracurricular"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Excel in Social Sciences & English",
+          "description": "Build strong skills in History, Civics, and English Grammar.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Explore Basic Constitution Principles",
+          "description": "Read introductory material on the Indian political and judicial structure.",
+          "duration": "3 months",
+          "type": "Exploration"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Select Humanities, Commerce, or Science Stream",
+          "description": "Choose any stream (Humanities/Legal studies preferred) and focus on logic and english comprehension.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Prepare for CLAT / Legal Entrances",
+          "description": "Study logical reasoning, legal aptitude, general knowledge, and quantitative skills.",
+          "duration": "1-2 years",
+          "type": "Entrance Preparation"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Legal Studies / Paralegal Practice",
+          "description": "Enroll in parallel courses offering foundation training in judicial systems and document support.",
+          "duration": "1-2 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Intern with Local Advocates",
+          "description": "Support filing, court document submission, and learning courtroom etiquette.",
+          "duration": "6 months",
+          "type": "Practical Training"
+        },
+        {
+          "title": "Prepare for 3-Year LL.B Entrance",
+          "description": "Prepare for law admissions (post graduation) if starting from non-integrated streams.",
+          "duration": "6 months",
+          "type": "Exam Prep"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Complete BA LL.B / BBA LL.B (Integrated Program)",
+          "description": "Complete a 5-year integrated law degree or a 3-year LL.B program after general graduation.",
+          "duration": "3-5 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Participate in Moot Court Competitions",
+          "description": "Engage in mock court cases to practice advocacy and research techniques.",
+          "duration": "Ongoing",
+          "type": "Co-curricular"
+        },
+        {
+          "title": "Pass All India Bar Examination (AIBE)",
+          "description": "Pass the open book exam to receive a Certificate of Practice (CoP) from Bar Council of India.",
+          "duration": "6 months",
+          "type": "Licensure"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Legal Research & Citation",
+        "level": "Expert"
+      },
+      {
+        "name": "Legal Drafting & Conveyancing",
+        "level": "Expert"
+      },
+      {
+        "name": "Oral Advocacy & Public Speaking",
+        "level": "Advanced"
+      },
+      {
+        "name": "Negotiation & Dispute Resolution",
+        "level": "Advanced"
+      },
+      {
+        "name": "Analytical Reasoning & Case Evaluation",
+        "level": "Expert"
+      }
+    ],
+    "tools": [
+      "SCC Online",
+      "Manupatra",
+      "LexisNexis",
+      "MS Word",
+      "Adobe Acrobat Pro",
+      "Legal Case Management Systems"
+    ],
+    "certifications": [
+      {
+        "name": "Certificate of Practice (COP)",
+        "issuingBody": "Bar Council of India (BCI)",
+        "description": "Mandatory national certification required to practice law in Indian courts."
+      },
+      {
+        "name": "Diploma in Intellectual Property Rights (IPR)",
+        "issuingBody": "Indian Law Institute (ILI) / Reputed University",
+        "description": "Specialized legal credential focused on patent, copyright, and trademark compliance."
+      },
+      {
+        "name": "Certified Corporate Secretary (CS) - Parallel",
+        "issuingBody": "ICSI",
+        "description": "Dual credential combining corporate secretary qualifications with corporate law specialization."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "National Law School of India University (NLSIU)",
+        "location": "Bengaluru, India",
+        "rank": "NIRF Law Rank #1"
+      },
+      {
+        "name": "National Academy of Legal Studies and Research (NALSAR)",
+        "location": "Hyderabad, India",
+        "rank": "Top Tier NLU"
+      },
+      {
+        "name": "West Bengal National University of Juridical Sciences (WBNUJS)",
+        "location": "Kolkata, India",
+        "rank": "Top National Law College"
+      },
+      {
+        "name": "National Law University (NLU) Delhi",
+        "location": "New Delhi, India",
+        "rank": "Top Ranked National Institute"
+      }
+    ],
+    "resources": [
+      {
+        "title": "SCC Online Blog & Reports",
+        "type": "Case Database"
+      },
+      {
+        "title": "LiveLaw & Bar and Bench Digital News",
+        "type": "Legal Journalism Web"
+      },
+      {
+        "title": "Indian Constitutional Law by M.P. Jain",
+        "type": "Reference Manual"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Junior Associate / Litigating Understudy",
+        "duration": "1-3 years",
+        "responsibilities": "Researching case details, filing documents in registry chambers, drafting basic notices, and taking brief sheets."
+      },
+      {
+        "stage": "Senior Associate / Independent Litigator",
+        "duration": "3-7 years",
+        "responsibilities": "Representing clients independently in lower courts, drafting complex writs/petitions, and managing junior associates."
+      },
+      {
+        "stage": "Corporate Counsel / Senior Advocate / Partner",
+        "duration": "7-12 years",
+        "responsibilities": "Handling corporate clients, negotiating major commercial deals, arguing complex cases in High Courts, and sharing firm equity."
+      },
+      {
+        "stage": "Senior Counsel / Judge (High Court / Supreme Court)",
+        "duration": "12+ years",
+        "responsibilities": "Presiding over judicial benches, interpreting laws, directing constitutional decisions, and mentoring senior bar counsels."
+      }
+    ],
+    "relatedCareers": [
+      "arbitrator",
+      "legal-advisor",
+      "corporate-secretary",
+      "public-prosecutor"
+    ]
+  },
+  {
+    "id": "teacher",
+    "title": "Teacher / Educator",
+    "icon": "GraduationCap",
+    "description": "Plans schedules, guides lessons, and simplifies complex concepts to support student development.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹2 LPA - ₹4.5 LPA",
+        "midLevel": "₹5 LPA - ₹9 LPA",
+        "seniorLevel": "₹10 LPA - ₹18 LPA+",
+        "currency": "INR"
+      },
+      "growth": "Moderate",
+      "degree": "B.Ed (Bachelor of Education) following BA/BSc/BCom",
+      "workEnvironment": "Schools / Classrooms (High energy, active public interaction, structured work hours)",
+      "careerType": "Education",
+      "difficulty": "Medium",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "CTET (Central Teacher Eligibility Test)",
+      "State-level TETs (Teacher Eligibility Tests)",
+      "State B.Ed. Entrance Examinations"
+    ],
+    "industries": [
+      "Primary and Secondary Schools (Government & Private)",
+      "EdTech Companies & Online Coaching",
+      "Training & Test Preparation Centres",
+      "Content Writing & Curriculum Design Labs",
+      "Non-Profit Educational Foundations"
+    ],
+    "dayInLife": [
+      "Designing daily lesson plans and preparing class material.",
+      "Delivering interactive lectures and conducting lab experiments.",
+      "Grading homework, exams, and providing detailed progress reports.",
+      "Counseling students, holding parent-teacher meetings, and monitoring safety."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Identify Favorite Subjects",
+          "description": "Notice which subjects (Mathematics, Science, History) you enjoy explaining to peers.",
+          "duration": "Ongoing",
+          "type": "Self-Exploration"
+        },
+        {
+          "title": "Improve Public Speaking",
+          "description": "Participate in class presentations, debate clubs, and story-telling events.",
+          "duration": "1 year",
+          "type": "Skill Development"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Excel in Secondary Boards",
+          "description": "Focus on overall subject mastery to choose appropriate high school streams.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Peer Tutoring",
+          "description": "Volunteer to tutor classmates or junior students in difficult topics.",
+          "duration": "6 months",
+          "type": "Practical Experience"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Pursue Stream of Specialization",
+          "description": "Select Arts, Commerce, or Science based on the subject you wish to teach in the future.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Develop Digital Literacy Skills",
+          "description": "Learn basic presentation applications (MS PowerPoint, Google Slides, Word).",
+          "duration": "3 months",
+          "type": "Skill Building"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Elementary Education (D.El.Ed.)",
+          "description": "Enroll in a 2-year diploma to qualify for primary school teacher roles.",
+          "duration": "2 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Pass Primary TET Exams",
+          "description": "Prepare for primary level Teacher Eligibility Tests to work in government systems.",
+          "duration": "6 months",
+          "type": "Exam Preparation"
+        },
+        {
+          "title": "Complete Primary School Internship",
+          "description": "Practice classroom management and teaching under local school mentors.",
+          "duration": "3 months",
+          "type": "Practical Training"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Complete Graduation followed by B.Ed.",
+          "description": "Pursue a Bachelor's degree (BA/BSc/BCom) in the main subject and complete a 2-year B.Ed. degree.",
+          "duration": "4-5 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Clear CTET / State TET Exams",
+          "description": "Acquire national or state certification required for recruitment in public schools.",
+          "duration": "6 months",
+          "type": "Certification"
+        },
+        {
+          "title": "Complete Teaching Internships",
+          "description": "Perform mock classrooms and intern at high schools to compile portfolios.",
+          "duration": "6 months",
+          "type": "Practical Experience"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Lesson Planning & Pedagogy",
+        "level": "Expert"
+      },
+      {
+        "name": "Classroom Management",
+        "level": "Advanced"
+      },
+      {
+        "name": "Public Speaking & Presentation",
+        "level": "Expert"
+      },
+      {
+        "name": "Digital Tool Integration (LMS/Zoom)",
+        "level": "Intermediate"
+      },
+      {
+        "name": "Student Assessment & Evaluation",
+        "level": "Advanced"
+      }
+    ],
+    "tools": [
+      "Google Classroom",
+      "Zoom / MS Teams",
+      "MS PowerPoint",
+      "Canva",
+      "Interactive Smart Boards",
+      "Kahoot! / Mentimeter"
+    ],
+    "certifications": [
+      {
+        "name": "CTET Certificate (Central Teacher Eligibility Test)",
+        "issuingBody": "CBSE",
+        "description": "Compulsory certificate proving eligibility to teach in central government schools (KVS, NVS)."
+      },
+      {
+        "name": "Cambridge International TKT (Teaching Knowledge Test)",
+        "issuingBody": "Cambridge English",
+        "description": "International certification validating teaching methodology and English language instruction."
+      },
+      {
+        "name": "B.Ed. Certification",
+        "issuingBody": "NCTE Recognized University",
+        "description": "Mandatory degree certification to teach in middle and high schools in India."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Central Institute of Education (CIE), Delhi University",
+        "location": "New Delhi, India",
+        "rank": "Premier Teacher Training College"
+      },
+      {
+        "name": "Regional Institute of Education (RIE), NCERT",
+        "location": "Ajmer / Bhopal / Mysore, India",
+        "rank": "Top Tier National Institute"
+      },
+      {
+        "name": "Lady Shri Ram College (LSR)",
+        "location": "New Delhi, India",
+        "rank": "Highly Reputed B.El.Ed Program"
+      },
+      {
+        "name": "Jamia Millia Islamia Faculty of Education",
+        "location": "New Delhi, India",
+        "rank": "Top Faculty of Education"
+      }
+    ],
+    "resources": [
+      {
+        "title": "NCERT Frameworks & Books",
+        "type": "National Guidelines"
+      },
+      {
+        "title": "Khan Academy Online Educator Resources",
+        "type": "Pedagogy Website"
+      },
+      {
+        "title": "Coursera: Foundations of Teaching for Learning Specialization",
+        "type": "Online Video Lectures"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Primary / Trained Graduate Teacher (TGT)",
+        "duration": "1-3 years",
+        "responsibilities": "Teaching core modules to junior school, managing class attendance, and checking assignments."
+      },
+      {
+        "stage": "Post Graduate Teacher (PGT)",
+        "duration": "3-7 years",
+        "responsibilities": "Teaching high school batches, preparing students for board exams, and coordinating lab practicals."
+      },
+      {
+        "stage": "Head of Department (HOD) / Coordinator",
+        "duration": "7-12 years",
+        "responsibilities": "Directing syllabus pacing, selecting textbooks, managing co-curricular events, and mentoring teachers."
+      },
+      {
+        "stage": "Vice Principal / School Principal / Director",
+        "duration": "12+ years",
+        "responsibilities": "Managing overall school operations, board registrations, administrative budgets, and setting academic culture."
+      }
+    ],
+    "relatedCareers": [
+      "education-consultant",
+      "curriculum-developer",
+      "school-counselor",
+      "corporate-trainer"
+    ]
+  },
+  {
+    "id": "psychologist",
+    "title": "Psychologist",
+    "icon": "Brain",
+    "description": "Studies human behaviors, emotions, and thoughts to counsel individuals and support mental well-being.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹3 LPA - ₹5.5 LPA",
+        "midLevel": "₹6 LPA - ₹12 LPA",
+        "seniorLevel": "₹15 LPA - ₹25 LPA+",
+        "currency": "INR"
+      },
+      "growth": "High",
+      "degree": "MA/MSc in Psychology + M.Phil (Clinical Psychology) for license",
+      "workEnvironment": "Clinics / Hospitals / Corporate offices (Highly confidential counseling rooms, empathetic client handling)",
+      "careerType": "Healthcare / Consulting",
+      "difficulty": "High",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "CUET UG",
+      "CUET PG (for MA/MSc Psychology)",
+      "NIMHANS M.Phil Entrance Exam"
+    ],
+    "industries": [
+      "Hospitals & Psychiatric Care Centers",
+      "Corporate Employee Wellness Programs",
+      "Educational Institutions (School & College Counseling)",
+      "Private Therapy Practices",
+      "NGOs & Rehab Centers"
+    ],
+    "dayInLife": [
+      "Conducting diagnostic interviews and psychological counseling sessions.",
+      "Administering and grading psychometric tests (IQ, personality, cognitive).",
+      "Formulating custom therapy plans using CBT, DBT, or mindfulness.",
+      "Writing clinical reports and coordinating care with psychiatrists."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Study Human Behavior & Social Science",
+          "description": "Read books on human behavior, basic biology, and sociology.",
+          "duration": "Ongoing",
+          "type": "Self-study"
+        },
+        {
+          "title": "Practice Active Listening",
+          "description": "Engage in peer support activities and learn how to validate emotions.",
+          "duration": "Ongoing",
+          "type": "Skill Building"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Excel in Languages & Science",
+          "description": "Build high communication and observation skills.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Explore Basic Psychology Topics",
+          "description": "Read books like 'Introduction to Psychology' by Morgan & King.",
+          "duration": "3 months",
+          "type": "Exploration"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Select Humanities Stream with Psychology Elective",
+          "description": "Study human development, psychological disorders, and cognitive science under CBSE/State boards.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Volunteer at Mental Health NGO",
+          "description": "Assist in helpline support, community awareness campaigns, or administrative roles.",
+          "duration": "3-6 months",
+          "type": "Practical Exposure"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Counseling / Child Guidance",
+          "description": "Enroll in child development or guidance counseling diplomas.",
+          "duration": "1 year",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Complete Counseling Field Placement",
+          "description": "Intern at family counseling centers under clinical supervisors.",
+          "duration": "3 months",
+          "type": "Practical Training"
+        },
+        {
+          "title": "Transition Prep for Higher Studies",
+          "description": "Prepare for direct entry/admission to degree streams in psychology.",
+          "duration": "6 months",
+          "type": "Transition Phase"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Pursue BA / B.Sc in Psychology",
+          "description": "Study general psychology, social psychology, biophysiology, and statistics for research.",
+          "duration": "3 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Complete MA / M.Sc in Psychology",
+          "description": "Specialize in Clinical, Counseling, or Industrial-Organizational Psychology.",
+          "duration": "2 years",
+          "type": "Post-graduate Specialization"
+        },
+        {
+          "title": "Pursue M.Phil in Clinical Psychology (Optional for Clinical license)",
+          "description": "Complete a 2-year Rehabilitation Council of India (RCI) licensed clinical training.",
+          "duration": "2 years",
+          "type": "Professional Licensure"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Psychological Therapy & Counseling (CBT/DBT)",
+        "level": "Expert"
+      },
+      {
+        "name": "Psychometric Assessment & Diagnosis",
+        "level": "Expert"
+      },
+      {
+        "name": "Active Listening & Empathy",
+        "level": "Expert"
+      },
+      {
+        "name": "Research Methodology & Statistical Analysis",
+        "level": "Advanced"
+      },
+      {
+        "name": "Crisis Intervention & Support",
+        "level": "Advanced"
+      }
+    ],
+    "tools": [
+      "DSM-5 / ICD-11 Diagnostic Manuals",
+      "IQ Testing Kits (e.g., WAIS-IV, WISC-V)",
+      "SPSS / R (Statistical Software)",
+      "Patient Record Portals",
+      "Therapy Worksheet Toolkits"
+    ],
+    "certifications": [
+      {
+        "name": "RCI Clinical Psychologist License",
+        "issuingBody": "Rehabilitation Council of India (RCI)",
+        "description": "Mandatory national license required to practice as a Clinical Psychologist and write diagnostics in India."
+      },
+      {
+        "name": "Certified Cognitive Behavioral Therapist (CBT)",
+        "issuingBody": "Beck Institute / Reputed Institution",
+        "description": "Validates specialized training in cognitive behavioral therapy protocols."
+      },
+      {
+        "name": "Certified Counseling Practitioner",
+        "issuingBody": "Counseling Association / Board",
+        "description": "Verifies clinical knowledge and ethics in counseling settings."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "National Institute of Mental Health and Neurosciences (NIMHANS)",
+        "location": "Bengaluru, India",
+        "rank": "Premier Neuro-Psychiatry Institute"
+      },
+      {
+        "name": "Tata Institute of Social Sciences (TISS)",
+        "location": "Mumbai, India",
+        "rank": "Top Tier Social Sciences Program"
+      },
+      {
+        "name": "Department of Psychology, Delhi University",
+        "location": "New Delhi, India",
+        "rank": "Highly Reputed Academic Program"
+      },
+      {
+        "name": "Christ University",
+        "location": "Bengaluru, India",
+        "rank": "Premier Private Psychology Studies"
+      }
+    ],
+    "resources": [
+      {
+        "title": "DSM-5-TR (Diagnostic and Statistical Manual of Mental Disorders)",
+        "type": "Manual Reference"
+      },
+      {
+        "title": "American Psychological Association (APA) Research Portal",
+        "type": "Scientific Library"
+      },
+      {
+        "title": "Psychology Today Publication",
+        "type": "Industry Web Journal"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Junior Counselor / Counseling Intern",
+        "duration": "1-2 years",
+        "responsibilities": "Conducting intake surveys, assisting in group therapies, taking notes during cases, and arranging patient files."
+      },
+      {
+        "stage": "Licensed Psychologist / Therapy Consultant",
+        "duration": "2-5 years",
+        "responsibilities": "Conducting diagnostic testing, delivering individual CBT sessions, writing clinical profiles, and counseling corporate clients."
+      },
+      {
+        "stage": "Senior Therapist / Associate Director",
+        "duration": "5-10 years",
+        "responsibilities": "Managing counseling clinic divisions, supervising graduate interns, organizing community camps, and consulting in hospitals."
+      },
+      {
+        "stage": "Clinical Director / Private Practice Owner",
+        "duration": "10+ years",
+        "responsibilities": "Operating personal mental health clinics, publishing clinical research papers, and advising corporate boards on employee wellness."
+      }
+    ],
+    "relatedCareers": [
+      "psychiatrist",
+      "school-counselor",
+      "hr-specialist",
+      "social-worker"
+    ]
+  },
+  {
+    "id": "architect",
+    "title": "Architect",
+    "icon": "Compass",
+    "description": "Plans, visualizes, and drafts structural designs for buildings and aesthetic functional spaces.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹3 LPA - ₹5 LPA",
+        "midLevel": "₹6 LPA - ₹12 LPA",
+        "seniorLevel": "₹15 LPA - ₹25 LPA+",
+        "currency": "INR"
+      },
+      "growth": "Moderate",
+      "degree": "Bachelor of Architecture (B.Arch)",
+      "workEnvironment": "Hybrid (Split between office design visualization and structural site monitoring)",
+      "careerType": "STEM / Art & Design",
+      "difficulty": "High",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "NATA (National Aptitude Test in Architecture)",
+      "JEE Main Paper 2",
+      "GATE (Architecture & Planning - for postgrad)"
+    ],
+    "industries": [
+      "Urban Design & Smart Cities Projects",
+      "Real Estate & Housing Construction",
+      "Landscape Architecture Firms",
+      "Interior Design Consultants",
+      "Heritage Restoration Departments"
+    ],
+    "dayInLife": [
+      "Drawing initial architectural layout ideas and elevations on Figma or paper.",
+      "Modeling structural spaces in 3D using Revit or SketchUp software.",
+      "Reviewing municipal building bye-laws to ensure design approval compliance.",
+      "Visiting construction locations to resolve design discrepancies with builders."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Improve Sketching & Fine Art Skills",
+          "description": "Learn perspective drawing, shadow mapping, and scale representation.",
+          "duration": "Ongoing",
+          "type": "Skill Building"
+        },
+        {
+          "title": "Excel in Geometry & Physics",
+          "description": "Understand solid geometry, volume calculations, and load distribution properties.",
+          "duration": "1 year",
+          "type": "Academic Foundation"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Develop 3D Visualization Capabilities",
+          "description": "Practice origami, cardboard building modeling, or technical drawings.",
+          "duration": "6 months",
+          "type": "Skill Practice"
+        },
+        {
+          "title": "Excel in Board Examinations",
+          "description": "Score well to secure science/commerce stream with mathematics.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Focus on Mathematics, Physics, and Fine Arts",
+          "description": "Take science or commerce streams containing Mathematics as a compulsory subject.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Prepare for NATA and JEE Paper 2",
+          "description": "Solve previous drawing papers, aesthetic sensitivity tests, and math sections.",
+          "duration": "1-2 years",
+          "type": "Entrance Prep"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Architectural Assistantship",
+          "description": "Enroll in a 3-year polytechnic course focused on drafting, construction estimation, and CAD basics.",
+          "duration": "3 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Field Drafting Work",
+          "description": "Work as an junior drafter under registered architects to learn blueprint details.",
+          "duration": "6 months",
+          "type": "Practical Training"
+        },
+        {
+          "title": "Lateral B.Arch Preparation",
+          "description": "Prepare to enter undergraduate B.Arch programs through NATA / lateral tests.",
+          "duration": "6 months",
+          "type": "Transition Phase"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Pursue Bachelor of Architecture (B.Arch)",
+          "description": "Complete a 5-year degree focusing on architectural design, history, structural systems, and town planning.",
+          "duration": "5 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Register with the Council of Architecture (CoA)",
+          "description": "Apply for license and registration number to practice legally as an Architect in India.",
+          "duration": "1 month",
+          "type": "Licensure"
+        },
+        {
+          "title": "Compile Professional Design Portfolio",
+          "description": "Complete a 6-month internship in an architectural firm and finalize the thesis project.",
+          "duration": "1 year",
+          "type": "Industry Training"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Architectural Design & Space Planning",
+        "level": "Expert"
+      },
+      {
+        "name": "3D Modeling & Visualization",
+        "level": "Expert"
+      },
+      {
+        "name": "Building Material Knowledge",
+        "level": "Advanced"
+      },
+      {
+        "name": "Local Bye-Laws & Code Compliance",
+        "level": "Advanced"
+      },
+      {
+        "name": "Client Presentation & Sketching",
+        "level": "Advanced"
+      }
+    ],
+    "tools": [
+      "AutoCAD",
+      "Revit",
+      "SketchUp",
+      "Lumion",
+      "Adobe Photoshop",
+      "3ds Max"
+    ],
+    "certifications": [
+      {
+        "name": "Council of Architecture (CoA) License",
+        "issuingBody": "Council of Architecture, India",
+        "description": "Mandatory statutory license required to use the title Architect and seal construction blueprints in India."
+      },
+      {
+        "name": "IGBC AP (Indian Green Building Council Accredited Professional)",
+        "issuingBody": "CII-IGBC",
+        "description": "Validates credentials in designing environmentally sustainable, green buildings in India."
+      },
+      {
+        "name": "Autodesk Certified Professional (Revit / AutoCAD)",
+        "issuingBody": "Autodesk",
+        "description": "Proves expert capabilities in using Autodesk BIM tools for architectural production."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "IIT Roorkee Department of Architecture",
+        "location": "Roorkee, India",
+        "rank": "NIRF Architecture Rank #1"
+      },
+      {
+        "name": "School of Planning and Architecture (SPA)",
+        "location": "New Delhi, India",
+        "rank": "Premier Government Architecture College"
+      },
+      {
+        "name": "CEPT University",
+        "location": "Ahmedabad, India",
+        "rank": "Top Tier Design and Architecture Institute"
+      },
+      {
+        "name": "Sir J.J. College of Architecture",
+        "location": "Mumbai, India",
+        "rank": "Historic Premier Design School"
+      }
+    ],
+    "resources": [
+      {
+        "title": "ArchDaily Web Journal",
+        "type": "Architecture Portal"
+      },
+      {
+        "title": "National Building Code of India (NBC)",
+        "type": "Safety Guidelines"
+      },
+      {
+        "title": "A Pattern Language by Christopher Alexander",
+        "type": "Textbook Reference"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Junior Architect / Project Trainee",
+        "duration": "1-3 years",
+        "responsibilities": "Drafting CAD blueprints, designing bathroom layouts, detailing windows, and preparing mood boards."
+      },
+      {
+        "stage": "Associate Architect / Project Coordinator",
+        "duration": "3-7 years",
+        "responsibilities": "Directing design visualizations, dealing with municipal regulatory boards, coordinating structural consultants, and leading client presentations."
+      },
+      {
+        "stage": "Senior Architect / Studio Lead",
+        "duration": "7-12 years",
+        "responsibilities": "Supervising large-scale residential and commercial projects, maintaining design budgets, and assigning studio workflows."
+      },
+      {
+        "stage": "Principal Architect / Design Director",
+        "duration": "12+ years",
+        "responsibilities": "Owning or directing architectural firms, signing off on major project structures, and winning design commissions via global bids."
+      }
+    ],
+    "relatedCareers": [
+      "civil-engineer",
+      "interior-designer",
+      "urban-planner",
+      "landscape-architect"
+    ]
+  },
+  {
+    "id": "chartered-accountant",
+    "title": "Chartered Accountant",
+    "icon": "BookOpen",
+    "description": "Audits corporate accounting statements, manages tax filing calculations, and monitors compliance regulations.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹7 LPA - ₹10 LPA",
+        "midLevel": "₹12 LPA - ₹20 LPA",
+        "seniorLevel": "₹25 LPA - ₹50 LPA+",
+        "currency": "INR"
+      },
+      "growth": "High",
+      "degree": "Chartered Accountancy qualification by ICAI",
+      "workEnvironment": "Office / Client Location (Highly demanding desk-based role, long hours during tax and auditing seasons)",
+      "careerType": "Finance / Auditing",
+      "difficulty": "Very High",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "CA Foundation Exam",
+      "CA Intermediate Exam",
+      "CA Final Exam"
+    ],
+    "industries": [
+      "Audit & Taxation Firms (Big 4 & Mid-size)",
+      "Corporate Finance & Treasury Divisions",
+      "Investment Banking & Private Equity Services",
+      "Government Revenue & Direct Tax Departments",
+      "Independent Financial Consultancy Services"
+    ],
+    "dayInLife": [
+      "Auditing financial spreadsheets and verifying compliance records.",
+      "Calculating income tax liabilities, GST claims, and preparing returns.",
+      "Consulting corporate managers on complex mergers, acquisitions, and restructuring.",
+      "Representing clients in appellate tax cases and income tax investigations."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Excel in Basic Mathematics",
+          "description": "Build high efficiency in mental math, data interpretation, and percentages.",
+          "duration": "1 year",
+          "type": "Academic Foundation"
+        },
+        {
+          "title": "Learn Financial Literacy",
+          "description": "Read basic personal finance blogs and understand bank accounts.",
+          "duration": "Ongoing",
+          "type": "Exploration"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Excel in Secondary Boards",
+          "description": "Achieve good grades in Mathematics and Social Sciences.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Choose Commerce Stream",
+          "description": "Select the Commerce stream with Mathematics or Accountancy electives in high school.",
+          "duration": "3 months",
+          "type": "Academic Stream Selection"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Master Accountancy and Business Studies",
+          "description": "Learn double-entry bookkeeping, ledger entries, trial balances, and mercantile laws.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Prepare for CA Foundation Examination",
+          "description": "Register with ICAI and study mercantile law, economics, statistics, and accounting.",
+          "duration": "1 year",
+          "type": "Entrance Preparation"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Accounting & Business Finance",
+          "description": "Enroll in intermediate professional diplomas to learn corporate taxation, ledger books, and tally software.",
+          "duration": "2 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Practical Accounting Work",
+          "description": "Complete field internships at local audit consultancies to learn GST filing.",
+          "duration": "6 months",
+          "type": "Practical Training"
+        },
+        {
+          "title": "CA Foundation Entry (Alternative Entry)",
+          "description": "Prepare for and clear the CA Foundation exam to enter the ICAI structure.",
+          "duration": "6 months",
+          "type": "Exam Prep"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Clear CA Intermediate & Join B.Com",
+          "description": "Clear the CA Intermediate examination and enroll in a parallel B.Com course for degree backup.",
+          "duration": "2 years",
+          "type": "Professional Studies"
+        },
+        {
+          "title": "Complete 3-Year Articleship Traineeship",
+          "description": "Undergo mandatory practical training under a practicing Chartered Accountant.",
+          "duration": "3 years",
+          "type": "Mandatory Articleship"
+        },
+        {
+          "title": "Clear CA Final & Obtain Membership",
+          "description": "Pass CA Final exam papers, complete advanced IT training, and register as ICAI Associate Member.",
+          "duration": "1-2 years",
+          "type": "Professional Licensure"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Statutory Auditing & Compliance",
+        "level": "Expert"
+      },
+      {
+        "name": "Direct & Indirect Taxation (GST)",
+        "level": "Expert"
+      },
+      {
+        "name": "Financial Reporting & IFRS/Ind AS",
+        "level": "Expert"
+      },
+      {
+        "name": "Corporate Law & Insolvency Rules",
+        "level": "Advanced"
+      },
+      {
+        "name": "Strategic Financial Management",
+        "level": "Advanced"
+      }
+    ],
+    "tools": [
+      "Tally Prime",
+      "SAP FICO Module",
+      "MS Excel (Advanced Formulas)",
+      "Computax & Tax filing utilities",
+      "GST & Income Tax Portals",
+      "CaseWare (Audit Management)"
+    ],
+    "certifications": [
+      {
+        "name": "ICAI Membership (ACA / FCA)",
+        "issuingBody": "The Institute of Chartered Accountants of India",
+        "description": "Mandatory national qualification required to practice as an auditor and certify statements in India."
+      },
+      {
+        "name": "DISA (Diploma in Information System Audit)",
+        "issuingBody": "ICAI",
+        "description": "Specialized qualification certifying competence in auditing computer security and database operations."
+      },
+      {
+        "name": "Certified Internal Auditor (CIA)",
+        "issuingBody": "Institute of Internal Auditors (IIA), USA",
+        "description": "Globally respected certification for specialists in internal auditing systems."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "The Institute of Chartered Accountants of India (ICAI)",
+        "location": "New Delhi, India (Branches national)",
+        "rank": "Exclusive statutory body for CA certification"
+      },
+      {
+        "name": "Shri Ram College of Commerce (SRCC)",
+        "location": "New Delhi, India",
+        "rank": "Top Ranked Commerce College (backup graduation)"
+      },
+      {
+        "name": "Loyola College",
+        "location": "Chennai, India",
+        "rank": "Premier Backup Commerce Graduation"
+      },
+      {
+        "name": "St. Xavier's College",
+        "location": "Kolkata, India",
+        "rank": "Highly Respected Commerce Department"
+      }
+    ],
+    "resources": [
+      {
+        "title": "ICAI Board of Studies Portal",
+        "type": "Study Materials"
+      },
+      {
+        "title": "Taxmann Publications & Online Library",
+        "type": "Legal Updates"
+      },
+      {
+        "title": "CA Club India Forum",
+        "type": "Professional Web Community"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Articled Assistant (CA Intern)",
+        "duration": "3 years",
+        "responsibilities": "Vouching ledger entries, verifying physical assets, drafting basic income tax computations, and visiting client sites."
+      },
+      {
+        "stage": "Assistant Manager (Finance / Audit & Taxation)",
+        "duration": "1-3 years",
+        "responsibilities": "Managing audit teams, finalising tax audit reports, resolving corporate accounts issues, and checking GST calculations."
+      },
+      {
+        "stage": "Senior Manager / Audit Partner",
+        "duration": "3-8 years",
+        "responsibilities": "Signing corporate audit reports, representing companies in tax appeals, and managing client acquisitions for the firm."
+      },
+      {
+        "stage": "Chief Financial Officer (CFO) / Corporate Finance Director",
+        "duration": "8+ years",
+        "responsibilities": "Leading overall financial strategies, managing capital structure, supervising audits, and presenting plans to the board of directors."
+      }
+    ],
+    "relatedCareers": [
+      "financial-analyst",
+      "investment-banker",
+      "auditor",
+      "company-secretary"
+    ]
+  },
+  {
+    "id": "financial-analyst",
+    "title": "Financial Analyst",
+    "icon": "TrendingUp",
+    "description": "Analyzes market rates, performs investment risk checks, and updates asset spreadsheets.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹4 LPA - ₹7 LPA",
+        "midLevel": "₹9 LPA - ₹16 LPA",
+        "seniorLevel": "₹18 LPA - ₹30 LPA+",
+        "currency": "INR"
+      },
+      "growth": "High",
+      "degree": "Bachelor's degree in Finance/Economics/Commerce (BBA/B.Com) or MBA Finance",
+      "workEnvironment": "Office (Data-driven environment, constant monitoring of stock indices and financial statements)",
+      "careerType": "Finance / Business",
+      "difficulty": "Medium",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "CAT (for MBA Finance)",
+      "NMAT / SNAP",
+      "B.Com / BBA College Entrance Tests (e.g., CUET)"
+    ],
+    "industries": [
+      "Mutual Funds & Asset Management (AMC)",
+      "Corporate Finance & Strategy Teams",
+      "Credit Rating Agencies (CRISIL, ICRA)",
+      "Brokerage & Equity Research Firms",
+      "Corporate Banking"
+    ],
+    "dayInLife": [
+      "Reading corporate financial statements and investor releases.",
+      "Building quantitative forecasting sheets in Excel.",
+      "Writing detailed stock or equity research recommendations.",
+      "Presenting market risk analysis models to investment committees."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Strengthen Core Mathematics",
+          "description": "Excel in algebra, percentage math, and data charting.",
+          "duration": "1 year",
+          "type": "Academic Foundation"
+        },
+        {
+          "title": "Explore Business News",
+          "description": "Begin reading business newspapers and understanding what stocks are.",
+          "duration": "Ongoing",
+          "type": "Exploration"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Develop Data Representation Skills",
+          "description": "Learn to interpret line charts, bar graphs, and spreadsheets.",
+          "duration": "6 months",
+          "type": "Skill Practice"
+        },
+        {
+          "title": "Excel in Board Exams",
+          "description": "Secure admission in commerce or humanities stream with mathematics.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Master Economics & Business Mathematics",
+          "description": "Study macroeconomics, statistics, and business organization structures.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Participate in Mock Stock Competitions",
+          "description": "Play simulation trading games to understand market fluctuations.",
+          "duration": "Ongoing",
+          "type": "Extracurricular"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Financial Management / Banking",
+          "description": "Enroll in a 2-year diploma focused on corporate finance, accounting rules, and markets.",
+          "duration": "2 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Complete Basic Stock Market Certifications",
+          "description": "Obtain certifications like NISM (National Institute of Securities Markets) modules.",
+          "duration": "3 months",
+          "type": "Certification Prep"
+        },
+        {
+          "title": "Prepare for Higher Degree Transfer",
+          "description": "Study entrance materials to enter Bachelor's degree (BBA / B.Com) courses.",
+          "duration": "6 months",
+          "type": "Transition Phase"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Complete B.Com / BBA / B.Sc Economics",
+          "description": "Complete graduation with a focus on finance, econometrics, and database systems.",
+          "duration": "3 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "CFA Level 1 Exam Preparation",
+          "description": "Register and study for Level 1 of the Chartered Financial Analyst exam.",
+          "duration": "1 year",
+          "type": "Professional Certification"
+        },
+        {
+          "title": "Complete Equity Research Internship",
+          "description": "Intern with an investment firm, assisting in building Excel financial models.",
+          "duration": "6 months",
+          "type": "Practical Training"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Financial Modeling & Valuation (DCF)",
+        "level": "Expert"
+      },
+      {
+        "name": "Accounting Principles & Analysis",
+        "level": "Expert"
+      },
+      {
+        "name": "Quantitative & Market Risk Analysis",
+        "level": "Advanced"
+      },
+      {
+        "name": "Industry & Competitor Research",
+        "level": "Advanced"
+      },
+      {
+        "name": "Python for Finance (Data Analysis)",
+        "level": "Intermediate"
+      }
+    ],
+    "tools": [
+      "Microsoft Excel (VBA / Pivot)",
+      "Bloomberg Terminal",
+      "S&P Capital IQ",
+      "Reuters Eikon",
+      "Python (Pandas)",
+      "Tableau"
+    ],
+    "certifications": [
+      {
+        "name": "CFA Charterholder (Chartered Financial Analyst)",
+        "issuingBody": "CFA Institute, USA",
+        "description": "Elite international finance credential validating portfolio management and investment analysis expertise."
+      },
+      {
+        "name": "Financial Risk Manager (FRM)",
+        "issuingBody": "GARP (Global Association of Risk Professionals)",
+        "description": "Global certification verifying capabilities in risk measurement and management."
+      },
+      {
+        "name": "NISM Research Analyst Certification",
+        "issuingBody": "NISM (National Institute of Securities Markets)",
+        "description": "Mandatory regulatory certification to act as a research analyst in India."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Shri Ram College of Commerce (SRCC)",
+        "location": "New Delhi, India",
+        "rank": "NIRF Commerce Rank #1"
+      },
+      {
+        "name": "Indian Institute of Management (IIM) Ahmedabad",
+        "location": "Ahmedabad, India",
+        "rank": "NIRF Management Rank #1 (MBA Finance)"
+      },
+      {
+        "name": "Shaheed Sukhdev College of Business Studies (SSCBS)",
+        "location": "New Delhi, India",
+        "rank": "Top Ranked Undergraduate BBA / BBS"
+      },
+      {
+        "name": "Narsee Monjee Institute of Management Studies (NMIMS)",
+        "location": "Mumbai, India",
+        "rank": "Premier Management University"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Investopedia Finance Database",
+        "type": "Educational Website"
+      },
+      {
+        "title": "Corporate Finance Institute (CFI) Courses",
+        "type": "Training Platform"
+      },
+      {
+        "title": "Bloomberg News and Market Indices",
+        "type": "Live Data Portal"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Junior Financial Analyst / Equity Intern",
+        "duration": "1-2 years",
+        "responsibilities": "Collecting market data, updating financial spreadsheets, and formatting client slide decks."
+      },
+      {
+        "stage": "Senior Financial Analyst / Associate Research Lead",
+        "duration": "2-5 years",
+        "responsibilities": "Constructing discount cash flow (DCF) models, writing investment reports, and presenting reviews to fund managers."
+      },
+      {
+        "stage": "Portfolio Manager / Investment Director",
+        "duration": "5-10 years",
+        "responsibilities": "Directing capital allocations across assets, managing investment committees, and negotiating client agreements."
+      },
+      {
+        "stage": "Chief Investment Officer (CIO) / Finance VP",
+        "duration": "10+ years",
+        "responsibilities": "Leading company investment vision, managing multi-billion dollar portfolios, and representing the enterprise in public investor calls."
+      }
+    ],
+    "relatedCareers": [
+      "chartered-accountant",
+      "investment-banker",
+      "risk-manager",
+      "portfolio-manager"
+    ]
+  },
+  {
+    "id": "investment-banker",
+    "title": "Investment Banker",
+    "icon": "DollarSign",
+    "description": "Helps clients raise capital through corporate financing and provides strategic merger recommendations.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹10 LPA - ₹16 LPA (Front Office)",
+        "midLevel": "₹18 LPA - ₹35 LPA",
+        "seniorLevel": "₹40 LPA - ₹80 LPA+",
+        "currency": "INR"
+      },
+      "growth": "High",
+      "degree": "MBA from Tier-1 college or B.Com/BBA (Tier-1) with CFA",
+      "workEnvironment": "Office / Client Site (High stress, long work weeks, frequent travel, and rapid transaction timelines)",
+      "careerType": "Finance / Advisory",
+      "difficulty": "Very High",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "CAT (for IIMs / top business schools)",
+      "XAT / NMAT",
+      "CFA Program Admissions"
+    ],
+    "industries": [
+      "Global Investment Banks (IBD)",
+      "Boutique Advisory Firms",
+      "Private Equity & Venture Capital Funds",
+      "Corporate Development Units",
+      "Management Consulting"
+    ],
+    "dayInLife": [
+      "Preparing pitch books summarizing acquisition targets.",
+      "Conducting complex valuation analyses of client companies.",
+      "Coordinating due diligence activities between legal, audit, and tax teams.",
+      "Negotiating financial deal structuring details with corporate clients."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Excel in Communication & Logic",
+          "description": "Focus on verbal persuasion, mathematics, and analytic thinking.",
+          "duration": "Ongoing",
+          "type": "Skill Building"
+        },
+        {
+          "title": "Read Corporate Success Stories",
+          "description": "Read biographies of prominent business leaders and corporate mergers.",
+          "duration": "Ongoing",
+          "type": "Exploration"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Achieve High Grades in School Exams",
+          "description": "Excellent academic track records are critical for selection in investment banking.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Choose Commerce or Science Stream",
+          "description": "Select streams containing Mathematics to maintain strong quantitative skills.",
+          "duration": "3 months",
+          "type": "Academic Pathway"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Focus on Economics and Financial Mathematics",
+          "description": "Study corporate organization structure and advanced statistical analytics.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Participate in MUNs and Public Speaking",
+          "description": "Develop high-level negotiation and articulation capabilities.",
+          "duration": "Ongoing",
+          "type": "Extracurricular"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Business Finance",
+          "description": "Enroll in polytechnic business programs emphasizing accounting practices, company law, and banking systems.",
+          "duration": "2 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Complete NISM Securities Markets Exams",
+          "description": "Pass NISM series exams (Investment Adviser/Research Analyst) to gain industrial knowledge.",
+          "duration": "3 months",
+          "type": "Certification"
+        },
+        {
+          "title": "Entrance Prep for Top Business Degrees",
+          "description": "Prepare for CUET/BBA exams to enter tier-1 undergraduate colleges.",
+          "duration": "6 months",
+          "type": "Exam Prep"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Complete B.Com / BBA at Tier-1 College",
+          "description": "Graduate with a high GPA from a top-tier commerce/management institute.",
+          "duration": "3 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Prepare for CAT / GMAT",
+          "description": "Secure a 99+ percentile in CAT to enter top IIMs, or prepare for CFA Level 1.",
+          "duration": "1-2 years",
+          "type": "Exam Preparation"
+        },
+        {
+          "title": "MBA in Finance at Tier-1 Business School",
+          "description": "Complete MBA from a top-ranked institute (IIM A/B/C, ISB) with specialized financial advisory modules.",
+          "duration": "2 years",
+          "type": "Postgraduate Education"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "M&A Advisory & Valuation",
+        "level": "Expert"
+      },
+      {
+        "name": "Financial Modeling & Valuation (LBO, DCF)",
+        "level": "Expert"
+      },
+      {
+        "name": "Pitch Book & Presentation Design",
+        "level": "Expert"
+      },
+      {
+        "name": "Deal Structuring & Capital Raising",
+        "level": "Advanced"
+      },
+      {
+        "name": "Client Management & Negotiation",
+        "level": "Advanced"
+      }
+    ],
+    "tools": [
+      "Microsoft PowerPoint",
+      "Bloomberg Terminal",
+      "S&P Capital IQ",
+      "Microsoft Excel (Advanced modeling templates)",
+      "Thomson Reuters",
+      "Virtual Data Rooms (VDR)"
+    ],
+    "certifications": [
+      {
+        "name": "CFA Charter",
+        "issuingBody": "CFA Institute, USA",
+        "description": "Highly respected global finance designation, essential for senior investment advisory roles."
+      },
+      {
+        "name": "NISM Series VIII: Equity Derivatives",
+        "issuingBody": "NISM",
+        "description": "Indian regulatory certification required for trading and advisory positions in derivatives markets."
+      },
+      {
+        "name": "Financial Modeling and Valuation Analyst (FMVA)",
+        "issuingBody": "Corporate Finance Institute (CFI)",
+        "description": "Practical skill-based certification validating Excel and financial modeling capabilities."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Institute of Management (IIM) Calcutta",
+        "location": "Kolkata, India",
+        "rank": "Ranked Tier-1 for Finance specialization"
+      },
+      {
+        "name": "Indian School of Business (ISB)",
+        "location": "Hyderabad, India",
+        "rank": "Global Rank Top 40"
+      },
+      {
+        "name": "FMS Delhi (Faculty of Management Studies)",
+        "location": "New Delhi, India",
+        "rank": "Highly Reputed Business School"
+      },
+      {
+        "name": "IIM Ahmedabad",
+        "location": "Ahmedabad, India",
+        "rank": "Top National Business School"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Wall Street Prep (Valuation Modeling courses)",
+        "type": "Training Portal"
+      },
+      {
+        "title": "Mergers & Inquisitions (Investment Banking guide blog)",
+        "type": "Industry Publication"
+      },
+      {
+        "title": "The Financial Times / Wall Street Journal",
+        "type": "Financial News"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Investment Banking Analyst",
+        "duration": "1-3 years",
+        "responsibilities": "Building financial models in Excel, formatting presentation slides, and managing communication during due diligence."
+      },
+      {
+        "stage": "Investment Banking Associate",
+        "duration": "3-5 years",
+        "responsibilities": "Supervising analysts, leading design of pitch books, coordinating with legal advisers, and reviewing valuations."
+      },
+      {
+        "stage": "Vice President (VP) / Director",
+        "duration": "5-10 years",
+        "responsibilities": "Managing project pipelines, dealing directly with client executives, negotiating terms sheets, and overseeing transaction closures."
+      },
+      {
+        "stage": "Managing Director (MD) / Senior Partner",
+        "duration": "10+ years",
+        "responsibilities": "Leading overall business division growth, acquiring new corporate clients, defining strategic firm goals, and managing major client relationships."
+      }
+    ],
+    "relatedCareers": [
+      "financial-analyst",
+      "venture-capitalist",
+      "private-equity-associate",
+      "portfolio-manager"
+    ]
+  },
+  {
+    "id": "business-analyst",
+    "title": "Business Analyst",
+    "icon": "Briefcase",
+    "description": "Bridges corporate gaps by analyzing metrics to suggest efficiency steps to management.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹4 LPA - ₹7 LPA",
+        "midLevel": "₹8 LPA - ₹15 LPA",
+        "seniorLevel": "₹16 LPA - ₹25 LPA+",
+        "currency": "INR"
+      },
+      "growth": "High",
+      "degree": "Bachelor's Degree in Business, IT, Commerce, or Engineering (followed by MBA/PGDM)",
+      "workEnvironment": "Office (Highly collaborative, interacting with technical teams and business clients)",
+      "careerType": "Business / Consulting",
+      "difficulty": "Medium",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "CAT (for Postgraduate/MBA)",
+      "XAT / NMAT",
+      "State MBA CETs"
+    ],
+    "industries": [
+      "IT Consultancies & System Integrators",
+      "E-commerce & Retail Tech",
+      "Banking & Financial Services",
+      "Telecommunications",
+      "Healthcare IT & Consulting"
+    ],
+    "dayInLife": [
+      "Interfacing with corporate clients to understand business requirements.",
+      "Translating requirements into technical user stories for development teams.",
+      "Conducting data analyses to identify operational bottlenecks.",
+      "Testing new system features to verify they meet business goals."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Excel in English Communication & Analysis",
+          "description": "Develop strong skills in presentation and written communication.",
+          "duration": "Ongoing",
+          "type": "Skill Building"
+        },
+        {
+          "title": "Learn Basic Computer Applications",
+          "description": "Develop comfort in working with word processors and spreadsheet software.",
+          "duration": "3 months",
+          "type": "Technical Foundation"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Develop logical problem-solving",
+          "description": "Study logic puzzles, analytics games, and basic science problems.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Engage in Group Leadership Projects",
+          "description": "Coordinate group presentations, school events, or clubs.",
+          "duration": "Ongoing",
+          "type": "Co-curricular"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Select Commerce / Humanities with Mathematics",
+          "description": "Focus on mathematics, economics, informatics, and business studies.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Master Presentation Design",
+          "description": "Learn to structure slide layouts and tell stories using data points.",
+          "duration": "3 months",
+          "type": "Skill Development"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Business Management",
+          "description": "Enroll in polytechnic programs focusing on corporate operations, project management, and basic databases.",
+          "duration": "3 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Learn Agile Basics",
+          "description": "Familiarize yourself with scrum framework terms, sprint boards, and backlog operations.",
+          "duration": "3 months",
+          "type": "Practical Skill"
+        },
+        {
+          "title": "Prepare for Direct BBA Entry",
+          "description": "Prepare for undergraduate management entrance exams.",
+          "duration": "6 months",
+          "type": "Exam Prep"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Complete Bachelor's in Engineering, Commerce, or BBA",
+          "description": "Pursue a graduate degree with an focus on analytical reasoning and database operations.",
+          "duration": "3-4 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Master Business Analysis Frameworks",
+          "description": "Learn SWOT analysis, process flow mapping, and requirements documentation.",
+          "duration": "Ongoing",
+          "type": "Technical Training"
+        },
+        {
+          "title": "Complete Business Analysis Internships",
+          "description": "Work in corporate teams assisting in product backlog management or client interviews.",
+          "duration": "6 months",
+          "type": "Practical Training"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Requirements Gathering & Documentation",
+        "level": "Expert"
+      },
+      {
+        "name": "Business Process Modeling (BPMN)",
+        "level": "Advanced"
+      },
+      {
+        "name": "Data Analytics & SQL Queries",
+        "level": "Advanced"
+      },
+      {
+        "name": "Stakeholder Management & Negotiation",
+        "level": "Advanced"
+      },
+      {
+        "name": "Agile & Scrum Frameworks",
+        "level": "Expert"
+      }
+    ],
+    "tools": [
+      "Jira",
+      "Confluence",
+      "Microsoft Visio",
+      "MS Excel",
+      "SQL Server",
+      "Tableau / Power BI"
+    ],
+    "certifications": [
+      {
+        "name": "Certified Business Analysis Professional (CBAP)",
+        "issuingBody": "IIBA (International Institute of Business Analysis)",
+        "description": "Elite global credential verifying extensive capabilities in requirements modeling and business consultancy."
+      },
+      {
+        "name": "PMI Agile Certified Practitioner (PMI-ACP)",
+        "issuingBody": "Project Management Institute (PMI)",
+        "description": "Validates knowledge of agile principles, scrum frameworks, and kanban systems."
+      },
+      {
+        "name": "Certified Scrum Product Owner (CSPO)",
+        "issuingBody": "Scrum Alliance",
+        "description": "Demonstrates competency in backlog grooming, product scoping, and agile release management."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Institute of Management (IIM) Bangalore",
+        "location": "Bengaluru, India",
+        "rank": "NIRF Management Rank #2"
+      },
+      {
+        "name": "Simbiosis Institute of Business Management (SIBM)",
+        "location": "Pune, India",
+        "rank": "Premier Private Management College"
+      },
+      {
+        "name": "Narsee Monjee Institute of Management Studies (NMIMS)",
+        "location": "Mumbai, India",
+        "rank": "Premier Private Management Institute"
+      },
+      {
+        "name": "Christ University",
+        "location": "Bengaluru, India",
+        "rank": "Highly Ranked Undergraduate BBA Department"
+      }
+    ],
+    "resources": [
+      {
+        "title": "IIBA Guide to Business Analysis Body of Knowledge (BABOK)",
+        "type": "Reference Guide Book"
+      },
+      {
+        "title": "Modern Analyst Web Resource Portal",
+        "type": "Community Database"
+      },
+      {
+        "title": "Scrum.org Agile Framework Documentation",
+        "type": "Free Training Material"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Junior Business Analyst / Trainee",
+        "duration": "1-2 years",
+        "responsibilities": "Taking meeting notes, drafting user stories under direction, and updating sprint metrics."
+      },
+      {
+        "stage": "Business Analyst / Scrum Master",
+        "duration": "2-5 years",
+        "responsibilities": "Leading client interviews, translating business goals to developer teams, and owning user acceptance testing (UAT)."
+      },
+      {
+        "stage": "Senior Business Analyst / Product Owner",
+        "duration": "5-10 years",
+        "responsibilities": "Owning overall product backlog decisions, negotiating design tradeoffs, and managing client portfolio consulting."
+      },
+      {
+        "stage": "Business Analysis Director / VP of Products",
+        "duration": "10+ years",
+        "responsibilities": "Directing enterprise-wide digital transformation strategies, managing director panels, and evaluating overall company budgets."
+      }
+    ],
+    "relatedCareers": [
+      "financial-analyst",
+      "product-manager",
+      "project-manager",
+      "data-scientist"
+    ]
+  },
+  {
+    "id": "entrepreneur",
+    "title": "Entrepreneur / Start-up Founder",
+    "icon": "Lightbulb",
+    "description": "Launches business startups, directs core strategy, raises funds, and directs operations.",
+    "overview": {
+      "salary": {
+        "entryLevel": "Variable / Profit Share (₹0 - ₹5 LPA)",
+        "midLevel": "₹6 LPA - ₹20 LPA",
+        "seniorLevel": "₹30 LPA - ₹1 Crore+",
+        "currency": "INR"
+      },
+      "growth": "High",
+      "degree": "No strict degree requirement (B.Tech / MBA from Tier-1 institutions helpful for networking)",
+      "workEnvironment": "Highly dynamic (Fast-paced, high risk, long hours, flexible workspace, constant stakeholder meetings)",
+      "careerType": "Business / Leadership",
+      "difficulty": "Very High",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "None (Admissions to top incubator programs or premier business schools are self-driven)"
+    ],
+    "industries": [
+      "Technology & Internet Startups",
+      "E-commerce & D2C Brands",
+      "Social Impact & CleanTech",
+      "FinTech & AgriTech",
+      "Franchise & Retail Systems"
+    ],
+    "dayInLife": [
+      "Pitching business products to angel investors or venture capitalist partners.",
+      "Meeting with product design and engineering leads to set sprint priorities.",
+      "Reviewing company cash burn rates, operational budgets, and financial runways.",
+      "Hiring core talent and promoting the startup brand across social networks."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Develop Problem-Solving Mentality",
+          "description": "Identify daily problems around you and think of innovative ways to solve them.",
+          "duration": "Ongoing",
+          "type": "Cognitive Skill"
+        },
+        {
+          "title": "Participate in School Sales & Charity Drives",
+          "description": "Practice public speaking, basic negotiation, and customer selling.",
+          "duration": "Ongoing",
+          "type": "Extracurricular"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Understand Basic Economics",
+          "description": "Read introductory books on demand, supply, and business operations.",
+          "duration": "6 months",
+          "type": "Exploration"
+        },
+        {
+          "title": "Excel in Class Examinations",
+          "description": "Build high quantitative skills to support business accounting.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Select Commerce or Humanities Streams",
+          "description": "Choose streams containing Entrepreneurship, Business Studies, or Math electives.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Initiate Small Projects",
+          "description": "Organize school festivals, sell custom merchandise, or launch a small newsletter.",
+          "duration": "Ongoing",
+          "type": "Extracurricular Project"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Entrepreneurship & Business Management",
+          "description": "Enroll in polytechnic business programs emphasizing sales strategy, accounting software, and business law.",
+          "duration": "3 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Work in early-stage startups",
+          "description": "Intern with local startups to observe how founders handle client pitches and cash operations.",
+          "duration": "6 months",
+          "type": "Practical Exposure"
+        },
+        {
+          "title": "Build Minimum Viable Products (MVP)",
+          "description": "Construct simple service websites or app prototypes to validate interest.",
+          "duration": "6 months",
+          "type": "Hands-on Training"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Complete B.Tech / BBA / B.Com Degree",
+          "description": "Pursue a graduate degree from an institute offering incubation facilities (IITs, BITS, IIMs).",
+          "duration": "3-4 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Participate in Startup Incubators & Pitch Fests",
+          "description": "Refine pitch decks, build software/hardware prototypes, and pitch to accelerator cells (e.g., Y Combinator).",
+          "duration": "Ongoing",
+          "type": "Incubation Phase"
+        },
+        {
+          "title": "Bootstrap or Seek Angel Funding",
+          "description": "Launch the validated product in the market and raise initial pre-seed funding.",
+          "duration": "1-2 years",
+          "type": "Startup Launch"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Business Strategy & Modeling",
+        "level": "Expert"
+      },
+      {
+        "name": "Fundraising & Investor Pitching",
+        "level": "Expert"
+      },
+      {
+        "name": "Product Development & MVP Prototyping",
+        "level": "Advanced"
+      },
+      {
+        "name": "Risk Management & Financial Planning",
+        "level": "Advanced"
+      },
+      {
+        "name": "Sales, Marketing & Brand Building",
+        "level": "Expert"
+      }
+    ],
+    "tools": [
+      "Notion",
+      "Pitch Deck Builders (Pitch/Canva)",
+      "Slack / Microsoft Teams",
+      "Google Workspace",
+      "Stripe / Razorpay",
+      "LinkedIn Premium"
+    ],
+    "certifications": [
+      {
+        "name": "Incubator Completion Certificate",
+        "issuingBody": "Y Combinator / IIT Incubation Cell",
+        "description": "Validates completion of a structural business development and accelerator curriculum."
+      },
+      {
+        "name": "Advanced Program in Entrepreneurship",
+        "issuingBody": "IIM Bangalore (NSRCEL) / Premier Institute",
+        "description": "Specialized executive academic program focused on scaling and operations."
+      },
+      {
+        "name": "Project Management Professional (PMP)",
+        "issuingBody": "PMI",
+        "description": "Demonstrates capability to manage resources, schedule milestones, and handle stakeholders."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "SINE - Indian Institute of Technology (IIT) Bombay",
+        "location": "Mumbai, India",
+        "rank": "Leading National Business Incubation Hub"
+      },
+      {
+        "name": "NSRCEL - Indian Institute of Management (IIM) Bangalore",
+        "location": "Bengaluru, India",
+        "rank": "Top Ranked Management Incubation Center"
+      },
+      {
+        "name": "BITS Pilani CEL",
+        "location": "Pilani, India",
+        "rank": "Premier Private University for Entrepreneurial Culture"
+      },
+      {
+        "name": "CIIE - Indian Institute of Management (IIM) Ahmedabad",
+        "location": "Ahmedabad, India",
+        "rank": "Elite National Incubation Cell"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Y Combinator Startup School",
+        "type": "Free Training Platform"
+      },
+      {
+        "title": "TechCrunch / YourStory News Portal",
+        "type": "Startup Journalism Website"
+      },
+      {
+        "title": "The Lean Startup by Eric Ries",
+        "type": "Methodology Book"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Ideation / Bootstrapped Founder",
+        "duration": "1-3 years",
+        "responsibilities": "Validating initial concepts, self-funding code development, creating MVPs, and executing initial sales directly."
+      },
+      {
+        "stage": "Seed-funded Founder / CEO",
+        "duration": "2-5 years",
+        "responsibilities": "Managing seed capital, setting product roadmaps, hiring core developers/sales leads, and evaluating product-market fit."
+      },
+      {
+        "stage": "Growth-stage CEO",
+        "duration": "5-10 years",
+        "responsibilities": "Raising Series A/B funding rounds, directing regional scaling plans, managing institutional investor relationships, and leading executive boards."
+      },
+      {
+        "stage": "Serial Entrepreneur / Angel Investor",
+        "duration": "10+ years",
+        "responsibilities": "Mentoring early-stage startup founders, investing personal capital in seed rounds, and serving on diverse advisory panels."
+      }
+    ],
+    "relatedCareers": [
+      "business-analyst",
+      "product-manager",
+      "management-consultant",
+      "venture-capitalist"
+    ]
+  },
+  {
+    "id": "ux-designer",
+    "title": "UX/UI Designer",
+    "icon": "Figma",
+    "description": "Maps client requirements to draft visual interfaces, app wireframes, and user research models.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹4 LPA - ₹7 LPA",
+        "midLevel": "₹9 LPA - ₹16 LPA",
+        "seniorLevel": "₹18 LPA - ₹30 LPA+",
+        "currency": "INR"
+      },
+      "growth": "High",
+      "degree": "Bachelor's Degree in Design (B.Des) or related UI/UX specialized courses",
+      "workEnvironment": "Office / Remote (Desk-based, highly collaborative, close interaction with product and engineering teams)",
+      "careerType": "STEM / Art & Design",
+      "difficulty": "Medium",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "UCEED (for B.Des admissions)",
+      "CEED (for M.Des admissions)",
+      "NID DAT (National Institute of Design Entrance)"
+    ],
+    "industries": [
+      "Software Development & IT Consultancy",
+      "E-commerce & Product Startups",
+      "Digital Design Agencies",
+      "Mobile App Development Studios",
+      "Gaming & Entertainment Companies"
+    ],
+    "dayInLife": [
+      "Conducting user interviews and compiling customer journey maps.",
+      "Creating low-fidelity wireframes and user flow diagrams.",
+      "Designing high-fidelity visual interfaces and interactive prototypes in Figma.",
+      "Conducting usability testing sessions to find design bottlenecks."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Develop Visual Aesthetic Skills",
+          "description": "Practice sketching, understanding color palettes, and analyzing layout designs.",
+          "duration": "Ongoing",
+          "type": "Creative Skill"
+        },
+        {
+          "title": "Understand App Layouts",
+          "description": "Notice why certain apps (like YouTube, WhatsApp) feel easy or difficult to use.",
+          "duration": "Ongoing",
+          "type": "Exploration"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Excel in Fine Arts / Computer Applications",
+          "description": "Develop skills in digital layout applications and art electives.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Learn Vector Drawing Basics",
+          "description": "Practice using free design software like Inkscape or Figma community editions.",
+          "duration": "3 months",
+          "type": "Digital Skill"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Select Arts, Commerce, or Science Stream",
+          "description": "Choose any stream (Arts with Graphic Design/Fine Arts preferred) and build a creative portfolio.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Prepare for Design Entrances",
+          "description": "Prepare for UCEED and NID DAT exams, focusing on spatial visualization, sketching, and design problem solving.",
+          "duration": "1-2 years",
+          "type": "Entrance Preparation"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Multimedia & Web Design",
+          "description": "Enroll in polytechnic programs focusing on layout principles, typography, and basic frontend interfaces.",
+          "duration": "2-3 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Complete Design Certifications",
+          "description": "Take specialized online courses (like Google UX Design) and learn design software.",
+          "duration": "6 months",
+          "type": "Certification Prep"
+        },
+        {
+          "title": "Build UI Portfolio",
+          "description": "Re-design popular application screens and post projects to platforms like Behance.",
+          "duration": "6 months",
+          "type": "Portfolio Work"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Pursue Bachelor of Design (B.Des in UX/UI or Interaction Design)",
+          "description": "Complete a 4-year design degree focusing on user research, interaction models, cognitive psychology, and branding.",
+          "duration": "4 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Publish Work on Dribbble & Behance",
+          "description": "Post high-quality user flows, design research papers, and app animations to build online authority.",
+          "duration": "Ongoing",
+          "type": "Portfolio Development"
+        },
+        {
+          "title": "Complete Product Design Internship",
+          "description": "Intern with tech startups or design consultancies to learn structural handoffs to developers.",
+          "duration": "6 months",
+          "type": "Practical Experience"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "User Research & Persona Development",
+        "level": "Advanced"
+      },
+      {
+        "name": "Wireframing & Interactive Prototyping",
+        "level": "Expert"
+      },
+      {
+        "name": "Information Architecture & User Flows",
+        "level": "Expert"
+      },
+      {
+        "name": "Visual Interface Design (UI)",
+        "level": "Advanced"
+      },
+      {
+        "name": "Usability Testing & Feedback Evaluation",
+        "level": "Advanced"
+      }
+    ],
+    "tools": [
+      "Figma",
+      "Adobe XD",
+      "Miro",
+      "InVision",
+      "Zeplin",
+      "Adobe Photoshop"
+    ],
+    "certifications": [
+      {
+        "name": "Google UX Design Professional Certificate",
+        "issuingBody": "Google (via Coursera)",
+        "description": "Foundational training program covering user research, Figma prototyping, and design portfolios."
+      },
+      {
+        "name": "Interaction Design Specialist Certification",
+        "issuingBody": "Interaction Design Foundation (IxDF)",
+        "description": "Validates deep theoretical understanding of user psychology, mobile design, and accessibility rules."
+      },
+      {
+        "name": "Nielsen Norman Group (NN/g) UX Certification",
+        "issuingBody": "Nielsen Norman Group",
+        "description": "Elite international design certification proving high-level competence in usability testing and UX strategy."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "National Institute of Design (NID)",
+        "location": "Ahmedabad, India",
+        "rank": "Premier Design Institution"
+      },
+      {
+        "name": "Industrial Design Centre (IDC), IIT Bombay",
+        "location": "Mumbai, India",
+        "rank": "Top Tier Technology & Design College"
+      },
+      {
+        "name": "Srishti Manipal Institute of Art, Design and Technology",
+        "location": "Bengaluru, India",
+        "rank": "Top Private Design Institute"
+      },
+      {
+        "name": "MIT Institute of Design",
+        "location": "Pune, India",
+        "rank": "Highly Reputed Private Design College"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Nielsen Norman Group (NN/g) Usability Articles",
+        "type": "Research Library Website"
+      },
+      {
+        "title": "Interaction Design Foundation (IxDF) Library",
+        "type": "Educational Portal"
+      },
+      {
+        "title": "Don't Make Me Think by Steve Krug",
+        "type": "UX Design Principles Book"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Junior UX/UI Designer / Design Intern",
+        "duration": "1-2 years",
+        "responsibilities": "Creating basic vector icons, updating screen layouts, running small client surveys, and helping document UI styles."
+      },
+      {
+        "stage": "UX/UI Designer / Interaction Specialist",
+        "duration": "2-5 years",
+        "responsibilities": "Owning app feature designs, creating complex interactive prototypes, coordinating with frontend developers, and planning usability studies."
+      },
+      {
+        "stage": "Senior UX Architect / Lead Product Designer",
+        "duration": "5-9 years",
+        "responsibilities": "Defining design system guidelines, supervising junior designers, planning overall user journeys, and presenting layouts to business heads."
+      },
+      {
+        "stage": "Design Director / Head of UX",
+        "duration": "9+ years",
+        "responsibilities": "Directing company-wide creative strategy, managing overall design division budgets, and establishing design culture across the enterprise."
+      }
+    ],
+    "relatedCareers": [
+      "graphic-designer",
+      "software-engineer",
+      "product-manager",
+      "front-end-developer"
+    ]
+  },
+  {
+    "id": "graphic-designer",
+    "title": "Graphic Designer",
+    "icon": "Palette",
+    "description": "Creates visual assets, logos, and promotional sketches for marketing campaigns and publications.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹2.5 LPA - ₹4 LPA",
+        "midLevel": "₹5 LPA - ₹9 LPA",
+        "seniorLevel": "₹10 LPA - ₹18 LPA+",
+        "currency": "INR"
+      },
+      "growth": "Moderate",
+      "degree": "Bachelor's Degree in Fine Arts (BFA) or Graphic Design (B.Des)",
+      "workEnvironment": "Office / Studio (Desk job, highly visual, creative deadlines, remote work option common)",
+      "careerType": "Art & Design",
+      "difficulty": "Medium",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "NID DAT",
+      "UCEED",
+      "NIFT Entrance Exam",
+      "State Fine Art College Entrance Exams"
+    ],
+    "industries": [
+      "Advertising & Branding Agencies",
+      "Publishing Houses & Print Media",
+      "E-commerce & Digital Marketing Firms",
+      "Corporate Communication Departments",
+      "Entertainment & Film Production Studios"
+    ],
+    "dayInLife": [
+      "Brainstorming visual identity ideas with copywriters and marketing teams.",
+      "Designing corporate logos, social media banner posts, and marketing flyers.",
+      "Editing vector graphics, choosing typography setups, and adjusting colors in Illustrator.",
+      "Revising design layouts based on client feedback messages."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Master Hand Sketching & Drawing",
+          "description": "Practice human figures, objects, color coordination, and layout balance.",
+          "duration": "Ongoing",
+          "type": "Skill Practice"
+        },
+        {
+          "title": "Participate in School Poster Contests",
+          "description": "Develop visual design concepts and win recognition in school exhibitions.",
+          "duration": "Ongoing",
+          "type": "Extracurricular"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Learn Digital Design Tools",
+          "description": "Start using free software like GIMP, Canva, or Inkscape to learn design principles.",
+          "duration": "6 months",
+          "type": "Technical Skill"
+        },
+        {
+          "title": "Excel in Language & Creative Arts",
+          "description": "Achieve high grades in board exams to secure admission in arts or humanities.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Select Arts / Fine Arts Stream",
+          "description": "Study Painting, Graphic Art, Commercial Art, or Applied Arts.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Prepare Drawing Portfolio",
+          "description": "Compile sketches, landscape designs, and typography layouts for design admissions.",
+          "duration": "1 year",
+          "type": "Portfolio Work"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Graphic Design & Animation",
+          "description": "Enroll in a 2-year polytechnic course focused on raster-vector tools, visual communication, and layout editing.",
+          "duration": "2 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Perform Freelance Branding Projects",
+          "description": "Create business cards, banners, and logos for local shops to gain experience.",
+          "duration": "Ongoing",
+          "type": "Practical Exposure"
+        },
+        {
+          "title": "Clear Design College Admission Exams",
+          "description": "Prepare for direct second-year entries or NIFT/NID programs.",
+          "duration": "6 months",
+          "type": "Exam Prep"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Pursue BFA (Applied Arts) or B.Des in Graphic Design",
+          "description": "Study typography, color theory, grid systems, advertising, and corporate branding.",
+          "duration": "3-4 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Publish Work on Behance & Dribbble",
+          "description": "Upload detailed layout designs, custom logo systems, and packaging templates.",
+          "duration": "Ongoing",
+          "type": "Portfolio Development"
+        },
+        {
+          "title": "Complete Design Agency Internship",
+          "description": "Intern with advertising or digital marketing agencies to learn commercial design processes.",
+          "duration": "6 months",
+          "type": "Practical Experience"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Vector Illustration & Graphic Design",
+        "level": "Expert"
+      },
+      {
+        "name": "Color Theory & Typography",
+        "level": "Expert"
+      },
+      {
+        "name": "Branding & Visual Identity Systems",
+        "level": "Advanced"
+      },
+      {
+        "name": "Layout Planning & Print Production",
+        "level": "Advanced"
+      },
+      {
+        "name": "Digital Photo Manipulation",
+        "level": "Advanced"
+      }
+    ],
+    "tools": [
+      "Adobe Illustrator",
+      "Adobe Photoshop",
+      "Adobe InDesign",
+      "CorelDRAW",
+      "Figma",
+      "Canva"
+    ],
+    "certifications": [
+      {
+        "name": "Adobe Certified Professional in Graphic Design",
+        "issuingBody": "Adobe Certification Board",
+        "description": "Proves expert capabilities in using Adobe Illustrator and Photoshop for visual media creation."
+      },
+      {
+        "name": "Specialized Typography Certification",
+        "issuingBody": "California Institute of the Arts (Calarts)",
+        "description": "Validates expert capabilities in grid dynamics, typeface selection, and letter spacing rules."
+      },
+      {
+        "name": "Graphic Design Specialization",
+        "issuingBody": "Coursera / University Partner",
+        "description": "Demonstrates completion of coursework in visual communications, branding, and history of design."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "National Institute of Design (NID)",
+        "location": "Ahmedabad, India",
+        "rank": "Premier Design College"
+      },
+      {
+        "name": "National Institute of Fashion Technology (NIFT)",
+        "location": "New Delhi, India",
+        "rank": "Premier Fashion and Communications School"
+      },
+      {
+        "name": "Industrial Design Centre (IDC), IIT Bombay",
+        "location": "Mumbai, India",
+        "rank": "Top Tier Technical Design College"
+      },
+      {
+        "name": "Symbiosis Institute of Design (SID)",
+        "location": "Pune, India",
+        "rank": "Highly Ranked Private Design Institute"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Behance Design Network (Visual Portfolios)",
+        "type": "Inspiration Website"
+      },
+      {
+        "title": "Dribbble UI and Illustration Portal",
+        "type": "Design Inspiration Showcase"
+      },
+      {
+        "title": "Creative Bloq Graphic Design Articles",
+        "type": "Industry Blog"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Junior Graphic Designer / Studio Trainee",
+        "duration": "1-2 years",
+        "responsibilities": "Formatting visual layouts, cutting photo backgrounds, resizing social media banners, and making edits based on notes."
+      },
+      {
+        "stage": "Graphic Designer / Creative Associate",
+        "duration": "2-5 years",
+        "responsibilities": "Creating original logo systems, designing marketing brochures, coordinating print proofs, and working directly on client feedback."
+      },
+      {
+        "stage": "Senior Designer / Art Director",
+        "duration": "5-10 years",
+        "responsibilities": "Leading team brainstorming campaigns, approving print designs, supervising junior illustrators, and pitch-presenting layouts to corporate clients."
+      },
+      {
+        "stage": "Creative Director / Chief Design Officer",
+        "duration": "10+ years",
+        "responsibilities": "Directing overall brand visual policies, managing large agency design projects, hiring creative leads, and sharing in agency equity."
+      }
+    ],
+    "relatedCareers": [
+      "ux-designer",
+      "art-director",
+      "animator",
+      "package-designer"
+    ]
+  },
+  {
+    "id": "mechanical-engineer",
+    "title": "Mechanical Engineer",
+    "icon": "Settings",
+    "description": "Builds and runs mechanical apparatuses, vehicle models, engine tools, and gears.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹3.5 LPA - ₹5.5 LPA",
+        "midLevel": "₹6 LPA - ₹12 LPA",
+        "seniorLevel": "₹15 LPA - ₹25 LPA+",
+        "currency": "INR"
+      },
+      "growth": "Moderate",
+      "degree": "Bachelor's Degree in Mechanical Engineering (B.E. / B.Tech)",
+      "workEnvironment": "Hybrid (Split between engineering office planning and industrial manufacturing plant floor supervision)",
+      "careerType": "STEM / Core Engineering",
+      "difficulty": "High",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "JEE Main",
+      "JEE Advanced",
+      "GATE (for PSUs & postgraduate admissions)",
+      "State-level Engineering Entrances (e.g., KCET, TNEA, UPSEE)"
+    ],
+    "industries": [
+      "Automotive & Electric Vehicle (EV) Manufacturing",
+      "Aerospace & Defence Industry",
+      "Robotics & Industrial Automation",
+      "Power Generation & Energy Plants",
+      "Heavy Machinery & Tool Development"
+    ],
+    "dayInLife": [
+      "Designing complex mechanical components in SolidWorks or CATIA.",
+      "Running finite element analysis (FEA) testing simulation on stress tolerance.",
+      "Inspecting factory assembly lines and resolving mechanical calibration errors.",
+      "Collaborating with electrical engineers on robotic assembly designs."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Excel in Physics Mechanics and Geometry",
+          "description": "Study force, friction, vectors, levers, and basic physics properties.",
+          "duration": "1 year",
+          "type": "Academic Foundation"
+        },
+        {
+          "title": "Dismantle and Explore Devices",
+          "description": "Understand mechanical principles by looking inside basic gears, clocks, or bicycles.",
+          "duration": "Ongoing",
+          "type": "Extracurricular Exploration"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Excel in Secondary Boards",
+          "description": "Achieve high grades in Science and Mathematics.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Take Basic CAD Courses",
+          "description": "Learn 2D drafting basics using student versions of CAD tools.",
+          "duration": "3 months",
+          "type": "Technical Skill"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "PCM Stream Focus",
+          "description": "Select Physics, Chemistry, and Mathematics stream and excel in advanced dynamics.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Engineering Entrance Preparation",
+          "description": "Study physics, chemistry, and mathematics to write competitive engineering exams.",
+          "duration": "1-2 years",
+          "type": "Entrance Prep"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Mechanical Engineering",
+          "description": "Enroll in a 3-year polytechnic course covering engineering drawings, thermodynamics, workshop practice, and lathe operations.",
+          "duration": "3 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Complete Factory Shop Floor Internship",
+          "description": "Work in local toolrooms or maintenance teams during semester breaks.",
+          "duration": "3 months",
+          "type": "Practical Training"
+        },
+        {
+          "title": "Prepare for Engineering Lateral Entry",
+          "description": "Prepare for entrance exams to join the second year of B.E./B.Tech programs.",
+          "duration": "6 months",
+          "type": "Transition Phase"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Pursue B.Tech / B.E. in Mechanical Engineering",
+          "description": "Study advanced thermodynamics, fluid dynamics, design of machine elements, and CAD/CAM modeling.",
+          "duration": "4 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Learn Simulation & Modeling Tools",
+          "description": "Learn ANSYS for simulation and SolidWorks for design.",
+          "duration": "Ongoing",
+          "type": "Software Skill"
+        },
+        {
+          "title": "Complete Industrial Project and Internships",
+          "description": "Complete internships with auto manufacturers or manufacturing plants and finalize a mechanical capstone design.",
+          "duration": "1 year",
+          "type": "Hands-on Experience"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "CAD/CAM Mechanical Design",
+        "level": "Expert"
+      },
+      {
+        "name": "Thermodynamics & Fluid Dynamics",
+        "level": "Advanced"
+      },
+      {
+        "name": "Finite Element Analysis (FEA)",
+        "level": "Advanced"
+      },
+      {
+        "name": "Manufacturing Processes & Tooling",
+        "level": "Advanced"
+      },
+      {
+        "name": "Robotics & Control Systems",
+        "level": "Intermediate"
+      }
+    ],
+    "tools": [
+      "SolidWorks",
+      "ANSYS",
+      "CATIA",
+      "AutoCAD",
+      "MATLAB",
+      "CNC Programming Software"
+    ],
+    "certifications": [
+      {
+        "name": "Certified SolidWorks Professional (CSWP)",
+        "issuingBody": "Dassault Systèmes",
+        "description": "Validates advanced capabilities to design complex parts and assembly configurations in SolidWorks."
+      },
+      {
+        "name": "GATE Qualified Certificate",
+        "issuingBody": "IITs / IISc",
+        "description": "Critical credential for securing junior engineer roles in Public Sector Undertakings (PSUs) like NTPC, BHEL, and IOCL."
+      },
+      {
+        "name": "HVAC System Design Certification",
+        "issuingBody": "ISHRAE / ASHRAE",
+        "description": "Specialized certificate verifying design capabilities for heating, ventilation, and air conditioning systems."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Institute of Technology (IIT) Madras",
+        "location": "Chennai, India",
+        "rank": "NIRF Rank #1"
+      },
+      {
+        "name": "Indian Institute of Technology (IIT) Delhi",
+        "location": "New Delhi, India",
+        "rank": "Top Tier Engineering College"
+      },
+      {
+        "name": "BITS Pilani",
+        "location": "Pilani, India",
+        "rank": "Premier Private University"
+      },
+      {
+        "name": "National Institute of Technology (NIT) Trichy",
+        "location": "Tiruchirappalli, India",
+        "rank": "Top Ranked NIT"
+      }
+    ],
+    "resources": [
+      {
+        "title": "ASME (American Society of Mechanical Engineers) Digital Library",
+        "type": "Technical Resource Portal"
+      },
+      {
+        "title": "Learn Engineering (YouTube Video Series)",
+        "type": "Visual Educational Channel"
+      },
+      {
+        "title": "Mechanical Engineering Reference Manual by Michael R. Lindeburg",
+        "type": "Textbook Reference"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Graduate Engineer Trainee (GET)",
+        "duration": "1-2 years",
+        "responsibilities": "Creating basic parts models, running simulation tests, doing routine machine calibrations, and reporting logs."
+      },
+      {
+        "stage": "Mechanical Design / Production Engineer",
+        "duration": "2-5 years",
+        "responsibilities": "Owning complete component designs, reviewing stress simulation results, coordinating with tooling suppliers, and managing line operators."
+      },
+      {
+        "stage": "Senior Design Lead / Plant Manager",
+        "duration": "5-10 years",
+        "responsibilities": "Directing complex machinery installation, budgeting plant tooling setups, managing multidisciplinary engineering leads, and scheduling assembly outputs."
+      },
+      {
+        "stage": "Director of Engineering / Chief Operating Officer (COO)",
+        "duration": "10+ years",
+        "responsibilities": "Formulating company-wide technological roadmaps, negotiating procurement contracts, directing global product setups, and reporting directly to CEO."
+      }
+    ],
+    "relatedCareers": [
+      "civil-engineer",
+      "aerospace-engineer",
+      "robotics-engineer",
+      "manufacturing-engineer"
+    ]
+  },
+  {
+    "id": "civil-engineer",
+    "title": "Civil Engineer",
+    "icon": "HardHat",
+    "description": "Directs public sector infrastructure construction, including bridge foundations, highway maps, and structural safety grids.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹3.5 LPA - ₹5 LPA",
+        "midLevel": "₹6 LPA - ₹12 LPA",
+        "seniorLevel": "₹15 LPA - ₹25 LPA+",
+        "currency": "INR"
+      },
+      "growth": "Moderate",
+      "degree": "Bachelor's Degree in Civil Engineering (B.E. / B.Tech)",
+      "workEnvironment": "Hybrid (Split between office design work and active construction site supervision)",
+      "careerType": "STEM / Engineering",
+      "difficulty": "High",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "JEE Main",
+      "JEE Advanced",
+      "GATE (for Postgraduate/PSUs)",
+      "State-level Engineering Entrances (e.g., MHT CET, WBJEE, KCET)"
+    ],
+    "industries": [
+      "Real Estate & Urban Development",
+      "Infrastructure & Transportation (Roadways, Railways, Airports)",
+      "Water Resource Management & Environmental Engineering",
+      "Government Sector & Public Works Departments (PWD, NHAI, CPWD)"
+    ],
+    "dayInLife": [
+      "Reviewing and modifying structural drafts and blueprints using CAD software.",
+      "Conducting site visits to inspect construction progress, materials quality, and safety compliance.",
+      "Performing structural calculations and checking load tolerances.",
+      "Collaborating with architects, project managers, and environmental consultants.",
+      "Preparing project cost estimations, material requirements, and compliance reports."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Strengthen Core Mathematics and Physics",
+          "description": "Focus heavily on geometry, algebra, and basic mechanics to build a strong analytical foundation.",
+          "duration": "1 year",
+          "type": "Academic Foundation"
+        },
+        {
+          "title": "Engage in Hands-on Projects",
+          "description": "Participate in science exhibitions, bridge-building competitions using balsa wood, or basic structural design activities.",
+          "duration": "Ongoing",
+          "type": "Extracurricular"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Excel in Secondary School Examinations",
+          "description": "Maintain a high GPA/score in Mathematics and Science subjects to qualify for science streams in high school.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Explore STEM Electives",
+          "description": "Choose courses or workshops in technical drawing, basic computer-aided design (CAD), or introductory coding.",
+          "duration": "3-6 months",
+          "type": "Skill Building"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Focus on Physics, Chemistry, and Mathematics (PCM)",
+          "description": "Study advanced topics like calculus, mechanics, thermodynamics, and coordinate geometry.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Prepare for Engineering Entrance Examinations",
+          "description": "Prepare for national or regional competitive tests (such as JEE in India, SAT/ACT for US admissions, or state-specific exams).",
+          "duration": "1-2 years",
+          "type": "Entrance Preparation"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Enroll in a Diploma in Civil Engineering",
+          "description": "Join a 3-year polytechnic course covering fundamental surveying, construction materials, and drafting.",
+          "duration": "3 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Complete Field Internships",
+          "description": "Gain practical experience as a site supervisor or surveyor trainee during semester breaks.",
+          "duration": "2-3 months",
+          "type": "Practical Training"
+        },
+        {
+          "title": "Prepare for Lateral Entry (Optional)",
+          "description": "Prepare for lateral entry exams to transition directly into the second year of a Bachelor's degree program.",
+          "duration": "6 months",
+          "type": "Transition Phase"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Pursue Bachelor of Engineering / Technology (B.E. / B.Tech / B.S.)",
+          "description": "Study advanced coursework: Structural Analysis, Fluid Mechanics, Soil Mechanics, and Environmental Engineering.",
+          "duration": "4 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Master CAD and Structural Design Software",
+          "description": "Learn industrial tools like AutoCAD, Revit, and STAAD.Pro to build digital design proficiency.",
+          "duration": "Ongoing",
+          "type": "Software Training"
+        },
+        {
+          "title": "Complete Capstone Project and Internships",
+          "description": "Work on an infrastructure design project and intern with construction firms, consulting agencies, or public works departments.",
+          "duration": "6-12 months",
+          "type": "Hands-on Experience"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Structural Analysis & Design",
+        "level": "Expert"
+      },
+      {
+        "name": "Geotechnical & Soil Mechanics",
+        "level": "Advanced"
+      },
+      {
+        "name": "Fluid Mechanics & Hydraulics",
+        "level": "Intermediate"
+      },
+      {
+        "name": "Project Estimation & Budgeting",
+        "level": "Advanced"
+      },
+      {
+        "name": "Land Surveying & GIS Mapping",
+        "level": "Advanced"
+      },
+      {
+        "name": "Regulatory Compliance & Building Codes",
+        "level": "Expert"
+      }
+    ],
+    "tools": [
+      "AutoCAD",
+      "Revit",
+      "STAAD.Pro",
+      "ArcGIS",
+      "Primavera P6 / MS Project",
+      "MATLAB"
+    ],
+    "certifications": [
+      {
+        "name": "GATE Qualified",
+        "issuingBody": "IITs / IISc",
+        "description": "Graduate Aptitude Test in Engineering qualification, critical for PSU recruitments and post-graduate studies in India."
+      },
+      {
+        "name": "Chartered Engineer (India)",
+        "issuingBody": "Institution of Engineers (India)",
+        "description": "Professional engineering certification validating competency and practice standards in India."
+      },
+      {
+        "name": "Project Management Professional (PMP)",
+        "issuingBody": "Project Management Institute (PMI)",
+        "description": "Global certification verifying capabilities in leading and managing infrastructure projects."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Institute of Technology (IIT) Bombay",
+        "location": "Mumbai, India",
+        "rank": "Top Tier National Institute"
+      },
+      {
+        "name": "Indian Institute of Technology (IIT) Delhi",
+        "location": "New Delhi, India",
+        "rank": "Top Tier National Institute"
+      },
+      {
+        "name": "National Institute of Technology (NIT) Trichy",
+        "location": "Tiruchirappalli, India",
+        "rank": "Top Ranked NIT"
+      },
+      {
+        "name": "BITS Pilani",
+        "location": "Pilani, India",
+        "rank": "Premier Private Engineering Institute"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Indian Road Congress (IRC) Publications",
+        "type": "Technical Specifications / Guidelines"
+      },
+      {
+        "title": "NPTEL Civil Engineering Lectures (IIT Faculty)",
+        "type": "Free Online Course Video Series"
+      },
+      {
+        "title": "Design of Steel Structures by N. Subramanian",
+        "type": "Textbook / Reference Guide"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Junior Civil Engineer / Graduate Engineer Trainee (GET)",
+        "duration": "1-2 years",
+        "responsibilities": "Assisting senior engineers, performing basic calculations, CAD drafting, and daily site supervision."
+      },
+      {
+        "stage": "Assistant Engineer / Site Engineer",
+        "duration": "2-5 years",
+        "responsibilities": "Managing structural design sub-sections, supervising day-to-day site operations, and coordinating subcontractors."
+      },
+      {
+        "stage": "Project Manager / Senior Structural Engineer",
+        "duration": "5-10 years",
+        "responsibilities": "Managing large-scale project execution, timelines, site budgets, client interactions, and team resources."
+      },
+      {
+        "stage": "Project Director / Chief Engineer / Partner",
+        "duration": "10+ years",
+        "responsibilities": "Directing entire organizational divisions, leading bidding and procurement processes, and defining corporate business development strategies."
+      }
+    ],
+    "relatedCareers": [
+      "architect",
+      "mechanical-engineer",
+      "urban-planner",
+      "environmental-engineer"
+    ]
+  },
+  {
+    "id": "digital-marketer",
+    "title": "Digital Marketer",
+    "icon": "Megaphone",
+    "description": "Manages brand social networks, targets advertising, and tracks campaign metric percentages.",
+    "overview": {
+      "salary": {
+        "entryLevel": "₹3 LPA - ₹5 LPA",
+        "midLevel": "₹6 LPA - ₹12 LPA",
+        "seniorLevel": "₹14 LPA - ₹25 LPA+",
+        "currency": "INR"
+      },
+      "growth": "High",
+      "degree": "Bachelor's Degree in Marketing, Commerce, Business, or Communications (MBA helpful)",
+      "workEnvironment": "Office / Remote (Fast-paced desk job, high interaction with graphics and analytics dashboards)",
+      "careerType": "Business / Communications",
+      "difficulty": "Medium",
+      "futureDemand": "High"
+    },
+    "entranceExams": [
+      "CAT (for MBA Marketing)",
+      "XAT / NMAT / SNAP",
+      "General Undergraduate Common Entrance Tests (e.g. CUET)"
+    ],
+    "industries": [
+      "Digital Marketing & Advertising Agencies",
+      "E-commerce & D2C Brands",
+      "SaaS & Tech Companies",
+      "Media & Entertainment Networks",
+      "Corporate In-house Marketing Teams"
+    ],
+    "dayInLife": [
+      "Analyzing campaign click-through rates on Google Analytics and Meta Ads manager.",
+      "Brainstorming social media campaign concepts with copywriters and designers.",
+      "Setting up email newsletters and search engine optimization keywords.",
+      "Compiling digital performance reports to justify ad spend budgets to managers."
+    ],
+    "roadmaps": {
+      "class9": [
+        {
+          "title": "Develop Reading & Communication Skills",
+          "description": "Read widely, study writing styles, and participate in creative writing events.",
+          "duration": "Ongoing",
+          "type": "Skill Building"
+        },
+        {
+          "title": "Explore Social Media Dynamics",
+          "description": "Understand what makes online videos, posts, and advertisements popular.",
+          "duration": "Ongoing",
+          "type": "Exploration"
+        }
+      ],
+      "class10": [
+        {
+          "title": "Excel in English and Social Sciences",
+          "description": "Hone articulation and presentation capabilities during class boards.",
+          "duration": "1 year",
+          "type": "Academic Milestone"
+        },
+        {
+          "title": "Learn Basic Image Editing",
+          "description": "Create social media graphics or logos using Canva or Photoshop.",
+          "duration": "3 months",
+          "type": "Skill Practice"
+        }
+      ],
+      "class11_12": [
+        {
+          "title": "Select Commerce or Arts Stream",
+          "description": "Study Business Studies, Economics, Entrepreneurship, and Informatics.",
+          "duration": "2 years",
+          "type": "Academic Specialization"
+        },
+        {
+          "title": "Launch a Social Channel or Blog",
+          "description": "Start a blog, YouTube channel, or Instagram theme page to learn content scaling.",
+          "duration": "Ongoing",
+          "type": "Extracurricular Project"
+        }
+      ],
+      "diploma": [
+        {
+          "title": "Diploma in Digital Marketing & Media",
+          "description": "Enroll in a 2-year diploma focusing on SEO, SMM, copywriting, and basic analytics tools.",
+          "duration": "2 years",
+          "type": "Technical Education"
+        },
+        {
+          "title": "Run Small Budget Ads",
+          "description": "Run basic paid promotions for local businesses or personal channels.",
+          "duration": "3 months",
+          "type": "Practical Training"
+        },
+        {
+          "title": "Prepare for Higher Degree Admission",
+          "description": "Prepare for undergraduate management or commerce entrance exams.",
+          "duration": "6 months",
+          "type": "Transition Phase"
+        }
+      ],
+      "undergraduate": [
+        {
+          "title": "Complete Bachelor's in BBA / B.Com / Mass Communication",
+          "description": "Pursue a graduate program emphasizing marketing theory, consumer psychology, and statistics.",
+          "duration": "3 years",
+          "type": "Higher Education"
+        },
+        {
+          "title": "Acquire Google and Meta Marketing Credentials",
+          "description": "Obtain certifications in Google Ads, Meta Blueprint, and HubSpot Academy.",
+          "duration": "6 months",
+          "type": "Professional Certification"
+        },
+        {
+          "title": "Complete Digital Marketing Agency Internship",
+          "description": "Intern as an ad manager, content strategist, or SEO analyst at a digital agency.",
+          "duration": "6-12 months",
+          "type": "Practical Training"
+        }
+      ]
+    },
+    "skills": [
+      {
+        "name": "Search Engine Optimization (SEO)",
+        "level": "Expert"
+      },
+      {
+        "name": "Paid Advertising (PPC/Google Ads/Meta Ads)",
+        "level": "Expert"
+      },
+      {
+        "name": "Social Media Marketing (SMM)",
+        "level": "Advanced"
+      },
+      {
+        "name": "Web Analytics & Data Evaluation",
+        "level": "Advanced"
+      },
+      {
+        "name": "Content Strategy & Copywriting",
+        "level": "Advanced"
+      }
+    ],
+    "tools": [
+      "Google Analytics 4 (GA4)",
+      "Google Ads Manager",
+      "Meta Ads Manager",
+      "Semrush / Ahrefs",
+      "Mailchimp",
+      "Canva / Figma"
+    ],
+    "certifications": [
+      {
+        "name": "Google Ads Search Certification",
+        "issuingBody": "Google Academy",
+        "description": "Proves expert competency in designing, running, and measuring search engine campaigns."
+      },
+      {
+        "name": "HubSpot Inbound Marketing Certification",
+        "issuingBody": "HubSpot Academy",
+        "description": "Validates core skills in content marketing, lead generation, and customer nurturing workflows."
+      },
+      {
+        "name": "Meta Certified Digital Marketing Associate",
+        "issuingBody": "Meta",
+        "description": "Demonstrates baseline skills in advertising on Facebook, Instagram, and Messenger apps."
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "MICA (Mudra Institute of Communications)",
+        "location": "Ahmedabad, India",
+        "rank": "Premier Strategic Marketing School"
+      },
+      {
+        "name": "Indian Institute of Digital Education (IIDE)",
+        "location": "Mumbai, India",
+        "rank": "Top Specialized Digital Marketing College"
+      },
+      {
+        "name": "Indian Institute of Management (IIM) Indore",
+        "location": "Indore, India",
+        "rank": "Premier Management Institute (MBA Marketing)"
+      },
+      {
+        "name": "Symbiosis Centre for Media & Communication (SCMC)",
+        "location": "Pune, India",
+        "rank": "Top Ranked Communications Undergraduate College"
+      }
+    ],
+    "resources": [
+      {
+        "title": "Neil Patel Marketing Blog",
+        "type": "Educational Website"
+      },
+      {
+        "title": "HubSpot Academy Digital Programs",
+        "type": "Free Training Database"
+      },
+      {
+        "title": "Social Media Examiner Web Portal",
+        "type": "Industry Publication"
+      }
+    ],
+    "careerProgression": [
+      {
+        "stage": "Digital Marketing Executive / SEO Trainee",
+        "duration": "1-2 years",
+        "responsibilities": "Creating daily calendar posts, researching keywords, compiling links, and scheduling newsletters."
+      },
+      {
+        "stage": "Digital Specialist / Campaign Manager",
+        "duration": "2-5 years",
+        "responsibilities": "Managing paid ad budgets, optimizing ad designs, conducting A/B test splits, and coordinating with graphic designers."
+      },
+      {
+        "stage": "Marketing Account Manager / Strategist Lead",
+        "duration": "5-10 years",
+        "responsibilities": "Leading digital strategy teams, managing client campaigns, directing marketing spend distributions, and evaluating overall client ROIs."
+      },
+      {
+        "stage": "Chief Marketing Officer (CMO) / VP of Digital",
+        "duration": "10+ years",
+        "responsibilities": "Defining firm-wide brand campaigns, managing multi-crore budgets, approving major brand sponsorships, and presenting metrics to corporate board."
+      }
+    ],
+    "relatedCareers": [
+      "digital-content-creator",
+      "pr-specialist",
+      "brand-manager",
+      "seo-consultant"
+    ]
+  }
+]

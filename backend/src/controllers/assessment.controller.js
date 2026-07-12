@@ -56,6 +56,7 @@ export const analyzeAssessment = async (req, res) => {
         ],
         closingMessage: "Configure your GROQ_API_KEY to unlock personalized AI guidance!",
         topCareers: topCareers.map(c => ({
+          id: c.id,
           career: c.career,
           score: c.score,
           reason: c.description // Fallback value from library
@@ -66,16 +67,22 @@ export const analyzeAssessment = async (req, res) => {
     // 3. Call Groq service to generate personalized explanations
     const aiReport = await generateCareerReport({ educationLevel, responses, traitScores }, topCareers);
     
+    // Inject IDs back into the AI report's topCareers array based on name matching
+    if (aiReport && Array.isArray(aiReport.topCareers)) {
+      aiReport.topCareers = aiReport.topCareers.map(aiCareer => {
+        const matched = topCareers.find(c => c.career.toLowerCase() === aiCareer.career.toLowerCase());
+        return {
+          id: matched ? matched.id : null,
+          ...aiCareer
+        };
+      });
+    }
+    
     return res.status(200).json({
-
-    success:true,
-
-    educationLevel,
-
-    traitScores,
-
-    report: aiReport
-
+      success: true,
+      educationLevel,
+      traitScores,
+      report: aiReport
     });
   } catch (error) {
     console.error("Error in analyzeAssessment controller:", error);

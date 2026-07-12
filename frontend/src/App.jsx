@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Assessment from './pages/Assessment';
 import Loading from './pages/Loading';
 import Results from './pages/Results';
+import CareerRoadmap from './pages/CareerRoadmap';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/loading" element={<Loading />} />
           <Route path="/results" element={<Results />} />
+          <Route path="/career/:careerId" element={<CareerRoadmap />} />
         </Routes>
       </Router>
     </AssessmentProvider>

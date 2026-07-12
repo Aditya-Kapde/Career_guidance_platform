@@ -62,6 +62,7 @@ export const calculateCareerMatches = (traitScores) => {
       : 0;
 
     return {
+      id: career.id,
       career: career.name,
       score: scorePercentage,
       description: career.description

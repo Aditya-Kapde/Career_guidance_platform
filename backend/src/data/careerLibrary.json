@@ -1,6 +1,6 @@
 [
   {
-    "id": "software_engineer",
+    "id": "software-engineer",
     "name": "Software Engineer",
     "description": "Designs, writes, and debugs software applications and system utilities.",
     "requiredTraits": {
@@ -13,7 +13,7 @@
     }
   },
   {
-    "id": "data_scientist",
+    "id": "data-scientist",
     "name": "Data Scientist",
     "description": "Analyzes complex datasets using mathematics, statistics, and machine learning models to extract business intelligence.",
     "requiredTraits": {
@@ -26,7 +26,7 @@
     }
   },
   {
-    "id": "cloud_engineer",
+    "id": "cloud-engineer",
     "name": "Cloud Engineer",
     "description": "Architects, maintains, and secures remote database servers and enterprise cloud networks.",
     "requiredTraits": {
@@ -38,7 +38,7 @@
     }
   },
   {
-    "id": "cybersecurity_analyst",
+    "id": "cybersecurity-analyst",
     "name": "Cybersecurity Analyst",
     "description": "Protects company networks and user data from security breaches, hacking attempts, and malware.",
     "requiredTraits": {
@@ -50,7 +50,7 @@
     }
   },
   {
-    "id": "ai_engineer",
+    "id": "ai-engineer",
     "name": "AI Engineer",
     "description": "Builds and trains artificial intelligence neural network models, chat systems, and computer vision systems.",
     "requiredTraits": {
@@ -126,7 +126,7 @@
     }
   },
   {
-    "id": "chartered_accountant",
+    "id": "chartered-accountant",
     "name": "Chartered Accountant",
     "description": "Audits corporate accounting statements, manages tax filing calculations, and monitors compliance regulations.",
     "requiredTraits": {
@@ -138,7 +138,7 @@
     }
   },
   {
-    "id": "financial_analyst",
+    "id": "financial-analyst",
     "name": "Financial Analyst",
     "description": "Analyzes market rates, performs investment risk checks, and updates asset spreadsheets.",
     "requiredTraits": {
@@ -150,7 +150,7 @@
     }
   },
   {
-    "id": "investment_banker",
+    "id": "investment-banker",
     "name": "Investment Banker",
     "description": "Helps clients raise capital through corporate financing and provides strategic merger recommendations.",
     "requiredTraits": {
@@ -163,7 +163,7 @@
     }
   },
   {
-    "id": "business_analyst",
+    "id": "business-analyst",
     "name": "Business Analyst",
     "description": "Bridges corporate gaps by analyzing metrics to suggest efficiency steps to management.",
     "requiredTraits": {
@@ -188,7 +188,7 @@
     }
   },
   {
-    "id": "ux_designer",
+    "id": "ux-designer",
     "name": "UX/UI Designer",
     "description": "Maps client requirements to draft visual interfaces, app wireframes, and user research models.",
     "requiredTraits": {
@@ -201,7 +201,7 @@
     }
   },
   {
-    "id": "graphic_designer",
+    "id": "graphic-designer",
     "name": "Graphic Designer",
     "description": "Creates visual assets, logos, and promotional sketches for marketing campaigns and publications.",
     "requiredTraits": {
@@ -213,7 +213,7 @@
     }
   },
   {
-    "id": "mechanical_engineer",
+    "id": "mechanical-engineer",
     "name": "Mechanical Engineer",
     "description": "Builds and runs mechanical apparatuses, vehicle models, engine tools, and gears.",
     "requiredTraits": {
@@ -225,7 +225,7 @@
     }
   },
   {
-    "id": "civil_engineer",
+    "id": "civil-engineer",
     "name": "Civil Engineer",
     "description": "Directs public sector infrastructure construction, including bridge foundations, highway maps, and structural safety grids.",
     "requiredTraits": {
@@ -237,7 +237,7 @@
     }
   },
   {
-    "id": "digital_marketer",
+    "id": "digital-marketer",
     "name": "Digital Marketer",
     "description": "Manages brand social networks, targets advertising, and tracks campaign metric percentages.",
     "requiredTraits": {

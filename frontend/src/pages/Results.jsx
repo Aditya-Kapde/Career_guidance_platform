@@ -110,7 +110,7 @@ export default function Results() {
                 <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
                   <span className="text-xs font-medium text-slate-400">Recommended Pathway</span>
                   <button
-                    onClick={() => alert(`View details for: ${career.career}`)}
+                    onClick={() => navigate(`/career/${career.id || career.career.toLowerCase().replace(/\s+/g, '-')}`)}
                     className="text-xs font-bold text-indigo-655 hover:text-indigo-800 transition-colors flex items-center space-x-1"
                   >
                     <span>Explore Route</span>

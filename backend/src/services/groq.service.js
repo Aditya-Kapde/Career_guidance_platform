@@ -43,7 +43,7 @@ STUDENT PROFILE DETAILS:
 - Full Trait Scores: ${JSON.stringify(payload.traitScores)}
 
 DETERMINISTIC COMPATIBILITY RANKINGS (Calculated by the backend scoring engine):
-${topCareers.map((c, i) => `${i + 1}. ${c.career} (Match Score: ${c.score}%). Description: ${c.description}`).join('\n')}
+${topCareers.map((c, i) => `${i + 1}. ${c.career} (ID: ${c.id}, Match Score: ${c.score}%). Description: ${c.description}`).join('\n')}
 
 INSTRUCTIONS:
 Generate a personalized career counseling report based on the student's traits and scores.
@@ -63,6 +63,7 @@ You MUST return a valid JSON object matching the following structure EXACTLY:
   "closingMessage": "A warm, inspiring motivational quote or closing statement...",
   "topCareers": [
     {
+      "id": "career-id-1",
       "career": "Career Name 1",
       "score": 95,
       "reason": "Detailed explanation of why their traits (like problemSolving) make them highly compatible with this career..."
