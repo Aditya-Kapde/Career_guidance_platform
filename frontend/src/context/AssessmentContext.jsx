@@ -23,9 +23,29 @@ const INITIAL_TRAIT_SCORES = {
 
 const AssessmentContext = createContext(null);
 
-const selectRandomQuestions = (allQuestions, count = 12) => {
-  const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
+const selectRandomQuestions = (allQuestions) => {
+  if (!allQuestions || allQuestions.length === 0) return [];
+
+  const interestQuestions = allQuestions.filter(q => q.category === 'interest');
+  const behaviourQuestions = allQuestions.filter(q => q.category === 'behaviour');
+  const aptitudeQuestions = allQuestions.filter(q => q.category === 'aptitude');
+
+  const selectRandomFromCategory = (categoryQuestions, count) => {
+    const shuffled = [...categoryQuestions].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
+
+  const selectedInterest = selectRandomFromCategory(interestQuestions, 4);
+  const selectedBehaviour = selectRandomFromCategory(behaviourQuestions, 4);
+  const selectedAptitude = selectRandomFromCategory(aptitudeQuestions, 4);
+
+  const interleaved = [];
+  for (let i = 0; i < 4; i++) {
+    if (selectedInterest[i]) interleaved.push(selectedInterest[i]);
+    if (selectedBehaviour[i]) interleaved.push(selectedBehaviour[i]);
+    if (selectedAptitude[i]) interleaved.push(selectedAptitude[i]);
+  }
+  return interleaved;
 };
 
 export function AssessmentProvider({ children }) {
@@ -38,7 +58,7 @@ export function AssessmentProvider({ children }) {
 
   useEffect(() => {
     if (educationLevel) {
-      setSelectedQuestions(selectRandomQuestions(QUESTIONS, 12));
+      setSelectedQuestions(selectRandomQuestions(QUESTIONS));
     } else {
       setSelectedQuestions([]);
     }

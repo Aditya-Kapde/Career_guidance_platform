@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import assessmentRoutes from './routes/assessment.routes.js';
 import roadmapRoutes from './routes/roadmap.routes.js';
+import flowTreeRoutes from './routes/flowTree.routes.js';
 
 // Load environment variables
 dotenv.config();
@@ -22,6 +23,7 @@ app.use(express.json());
 // Routes
 app.use('/api/assessment', assessmentRoutes);
 app.use('/api/roadmaps', roadmapRoutes);
+app.use('/api/flow-tree', flowTreeRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

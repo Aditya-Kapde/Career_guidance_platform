@@ -192,7 +192,7 @@ export default function Assessment() {
                 question={currentQuestion}
                 selectedOptions={selectedOptions}
                 onSelectOption={(optionIdx) =>
-                  selectOption(currentQuestionIndex, optionIdx, currentQuestion.type === 'multiple')
+                  selectOption(currentQuestionIndex, optionIdx, (currentQuestion.questionType || currentQuestion.type) === 'multiple')
                 }
               />
             )}

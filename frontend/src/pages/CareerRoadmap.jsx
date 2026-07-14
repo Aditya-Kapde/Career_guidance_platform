@@ -5,6 +5,7 @@ import api from '../services/api';
 import { useAssessment } from '../context/AssessmentContext';
 import CareerHero from '../components/CareerHero';
 import RoadmapTimeline from '../components/RoadmapTimeline';
+import CareerFlowDiagram from '../components/CareerFlowDiagram';
 import SkillsSection from '../components/SkillsSection';
 import ToolsSection from '../components/ToolsSection';
 import EntranceExamsSection from '../components/EntranceExamsSection';
@@ -121,6 +122,7 @@ export default function CareerRoadmap() {
             compatibilityScore={score}
           />
           <RoadmapTimeline roadmaps={roadmap.roadmaps} educationLevel={educationLevel} />
+          <CareerFlowDiagram careerId={careerId} />
           <CareerProgressionSection careerProgression={roadmap.careerProgression} />
         </div>
 

@@ -1,0 +1,2134 @@
+[
+  {
+    "id": "software-engineer",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "science",
+        "label": "Choose Science Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "pcm",
+        "label": "Take PCM (Physics, Chemistry, Maths)",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "entrance",
+        "label": "JEE / State Entrance Exams",
+        "type": "entrance-exam",
+        "level": 4
+      },
+      {
+        "id": "iit-nit",
+        "label": "IIT / NIT or Top Engineering College",
+        "type": "college",
+        "level": 6
+      },
+      {
+        "id": "private-college",
+        "label": "Private Engineering College",
+        "type": "college",
+        "level": 6
+      },
+      {
+        "id": "btech-cse",
+        "label": "B.Tech / B.E. Computer Science",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "bca-mca",
+        "label": "BCA + MCA Pathway",
+        "type": "higher-studies",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "Software Engineering Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "se",
+        "label": "Software Engineer",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "senior-se",
+        "label": "Senior Software Engineer",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "tech-lead",
+        "label": "Tech Lead / Architect",
+        "type": "promotion",
+        "level": 7
+      },
+      {
+        "id": "cto",
+        "label": "CTO / Director of Engineering",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "science"
+      },
+      {
+        "source": "science",
+        "target": "pcm"
+      },
+      {
+        "source": "pcm",
+        "target": "entrance"
+      },
+      {
+        "source": "entrance",
+        "target": "iit-nit"
+      },
+      {
+        "source": "entrance",
+        "target": "private-college"
+      },
+      {
+        "source": "iit-nit",
+        "target": "btech-cse"
+      },
+      {
+        "source": "private-college",
+        "target": "btech-cse"
+      },
+      {
+        "source": "pcm",
+        "target": "bca-mca"
+      },
+      {
+        "source": "btech-cse",
+        "target": "internship"
+      },
+      {
+        "source": "bca-mca",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "se"
+      },
+      {
+        "source": "se",
+        "target": "senior-se"
+      },
+      {
+        "source": "senior-se",
+        "target": "tech-lead"
+      },
+      {
+        "source": "tech-lead",
+        "target": "cto"
+      }
+    ]
+  },
+  {
+    "id": "data-scientist",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "science",
+        "label": "Choose Science Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "maths",
+        "label": "Take Mathematics & Statistics",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "btech-cse",
+        "label": "B.Tech in CS or Data Science",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "bsc-stats",
+        "label": "B.Sc in Statistics / Math",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "mtech-ds",
+        "label": "M.Tech / M.Sc in Data Science / AI",
+        "type": "higher-studies",
+        "level": 6
+      },
+      {
+        "id": "cert",
+        "label": "Data Science Certification (Python, SQL)",
+        "type": "certification",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "Data Analyst Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "ds",
+        "label": "Junior Data Scientist",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "senior-ds",
+        "label": "Senior Data Scientist",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "lead-ds",
+        "label": "Lead Data Scientist",
+        "type": "promotion",
+        "level": 7
+      },
+      {
+        "id": "chief-data-officer",
+        "label": "Chief Data Officer (CDO)",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "science"
+      },
+      {
+        "source": "science",
+        "target": "maths"
+      },
+      {
+        "source": "maths",
+        "target": "btech-cse"
+      },
+      {
+        "source": "maths",
+        "target": "bsc-stats"
+      },
+      {
+        "source": "btech-cse",
+        "target": "mtech-ds"
+      },
+      {
+        "source": "bsc-stats",
+        "target": "mtech-ds"
+      },
+      {
+        "source": "btech-cse",
+        "target": "cert"
+      },
+      {
+        "source": "bsc-stats",
+        "target": "cert"
+      },
+      {
+        "source": "mtech-ds",
+        "target": "internship"
+      },
+      {
+        "source": "cert",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "ds"
+      },
+      {
+        "source": "ds",
+        "target": "senior-ds"
+      },
+      {
+        "source": "senior-ds",
+        "target": "lead-ds"
+      },
+      {
+        "source": "lead-ds",
+        "target": "chief-data-officer"
+      }
+    ]
+  },
+  {
+    "id": "cloud-engineer",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "science",
+        "label": "Choose Science Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "pcm",
+        "label": "Take PCM",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "btech-it",
+        "label": "B.Tech IT / Computer Science",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "diploma-it",
+        "label": "Diploma in CS / IT",
+        "type": "degree",
+        "level": 5
+      },
+      {
+        "id": "cert-aws",
+        "label": "AWS / Azure Solutions Architect Cert",
+        "type": "certification",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "Cloud / Systems Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "sysops",
+        "label": "SysOps / DevOps Associate",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "cloud-eng",
+        "label": "Cloud Engineer",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "senior-cloud",
+        "label": "Senior Cloud Architect",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "science"
+      },
+      {
+        "source": "science",
+        "target": "pcm"
+      },
+      {
+        "source": "pcm",
+        "target": "btech-it"
+      },
+      {
+        "source": "class10",
+        "target": "diploma-it"
+      },
+      {
+        "source": "diploma-it",
+        "target": "cert-aws"
+      },
+      {
+        "source": "btech-it",
+        "target": "cert-aws"
+      },
+      {
+        "source": "cert-aws",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "sysops"
+      },
+      {
+        "source": "sysops",
+        "target": "cloud-eng"
+      },
+      {
+        "source": "cloud-eng",
+        "target": "senior-cloud"
+      }
+    ]
+  },
+  {
+    "id": "cybersecurity-analyst",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "science",
+        "label": "Choose Science Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "pcm",
+        "label": "Take PCM",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "btech-cse",
+        "label": "B.Tech in CSE / IT",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "cert-ceh",
+        "label": "CEH (Certified Ethical Hacker)",
+        "type": "certification",
+        "level": 6
+      },
+      {
+        "id": "cert-cissp",
+        "label": "CISSP / CompTIA Security+",
+        "type": "certification",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "Security Operations Center (SOC) Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "soc-analyst",
+        "label": "SOC Security Analyst",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "pen-tester",
+        "label": "Penetration Tester / Security Eng",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "ciso",
+        "label": "Chief Information Security Officer (CISO)",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "science"
+      },
+      {
+        "source": "science",
+        "target": "pcm"
+      },
+      {
+        "source": "pcm",
+        "target": "btech-cse"
+      },
+      {
+        "source": "btech-cse",
+        "target": "cert-ceh"
+      },
+      {
+        "source": "btech-cse",
+        "target": "cert-cissp"
+      },
+      {
+        "source": "cert-ceh",
+        "target": "internship"
+      },
+      {
+        "source": "cert-cissp",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "soc-analyst"
+      },
+      {
+        "source": "soc-analyst",
+        "target": "pen-tester"
+      },
+      {
+        "source": "pen-tester",
+        "target": "ciso"
+      }
+    ]
+  },
+  {
+    "id": "ai-engineer",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "science",
+        "label": "Choose Science Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "pcm",
+        "label": "Take PCM",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "btech-cse",
+        "label": "B.Tech Computer Science / AI",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "mtech-ai",
+        "label": "M.Tech / MS in Artificial Intelligence",
+        "type": "higher-studies",
+        "level": 6
+      },
+      {
+        "id": "cert-ml",
+        "label": "Advanced ML / Deep Learning Certification",
+        "type": "certification",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "ML Engineering Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "ai-eng",
+        "label": "AI Engineer",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "senior-ai",
+        "label": "Senior AI researcher / Lead",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "director-ai",
+        "label": "Director of AI & Robotics",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "science"
+      },
+      {
+        "source": "science",
+        "target": "pcm"
+      },
+      {
+        "source": "pcm",
+        "target": "btech-cse"
+      },
+      {
+        "source": "btech-cse",
+        "target": "mtech-ai"
+      },
+      {
+        "source": "btech-cse",
+        "target": "cert-ml"
+      },
+      {
+        "source": "mtech-ai",
+        "target": "internship"
+      },
+      {
+        "source": "cert-ml",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "ai-eng"
+      },
+      {
+        "source": "ai-eng",
+        "target": "senior-ai"
+      },
+      {
+        "source": "senior-ai",
+        "target": "director-ai"
+      }
+    ]
+  },
+  {
+    "id": "doctor",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "science",
+        "label": "Choose Science Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "pcb",
+        "label": "Take PCB (Physics, Chemistry, Biology)",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "neet-ug",
+        "label": "NEET UG Entrance Exam",
+        "type": "entrance-exam",
+        "level": 4
+      },
+      {
+        "id": "mbbs",
+        "label": "MBBS Degree Course",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "neet-pg",
+        "label": "NEET PG / Specialized Exam",
+        "type": "entrance-exam",
+        "level": 6
+      },
+      {
+        "id": "md-ms",
+        "label": "MD / MS (Specialization Residency)",
+        "type": "specialization",
+        "level": 6
+      },
+      {
+        "id": "residency",
+        "label": "Hospital Residency & Training",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "doctor",
+        "label": "Junior Consultant / Doctor",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "sr-consultant",
+        "label": "Senior Consultant / Surgeon",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "medical-dir",
+        "label": "Medical Director / Chief of Staff",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "science"
+      },
+      {
+        "source": "science",
+        "target": "pcb"
+      },
+      {
+        "source": "pcb",
+        "target": "neet-ug"
+      },
+      {
+        "source": "neet-ug",
+        "target": "mbbs"
+      },
+      {
+        "source": "mbbs",
+        "target": "neet-pg"
+      },
+      {
+        "source": "neet-pg",
+        "target": "md-ms"
+      },
+      {
+        "source": "md-ms",
+        "target": "residency"
+      },
+      {
+        "source": "residency",
+        "target": "doctor"
+      },
+      {
+        "source": "doctor",
+        "target": "sr-consultant"
+      },
+      {
+        "source": "sr-consultant",
+        "target": "medical-dir"
+      }
+    ]
+  },
+  {
+    "id": "lawyer",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "any-stream",
+        "label": "Choose Any Stream (Arts / Commerce / Science)",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "clat",
+        "label": "CLAT Entrance Exam",
+        "type": "entrance-exam",
+        "level": 4
+      },
+      {
+        "id": "ba-llb",
+        "label": "Integrated BA-LLB (5 years)",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "bcom-llb",
+        "label": "Integrated B.Com-LLB (5 years)",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "bar-exam",
+        "label": "All India Bar Examination (AIBE)",
+        "type": "gov-exam",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "Legal Internship (Law Firm / Court)",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "associate",
+        "label": "Associate Advocate",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "senior-associate",
+        "label": "Senior Associate / Prosecutor",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "partner",
+        "label": "Partner / Senior Advocate / Judge",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "any-stream"
+      },
+      {
+        "source": "any-stream",
+        "target": "clat"
+      },
+      {
+        "source": "clat",
+        "target": "ba-llb"
+      },
+      {
+        "source": "clat",
+        "target": "bcom-llb"
+      },
+      {
+        "source": "ba-llb",
+        "target": "bar-exam"
+      },
+      {
+        "source": "bcom-llb",
+        "target": "bar-exam"
+      },
+      {
+        "source": "bar-exam",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "associate"
+      },
+      {
+        "source": "associate",
+        "target": "senior-associate"
+      },
+      {
+        "source": "senior-associate",
+        "target": "partner"
+      }
+    ]
+  },
+  {
+    "id": "teacher",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "any-stream",
+        "label": "Choose Any Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "graduation",
+        "label": "B.A. / B.Sc / B.Com Degree",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "bed",
+        "label": "B.Ed (Bachelor of Education)",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "tet-exam",
+        "label": "TET (Teacher Eligibility Test)",
+        "type": "gov-exam",
+        "level": 6
+      },
+      {
+        "id": "training",
+        "label": "Student Teaching & School Practicum",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "teacher",
+        "label": "Primary / Secondary School Teacher",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "senior-teacher",
+        "label": "Senior Coordinator / PGT",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "principal",
+        "label": "School Principal / Academic Director",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "any-stream"
+      },
+      {
+        "source": "any-stream",
+        "target": "graduation"
+      },
+      {
+        "source": "graduation",
+        "target": "bed"
+      },
+      {
+        "source": "bed",
+        "target": "tet-exam"
+      },
+      {
+        "source": "tet-exam",
+        "target": "training"
+      },
+      {
+        "source": "training",
+        "target": "teacher"
+      },
+      {
+        "source": "teacher",
+        "target": "senior-teacher"
+      },
+      {
+        "source": "senior-teacher",
+        "target": "principal"
+      }
+    ]
+  },
+  {
+    "id": "psychologist",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "any-stream",
+        "label": "Choose Any Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "ba-psych",
+        "label": "B.A. / B.Sc in Psychology",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "ma-psych",
+        "label": "M.A. / M.Sc in Clinical/Counseling Psychology",
+        "type": "higher-studies",
+        "level": 6
+      },
+      {
+        "id": "mphil",
+        "label": "M.Phil / Ph.D in Psychology",
+        "type": "higher-studies",
+        "level": 6
+      },
+      {
+        "id": "clinical-training",
+        "label": "Supervised Hospital Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "counselor",
+        "label": "Counseling / Clinical Psychologist",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "director",
+        "label": "Director of Mental Health Facility",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "any-stream"
+      },
+      {
+        "source": "any-stream",
+        "target": "ba-psych"
+      },
+      {
+        "source": "ba-psych",
+        "target": "ma-psych"
+      },
+      {
+        "source": "ma-psych",
+        "target": "mphil"
+      },
+      {
+        "source": "ma-psych",
+        "target": "clinical-training"
+      },
+      {
+        "source": "mphil",
+        "target": "clinical-training"
+      },
+      {
+        "source": "clinical-training",
+        "target": "counselor"
+      },
+      {
+        "source": "counselor",
+        "target": "director"
+      }
+    ]
+  },
+  {
+    "id": "architect",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "science",
+        "label": "Choose Science Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "pcm",
+        "label": "Take PCM",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "nata-exam",
+        "label": "NATA / JEE Paper 2 Exam",
+        "type": "entrance-exam",
+        "level": 4
+      },
+      {
+        "id": "barch",
+        "label": "B.Arch (Bachelor of Architecture, 5 years)",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "coa-reg",
+        "label": "COA (Council of Architecture) License",
+        "type": "certification",
+        "level": 6
+      },
+      {
+        "id": "training",
+        "label": "Architectural firm internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "jr-architect",
+        "label": "Junior Architect",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "sr-architect",
+        "label": "Senior Architect / Lead Designer",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "principal-arch",
+        "label": "Principal Architect / Firm Owner",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "science"
+      },
+      {
+        "source": "science",
+        "target": "pcm"
+      },
+      {
+        "source": "pcm",
+        "target": "nata-exam"
+      },
+      {
+        "source": "nata-exam",
+        "target": "barch"
+      },
+      {
+        "source": "barch",
+        "target": "coa-reg"
+      },
+      {
+        "source": "coa-reg",
+        "target": "training"
+      },
+      {
+        "source": "training",
+        "target": "jr-architect"
+      },
+      {
+        "source": "jr-architect",
+        "target": "sr-architect"
+      },
+      {
+        "source": "sr-architect",
+        "target": "principal-arch"
+      }
+    ]
+  },
+  {
+    "id": "chartered-accountant",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "commerce",
+        "label": "Choose Commerce Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "foundation",
+        "label": "CA Foundation Exam",
+        "type": "entrance-exam",
+        "level": 4
+      },
+      {
+        "id": "bcom",
+        "label": "B.Com (Direct Entry Scheme)",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "intermediate",
+        "label": "CA Intermediate (Group I & II)",
+        "type": "exam",
+        "level": 6
+      },
+      {
+        "id": "articleship",
+        "label": "Practical Articleship Training (3 years)",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "final",
+        "label": "CA Final Exam",
+        "type": "exam",
+        "level": 6
+      },
+      {
+        "id": "ca-member",
+        "label": "ICAI Membership",
+        "type": "certification",
+        "level": 7
+      },
+      {
+        "id": "consultant",
+        "label": "Tax Consultant / Auditor",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "partner",
+        "label": "Partner at Audit Firm / CFO",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "commerce"
+      },
+      {
+        "source": "commerce",
+        "target": "foundation"
+      },
+      {
+        "source": "foundation",
+        "target": "intermediate"
+      },
+      {
+        "source": "commerce",
+        "target": "bcom"
+      },
+      {
+        "source": "bcom",
+        "target": "intermediate"
+      },
+      {
+        "source": "intermediate",
+        "target": "articleship"
+      },
+      {
+        "source": "articleship",
+        "target": "final"
+      },
+      {
+        "source": "final",
+        "target": "ca-member"
+      },
+      {
+        "source": "ca-member",
+        "target": "consultant"
+      },
+      {
+        "source": "consultant",
+        "target": "partner"
+      }
+    ]
+  },
+  {
+    "id": "financial-analyst",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "commerce",
+        "label": "Choose Commerce / Science Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "bba-finance",
+        "label": "BBA / B.Com in Finance",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "cfa-level1",
+        "label": "CFA Level 1 Exam",
+        "type": "exam",
+        "level": 6
+      },
+      {
+        "id": "cfa-level2",
+        "label": "CFA Level 2 & 3",
+        "type": "certification",
+        "level": 7
+      },
+      {
+        "id": "internship",
+        "label": "Financial Research Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "analyst",
+        "label": "Financial Analyst",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "portfolio-mgr",
+        "label": "Portfolio Manager / Advisor",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "commerce"
+      },
+      {
+        "source": "commerce",
+        "target": "bba-finance"
+      },
+      {
+        "source": "bba-finance",
+        "target": "cfa-level1"
+      },
+      {
+        "source": "cfa-level1",
+        "target": "cfa-level2"
+      },
+      {
+        "source": "bba-finance",
+        "target": "internship"
+      },
+      {
+        "source": "cfa-level1",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "analyst"
+      },
+      {
+        "source": "cfa-level2",
+        "target": "portfolio-mgr"
+      },
+      {
+        "source": "analyst",
+        "target": "portfolio-mgr"
+      }
+    ]
+  },
+  {
+    "id": "investment-banker",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "commerce",
+        "label": "Choose Commerce / Science Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "bcom-finance",
+        "label": "B.Com / BBA in Finance",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "cat-gmat",
+        "label": "CAT / GMAT Exams",
+        "type": "entrance-exam",
+        "level": 6
+      },
+      {
+        "id": "mba-finance",
+        "label": "MBA from Tier-1 Business School",
+        "type": "higher-studies",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "M&A Advisory Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "analyst",
+        "label": "Investment Banking Analyst",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "associate",
+        "label": "Investment Banking Associate",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "vp",
+        "label": "Vice President / Managing Director",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "commerce"
+      },
+      {
+        "source": "commerce",
+        "target": "bcom-finance"
+      },
+      {
+        "source": "bcom-finance",
+        "target": "cat-gmat"
+      },
+      {
+        "source": "cat-gmat",
+        "target": "mba-finance"
+      },
+      {
+        "source": "mba-finance",
+        "target": "internship"
+      },
+      {
+        "source": "bcom-finance",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "analyst"
+      },
+      {
+        "source": "analyst",
+        "target": "associate"
+      },
+      {
+        "source": "mba-finance",
+        "target": "associate"
+      },
+      {
+        "source": "associate",
+        "target": "vp"
+      }
+    ]
+  },
+  {
+    "id": "business-analyst",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "any-stream",
+        "label": "Choose Any Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "bba-it",
+        "label": "BBA / B.Tech / B.Com Degree",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "cert-analytics",
+        "label": "Data Analytics / CBAP Certification",
+        "type": "certification",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "Business Process Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "ba",
+        "label": "Business Analyst",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "sr-ba",
+        "label": "Senior Business Analyst / Consultant",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "product-mgr",
+        "label": "Product Manager / Director",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "any-stream"
+      },
+      {
+        "source": "any-stream",
+        "target": "bba-it"
+      },
+      {
+        "source": "bba-it",
+        "target": "cert-analytics"
+      },
+      {
+        "source": "cert-analytics",
+        "target": "internship"
+      },
+      {
+        "source": "bba-it",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "ba"
+      },
+      {
+        "source": "ba",
+        "target": "sr-ba"
+      },
+      {
+        "source": "sr-ba",
+        "target": "product-mgr"
+      }
+    ]
+  },
+  {
+    "id": "entrepreneur",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "any-stream",
+        "label": "Choose Any Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "degree",
+        "label": "BBA / B.Tech / Any Graduate Degree",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "mba",
+        "label": "MBA / Business Incubation Program",
+        "type": "higher-studies",
+        "level": 6
+      },
+      {
+        "id": "side-project",
+        "label": "Build Prototype & Side Project",
+        "type": "specialization",
+        "level": 6
+      },
+      {
+        "id": "corporate-xp",
+        "label": "2-3 Years Corporate Industry Experience",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "pitch",
+        "label": "Angel / Seed Funding Pitch",
+        "type": "certification",
+        "level": 7
+      },
+      {
+        "id": "founder",
+        "label": "Startup Founder & CEO",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "scale",
+        "label": "Series-A Scale & Venture Leader",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "any-stream"
+      },
+      {
+        "source": "any-stream",
+        "target": "degree"
+      },
+      {
+        "source": "degree",
+        "target": "mba"
+      },
+      {
+        "source": "degree",
+        "target": "side-project"
+      },
+      {
+        "source": "side-project",
+        "target": "corporate-xp"
+      },
+      {
+        "source": "mba",
+        "target": "corporate-xp"
+      },
+      {
+        "source": "corporate-xp",
+        "target": "pitch"
+      },
+      {
+        "source": "degree",
+        "target": "pitch"
+      },
+      {
+        "source": "pitch",
+        "target": "founder"
+      },
+      {
+        "source": "founder",
+        "target": "scale"
+      }
+    ]
+  },
+  {
+    "id": "ux-designer",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "any-stream",
+        "label": "Choose Any Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "bdes",
+        "label": "B.Des in Interaction/Communication Design",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "bca-it",
+        "label": "BCA / B.Tech / Science Degree",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "bootcamp",
+        "label": "UX/UI Design Bootcamp (Figma, Research)",
+        "type": "certification",
+        "level": 6
+      },
+      {
+        "id": "portfolio",
+        "label": "Build Interaction Design Portfolio",
+        "type": "certification",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "Product Design Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "designer",
+        "label": "UX/UI Product Designer",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "sr-designer",
+        "label": "Senior Product Designer",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "design-lead",
+        "label": "Design System Lead / Manager",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "any-stream"
+      },
+      {
+        "source": "any-stream",
+        "target": "bdes"
+      },
+      {
+        "source": "any-stream",
+        "target": "bca-it"
+      },
+      {
+        "source": "bca-it",
+        "target": "bootcamp"
+      },
+      {
+        "source": "bdes",
+        "target": "portfolio"
+      },
+      {
+        "source": "bootcamp",
+        "target": "portfolio"
+      },
+      {
+        "source": "portfolio",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "designer"
+      },
+      {
+        "source": "designer",
+        "target": "sr-designer"
+      },
+      {
+        "source": "sr-designer",
+        "target": "design-lead"
+      }
+    ]
+  },
+  {
+    "id": "graphic-designer",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "any-stream",
+        "label": "Choose Any Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "bdes",
+        "label": "B.Des (Graphic / Communication Design)",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "bfa",
+        "label": "BFA (Bachelor of Fine Arts)",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "portfolio",
+        "label": "Assemble Design Portfolio (Adobe CC)",
+        "type": "certification",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "Design Agency Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "designer",
+        "label": "Graphic Designer",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "senior-designer",
+        "label": "Senior Designer / Art Director",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "creative-director",
+        "label": "Creative Director",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "any-stream"
+      },
+      {
+        "source": "any-stream",
+        "target": "bdes"
+      },
+      {
+        "source": "any-stream",
+        "target": "bfa"
+      },
+      {
+        "source": "bdes",
+        "target": "portfolio"
+      },
+      {
+        "source": "bfa",
+        "target": "portfolio"
+      },
+      {
+        "source": "portfolio",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "designer"
+      },
+      {
+        "source": "designer",
+        "target": "senior-designer"
+      },
+      {
+        "source": "senior-designer",
+        "target": "creative-director"
+      }
+    ]
+  },
+  {
+    "id": "mechanical-engineer",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "science",
+        "label": "Choose Science Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "pcm",
+        "label": "Take PCM",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "entrance",
+        "label": "JEE / State Engineering Exam",
+        "type": "entrance-exam",
+        "level": 4
+      },
+      {
+        "id": "iit-nit",
+        "label": "IIT / NIT or Top Govt College",
+        "type": "college",
+        "level": 6
+      },
+      {
+        "id": "private-college",
+        "label": "Private Engineering College",
+        "type": "college",
+        "level": 6
+      },
+      {
+        "id": "btech-mech",
+        "label": "B.Tech / B.E. Mechanical Engineering",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "cad-cert",
+        "label": "CAD / CAM (SolidWorks) Certification",
+        "type": "certification",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "Industrial / Factory Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "mech-eng",
+        "label": "Mechanical Design / Operations Engineer",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "sr-mech",
+        "label": "Senior Mechanical Engineer",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "plant-manager",
+        "label": "Plant Operations Manager / Lead",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "science"
+      },
+      {
+        "source": "science",
+        "target": "pcm"
+      },
+      {
+        "source": "pcm",
+        "target": "entrance"
+      },
+      {
+        "source": "entrance",
+        "target": "iit-nit"
+      },
+      {
+        "source": "entrance",
+        "target": "private-college"
+      },
+      {
+        "source": "iit-nit",
+        "target": "btech-mech"
+      },
+      {
+        "source": "private-college",
+        "target": "btech-mech"
+      },
+      {
+        "source": "btech-mech",
+        "target": "cad-cert"
+      },
+      {
+        "source": "cad-cert",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "mech-eng"
+      },
+      {
+        "source": "mech-eng",
+        "target": "sr-mech"
+      },
+      {
+        "source": "sr-mech",
+        "target": "plant-manager"
+      }
+    ]
+  },
+  {
+    "id": "civil-engineer",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "science",
+        "label": "Choose Science Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "pcm",
+        "label": "Take PCM",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "jee",
+        "label": "JEE / State Entrance Exam",
+        "type": "entrance-exam",
+        "level": 4
+      },
+      {
+        "id": "private-college",
+        "label": "Private Engineering College",
+        "type": "college",
+        "level": 6
+      },
+      {
+        "id": "iit",
+        "label": "IIT / NIT or Top College",
+        "type": "college",
+        "level": 6
+      },
+      {
+        "id": "btech",
+        "label": "B.Tech Civil Engineering",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "Construction Site Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "civil-engineer",
+        "label": "Civil Engineer",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "site-engineer",
+        "label": "Site Engineer",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "project-manager",
+        "label": "Project Manager",
+        "type": "promotion",
+        "level": 7
+      },
+      {
+        "id": "chief-engineer",
+        "label": "Chief Engineer",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "science"
+      },
+      {
+        "source": "science",
+        "target": "pcm"
+      },
+      {
+        "source": "pcm",
+        "target": "jee"
+      },
+      {
+        "source": "jee",
+        "target": "iit"
+      },
+      {
+        "source": "jee",
+        "target": "private-college"
+      },
+      {
+        "source": "iit",
+        "target": "btech"
+      },
+      {
+        "source": "private-college",
+        "target": "btech"
+      },
+      {
+        "source": "btech",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "civil-engineer"
+      },
+      {
+        "source": "civil-engineer",
+        "target": "site-engineer"
+      },
+      {
+        "source": "site-engineer",
+        "target": "project-manager"
+      },
+      {
+        "source": "project-manager",
+        "target": "chief-engineer"
+      }
+    ]
+  },
+  {
+    "id": "digital-marketer",
+    "nodes": [
+      {
+        "id": "class10",
+        "label": "Complete Class 10",
+        "type": "education",
+        "level": 3
+      },
+      {
+        "id": "any-stream",
+        "label": "Choose Any Stream",
+        "type": "education",
+        "level": 4
+      },
+      {
+        "id": "bba-marketing",
+        "label": "BBA / B.Com in Marketing",
+        "type": "degree",
+        "level": 6
+      },
+      {
+        "id": "cert-seo",
+        "label": "SEO / Google Ads / Meta Certified Professional",
+        "type": "certification",
+        "level": 6
+      },
+      {
+        "id": "internship",
+        "label": "Digital Marketing Agency Internship",
+        "type": "internship",
+        "level": 7
+      },
+      {
+        "id": "exec",
+        "label": "Digital Marketing Executive",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "manager",
+        "label": "Digital Marketing Manager",
+        "type": "job",
+        "level": 7
+      },
+      {
+        "id": "cmo",
+        "label": "Chief Marketing Officer (CMO)",
+        "type": "promotion",
+        "level": 7
+      }
+    ],
+    "edges": [
+      {
+        "source": "class10",
+        "target": "any-stream"
+      },
+      {
+        "source": "any-stream",
+        "target": "bba-marketing"
+      },
+      {
+        "source": "bba-marketing",
+        "target": "cert-seo"
+      },
+      {
+        "source": "cert-seo",
+        "target": "internship"
+      },
+      {
+        "source": "bba-marketing",
+        "target": "internship"
+      },
+      {
+        "source": "internship",
+        "target": "exec"
+      },
+      {
+        "source": "exec",
+        "target": "manager"
+      },
+      {
+        "source": "manager",
+        "target": "cmo"
+      }
+    ]
+  }
+]

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 
 export default function QuestionCard({ question, selectedOptions, onSelectOption }) {
-  const isMultiple = question.type === 'multiple';
+  const isMultiple = (question.questionType || question.type) === 'multiple';
 
   return (
     <div className="w-full">
