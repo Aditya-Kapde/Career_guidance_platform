@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useSearchParams } from 'react-router-dom';
+import api from '../services/api';
 
 import PrintHero from '../components/print-report/PrintHero';
 import PrintExecutiveBriefing from '../components/print-report/PrintExecutiveBriefing';
@@ -24,8 +23,8 @@ const ReportPrint = () => {
   useEffect(() => {
     const fetchReport = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/report/latest');
-        setReportData(response.data);
+        const response = await api.get('/api/report/latest');
+        setReportData(response);
         setLoading(false);
       } catch (err) {
         console.error("Failed to fetch report:", err);

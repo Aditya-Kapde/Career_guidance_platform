@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Download } from 'lucide-react';
+import api from '../../services/api';
 
 const ReportHeader = ({ reportData }) => {
   const [isMounted, setIsMounted] = useState(false);
@@ -22,9 +23,7 @@ const ReportHeader = ({ reportData }) => {
             <button
               onClick={async () => {
                 try {
-                  const response = await fetch('http://localhost:5000/api/report/pdf');
-                  if (!response.ok) throw new Error("Failed to download PDF");
-                  const blob = await response.blob();
+                  const blob = await api.get('/api/report/pdf', { responseType: 'blob' });
                   const url = window.URL.createObjectURL(blob);
                   const a = document.createElement('a');
                   a.href = url;

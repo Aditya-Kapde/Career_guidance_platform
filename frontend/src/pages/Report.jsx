@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useSearchParams } from 'react-router-dom';
+import api from '../services/api';
 import ReportHeader from '../components/report/ReportHeader';
 import ReportFooter from '../components/report/ReportFooter';
 
@@ -25,8 +24,8 @@ const Report = () => {
   useEffect(() => {
     const fetchReport = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/report/latest');
-        setReportData(response.data);
+        const response = await api.get('/api/report/latest');
+        setReportData(response);
         setLoading(false);
       } catch (err) {
         console.error("Failed to fetch report:", err);
