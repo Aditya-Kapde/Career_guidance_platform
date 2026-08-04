@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import assessmentRoutes from './routes/assessment.routes.js';
 import roadmapRoutes from './routes/roadmap.routes.js';
 import flowTreeRoutes from './routes/flowTree.routes.js';
+import reportRoutes from './routes/report.routes.js';
 
 // Load environment variables
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(express.json());
 app.use('/api/assessment', assessmentRoutes);
 app.use('/api/roadmaps', roadmapRoutes);
 app.use('/api/flow-tree', flowTreeRoutes);
+app.use('/api/report', reportRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

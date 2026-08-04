@@ -5,11 +5,11 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const ROADMAPS_PATH = path.join(__dirname, '../data/careerRoadmaps.json');
-let careerRoadmaps = [];
+const ROADMAPS_PATH = path.join(__dirname, '../data/careerKnowledgeBase.json');
+let careerKnowledgeBase = [];
 
 try {
-  careerRoadmaps = JSON.parse(fs.readFileSync(ROADMAPS_PATH, 'utf-8'));
+  careerKnowledgeBase = JSON.parse(fs.readFileSync(ROADMAPS_PATH, 'utf-8'));
 } catch (error) {
   console.error("Error reading career roadmaps database:", error);
 }
@@ -22,5 +22,5 @@ try {
  */
 export const getRoadmapById = (careerId) => {
   if (!careerId) return null;
-  return careerRoadmaps.find(roadmap => roadmap.id === careerId) || null;
+  return careerKnowledgeBase.find(career => career.id === careerId) || null;
 };

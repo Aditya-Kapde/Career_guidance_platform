@@ -1,18 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const FLOW_TREES_PATH = path.join(__dirname, '../data/careerFlowTrees.json');
-let flowTrees = [];
-
-try {
-  flowTrees = JSON.parse(fs.readFileSync(FLOW_TREES_PATH, 'utf-8'));
-} catch (error) {
-  console.error("Error reading career flow trees database:", error);
-}
+import { getRoadmapById } from './roadmap.service.js';
 
 /**
  * Retrieves the flow tree for a given career ID.
@@ -22,5 +8,21 @@ try {
  */
 export const getFlowTreeById = (careerId) => {
   if (!careerId) return null;
-  return flowTrees.find(tree => tree.id === careerId) || null;
+  
+  const roadmap = getRoadmapById(careerId);
+  if (!roadmap || !roadmap.timeline) return null;
+
+  const nodes = roadmap.timeline.map((step, index) => ({
+    id: `${careerId}-node-${index}`,
+    label: step.focus || step.title || `Step ${index + 1}`,
+    level: index,
+    type: 'core'
+  }));
+
+  const edges = roadmap.timeline.slice(0, -1).map((_, index) => ({
+    source: `${careerId}-node-${index}`,
+    target: `${careerId}-node-${index + 1}`
+  }));
+
+  return { id: careerId, nodes, edges };
 };

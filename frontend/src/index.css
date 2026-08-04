@@ -38,3 +38,57 @@ html, body {
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
 }
+
+/* Premium Document Print Mode (Used by Puppeteer Backend Generator) */
+.print-mode {
+  background: white !important;
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: A4;
+  }
+  
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    overflow: visible !important;
+  }
+
+  /* Disable all animations, transitions and sticky elements for printing */
+  * {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .sticky, .fixed, .absolute {
+    position: static !important;
+  }
+
+  .min-h-screen, .h-screen {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .print\:break-after-page {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .print\:break-before-page {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .print\:break-inside-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .print\:pt-10 {
+    padding-top: 2.5rem !important;
+  }
+}

@@ -202,10 +202,17 @@ export default function Results() {
       )}
 
       {/* Action Footer */}
-      <footer className="text-center pt-4">
+      <footer className="text-center pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button
+          onClick={() => navigate('/report')}
+          className="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-indigo-100 transition-all transform hover:-translate-y-0.5 w-full sm:w-auto justify-center"
+        >
+          <Award className="w-5 h-5" />
+          <span>View Premium Report</span>
+        </button>
         <button
           onClick={handleRestart}
-          className="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-600 to-purple-650 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-indigo-100 transition-all transform hover:-translate-y-0.5"
+          className="inline-flex items-center space-x-2 bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 font-bold py-4 px-8 rounded-xl shadow-sm transition-all transform hover:-translate-y-0.5 w-full sm:w-auto justify-center"
         >
           <RefreshCw className="w-5 h-5" />
           <span>Restart Assessment</span>

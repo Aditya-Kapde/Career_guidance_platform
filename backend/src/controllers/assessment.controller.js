@@ -1,5 +1,7 @@
 import { calculateCareerMatches } from '../services/careerEngine.service.js';
 import { generateCareerReport, getGroqClient } from '../services/groq.service.js';
+import { buildReport } from '../services/report/reportBuilder.js';
+import { saveLatestReport } from '../services/report/reportStore.js';
 
 export const startAssessment = async (req, res) => {
   res.status(200).json({ message: "Assessment controller placeholder" });
@@ -40,7 +42,7 @@ export const analyzeAssessment = async (req, res) => {
     const groqClient = getGroqClient();
     if (!groqClient) {
       console.warn("GROQ_API_KEY is not defined. Returning matching engine results with placeholders.");
-      return res.status(200).json({
+      const fallbackReport = {
         summary: "Assessment successfully processed. To unlock personalized AI analysis, study tips, and detailed career fits, please configure GROQ_API_KEY in the backend .env file.",
         strengths: [
           "Logical thinking and task breakdown capability",
@@ -61,7 +63,12 @@ export const analyzeAssessment = async (req, res) => {
           score: c.score,
           reason: c.description // Fallback value from library
         }))
-      });
+      };
+      
+      const unifiedReport = buildReport({ educationLevel, responses, traitScores }, fallbackReport, topCareers);
+      saveLatestReport(unifiedReport);
+
+      return res.status(200).json(fallbackReport);
     }
 
     // 3. Call Groq service to generate personalized explanations
@@ -78,6 +85,9 @@ export const analyzeAssessment = async (req, res) => {
       });
     }
     
+    const unifiedReport = buildReport({ educationLevel, responses, traitScores }, aiReport, topCareers);
+    saveLatestReport(unifiedReport);
+
     return res.status(200).json({
       success: true,
       educationLevel,

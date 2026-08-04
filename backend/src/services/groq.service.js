@@ -46,30 +46,114 @@ DETERMINISTIC COMPATIBILITY RANKINGS (Calculated by the backend scoring engine):
 ${topCareers.map((c, i) => `${i + 1}. ${c.career} (ID: ${c.id}, Match Score: ${c.score}%). Description: ${c.description}`).join('\n')}
 
 INSTRUCTIONS:
-Generate a personalized career counseling report based on the student's traits and scores.
-1. Provide an overall student profile summary ("summary").
-2. Detail exactly why each of the 4 matched careers fits their specific traits ("reason" inside each item in "topCareers"). Use the exact names of the matched careers provided.
-3. List 4 core strengths ("strengths") based on their high trait values.
-4. List 3 key developmental areas / skills to improve ("skillsToDevelop") relevant to their profile.
-5. Provide 3 highly targeted study and revision tips ("studyTips") customized for the student's education level.
-6. Share a motivational closing statement ("closingMessage").
+Generate a premium, deeply personalized career consulting report based on the student's traits.
+Do NOT use generic AI language. Write like a seasoned McKinsey consultant advising a student.
+Never repeat the same sentence twice. 
+CRITICAL: NEVER generate motivational quotes like "Believe in yourself". Every single insight must reference specific assessment findings (e.g. "Your high adaptability score explains why entrepreneurship ranked above...").
 
 You MUST return a valid JSON object matching the following structure EXACTLY:
 {
-  "summary": "Detailed overall student profile summary...",
-  "strengths": ["Core Strength 1", "Core Strength 2", "Core Strength 3", "Core Strength 4"],
-  "skillsToDevelop": ["Growth Skill 1", "Growth Skill 2", "Growth Skill 3"],
-  "studyTips": ["Personalized Study Tip 1", "Personalized Study Tip 2", "Personalized Study Tip 3"],
-  "closingMessage": "A warm, inspiring motivational quote or closing statement...",
+  "executiveSummary": {
+    "profileSummary": "High-level summary of the student.",
+    "personalityInterpretation": "...",
+    "dominantBehaviour": "...",
+    "learningStyle": "...",
+    "communicationStyle": "...",
+    "decisionMaking": "...",
+    "biggestStrength": "...",
+    "biggestDevelopmentOpportunity": "...",
+    "readiness": "...",
+    "confidenceLevel": "..."
+  },
+  "traitAnalysis": [
+    {
+      "trait": "Name of trait",
+      "interpretation": "What the score means",
+      "realWorldImpact": "...",
+      "advantages": "...",
+      "limitations": "...",
+      "improvements": "...",
+      "careerRelevance": "..."
+    } // Generate for top 4 traits
+  ],
   "topCareers": [
     {
       "id": "career-id-1",
       "career": "Career Name 1",
       "score": 95,
-      "reason": "Detailed explanation of why their traits (like problemSolving) make them highly compatible with this career..."
-    },
-    ... for all 4 careers in the exact order provided ...
-  ]
+      "matchReason": "Deep, evidence-based reason why this career matches",
+      "requiredEducation": "...",
+      "personalityFit": "...",
+      "industries": ["...", "..."],
+      "remoteOpportunities": "...",
+      "entrepreneurshipScore": "High/Med/Low",
+      "globalDemand": "...",
+      "requiredCertifications": ["...", "..."],
+      "aiImpact": "...",
+      "salaryProgression": "...",
+      "workEnvironment": "...",
+      "pros": ["...", "..."],
+      "cons": ["...", "..."],
+      "whoShouldAvoid": "...",
+      "typicalDay": "...",
+      "growthPath": "..."
+    } // For all 4 careers provided in the prompt
+  ],
+  "careerComparison": [
+    {
+      "career": "Career Name",
+      "salary": "High/Med/Low",
+      "difficulty": "High/Med/Low",
+      "educationLength": "Short/Med/Long",
+      "futureScope": "...",
+      "aiResistance": "...",
+      "creativity": "...",
+      "leadership": "...",
+      "communication": "...",
+      "jobStability": "...",
+      "competition": "...",
+      "remoteWork": "Yes/No",
+      "entrepreneurial": "High/Med/Low"
+    } // For all 4 careers
+  ],
+  "swot": {
+    "strengths": ["...", "...", "..."],
+    "weaknesses": ["...", "...", "..."],
+    "opportunities": ["...", "...", "..."],
+    "threats": ["...", "...", "..."]
+  },
+  "actionPlan": [
+    { "phase": "30 Days", "skills": "...", "books": "...", "courses": "...", "projects": "...", "habits": "...", "competitions": "...", "certifications": "..." },
+    { "phase": "90 Days", "skills": "...", "books": "...", "courses": "...", "projects": "...", "habits": "...", "competitions": "...", "certifications": "..." },
+    { "phase": "6 Months", "skills": "...", "books": "...", "courses": "...", "projects": "...", "habits": "...", "competitions": "...", "certifications": "..." },
+    { "phase": "1 Year", "skills": "...", "books": "...", "courses": "...", "projects": "...", "habits": "...", "competitions": "...", "certifications": "..." },
+    { "phase": "3 Years", "skills": "...", "books": "...", "courses": "...", "projects": "...", "habits": "...", "competitions": "...", "certifications": "..." }
+  ],
+  "learningStrategy": {
+    "howTheyLearnBest": "...",
+    "recommendations": ["watch videos", "read books", "build projects", "join communities", "learn alone", "learn in groups"] // keep only the ones that apply
+  },
+  "parentGuidance": {
+    "howToSupport": "...",
+    "whatNotToForce": "...",
+    "extracurriculars": "...",
+    "howToMotivate": "...",
+    "avoidBurnout": "...",
+    "evaluateProgress": "..."
+  },
+  "skillGapAnalysis": [
+    { "skill": "...", "targetLevel": "...", "priority": "High/Med/Low", "difficulty": "...", "estimatedTime": "...", "recommendedResources": "..." } // Top 4 skills
+  ],
+  "resourceRecommendations": [
+    { "type": "Book", "name": "...", "explanation": "..." },
+    { "type": "YouTube Channel", "name": "...", "explanation": "..." },
+    { "type": "Course", "name": "...", "explanation": "..." } // Provide 6-8 varied resources
+  ],
+  "aiInsights": [
+    "Insight 1 (e.g. You naturally communicate ideas well...)",
+    "Insight 2 (e.g. Your low analytical score suggests...)" // 3-4 insights
+  ],
+  "closingMessage": "A professional, inspiring closing statement."
 }
 
 Ensure the output is clean, valid JSON, containing only the JSON structure.

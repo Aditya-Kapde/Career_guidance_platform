@@ -7,6 +7,9 @@ import Assessment from './pages/Assessment';
 import Loading from './pages/Loading';
 import Results from './pages/Results';
 import CareerRoadmap from './pages/CareerRoadmap';
+import Report from './pages/Report';
+import ReportPrint from './pages/ReportPrint';
+import PdfTest from './pages/PdfTest';
 import './App.css';
 
 function App() {
@@ -19,6 +22,9 @@ function App() {
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/loading" element={<Loading />} />
           <Route path="/results" element={<Results />} />
+          <Route path="/report" element={<Report />} />
+          <Route path="/report-print" element={<ReportPrint />} />
+          <Route path="/pdf-test" element={<PdfTest />} />
           <Route path="/career/:careerId" element={<CareerRoadmap />} />
         </Routes>
       </Router>
