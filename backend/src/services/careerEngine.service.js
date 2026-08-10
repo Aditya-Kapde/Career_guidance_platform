@@ -6,12 +6,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const LIBRARY_PATH = path.join(__dirname, '../data/careerLibrary.json');
+const MASTER_PATH = path.join(__dirname, '../data/master.json');
 let careerLibrary = [];
+let masterQuestions = [];
 
 try {
   careerLibrary = JSON.parse(fs.readFileSync(LIBRARY_PATH, 'utf-8'));
+  const masterData = JSON.parse(fs.readFileSync(MASTER_PATH, 'utf-8'));
+  masterQuestions = masterData.questions || [];
 } catch (error) {
-  console.error("Error reading career library database:", error);
+  console.error("Error reading database files:", error);
 }
 
 /**
@@ -74,4 +78,51 @@ export const calculateCareerMatches = (traitScores) => {
 
   // 4. Slice the top 4 matched profiles
   return matches.slice(0, 4);
+};
+
+/**
+ * Evaluates detailed responses against master questions to generate trait scores and an IQ/Aptitude score.
+ * 
+ * @param {Array<Object>} responses - Array of response objects, e.g., [{ questionId: 'q-1', selectedOptionId: 'A' }]
+ * @returns {Object} { traitScores: Object, iqScore: number }
+ */
+export const evaluateResponses = (responses) => {
+  const traitScores = {};
+  let iqScore = 0;
+
+  if (!Array.isArray(responses) || masterQuestions.length === 0) {
+    return { traitScores, iqScore };
+  }
+
+  responses.forEach(response => {
+    const question = masterQuestions.find(q => q.id === response.questionId);
+    if (!question) return;
+
+    const selectedOption = question.options.find(opt => opt.id === response.selectedOptionId);
+    if (!selectedOption) return;
+
+    const isObjective = ['quantitative', 'spatial_pattern', 'logical_reasoning'].includes(question.questionType);
+    
+    // For objective questions, we only award points if correct
+    if (isObjective) {
+      if (selectedOption.isCorrect === true) {
+        // Award traits
+        if (selectedOption.traitScores) {
+          Object.entries(selectedOption.traitScores).forEach(([trait, value]) => {
+            traitScores[trait] = (traitScores[trait] || 0) + value;
+          });
+        }
+        iqScore += 1; // Increment overall IQ score by 1 for each correct answer
+      }
+    } else {
+      // For subjective (e.g. personality)
+      if (selectedOption.traitScores) {
+        Object.entries(selectedOption.traitScores).forEach(([trait, value]) => {
+          traitScores[trait] = (traitScores[trait] || 0) + value;
+        });
+      }
+    }
+  });
+
+  return { traitScores, iqScore };
 };

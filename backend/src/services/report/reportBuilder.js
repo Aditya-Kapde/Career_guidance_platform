@@ -46,6 +46,7 @@ export const buildReport = (assessmentInput, aiReport, engineCareers) => {
       educationLevel: assessmentInput.educationLevel || "Unknown",
     },
     traitScores: assessmentInput.traitScores || {},
+    iqScore: assessmentInput.iqScore,
     dominantTraits: extractDominantTraits(assessmentInput.traitScores),
     careerCompatibility: {}, // Placeholder for broader compatibility metrics
     topCareerRecommendations,

@@ -26,26 +26,9 @@ const AssessmentContext = createContext(null);
 const selectRandomQuestions = (allQuestions) => {
   if (!allQuestions || allQuestions.length === 0) return [];
 
-  const interestQuestions = allQuestions.filter(q => q.category === 'interest');
-  const behaviourQuestions = allQuestions.filter(q => q.category === 'behaviour');
-  const aptitudeQuestions = allQuestions.filter(q => q.category === 'aptitude');
-
-  const selectRandomFromCategory = (categoryQuestions, count) => {
-    const shuffled = [...categoryQuestions].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
-  };
-
-  const selectedInterest = selectRandomFromCategory(interestQuestions, 4);
-  const selectedBehaviour = selectRandomFromCategory(behaviourQuestions, 4);
-  const selectedAptitude = selectRandomFromCategory(aptitudeQuestions, 4);
-
-  const interleaved = [];
-  for (let i = 0; i < 4; i++) {
-    if (selectedInterest[i]) interleaved.push(selectedInterest[i]);
-    if (selectedBehaviour[i]) interleaved.push(selectedBehaviour[i]);
-    if (selectedAptitude[i]) interleaved.push(selectedAptitude[i]);
-  }
-  return interleaved;
+  // Return all available questions shuffled for the full expanded assessment (up to 40)
+  const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
+  return shuffled;
 };
 
 export function AssessmentProvider({ children }) {
@@ -128,6 +111,27 @@ export function AssessmentProvider({ children }) {
     return responses[questionIndex] || [];
   };
 
+  const getDetailedResponses = () => {
+    const detailed = [];
+    Object.keys(responses).forEach((qIdxStr) => {
+      const qIdx = parseInt(qIdxStr, 10);
+      const question = selectedQuestions[qIdx];
+      if (!question) return;
+
+      const selectedOptionIndexes = responses[qIdx] || [];
+      selectedOptionIndexes.forEach((optIdx) => {
+        const option = question.options[optIdx];
+        if (option) {
+          detailed.push({
+            questionId: question.id,
+            selectedOptionId: option.id
+          });
+        }
+      });
+    });
+    return detailed;
+  };
+
   return (
     <AssessmentContext.Provider
       value={{
@@ -143,6 +147,7 @@ export function AssessmentProvider({ children }) {
         setAssessmentReport,
         selectOption,
         getSelectedOptionsForQuestion,
+        getDetailedResponses,
         resetAssessment,
       }}
     >

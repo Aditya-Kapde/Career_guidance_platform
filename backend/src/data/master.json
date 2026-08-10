@@ -1,33 +1,111 @@
 {
   "metadata": {
     "version": "2.0.0",
-    "totalQuestions": 30,
+    "totalQuestions": 40,
     "description": "Multi-category upgraded career guidance assessment questions for students Class 8 to Undergraduate."
   },
   "traits": [
-    { "id": "logicalThinking", "name": "Logical Thinking", "description": "Analyzing structures, formulas, and numeric patterns." },
-    { "id": "problemSolving", "name": "Problem Solving", "description": "Diagnosing errors, debugging code, and fixing bottlenecks." },
-    { "id": "creativity", "name": "Creativity", "description": "Original artistic creation, visual layouts, and out-of-the-box ideas." },
-    { "id": "leadership", "name": "Leadership", "description": "Taking charge, managing schedules, and motivating teams." },
-    { "id": "communication", "name": "Communication", "description": "Articulating complex topics, storytelling, and active listening." },
-    { "id": "curiosity", "name": "Curiosity", "description": "Deep questioning, exploring topics, and technical research." },
-    { "id": "teamwork", "name": "Teamwork", "description": "Cooperating with peers, distributing tasks, and compromise." },
-    { "id": "decisionMaking", "name": "Decision Making", "description": "Choosing pathways under constraints and evaluating trade-offs." },
-    { "id": "adaptability", "name": "Adaptability", "description": "Adjusting to sudden change and learning new tools quickly." },
-    { "id": "planning", "name": "Planning", "description": "Organizing milestones, maintaining schedules, and structuring details." },
-    { "id": "attentionToDetail", "name": "Attention to Detail", "description": "Catching small grammar flaws, visual bugs, or calculations." },
-    { "id": "riskTaking", "name": "Risk Taking", "description": "Stepping out of comfort zones and pitching bold experiments." },
-    { "id": "analyticalThinking", "name": "Analytical Thinking", "description": "Reading metrics, charts, spreadsheets, and logic patterns." },
-    { "id": "empathy", "name": "Empathy", "description": "Understanding user challenges and supporting emotional needs." },
-    { "id": "learningStyle", "name": "Learning Style", "description": "Hands-on construction versus academic reading and lectures." }
+    {
+      "id": "logicalThinking",
+      "name": "Logical Thinking",
+      "description": "Analyzing structures, formulas, and numeric patterns."
+    },
+    {
+      "id": "problemSolving",
+      "name": "Problem Solving",
+      "description": "Diagnosing errors, debugging code, and fixing bottlenecks."
+    },
+    {
+      "id": "creativity",
+      "name": "Creativity",
+      "description": "Original artistic creation, visual layouts, and out-of-the-box ideas."
+    },
+    {
+      "id": "leadership",
+      "name": "Leadership",
+      "description": "Taking charge, managing schedules, and motivating teams."
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "description": "Articulating complex topics, storytelling, and active listening."
+    },
+    {
+      "id": "curiosity",
+      "name": "Curiosity",
+      "description": "Deep questioning, exploring topics, and technical research."
+    },
+    {
+      "id": "teamwork",
+      "name": "Teamwork",
+      "description": "Cooperating with peers, distributing tasks, and compromise."
+    },
+    {
+      "id": "decisionMaking",
+      "name": "Decision Making",
+      "description": "Choosing pathways under constraints and evaluating trade-offs."
+    },
+    {
+      "id": "adaptability",
+      "name": "Adaptability",
+      "description": "Adjusting to sudden change and learning new tools quickly."
+    },
+    {
+      "id": "planning",
+      "name": "Planning",
+      "description": "Organizing milestones, maintaining schedules, and structuring details."
+    },
+    {
+      "id": "attentionToDetail",
+      "name": "Attention to Detail",
+      "description": "Catching small grammar flaws, visual bugs, or calculations."
+    },
+    {
+      "id": "riskTaking",
+      "name": "Risk Taking",
+      "description": "Stepping out of comfort zones and pitching bold experiments."
+    },
+    {
+      "id": "analyticalThinking",
+      "name": "Analytical Thinking",
+      "description": "Reading metrics, charts, spreadsheets, and logic patterns."
+    },
+    {
+      "id": "empathy",
+      "name": "Empathy",
+      "description": "Understanding user challenges and supporting emotional needs."
+    },
+    {
+      "id": "learningStyle",
+      "name": "Learning Style",
+      "description": "Hands-on construction versus academic reading and lectures."
+    }
   ],
   "educationLevels": [
-    { "id": "class-8", "name": "Class 8" },
-    { "id": "class-9", "name": "Class 9" },
-    { "id": "class-10", "name": "Class 10" },
-    { "id": "puc", "name": "PUC (11th & 12th)" },
-    { "id": "diploma", "name": "Diploma" },
-    { "id": "undergraduate", "name": "Undergraduate" }
+    {
+      "id": "class-8",
+      "name": "Class 8"
+    },
+    {
+      "id": "class-9",
+      "name": "Class 9"
+    },
+    {
+      "id": "class-10",
+      "name": "Class 10"
+    },
+    {
+      "id": "puc",
+      "name": "PUC (11th & 12th)"
+    },
+    {
+      "id": "diploma",
+      "name": "Diploma"
+    },
+    {
+      "id": "undergraduate",
+      "name": "Undergraduate"
+    }
   ],
   "questions": [
     {
@@ -37,27 +115,46 @@
       "questionType": "single",
       "type": "single",
       "question": "If you had a free weekend to build or create anything you wanted, which project would you be most excited about?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "Coding a mobile app or programming a virtual assistant.",
-          "traitScores": { "curiosity": 3, "learningStyle": 1 }
+          "traitScores": {
+            "curiosity": 3,
+            "learningStyle": 1
+          }
         },
         {
           "id": "B",
           "text": "Writing a short story or painting a digital landscape.",
-          "traitScores": { "creativity": 3, "communication": 1 }
+          "traitScores": {
+            "creativity": 3,
+            "communication": 1
+          }
         },
         {
           "id": "C",
           "text": "Designing a custom board game or crafting a wooden model.",
-          "traitScores": { "learningStyle": 3, "creativity": 1 }
+          "traitScores": {
+            "learningStyle": 3,
+            "creativity": 1
+          }
         },
         {
           "id": "D",
           "text": "Conducting a science experiment or researching space phenomena.",
-          "traitScores": { "curiosity": 3, "communication": 1 }
+          "traitScores": {
+            "curiosity": 3,
+            "communication": 1
+          }
         }
       ]
     },
@@ -68,27 +165,42 @@
       "questionType": "single",
       "type": "single",
       "question": "When you are trying to understand how a complex machine (like a drone) works, what is your preferred method?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "Taking it apart and rebuilding it hands-on.",
-          "traitScores": { "learningStyle": 3 }
+          "traitScores": {
+            "learningStyle": 3
+          }
         },
         {
           "id": "B",
           "text": "Reading the complete technical manual or design blueprints.",
-          "traitScores": { "curiosity": 3 }
+          "traitScores": {
+            "curiosity": 3
+          }
         },
         {
           "id": "C",
           "text": "Watching an animated video explaining the visual mechanics.",
-          "traitScores": { "creativity": 3 }
+          "traitScores": {
+            "creativity": 3
+          }
         },
         {
           "id": "D",
           "text": "Discussing it with an expert or teaching a friend how it works.",
-          "traitScores": { "communication": 3 }
+          "traitScores": {
+            "communication": 3
+          }
         }
       ]
     },
@@ -99,27 +211,42 @@
       "questionType": "single",
       "type": "single",
       "question": "During a school exhibition, which section do you find yourself visiting first and staying in the longest?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "The creative arts, graphic design, and literature displays.",
-          "traitScores": { "creativity": 3 }
+          "traitScores": {
+            "creativity": 3
+          }
         },
         {
           "id": "B",
           "text": "The live coding demos, robotics, and interactive math puzzles.",
-          "traitScores": { "curiosity": 3 }
+          "traitScores": {
+            "curiosity": 3
+          }
         },
         {
           "id": "C",
           "text": "The debate stage, public speaking presentations, and social studies.",
-          "traitScores": { "communication": 3 }
+          "traitScores": {
+            "communication": 3
+          }
         },
         {
           "id": "D",
           "text": "The DIY craft workshops and building zone where you make things.",
-          "traitScores": { "learningStyle": 3 }
+          "traitScores": {
+            "learningStyle": 3
+          }
         }
       ]
     },
@@ -130,27 +257,42 @@
       "questionType": "single",
       "type": "single",
       "question": "In a group project, what is your favorite part of the process?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "Researching deep questions and finding facts that others missed.",
-          "traitScores": { "curiosity": 3 }
+          "traitScores": {
+            "curiosity": 3
+          }
         },
         {
           "id": "B",
           "text": "Designing the slides, layout, and visual presentation.",
-          "traitScores": { "creativity": 3 }
+          "traitScores": {
+            "creativity": 3
+          }
         },
         {
           "id": "C",
           "text": "Writing the script and presenting the final slides to the audience.",
-          "traitScores": { "communication": 3 }
+          "traitScores": {
+            "communication": 3
+          }
         },
         {
           "id": "D",
           "text": "Assembling the physical model or coding the interactive prototype.",
-          "traitScores": { "learningStyle": 3 }
+          "traitScores": {
+            "learningStyle": 3
+          }
         }
       ]
     },
@@ -161,27 +303,42 @@
       "questionType": "single",
       "type": "single",
       "question": "Which of the following activities makes you lose track of time most easily?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "Exploring new topics online, reading books, or solving riddle puzzles.",
-          "traitScores": { "curiosity": 3 }
+          "traitScores": {
+            "curiosity": 3
+          }
         },
         {
           "id": "B",
           "text": "Sketching designs, editing videos, or composing music.",
-          "traitScores": { "creativity": 3 }
+          "traitScores": {
+            "creativity": 3
+          }
         },
         {
           "id": "C",
           "text": "Writing articles, blogging, or debating with friends on forums.",
-          "traitScores": { "communication": 3 }
+          "traitScores": {
+            "communication": 3
+          }
         },
         {
           "id": "D",
           "text": "Assembling puzzle blocks, playing video games, or fixing broken tools.",
-          "traitScores": { "learningStyle": 3 }
+          "traitScores": {
+            "learningStyle": 3
+          }
         }
       ]
     },
@@ -192,27 +349,42 @@
       "questionType": "single",
       "type": "single",
       "question": "Which type of challenge sounds most engaging to you?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "Solving a mystery or analyzing why a system has a technical error.",
-          "traitScores": { "curiosity": 3 }
+          "traitScores": {
+            "curiosity": 3
+          }
         },
         {
           "id": "B",
           "text": "Creating a logo and branding style for a brand new startup.",
-          "traitScores": { "creativity": 3 }
+          "traitScores": {
+            "creativity": 3
+          }
         },
         {
           "id": "C",
           "text": "Expressing a complex concept in a speech to convince a panel of judges.",
-          "traitScores": { "communication": 3 }
+          "traitScores": {
+            "communication": 3
+          }
         },
         {
           "id": "D",
           "text": "Following step-by-step instructions to assemble a multi-piece furniture set.",
-          "traitScores": { "learningStyle": 3 }
+          "traitScores": {
+            "learningStyle": 3
+          }
         }
       ]
     },
@@ -223,27 +395,42 @@
       "questionType": "single",
       "type": "single",
       "question": "If you were to create a website, what would be the primary focus of your contribution?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "Writing the core logic, algorithms, and setting up databases.",
-          "traitScores": { "curiosity": 3 }
+          "traitScores": {
+            "curiosity": 3
+          }
         },
         {
           "id": "B",
           "text": "Styling the visual theme, animations, and logo layout.",
-          "traitScores": { "creativity": 3 }
+          "traitScores": {
+            "creativity": 3
+          }
         },
         {
           "id": "C",
           "text": "Writing the blog posts, help guides, and copy for users.",
-          "traitScores": { "communication": 3 }
+          "traitScores": {
+            "communication": 3
+          }
         },
         {
           "id": "D",
           "text": "Testing the buttons, links, and overall usability flow.",
-          "traitScores": { "learningStyle": 3 }
+          "traitScores": {
+            "learningStyle": 3
+          }
         }
       ]
     },
@@ -254,27 +441,42 @@
       "questionType": "single",
       "type": "single",
       "question": "If you were invited to join a team designing a new city park, which role would you choose?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "Researching the environmental impact and soil quality for plant life.",
-          "traitScores": { "curiosity": 3 }
+          "traitScores": {
+            "curiosity": 3
+          }
         },
         {
           "id": "B",
           "text": "Designing the overall landscape layout, color schemes, and aesthetic themes.",
-          "traitScores": { "creativity": 3 }
+          "traitScores": {
+            "creativity": 3
+          }
         },
         {
           "id": "C",
           "text": "Interviewing local residents and writing the park's informational guides.",
-          "traitScores": { "communication": 3 }
+          "traitScores": {
+            "communication": 3
+          }
         },
         {
           "id": "D",
           "text": "Building the actual playground equipment, paths, and physical structures.",
-          "traitScores": { "learningStyle": 3 }
+          "traitScores": {
+            "learningStyle": 3
+          }
         }
       ]
     },
@@ -285,27 +487,42 @@
       "questionType": "single",
       "type": "single",
       "question": "Which type of content do you enjoy consuming the most?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "Deep-dive documentary series or technical science journals.",
-          "traitScores": { "curiosity": 3 }
+          "traitScores": {
+            "curiosity": 3
+          }
         },
         {
           "id": "B",
           "text": "Graphic novels, animated short films, or design magazines.",
-          "traitScores": { "creativity": 3 }
+          "traitScores": {
+            "creativity": 3
+          }
         },
         {
           "id": "C",
           "text": "Podcasts discussing social issues, storybooks, or public debates.",
-          "traitScores": { "communication": 3 }
+          "traitScores": {
+            "communication": 3
+          }
         },
         {
           "id": "D",
           "text": "Interactive simulator games, build tutorials, or hands-on labs.",
-          "traitScores": { "learningStyle": 3 }
+          "traitScores": {
+            "learningStyle": 3
+          }
         }
       ]
     },
@@ -316,27 +533,42 @@
       "questionType": "single",
       "type": "single",
       "question": "When you are working in a team, which task do you instinctively volunteer for?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "Digging through data and documents to find the required information.",
-          "traitScores": { "curiosity": 3 }
+          "traitScores": {
+            "curiosity": 3
+          }
         },
         {
           "id": "B",
           "text": "Coming up with the original concept, theme, and layout.",
-          "traitScores": { "creativity": 3 }
+          "traitScores": {
+            "creativity": 3
+          }
         },
         {
           "id": "C",
           "text": "Editing the written documents and speaking on behalf of the group.",
-          "traitScores": { "communication": 3 }
+          "traitScores": {
+            "communication": 3
+          }
         },
         {
           "id": "D",
           "text": "Constructing the spreadsheets, models, or actual deliverables.",
-          "traitScores": { "learningStyle": 3 }
+          "traitScores": {
+            "learningStyle": 3
+          }
         }
       ]
     },
@@ -347,27 +579,44 @@
       "questionType": "single",
       "type": "single",
       "question": "Your school is organizing a science exhibition, and the main model setup suddenly stops working just an hour before the guests arrive. What is your immediate reaction?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "I study the circuit or instruction booklet to find out exactly where the system breakdown happened.",
-          "traitScores": { "planning": 2, "adaptability": 1 }
+          "traitScores": {
+            "planning": 2,
+            "adaptability": 1
+          }
         },
         {
           "id": "B",
           "text": "I ask my teammates to help me quickly test different components to narrow it down.",
-          "traitScores": { "teamwork": 3 }
+          "traitScores": {
+            "teamwork": 3
+          }
         },
         {
           "id": "C",
           "text": "I think of a creative workaround using spare materials to bypass the broken part.",
-          "traitScores": { "adaptability": 3 }
+          "traitScores": {
+            "adaptability": 3
+          }
         },
         {
           "id": "D",
           "text": "I coordinate the team, assigning diagnostic roles to keep everyone calm and productive.",
-          "traitScores": { "leadership": 3, "planning": 1 }
+          "traitScores": {
+            "leadership": 3,
+            "planning": 1
+          }
         }
       ]
     },
@@ -378,27 +627,45 @@
       "questionType": "single",
       "type": "single",
       "question": "Your group is assigned to complete a research project by next week. The team cannot agree on how to divide the work. How do you step in?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "I create a task list with clear deadlines and ask members to pick what matches their strengths.",
-          "traitScores": { "planning": 3, "leadership": 1 }
+          "traitScores": {
+            "planning": 3,
+            "leadership": 1
+          }
         },
         {
           "id": "B",
           "text": "I suggest we vote on the best approach and document everyone's agreement.",
-          "traitScores": { "teamwork": 3 }
+          "traitScores": {
+            "teamwork": 3
+          }
         },
         {
           "id": "C",
           "text": "I listen to everyone's ideas and suggest a combined theme that satisfies most people.",
-          "traitScores": { "empathy": 3, "teamwork": 1 }
+          "traitScores": {
+            "empathy": 3,
+            "teamwork": 1
+          }
         },
         {
           "id": "D",
           "text": "I volunteer to take the most challenging section to inspire the rest of the group.",
-          "traitScores": { "adaptability": 3, "leadership": 1 }
+          "traitScores": {
+            "adaptability": 3,
+            "leadership": 1
+          }
         }
       ]
     },
@@ -409,27 +676,45 @@
       "questionType": "single",
       "type": "single",
       "question": "During a group activity, a teammate is working slowly, putting your timeline at risk. What do you do?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "I sit down with them to understand if they are struggling with a difficult task.",
-          "traitScores": { "empathy": 3, "teamwork": 2 }
+          "traitScores": {
+            "empathy": 3,
+            "teamwork": 2
+          }
         },
         {
           "id": "B",
           "text": "I suggest dividing their tasks among other members to ensure we hit the deadline.",
-          "traitScores": { "planning": 3, "leadership": 1 }
+          "traitScores": {
+            "planning": 3,
+            "leadership": 1
+          }
         },
         {
           "id": "C",
           "text": "I show them a faster way or tool that I use to complete that specific work.",
-          "traitScores": { "teamwork": 3 }
+          "traitScores": {
+            "teamwork": 3
+          }
         },
         {
           "id": "D",
           "text": "I take charge and do their portion myself after school to make sure it's correct.",
-          "traitScores": { "leadership": 2, "planning": 1 }
+          "traitScores": {
+            "leadership": 2,
+            "planning": 1
+          }
         }
       ]
     },
@@ -440,27 +725,44 @@
       "questionType": "single",
       "type": "single",
       "question": "You receive constructive feedback that your design project or essay is too confusing. How do you handle it?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "I ask for specific examples of what is confusing so I can edit those lines.",
-          "traitScores": { "adaptability": 3, "planning": 1 }
+          "traitScores": {
+            "adaptability": 3,
+            "planning": 1
+          }
         },
         {
           "id": "B",
           "text": "I explain the thought process behind my work to see if that resolves the confusion.",
-          "traitScores": { "leadership": 2, "teamwork": 1 }
+          "traitScores": {
+            "leadership": 2,
+            "teamwork": 1
+          }
         },
         {
           "id": "C",
           "text": "I try a completely different layout or write from a new perspective.",
-          "traitScores": { "adaptability": 3 }
+          "traitScores": {
+            "adaptability": 3
+          }
         },
         {
           "id": "D",
           "text": "I look at high-scoring examples to see how they structured their work.",
-          "traitScores": { "planning": 3 }
+          "traitScores": {
+            "planning": 3
+          }
         }
       ]
     },
@@ -471,27 +773,44 @@
       "questionType": "single",
       "type": "single",
       "question": "You are selected to lead a school tour for parents of new students. How do you approach this?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "I outline a structured schedule of the tour points and keep everyone on time.",
-          "traitScores": { "planning": 3, "leadership": 1 }
+          "traitScores": {
+            "planning": 3,
+            "leadership": 1
+          }
         },
         {
           "id": "B",
           "text": "I share stories about the school's achievements and answer questions warmly.",
-          "traitScores": { "empathy": 3 }
+          "traitScores": {
+            "empathy": 3
+          }
         },
         {
           "id": "C",
           "text": "I plan a fun interactive map or scavenger hunt to make the tour memorable.",
-          "traitScores": { "adaptability": 2, "leadership": 1 }
+          "traitScores": {
+            "adaptability": 2,
+            "leadership": 1
+          }
         },
         {
           "id": "D",
           "text": "I research deep historical facts about the school to share during the walk.",
-          "traitScores": { "planning": 2 }
+          "traitScores": {
+            "planning": 2
+          }
         }
       ]
     },
@@ -502,27 +821,43 @@
       "questionType": "single",
       "type": "single",
       "question": "Your friend is feeling stressed about an upcoming examination and asks for your advice. How do you help them?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "I listen quietly first to let them express their worries before saying anything.",
-          "traitScores": { "empathy": 3 }
+          "traitScores": {
+            "empathy": 3
+          }
         },
         {
           "id": "B",
           "text": "I help them write down a daily study planner to cover all key subjects.",
-          "traitScores": { "planning": 3, "teamwork": 1 }
+          "traitScores": {
+            "planning": 3,
+            "teamwork": 1
+          }
         },
         {
           "id": "C",
           "text": "I explain difficult concepts using simplified diagrams or study notes.",
-          "traitScores": { "teamwork": 3 }
+          "traitScores": {
+            "teamwork": 3
+          }
         },
         {
           "id": "D",
           "text": "I suggest testing them with flashcards to find exactly what they need to study.",
-          "traitScores": { "adaptability": 2 }
+          "traitScores": {
+            "adaptability": 2
+          }
         }
       ]
     },
@@ -533,27 +868,44 @@
       "questionType": "single",
       "type": "single",
       "question": "Your team is building a model rocket, but the parachute keeps failing to deploy. How does the group fix it?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "We split the project: one checks the design drawings, another tests the triggers.",
-          "traitScores": { "teamwork": 3, "planning": 2 }
+          "traitScores": {
+            "teamwork": 3,
+            "planning": 2
+          }
         },
         {
           "id": "B",
           "text": "I look closely at the folding mechanism to find any tiny snags in the string.",
-          "traitScores": { "planning": 2 }
+          "traitScores": {
+            "planning": 2
+          }
         },
         {
           "id": "C",
           "text": "We search online for alternative parachute designs using cheap materials.",
-          "traitScores": { "adaptability": 3 }
+          "traitScores": {
+            "adaptability": 3
+          }
         },
         {
           "id": "D",
           "text": "I lead a testing session where we record deployment rates for different designs.",
-          "traitScores": { "leadership": 3, "teamwork": 1 }
+          "traitScores": {
+            "leadership": 3,
+            "teamwork": 1
+          }
         }
       ]
     },
@@ -564,27 +916,45 @@
       "questionType": "single",
       "type": "single",
       "question": "You have a disagreement with your friend about who should present your joint presentation. How do you resolve it?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "I suggest we split the slides so both of us get to present equal portions.",
-          "traitScores": { "teamwork": 3, "empathy": 2 }
+          "traitScores": {
+            "teamwork": 3,
+            "empathy": 2
+          }
         },
         {
           "id": "B",
           "text": "I volunteer to let them present and offer to focus on designing the presentation slides.",
-          "traitScores": { "empathy": 3, "teamwork": 1 }
+          "traitScores": {
+            "empathy": 3,
+            "teamwork": 1
+          }
         },
         {
           "id": "C",
           "text": "I propose a quick mock presentation in front of another classmate to let them decide.",
-          "traitScores": { "leadership": 3, "adaptability": 1 }
+          "traitScores": {
+            "leadership": 3,
+            "adaptability": 1
+          }
         },
         {
           "id": "D",
           "text": "I write a detailed script to make sure we both know exactly what to say.",
-          "traitScores": { "planning": 3 }
+          "traitScores": {
+            "planning": 3
+          }
         }
       ]
     },
@@ -595,27 +965,45 @@
       "questionType": "single",
       "type": "single",
       "question": "Your science teacher asks you to organize a study group for classmates who are struggling with science. How do you schedule this?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "I prepare a weekly syllabus covering specific chapters and set clear rules.",
-          "traitScores": { "planning": 3, "leadership": 2 }
+          "traitScores": {
+            "planning": 3,
+            "leadership": 2
+          }
         },
         {
           "id": "B",
           "text": "I ask students what topics they find hardest and prioritize those.",
-          "traitScores": { "empathy": 3, "teamwork": 1 }
+          "traitScores": {
+            "empathy": 3,
+            "teamwork": 1
+          }
         },
         {
           "id": "C",
           "text": "I create quiz games and challenges to make studying science fun.",
-          "traitScores": { "adaptability": 3 }
+          "traitScores": {
+            "adaptability": 3
+          }
         },
         {
           "id": "D",
           "text": "I assign stronger students to partner with those who need help.",
-          "traitScores": { "leadership": 3, "teamwork": 2 }
+          "traitScores": {
+            "leadership": 3,
+            "teamwork": 2
+          }
         }
       ]
     },
@@ -626,27 +1014,44 @@
       "questionType": "single",
       "type": "single",
       "question": "You have two tests tomorrow: Math and History. You only have 3 hours tonight to study. How do you divide your time?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "I split it: 1.5 hours on Math solving formulas, and 1.5 hours reading History.",
-          "traitScores": { "planning": 3 }
+          "traitScores": {
+            "planning": 3
+          }
         },
         {
           "id": "B",
           "text": "I spend 2.5 hours on the subject I am weaker in, and quickly review the other.",
-          "traitScores": { "planning": 2, "adaptability": 1 }
+          "traitScores": {
+            "planning": 2,
+            "adaptability": 1
+          }
         },
         {
           "id": "C",
           "text": "I spend 3 hours on Math since it requires practice, and read History notes tomorrow morning.",
-          "traitScores": { "adaptability": 3 }
+          "traitScores": {
+            "adaptability": 3
+          }
         },
         {
           "id": "D",
           "text": "I ask my friend what topics they are studying to see if we can cover them together.",
-          "traitScores": { "teamwork": 3, "empathy": 1 }
+          "traitScores": {
+            "teamwork": 3,
+            "empathy": 1
+          }
         }
       ]
     },
@@ -658,7 +1063,14 @@
       "questionType": "single",
       "type": "single",
       "question": "In a certain code, the word 'CRAVINGS' is written as 'SGNIVARC'. How would the word 'DYNAMITE' be written in the same code?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
@@ -668,7 +1080,10 @@
         {
           "id": "B",
           "text": "ETIMANYD",
-          "traitScores": { "logicalThinking": 3, "attentionToDetail": 2 }
+          "traitScores": {
+            "logicalThinking": 3,
+            "attentionToDetail": 2
+          }
         },
         {
           "id": "C",
@@ -690,7 +1105,14 @@
       "questionType": "single",
       "type": "single",
       "question": "Find the missing number in the following sequence: 3, 6, 12, 21, 33, ?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
@@ -705,7 +1127,10 @@
         {
           "id": "C",
           "text": "48",
-          "traitScores": { "logicalThinking": 3, "analyticalThinking": 2 }
+          "traitScores": {
+            "logicalThinking": 3,
+            "analyticalThinking": 2
+          }
         },
         {
           "id": "D",
@@ -722,7 +1147,14 @@
       "questionType": "single",
       "type": "single",
       "question": "If all Squares are Rectangles, and all Rectangles are Polygons, which of the following statements must be true?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
@@ -732,7 +1164,10 @@
         {
           "id": "B",
           "text": "All Squares are Polygons.",
-          "traitScores": { "logicalThinking": 3, "analyticalThinking": 2 }
+          "traitScores": {
+            "logicalThinking": 3,
+            "analyticalThinking": 2
+          }
         },
         {
           "id": "C",
@@ -754,12 +1189,22 @@
       "questionType": "single",
       "type": "single",
       "question": "If you start walking from point A towards the North for 10 meters, turn right and walk for 5 meters, then turn right again and walk for 10 meters, how far and in which direction are you from the starting point A?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
           "text": "5 meters East.",
-          "traitScores": { "analyticalThinking": 3, "logicalThinking": 2 }
+          "traitScores": {
+            "analyticalThinking": 3,
+            "logicalThinking": 2
+          }
         },
         {
           "id": "B",
@@ -786,7 +1231,14 @@
       "questionType": "single",
       "type": "single",
       "question": "Compare the two text strings: 'S. Ramakrishnan & Sons Co. (Bldg A-14)' and 'S. Ramakrishan & Sons Co. (Bldg A-14)'. How do they differ?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
@@ -801,7 +1253,10 @@
         {
           "id": "C",
           "text": "The second string is missing the 'n' in Ramakrishnan (i.e. 'Ramakrishan').",
-          "traitScores": { "attentionToDetail": 3, "problemSolving": 2 }
+          "traitScores": {
+            "attentionToDetail": 3,
+            "problemSolving": 2
+          }
         },
         {
           "id": "D",
@@ -818,7 +1273,14 @@
       "questionType": "single",
       "type": "single",
       "question": "Choose the next term in the letter series: AB, DE, GH, JK, ?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
@@ -828,7 +1290,10 @@
         {
           "id": "B",
           "text": "MN",
-          "traitScores": { "logicalThinking": 3, "attentionToDetail": 2 }
+          "traitScores": {
+            "logicalThinking": 3,
+            "attentionToDetail": 2
+          }
         },
         {
           "id": "C",
@@ -850,7 +1315,14 @@
       "questionType": "single",
       "type": "single",
       "question": "A water tank is being filled by a pipe at a rate of 10 liters per minute. However, there is a small leak in the tank letting out 2 liters per minute. If the tank is currently empty and has a capacity of 80 liters, how long will it take to fill it completely?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
@@ -860,7 +1332,10 @@
         {
           "id": "B",
           "text": "10 minutes",
-          "traitScores": { "problemSolving": 3, "decisionMaking": 2 }
+          "traitScores": {
+            "problemSolving": 3,
+            "decisionMaking": 2
+          }
         },
         {
           "id": "C",
@@ -882,7 +1357,14 @@
       "questionType": "single",
       "type": "single",
       "question": "A study tracker shows that you study best in 25-minute blocks followed by a 5-minute break. If you have 2 hours of study time, how many full 25-minute study blocks can you fit in, including their subsequent breaks?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
@@ -892,7 +1374,10 @@
         {
           "id": "B",
           "text": "4 blocks",
-          "traitScores": { "analyticalThinking": 3, "decisionMaking": 2 }
+          "traitScores": {
+            "analyticalThinking": 3,
+            "decisionMaking": 2
+          }
         },
         {
           "id": "C",
@@ -914,7 +1399,14 @@
       "questionType": "single",
       "type": "single",
       "question": "If the letters in the alphabet are numbered from A=1 to Z=26, what is the sum of the positions of the letters in the word 'CAB'?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
@@ -924,7 +1416,10 @@
         {
           "id": "B",
           "text": "6",
-          "traitScores": { "attentionToDetail": 3, "logicalThinking": 2 }
+          "traitScores": {
+            "attentionToDetail": 3,
+            "logicalThinking": 2
+          }
         },
         {
           "id": "C",
@@ -946,7 +1441,14 @@
       "questionType": "single",
       "type": "single",
       "question": "Four students (Aman, Bina, Charan, and Divya) are sitting in a row. Aman is sitting to the immediate right of Bina. Charan is sitting between Bina and Divya. Who is sitting on the extreme left?",
-      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
       "options": [
         {
           "id": "A",
@@ -966,7 +1468,440 @@
         {
           "id": "D",
           "text": "Divya",
-          "traitScores": { "logicalThinking": 3, "decisionMaking": 2 }
+          "traitScores": {
+            "logicalThinking": 3,
+            "decisionMaking": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "iq-1",
+      "category": "IQ ANALYSIS",
+      "subcategory": "quantitative",
+      "difficulty": "hard",
+      "questionType": "quantitative",
+      "type": "single",
+      "question": "A water tank can be filled by Pipe A in 4 hours and by Pipe B in 6 hours. How long will it take to fill the tank if both pipes are opened together?",
+      "educationLevels": [
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "2 hours",
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "2.4 hours",
+          "isCorrect": true,
+          "traitScores": {
+            "logicalThinking": 4,
+            "analyticalThinking": 3
+          }
+        },
+        {
+          "id": "C",
+          "text": "3 hours",
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "5 hours",
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "iq-2",
+      "category": "IQ ANALYSIS",
+      "subcategory": "spatial_pattern",
+      "difficulty": "medium",
+      "questionType": "spatial_pattern",
+      "type": "single",
+      "question": "Which of the following shapes would correctly complete the missing part of the 3x3 grid matrix?",
+      "questionImage": "/images/questions/spatial-matrix-1.png",
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Circle with a dot",
+          "image": "/images/options/shape-A.png",
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "Square with a cross",
+          "image": "/images/options/shape-B.png",
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "Triangle with a line",
+          "image": "/images/options/shape-C.png",
+          "isCorrect": true,
+          "traitScores": {
+            "attentionToDetail": 4,
+            "logicalThinking": 2
+          }
+        },
+        {
+          "id": "D",
+          "text": "Empty hexagon",
+          "image": "/images/options/shape-D.png",
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "iq-3",
+      "category": "IQ ANALYSIS",
+      "subcategory": "logical_reasoning",
+      "difficulty": "hard",
+      "questionType": "logical_reasoning",
+      "type": "single",
+      "question": "If all Bloops are Razzies and all Razzies are Lazzies, which of the following statements must be true?",
+      "educationLevels": [
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "All Lazzies are Bloops.",
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "Some Bloops are not Lazzies.",
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "All Bloops are Lazzies.",
+          "isCorrect": true,
+          "traitScores": {
+            "logicalThinking": 5,
+            "analyticalThinking": 2
+          }
+        },
+        {
+          "id": "D",
+          "text": "No Razzies are Bloops.",
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "iq-4",
+      "category": "IQ ANALYSIS",
+      "subcategory": "quantitative",
+      "difficulty": "medium",
+      "questionType": "quantitative",
+      "type": "single",
+      "question": "If a shirt costs $40 after a 20% discount, what was the original price of the shirt?",
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "$48",
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "$50",
+          "isCorrect": true,
+          "traitScores": {
+            "analyticalThinking": 3,
+            "problemSolving": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "$60",
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "$45",
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "iq-5",
+      "category": "IQ ANALYSIS",
+      "subcategory": "spatial_pattern",
+      "difficulty": "hard",
+      "questionType": "spatial_pattern",
+      "type": "single",
+      "question": "Imagine a cube is painted red on all sides and then cut into 27 smaller equal cubes (3x3x3). How many of the smaller cubes have exactly two sides painted red?",
+      "educationLevels": [
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "8",
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "12",
+          "isCorrect": true,
+          "traitScores": {
+            "logicalThinking": 4,
+            "problemSolving": 4
+          }
+        },
+        {
+          "id": "C",
+          "text": "6",
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "4",
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "iq-6",
+      "category": "QUANTITATIVE",
+      "subcategory": "sequence",
+      "difficulty": "medium",
+      "questionType": "quantitative",
+      "type": "single",
+      "question": "What is the next number in the sequence: 3, 6, 12, 24, ...?",
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "30",
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "36",
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "48",
+          "isCorrect": true,
+          "traitScores": {
+            "logicalThinking": 4,
+            "analyticalThinking": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "42",
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "iq-7",
+      "category": "QUANTITATIVE",
+      "subcategory": "rate",
+      "difficulty": "medium",
+      "questionType": "quantitative",
+      "type": "single",
+      "question": "If a train travels 60 miles in 1.5 hours, what is its average speed in miles per hour?",
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "30 mph",
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "40 mph",
+          "isCorrect": true,
+          "traitScores": {
+            "analyticalThinking": 3,
+            "problemSolving": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "45 mph",
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "50 mph",
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "iq-8",
+      "category": "QUANTITATIVE",
+      "subcategory": "word_problem",
+      "difficulty": "hard",
+      "questionType": "quantitative",
+      "type": "single",
+      "question": "A store sells apples for $0.50 each and oranges for $0.75 each. If you buy 4 apples and 3 oranges, and pay with a $10 bill, how much change will you receive?",
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "$5.75",
+          "isCorrect": true,
+          "traitScores": {
+            "analyticalThinking": 4,
+            "attentionToDetail": 3
+          }
+        },
+        {
+          "id": "B",
+          "text": "$4.25",
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "$6.25",
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "$5.25",
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "iq-9",
+      "category": "IQ ANALYSIS",
+      "subcategory": "spatial_pattern",
+      "difficulty": "medium",
+      "questionType": "spatial_pattern",
+      "type": "single",
+      "question": "Which shape completes the pattern? (Look at the SVG graphic below)",
+      "svgComponent": "<svg viewBox='0 0 100 100' className='w-32 h-32'><rect x='20' y='20' width='60' height='60' fill='none' stroke='black' strokeWidth='4'/><circle cx='50' cy='50' r='10' fill='black'/></svg>",
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "A circle inside a triangle",
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "A square with a dot",
+          "isCorrect": true,
+          "traitScores": {
+            "attentionToDetail": 4,
+            "logicalThinking": 2
+          }
+        },
+        {
+          "id": "C",
+          "text": "Two circles",
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "A blank square",
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "iq-10",
+      "category": "IQ ANALYSIS",
+      "subcategory": "spatial_pattern",
+      "difficulty": "hard",
+      "questionType": "spatial_pattern",
+      "type": "single",
+      "question": "If you fold a paper in half, then in half again, and cut a hole in the center, how many holes will the paper have when unfolded?",
+      "educationLevels": [
+        "class-8",
+        "class-9",
+        "class-10",
+        "puc",
+        "diploma",
+        "undergraduate"
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "1",
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "2",
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "4",
+          "isCorrect": true,
+          "traitScores": {
+            "logicalThinking": 5,
+            "problemSolving": 3
+          }
+        },
+        {
+          "id": "D",
+          "text": "8",
+          "traitScores": {}
         }
       ]
     }

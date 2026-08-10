@@ -10,6 +10,7 @@
  */
 export const generateAnalytics = (report) => {
   const traitScores = report.traitScores || {};
+  const iqScore = report.iqScore;
   const topCareers = report.topCareerRecommendations || [];
 
   const traitRanking = getTraitRanking(traitScores);
@@ -25,7 +26,7 @@ export const generateAnalytics = (report) => {
   const interestDistribution = calculateInterestDistribution(topCareers);
   const strengthDistribution = calculateStrengthDistribution(traitScores);
 
-  const overallProfileSummary = generateOverallSummary(traitRanking, careerRanking, interestDistribution);
+  const overallProfileSummary = generateOverallSummary(traitRanking, careerRanking, interestDistribution, iqScore);
 
   return {
     traitRanking,
@@ -37,7 +38,8 @@ export const generateAnalytics = (report) => {
     learningProfile,
     interestDistribution,
     strengthDistribution,
-    overallProfileSummary
+    overallProfileSummary,
+    ...(iqScore !== undefined && { iqScore })
   };
 };
 
@@ -223,7 +225,7 @@ const calculateStrengthDistribution = (traitScores) => {
   return distribution;
 };
 
-const generateOverallSummary = (traitRanking, careerRanking, interestDistribution) => {
+const generateOverallSummary = (traitRanking, careerRanking, interestDistribution, iqScore) => {
   const topStrength = traitRanking.length > 0 ? traitRanking[0].trait : "N/A";
   const lowestTrait = traitRanking.length > 0 ? traitRanking[traitRanking.length - 1].trait : "N/A";
   
@@ -247,6 +249,7 @@ const generateOverallSummary = (traitRanking, careerRanking, interestDistributio
     highestCareerMatch,
     highestTrait: topStrength, // as requested
     lowestTrait,
-    overallCategory
+    overallCategory,
+    ...(iqScore !== undefined && { iqScore })
   };
 };
