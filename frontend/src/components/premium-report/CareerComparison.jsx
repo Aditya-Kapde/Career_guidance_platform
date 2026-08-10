@@ -55,15 +55,15 @@ const CareerComparison = ({ comparison }) => {
         <table className="w-full text-center border-collapse min-w-[900px]">
           <thead>
             <tr>
-              <th className="p-6 border-b border-slate-200 text-xs font-bold text-slate-500 uppercase tracking-widest w-1/5 text-left bg-white">
+              <th className="px-6 pt-10 pb-6 border-b border-slate-200 text-xs font-bold text-slate-500 uppercase tracking-widest w-1/5 text-left bg-white align-bottom">
                 Dimension
               </th>
               {comparison.map((c, idx) => {
                 const isBestFit = idx === 0;
                 return (
-                  <th key={idx} className={`p-6 border-b border-slate-200 relative w-1/5 align-bottom ${isBestFit ? 'bg-indigo-50/50' : 'bg-white'}`}>
+                  <th key={idx} className={`px-6 pt-10 pb-6 border-b border-slate-200 relative w-1/5 align-bottom ${isBestFit ? 'bg-indigo-50/50' : 'bg-white'}`}>
                     {isBestFit && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-100 text-indigo-700 text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1 border border-indigo-200 whitespace-nowrap">
+                      <div className="absolute top-2 left-1/2 -translate-x-1/2 bg-indigo-100 text-indigo-700 text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1 border border-indigo-200 whitespace-nowrap">
                         <Star size={10} className="fill-indigo-700" /> Best overall fit
                       </div>
                     )}
