@@ -159,7 +159,7 @@ You MUST return a valid JSON object matching the following structure EXACTLY:
 Ensure the output is clean, valid JSON, containing only the JSON structure.
 `;
 
-  const model = process.env.GROQ_MODEL || 'qwen/qwen3.6-27b';
+  const model = process.env.GROQ_MODEL || 'openai/gpt-oss-20b';
 
   try {
     const response = await client.chat.completions.create({
@@ -169,12 +169,26 @@ Ensure the output is clean, valid JSON, containing only the JSON structure.
         { role: 'user', content: userPrompt }
       ],
       response_format: { type: "json_object" },
+      max_tokens: 8000,
       temperature: 0.3
     });
 
-    const content = response.choices[0]?.message?.content;
+    let content = response.choices[0]?.message?.content;
     if (!content) {
       throw new Error("Received an empty response from the Groq API completion.");
+    }
+    
+    // Remove reasoning blocks (e.g., <think>...</think>) from Qwen/DeepSeek models
+    content = content.replace(/<think>[\s\S]*?<\/think>/ig, '').trim();
+    // Clean markdown formatting if model outputted code blocks
+    content = content.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim();
+
+    // Sometimes models might still have pre-text or post-text. Extract just the {...} part as a fallback
+    if (!content.startsWith('{')) {
+      const match = content.match(/\{[\s\S]*\}/);
+      if (match) {
+        content = match[0];
+      }
     }
 
     return JSON.parse(content);
