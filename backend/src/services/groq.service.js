@@ -169,7 +169,7 @@ Ensure the output is clean, valid JSON, containing only the JSON structure.
         { role: 'user', content: userPrompt }
       ],
       response_format: { type: "json_object" },
-      max_tokens: 8000,
+      max_tokens: 6000,
       temperature: 0.3
     });
 
