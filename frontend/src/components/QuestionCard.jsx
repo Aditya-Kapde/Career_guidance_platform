@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import PatternTile from './PatternTile';
 
 export default function QuestionCard({ question, selectedOptions, onSelectOption }) {
   const isMultiple = (question.questionType || question.type) === 'multiple';
@@ -35,6 +36,26 @@ export default function QuestionCard({ question, selectedOptions, onSelectOption
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
             <span>Image placeholder</span>
+          </div>
+        </div>
+      )}
+
+      {/* Pattern Grid Graphic */}
+      {(question.type === 'pattern' || question.questionType === 'pattern') && question.patternTiles && (
+        <div className="mb-6 w-full max-w-xs md:max-w-sm mx-auto aspect-square bg-slate-50/50 rounded-xl border border-slate-200 p-3 md:p-4">
+          <div className="w-full h-full grid grid-cols-3 gap-2 md:gap-3">
+            {question.patternTiles.map((tile, idx) => (
+              <div 
+                key={idx} 
+                className={`aspect-square rounded-lg overflow-hidden transition-all ${
+                  tile.isMissing 
+                    ? '' 
+                    : 'border border-slate-200 bg-white shadow-sm'
+                }`}
+              >
+                <PatternTile tile={tile} />
+              </div>
+            ))}
           </div>
         </div>
       )}
@@ -91,11 +112,25 @@ export default function QuestionCard({ question, selectedOptions, onSelectOption
                         </div>
                       </div>
                     )}
-                    <span className={`font-semibold text-slate-800 text-sm md:text-base ${
-                      isSelected ? 'text-indigo-950 font-bold' : ''
-                    }`}>
-                      {typeof option === 'object' ? option.text : option}
-                    </span>
+                    {option.patternTile && (
+                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-lg border border-slate-200 flex items-center justify-center overflow-hidden shadow-sm shrink-0">
+                        <PatternTile tile={option.patternTile} />
+                      </div>
+                    )}
+                    {(typeof option === 'object' && option.text) && (
+                      <span className={`font-semibold text-slate-800 text-sm md:text-base ${
+                        isSelected ? 'text-indigo-950 font-bold' : ''
+                      }`}>
+                        {option.text}
+                      </span>
+                    )}
+                    {typeof option === 'string' && (
+                      <span className={`font-semibold text-slate-800 text-sm md:text-base ${
+                        isSelected ? 'text-indigo-950 font-bold' : ''
+                      }`}>
+                        {option}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

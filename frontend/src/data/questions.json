@@ -969,6 +969,570 @@
           "traitScores": { "logicalThinking": 3, "decisionMaking": 2 }
         }
       ]
+    },
+    {
+      "id": "pattern-1",
+      "category": "aptitude",
+      "subcategory": "spatial-reasoning",
+      "difficulty": "medium",
+      "questionType": "pattern",
+      "type": "pattern",
+      "question": "Select the option that correctly completes the 3x3 pattern:",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "patternTiles": [
+        { "type": "arrow", "direction": "down", "color": "green" },
+        { "type": "arrow", "direction": "left", "color": "green" },
+        { "type": "arrow", "direction": "up", "color": "green" },
+        { "type": "arrow", "direction": "left", "color": "orange" },
+        { "type": "arrow", "direction": "up", "color": "orange" },
+        { "type": "arrow", "direction": "right", "color": "orange" },
+        { "type": "arrow", "direction": "up", "color": "blue" },
+        { "type": "arrow", "direction": "right", "color": "blue" },
+        { "isMissing": true }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A",
+          "patternTile": { "type": "arrow", "direction": "down", "color": "blue" },
+          "traitScores": { "logicalThinking": 3, "analyticalThinking": 2 }
+        },
+        {
+          "id": "B",
+          "text": "Option B",
+          "patternTile": { "type": "shape", "shape": "square", "color": "blue" },
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "Option C",
+          "patternTile": { "type": "arrow", "direction": "right", "color": "blue" },
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "Option D",
+          "patternTile": { "type": "shape", "shape": "diamond", "color": "blue" },
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "pattern-2",
+      "category": "aptitude",
+      "subcategory": "spatial-reasoning",
+      "difficulty": "hard",
+      "questionType": "pattern",
+      "type": "pattern",
+      "question": "Which shape logically follows in the missing spot?",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "patternTiles": [
+        { "type": "shape", "shape": "square", "color": "pink" },
+        { "type": "shape", "shape": "square", "color": "green" },
+        { "type": "shape", "shape": "square", "size": "sm", "color": "orange" },
+        { "type": "shape", "shape": "triangle", "color": "pink" },
+        { "type": "shape", "shape": "triangle", "color": "green" },
+        { "type": "shape", "shape": "triangle", "size": "sm", "color": "orange" },
+        { "type": "shape", "shape": "circle", "color": "pink" },
+        { "type": "shape", "shape": "circle", "color": "green" },
+        { "isMissing": true }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A",
+          "patternTile": { "type": "shape", "shape": "square", "size": "sm", "color": "orange" },
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "Option B",
+          "patternTile": { "type": "shape", "shape": "triangle", "size": "sm", "color": "orange" },
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "Option C",
+          "patternTile": { "type": "shape", "shape": "circle", "size": "sm", "color": "orange" },
+          "traitScores": { "logicalThinking": 3, "attentionToDetail": 2 }
+        },
+        {
+          "id": "D",
+          "text": "Option D",
+          "patternTile": { "type": "shape", "shape": "plus", "color": "orange" },
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "pattern-3",
+      "category": "aptitude",
+      "subcategory": "spatial-reasoning",
+      "difficulty": "medium",
+      "questionType": "pattern",
+      "type": "pattern",
+      "question": "Determine the correct dot sequence to finish the pattern:",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "patternTiles": [
+        { "type": "dots", "count": 1, "color": "purple" },
+        { "type": "dots", "count": 2, "color": "purple" },
+        { "type": "dots", "count": 3, "color": "purple" },
+        { "type": "dots", "count": 2, "color": "purple" },
+        { "type": "dots", "count": 3, "color": "purple" },
+        { "type": "dots", "count": 4, "color": "purple" },
+        { "type": "dots", "count": 3, "color": "purple" },
+        { "type": "dots", "count": 4, "color": "purple" },
+        { "isMissing": true }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A",
+          "patternTile": { "type": "dots", "count": 5, "color": "pink" },
+          "traitScores": { "logicalThinking": 3, "analyticalThinking": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Option B",
+          "patternTile": { "type": "dots", "count": 6, "color": "pink" },
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "Option C",
+          "patternTile": { "type": "shape", "shape": "triangle", "count": 5, "color": "pink" },
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "Option D",
+          "patternTile": { "type": "shape", "shape": "diamond", "count": 4, "color": "pink" },
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "pattern-4",
+      "category": "aptitude",
+      "subcategory": "spatial-reasoning",
+      "difficulty": "hard",
+      "questionType": "pattern",
+      "type": "pattern",
+      "question": "What is the missing tile in the sequence?",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "patternTiles": [
+        { "type": "shape", "shape": "triangle", "variant": "solid", "color": "purple" },
+        { "type": "shape", "shape": "triangle", "variant": "faded", "color": "purple" },
+        { "type": "shape", "shape": "triangle", "variant": "outline", "color": "purple" },
+        { "type": "shape", "shape": "circle", "variant": "solid", "color": "purple" },
+        { "type": "shape", "shape": "circle", "variant": "faded", "color": "purple" },
+        { "type": "shape", "shape": "circle", "variant": "outline", "color": "purple" },
+        { "type": "shape", "shape": "square", "variant": "solid", "color": "purple" },
+        { "type": "shape", "shape": "square", "variant": "faded", "color": "purple" },
+        { "isMissing": true }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A",
+          "patternTile": { "type": "shape", "shape": "square", "variant": "outline", "color": "purple" },
+          "traitScores": { "logicalThinking": 3, "problemSolving": 2 }
+        },
+        {
+          "id": "B",
+          "text": "Option B",
+          "patternTile": { "type": "shape", "shape": "triangle", "variant": "outline", "color": "purple" },
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "Option C",
+          "patternTile": { "type": "shape", "shape": "diamond", "variant": "outline", "color": "purple" },
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "Option D",
+          "patternTile": { "type": "shape", "shape": "plus", "variant": "solid", "color": "purple" },
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "pattern-5",
+      "category": "aptitude",
+      "subcategory": "spatial-reasoning",
+      "difficulty": "medium",
+      "questionType": "pattern",
+      "type": "pattern",
+      "question": "What is the missing tile based on the alternating color pattern?",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "patternTiles": [
+        { "type": "shape", "shape": "circle", "color": "blue" },
+        { "type": "shape", "shape": "circle", "color": "green" },
+        { "type": "shape", "shape": "circle", "color": "blue" },
+        { "type": "shape", "shape": "circle", "color": "green" },
+        { "type": "shape", "shape": "circle", "color": "blue" },
+        { "type": "shape", "shape": "circle", "color": "green" },
+        { "type": "shape", "shape": "circle", "color": "blue" },
+        { "type": "shape", "shape": "circle", "color": "green" },
+        { "isMissing": true }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A",
+          "patternTile": { "type": "shape", "shape": "circle", "color": "blue" },
+          "traitScores": { "logicalThinking": 2, "attentionToDetail": 2 }
+        },
+        {
+          "id": "B",
+          "text": "Option B",
+          "patternTile": { "type": "shape", "shape": "circle", "color": "green" },
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "Option C",
+          "patternTile": { "type": "shape", "shape": "square", "color": "blue" },
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "Option D",
+          "patternTile": { "type": "shape", "shape": "square", "color": "green" },
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "pattern-6",
+      "category": "aptitude",
+      "subcategory": "spatial-reasoning",
+      "difficulty": "medium",
+      "questionType": "pattern",
+      "type": "pattern",
+      "question": "Find the missing dot sequence:",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "patternTiles": [
+        { "type": "dots", "count": 6, "color": "slate" },
+        { "type": "dots", "count": 5, "color": "slate" },
+        { "type": "dots", "count": 4, "color": "slate" },
+        { "type": "dots", "count": 5, "color": "slate" },
+        { "type": "dots", "count": 4, "color": "slate" },
+        { "type": "dots", "count": 3, "color": "slate" },
+        { "type": "dots", "count": 4, "color": "slate" },
+        { "type": "dots", "count": 3, "color": "slate" },
+        { "isMissing": true }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A",
+          "patternTile": { "type": "dots", "count": 1, "color": "slate" },
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "Option B",
+          "patternTile": { "type": "dots", "count": 2, "color": "slate" },
+          "traitScores": { "logicalThinking": 3, "problemSolving": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Option C",
+          "patternTile": { "type": "dots", "count": 3, "color": "slate" },
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "Option D",
+          "patternTile": { "type": "dots", "count": 4, "color": "slate" },
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "pattern-7",
+      "category": "aptitude",
+      "subcategory": "spatial-reasoning",
+      "difficulty": "hard",
+      "questionType": "pattern",
+      "type": "pattern",
+      "question": "Which arrow completes the 90-degree clockwise rotation pattern?",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "patternTiles": [
+        { "type": "arrow", "direction": "up", "color": "red" },
+        { "type": "arrow", "direction": "right", "color": "red" },
+        { "type": "arrow", "direction": "down", "color": "red" },
+        { "type": "arrow", "direction": "right", "color": "red" },
+        { "type": "arrow", "direction": "down", "color": "red" },
+        { "type": "arrow", "direction": "left", "color": "red" },
+        { "type": "arrow", "direction": "down", "color": "red" },
+        { "type": "arrow", "direction": "left", "color": "red" },
+        { "isMissing": true }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A",
+          "patternTile": { "type": "arrow", "direction": "left", "color": "red" },
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "Option B",
+          "patternTile": { "type": "arrow", "direction": "up", "color": "red" },
+          "traitScores": { "logicalThinking": 3, "spatialReasoning": 3 }
+        },
+        {
+          "id": "C",
+          "text": "Option C",
+          "patternTile": { "type": "arrow", "direction": "right", "color": "red" },
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "Option D",
+          "patternTile": { "type": "arrow", "direction": "down", "color": "red" },
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "pattern-8",
+      "category": "aptitude",
+      "subcategory": "spatial-reasoning",
+      "difficulty": "medium",
+      "questionType": "pattern",
+      "type": "pattern",
+      "question": "What is the next logical shape in this size-based sequence?",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "patternTiles": [
+        { "type": "shape", "shape": "diamond", "size": "sm", "color": "purple" },
+        { "type": "shape", "shape": "diamond", "size": "md", "color": "purple" },
+        { "type": "shape", "shape": "diamond", "size": "lg", "color": "purple" },
+        { "type": "shape", "shape": "square", "size": "sm", "color": "green" },
+        { "type": "shape", "shape": "square", "size": "md", "color": "green" },
+        { "type": "shape", "shape": "square", "size": "lg", "color": "green" },
+        { "type": "shape", "shape": "triangle", "size": "sm", "color": "orange" },
+        { "type": "shape", "shape": "triangle", "size": "md", "color": "orange" },
+        { "isMissing": true }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A",
+          "patternTile": { "type": "shape", "shape": "triangle", "size": "lg", "color": "orange" },
+          "traitScores": { "logicalThinking": 2, "attentionToDetail": 2 }
+        },
+        {
+          "id": "B",
+          "text": "Option B",
+          "patternTile": { "type": "shape", "shape": "triangle", "size": "sm", "color": "orange" },
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "Option C",
+          "patternTile": { "type": "shape", "shape": "square", "size": "lg", "color": "orange" },
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "Option D",
+          "patternTile": { "type": "shape", "shape": "circle", "size": "lg", "color": "orange" },
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "pattern-9",
+      "category": "aptitude",
+      "subcategory": "spatial-reasoning",
+      "difficulty": "medium",
+      "questionType": "pattern",
+      "type": "pattern",
+      "question": "Which arrow completes the mirror reflection pattern?",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "patternTiles": [
+        { "type": "arrow", "direction": "up", "color": "yellow" },
+        { "type": "arrow", "direction": "down", "color": "yellow" },
+        { "type": "arrow", "direction": "left", "color": "yellow" },
+        { "type": "arrow", "direction": "right", "color": "yellow" },
+        { "type": "arrow", "direction": "left", "color": "yellow" },
+        { "type": "arrow", "direction": "up", "color": "yellow" },
+        { "type": "arrow", "direction": "down", "color": "yellow" },
+        { "type": "arrow", "direction": "up", "color": "yellow" },
+        { "isMissing": true }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A",
+          "patternTile": { "type": "arrow", "direction": "left", "color": "yellow" },
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "Option B",
+          "patternTile": { "type": "arrow", "direction": "down", "color": "yellow" },
+          "traitScores": { "logicalThinking": 3, "analyticalThinking": 2 }
+        },
+        {
+          "id": "C",
+          "text": "Option C",
+          "patternTile": { "type": "arrow", "direction": "right", "color": "yellow" },
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "Option D",
+          "patternTile": { "type": "arrow", "direction": "up", "color": "yellow" },
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "pattern-10",
+      "category": "aptitude",
+      "subcategory": "spatial-reasoning",
+      "difficulty": "medium",
+      "questionType": "pattern",
+      "type": "pattern",
+      "question": "What is the missing tile in the variant sequence?",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "patternTiles": [
+        { "type": "shape", "shape": "cross", "variant": "solid", "color": "blue" },
+        { "type": "shape", "shape": "cross", "variant": "faded", "color": "blue" },
+        { "type": "shape", "shape": "cross", "variant": "outline", "color": "blue" },
+        { "type": "shape", "shape": "plus", "variant": "solid", "color": "green" },
+        { "type": "shape", "shape": "plus", "variant": "faded", "color": "green" },
+        { "type": "shape", "shape": "plus", "variant": "outline", "color": "green" },
+        { "type": "shape", "shape": "diamond", "variant": "solid", "color": "orange" },
+        { "type": "shape", "shape": "diamond", "variant": "faded", "color": "orange" },
+        { "isMissing": true }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A",
+          "patternTile": { "type": "shape", "shape": "diamond", "variant": "solid", "color": "orange" },
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "Option B",
+          "patternTile": { "type": "shape", "shape": "diamond", "variant": "outline", "color": "orange" },
+          "traitScores": { "logicalThinking": 3, "attentionToDetail": 2 }
+        },
+        {
+          "id": "C",
+          "text": "Option C",
+          "patternTile": { "type": "shape", "shape": "plus", "variant": "outline", "color": "orange" },
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "Option D",
+          "patternTile": { "type": "shape", "shape": "cross", "variant": "outline", "color": "orange" },
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "pattern-11",
+      "category": "aptitude",
+      "subcategory": "spatial-reasoning",
+      "difficulty": "easy",
+      "questionType": "pattern",
+      "type": "pattern",
+      "question": "Which shape alternates correctly?",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "patternTiles": [
+        { "type": "shape", "shape": "cross", "color": "pink" },
+        { "type": "shape", "shape": "plus", "color": "pink" },
+        { "type": "shape", "shape": "cross", "color": "pink" },
+        { "type": "shape", "shape": "plus", "color": "pink" },
+        { "type": "shape", "shape": "cross", "color": "pink" },
+        { "type": "shape", "shape": "plus", "color": "pink" },
+        { "type": "shape", "shape": "cross", "color": "pink" },
+        { "type": "shape", "shape": "plus", "color": "pink" },
+        { "isMissing": true }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A",
+          "patternTile": { "type": "shape", "shape": "cross", "color": "pink" },
+          "traitScores": { "attentionToDetail": 3, "logicalThinking": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Option B",
+          "patternTile": { "type": "shape", "shape": "plus", "color": "pink" },
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "Option C",
+          "patternTile": { "type": "shape", "shape": "cross", "color": "blue" },
+          "traitScores": {}
+        },
+        {
+          "id": "D",
+          "text": "Option D",
+          "patternTile": { "type": "shape", "shape": "square", "color": "pink" },
+          "traitScores": {}
+        }
+      ]
+    },
+    {
+      "id": "pattern-12",
+      "category": "aptitude",
+      "subcategory": "spatial-reasoning",
+      "difficulty": "hard",
+      "questionType": "pattern",
+      "type": "pattern",
+      "question": "Determine the correct dot sequence mathematically:",
+      "educationLevels": ["class-8", "class-9", "class-10", "puc", "diploma", "undergraduate"],
+      "patternTiles": [
+        { "type": "dots", "count": 1, "color": "blue" },
+        { "type": "dots", "count": 2, "color": "blue" },
+        { "type": "dots", "count": 3, "color": "blue" },
+        { "type": "dots", "count": 2, "color": "blue" },
+        { "type": "dots", "count": 4, "color": "blue" },
+        { "type": "dots", "count": 6, "color": "blue" },
+        { "type": "dots", "count": 3, "color": "blue" },
+        { "type": "dots", "count": 6, "color": "blue" },
+        { "isMissing": true }
+      ],
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A",
+          "patternTile": { "type": "dots", "count": 7, "color": "blue" },
+          "traitScores": {}
+        },
+        {
+          "id": "B",
+          "text": "Option B",
+          "patternTile": { "type": "dots", "count": 8, "color": "blue" },
+          "traitScores": {}
+        },
+        {
+          "id": "C",
+          "text": "Option C",
+          "patternTile": { "type": "dots", "count": 9, "color": "blue" },
+          "traitScores": { "logicalThinking": 4, "analyticalThinking": 3 }
+        },
+        {
+          "id": "D",
+          "text": "Option D",
+          "patternTile": { "type": "dots", "count": 5, "color": "blue" },
+          "traitScores": {}
+        }
+      ]
     }
   ]
 }

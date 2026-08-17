@@ -28,7 +28,7 @@ const selectRandomQuestions = (allQuestions) => {
 
   // Return all available questions shuffled for the full expanded assessment (up to 40)
   const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-  return shuffled;
+  return shuffled.slice(0, 40);
 };
 
 export function AssessmentProvider({ children }) {
