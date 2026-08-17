@@ -46,49 +46,65 @@ html, body {
 
 @media print {
   @page {
-    margin: 0;
-    size: A4;
+    size: A4 portrait;
+    margin: 10mm;
   }
-  
-  body {
+
+  /* Force explicit text and background colors & Prevent container collapse */
+  html, body, #root, main, .report-container {
+    background-color: #ffffff !important;
+    color: #0f172a !important; /* Slate 900 */
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+  }
+
+  /* Ensure all text elements are explicitly dark and readable */
+  h1, h2, h3, h4, h5, h6, p, span, li, td, th, div {
+    color: #0f172a !important;
+    text-shadow: none !important;
+  }
+
+  /* Force explicit heights on Recharts containers during print */
+  .recharts-responsive-container {
+    min-height: 320px !important;
+    height: 320px !important;
+    width: 100% !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .recharts-wrapper, .recharts-surface {
     overflow: visible !important;
+    visibility: visible !important;
   }
 
-  /* Disable all animations, transitions and sticky elements for printing */
-  * {
-    transition: none !important;
-    animation: none !important;
-    transform: none !important;
-    opacity: 1 !important;
+  /* Force card backgrounds to render with light borders and Relax page break rules */
+  .report-card, section, div[class*="bg-"] {
+    background-color: #f8fafc !important; /* Slate 50 */
+    border: 1px solid #e2e8f0 !important; /* Slate 200 */
+    box-shadow: none !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    margin-bottom: 1.5rem !important;
   }
 
-  .sticky, .fixed, .absolute {
-    position: static !important;
+  /* Keep individual chart blocks intact without creating blank leading pages */
+  .chart-container, .recharts-wrapper, svg {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
   }
 
-  .min-h-screen, .h-screen {
-    min-height: auto !important;
-    height: auto !important;
+  /* Ensure SVG paths and chart fills are visible */
+  svg path, svg circle, svg rect {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
-  .print\:break-after-page {
-    page-break-after: always;
-    break-after: page;
-  }
-
-  .print\:break-before-page {
-    page-break-before: always;
-    break-before: page;
-  }
-
-  .print\:break-inside-avoid {
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-
-  .print\:pt-10 {
-    padding-top: 2.5rem !important;
+  /* Hide interactive UI elements */
+  .no-print, nav, button, header .download-btn {
+    display: none !important;
   }
 }

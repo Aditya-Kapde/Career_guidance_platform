@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import api from '../services/api';
 import ReportHeader from '../components/report/ReportHeader';
 import ReportFooter from '../components/report/ReportFooter';
@@ -15,11 +16,18 @@ import PremiumLearningStrategy from '../components/premium-report/PremiumLearnin
 import PremiumParentGuidance from '../components/premium-report/PremiumParentGuidance';
 import PremiumResources from '../components/premium-report/PremiumResources';
 import PremiumClosing from '../components/premium-report/PremiumClosing';
+import CognitiveAnalytics from '../components/premium-report/CognitiveAnalytics';
 
 const Report = () => {
   const [reportData, setReportData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const reportRef = useRef(null);
+
+  const handleDownloadPdf = useReactToPrint({
+    contentRef: reportRef,
+    documentTitle: `Career_Report_${reportData?.assessmentMetadata?.educationLevel || 'Student'}`,
+  });
 
   useEffect(() => {
     const fetchReport = async () => {
@@ -60,8 +68,8 @@ const Report = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans">
-      <ReportHeader reportData={reportData} />
+    <div className="min-h-screen bg-white text-gray-900 font-sans" ref={reportRef}>
+      <ReportHeader reportData={reportData} onDownloadPdf={handleDownloadPdf} />
       
       <main className="w-full">
 
@@ -70,6 +78,8 @@ const Report = () => {
         {reportData.executiveSummaryData && (
           <ExecutiveBriefing execData={reportData.executiveSummaryData} />
         )}
+
+        <CognitiveAnalytics iqScore={reportData.iqScore} />
 
         {reportData.traitAnalysisDeep && (
           <TraitDeepDive traits={reportData.traitAnalysisDeep} />

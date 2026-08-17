@@ -191,9 +191,16 @@ export default function Assessment() {
               <QuestionCard
                 question={currentQuestion}
                 selectedOptions={selectedOptions}
-                onSelectOption={(optionIdx) =>
-                  selectOption(currentQuestionIndex, optionIdx, (currentQuestion.questionType || currentQuestion.type) === 'multiple')
-                }
+                onSelectOption={(optionIdx) => {
+                  const isMultiple = (currentQuestion.questionType || currentQuestion.type) === 'multiple';
+                  selectOption(currentQuestionIndex, optionIdx, isMultiple);
+                  
+                  if (!isMultiple) {
+                    setTimeout(() => {
+                      handleNext();
+                    }, 450);
+                  }
+                }}
               />
             )}
           </motion.div>
@@ -210,20 +217,27 @@ export default function Assessment() {
           <span>Previous</span>
         </button>
 
-        <button
-          onClick={handleNext}
-          disabled={isNextDisabled}
-          className={`flex-1 py-3 px-4 rounded-xl font-semibold text-sm flex items-center justify-center space-x-2 transition-all ${
-            !isNextDisabled
-              ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-100'
-              : 'bg-slate-250 text-slate-400 cursor-not-allowed border border-slate-200'
-          }`}
-        >
-          <span>
-            {currentQuestionIndex === totalQuestions - 1 ? 'Submit' : 'Next'}
-          </span>
-          <ArrowRight className="w-4 h-4" />
-        </button>
+        {/* 
+          Task 1: Next button removed as per requirements. 
+          If you have multiple-choice questions (checkboxes), you might want to conditionally render this.
+          For now, hiding it entirely for single-select auto-advance.
+        */}
+        {((currentQuestion?.questionType || currentQuestion?.type) === 'multiple') && (
+          <button
+            onClick={handleNext}
+            disabled={isNextDisabled}
+            className={`flex-1 py-3 px-4 rounded-xl font-semibold text-sm flex items-center justify-center space-x-2 transition-all ${
+              !isNextDisabled
+                ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-100'
+                : 'bg-slate-250 text-slate-400 cursor-not-allowed border border-slate-200'
+            }`}
+          >
+            <span>
+              {currentQuestionIndex === totalQuestions - 1 ? 'Submit' : 'Next'}
+            </span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        )}
       </div>
     </div>
   );

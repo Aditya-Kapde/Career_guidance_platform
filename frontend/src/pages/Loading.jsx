@@ -7,7 +7,7 @@ import api from '../services/api';
 
 export default function Loading() {
   const navigate = useNavigate();
-  const { educationLevel, responses, traitScores, setAssessmentReport } = useAssessment();
+  const { educationLevel, responses, traitScores, getDetailedResponses, setAssessmentReport } = useAssessment();
   const [status, setStatus] = useState('loading'); // 'loading' | 'error'
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -17,7 +17,7 @@ export default function Loading() {
     try {
       const payload = {
         educationLevel,
-        responses,
+        responses: getDetailedResponses ? getDetailedResponses() : responses,
         traitScores
       };
       

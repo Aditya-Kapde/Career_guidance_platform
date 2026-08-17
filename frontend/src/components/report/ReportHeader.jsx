@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Download } from 'lucide-react';
 import api from '../../services/api';
 
-const ReportHeader = ({ reportData }) => {
+const ReportHeader = ({ reportData, onDownloadPdf }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -21,23 +21,8 @@ const ReportHeader = ({ reportData }) => {
         <div className="flex items-center gap-4">
           {isMounted && reportData && (
             <button
-              onClick={async () => {
-                try {
-                  const blob = await api.get('/api/report/pdf', { responseType: 'blob' });
-                  const url = window.URL.createObjectURL(blob);
-                  const a = document.createElement('a');
-                  a.href = url;
-                  a.download = "Career-Intelligence-Report.pdf";
-                  document.body.appendChild(a);
-                  a.click();
-                  window.URL.revokeObjectURL(url);
-                  document.body.removeChild(a);
-                } catch (err) {
-                  console.error(err);
-                  alert("Failed to download PDF. Please try again.");
-                }
-              }}
-              className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-sm transition-colors outline-none cursor-pointer"
+              onClick={onDownloadPdf}
+              className="no-print flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-sm transition-colors outline-none cursor-pointer"
             >
               <Download size={16} />
               Download Report (PDF)

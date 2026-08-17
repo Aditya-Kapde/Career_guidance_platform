@@ -1,4 +1,4 @@
-import { calculateCareerMatches } from '../services/careerEngine.service.js';
+import { calculateCareerMatches, evaluateResponses } from '../services/careerEngine.service.js';
 import { generateCareerReport, getGroqClient } from '../services/groq.service.js';
 import { buildReport } from '../services/report/reportBuilder.js';
 import { saveLatestReport } from '../services/report/reportStore.js';
@@ -17,7 +17,15 @@ export const submitAssessment = async (req, res) => {
  */
 export const analyzeAssessment = async (req, res) => {
   try {
-    const { educationLevel, responses, traitScores } = req.body;
+    let { educationLevel, responses, traitScores } = req.body;
+    let iqScore = undefined;
+
+    // Check if responses are provided in the new detailed format
+    if (Array.isArray(responses) && responses.length > 0 && responses[0].questionId) {
+      const evaluation = evaluateResponses(responses);
+      traitScores = evaluation.traitScores;
+      iqScore = evaluation.iqScore;
+    }
 
     // Validation checks
     if (
@@ -65,7 +73,7 @@ export const analyzeAssessment = async (req, res) => {
         }))
       };
       
-      const unifiedReport = buildReport({ educationLevel, responses, traitScores }, fallbackReport, topCareers);
+      const unifiedReport = buildReport({ educationLevel, responses, traitScores, iqScore }, fallbackReport, topCareers);
       saveLatestReport(unifiedReport);
 
       return res.status(200).json(fallbackReport);
@@ -85,13 +93,14 @@ export const analyzeAssessment = async (req, res) => {
       });
     }
     
-    const unifiedReport = buildReport({ educationLevel, responses, traitScores }, aiReport, topCareers);
+    const unifiedReport = buildReport({ educationLevel, responses, traitScores, iqScore }, aiReport, topCareers);
     saveLatestReport(unifiedReport);
 
     return res.status(200).json({
       success: true,
       educationLevel,
       traitScores,
+      iqScore,
       report: aiReport
     });
   } catch (error) {
