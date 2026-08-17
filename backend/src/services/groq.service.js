@@ -159,7 +159,7 @@ You MUST return a valid JSON object matching the following structure EXACTLY:
 Ensure the output is clean, valid JSON, containing only the JSON structure.
 `;
 
-  const model = process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
+  const model = process.env.GROQ_MODEL || 'qwen/qwen3.6-27b';
 
   try {
     const response = await client.chat.completions.create({
