@@ -1,130 +1,103 @@
 import React from 'react';
-import { Briefcase, Zap, MapPin, GraduationCap, Users, DollarSign, BrainCircuit } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Briefcase, Zap, MapPin, GraduationCap, Users, DollarSign, BrainCircuit, Target, ShieldCheck, AlertCircle, TrendingUp } from 'lucide-react';
 
 const CareerMatchAnalysis = ({ topCareers }) => {
   if (!topCareers || topCareers.length === 0) return null;
 
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: { 
+      opacity: 1,
+      transition: { staggerChildren: 0.2 }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 1, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-b border-gray-100 print:break-before-page">
+    <motion.section 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={containerVariants}
+      className="py-12"
+    >
       <div className="mb-16">
-        <h2 className="text-sm font-bold tracking-widest text-indigo-600 uppercase mb-2">Chapter 03</h2>
-        <h3 className="text-3xl font-bold text-gray-900 tracking-tight">Career Match Profiles</h3>
-        <p className="text-gray-500 mt-4 max-w-2xl text-lg">In-depth structural analysis of your highest compatibility career pathways.</p>
+        <motion.div variants={cardVariants} className="flex items-center gap-4 mb-4">
+          <span className="h-1.5 w-12 bg-purple-500 rounded-full"></span>
+          <h2 className="text-sm font-black tracking-widest text-purple-500 uppercase">Chapter 03</h2>
+        </motion.div>
+        <motion.h3 variants={cardVariants} className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">Career Match Profiles</motion.h3>
+        <motion.p variants={cardVariants} className="text-slate-500 mt-4 max-w-2xl text-xl font-light">
+          In-depth structural analysis of your highest compatibility career pathways.
+        </motion.p>
       </div>
 
-      <div className="space-y-24">
+      <div className="space-y-12">
         {topCareers.map((career, idx) => (
-          <div key={idx} className="print:break-inside-avoid">
+          <motion.div key={idx} variants={cardVariants} className="bg-white rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100 group hover:shadow-indigo-100 transition-all duration-500">
             {/* Career Header */}
-            <div className="bg-gray-900 text-white p-8 rounded-t-2xl flex flex-col md:flex-row md:items-center justify-between gap-6">
-              <div>
-                <h4 className="text-3xl font-bold tracking-tight mb-2">{career.career}</h4>
-                <p className="text-gray-400 font-medium">{career.industries?.join(', ') || 'Various Industries'}</p>
+            <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-10 flex flex-col md:flex-row md:items-center justify-between gap-8 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl group-hover:bg-indigo-500/30 transition-all duration-700"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
+                    <Target className="text-indigo-300" size={20} />
+                  </div>
+                  <p className="text-indigo-200 font-medium tracking-wide">{career.industries?.join(', ') || 'Various Industries'}</p>
+                </div>
+                <h4 className="text-4xl md:text-5xl font-black tracking-tight">{career.career}</h4>
               </div>
-              <div className="flex flex-col items-end">
-                <span className="text-4xl font-extrabold text-indigo-400">{career.score}%</span>
-                <span className="text-sm font-semibold tracking-wider uppercase text-gray-500 mt-1">Match Score</span>
+              
+              <div className="relative z-10 flex flex-col items-start md:items-end bg-white/5 backdrop-blur-xl p-6 rounded-3xl border border-white/10">
+                <span className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300 drop-shadow-sm">
+                  {career.score}%
+                </span>
+                <span className="text-sm font-bold tracking-widest uppercase text-indigo-200/80 mt-2">Match Score</span>
               </div>
             </div>
 
             {/* Main Content Body */}
-            <div className="border-x border-b border-gray-200 rounded-b-2xl p-8 bg-white">
-              <div className="mb-10">
-                <h5 className="text-lg font-bold text-gray-900 mb-3 border-l-4 border-indigo-600 pl-4">Strategic Fit Rationale</h5>
-                <p className="text-gray-600 leading-relaxed pl-5">{career.matchReason}</p>
+            <div className="p-10">
+              <div className="mb-12">
+                <h5 className="flex items-center gap-3 text-xl font-bold text-slate-900 mb-4">
+                  <span className="p-2 bg-indigo-50 text-indigo-600 rounded-lg"><Zap size={20} /></span>
+                  Strategic Fit Rationale
+                </h5>
+                <p className="text-xl text-slate-600 font-light leading-relaxed pl-14">{career.matchReason}</p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-10">
-                <div>
-                  <h5 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Core Attributes</h5>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3">
-                      <GraduationCap className="text-indigo-600 shrink-0" size={20}/>
+              <div className="mb-12">
+                <div className="space-y-6">
+                  <h5 className="text-sm font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-3">Core Attributes</h5>
+                  <ul className="space-y-6">
+                    <li className="flex items-start gap-4">
+                      <div className="p-3 bg-indigo-50 text-indigo-600 rounded-xl shrink-0"><BrainCircuit size={22}/></div>
                       <div>
-                        <p className="font-semibold text-gray-900 text-sm">Education Level</p>
-                        <p className="text-gray-600 text-sm">{career.requiredEducation}</p>
+                        <p className="font-bold text-slate-900 text-sm tracking-wide">AI Disruption Risk & Impact</p>
+                        <p className="text-slate-600 mt-1">{career.aiImpact}</p>
                       </div>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <BrainCircuit className="text-indigo-600 shrink-0" size={20}/>
+                    <li className="flex items-start gap-4">
+                      <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl shrink-0"><DollarSign size={22}/></div>
                       <div>
-                        <p className="font-semibold text-gray-900 text-sm">AI Disruption Risk</p>
-                        <p className="text-gray-600 text-sm">{career.aiImpact}</p>
+                        <p className="font-bold text-slate-900 text-sm tracking-wide">Global Demand</p>
+                        <p className="text-slate-600 mt-1">{career.globalDemand}</p>
                       </div>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <DollarSign className="text-indigo-600 shrink-0" size={20}/>
-                      <div>
-                        <p className="font-semibold text-gray-900 text-sm">Salary Progression</p>
-                        <p className="text-gray-600 text-sm">{career.salaryProgression}</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <MapPin className="text-indigo-600 shrink-0" size={20}/>
-                      <div>
-                        <p className="font-semibold text-gray-900 text-sm">Work Environment</p>
-                        <p className="text-gray-600 text-sm">{career.workEnvironment}</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h5 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Execution & Reality</h5>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3">
-                      <Briefcase className="text-indigo-600 shrink-0" size={20}/>
-                      <div>
-                        <p className="font-semibold text-gray-900 text-sm">Typical Day</p>
-                        <p className="text-gray-600 text-sm">{career.typicalDay}</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Users className="text-indigo-600 shrink-0" size={20}/>
-                      <div>
-                        <p className="font-semibold text-gray-900 text-sm">Who Should Avoid This</p>
-                        <p className="text-gray-600 text-sm">{career.whoShouldAvoid}</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Zap className="text-indigo-600 shrink-0" size={20}/>
-                      <div>
-                        <p className="font-semibold text-gray-900 text-sm">Growth Path</p>
-                        <p className="text-gray-600 text-sm">{career.growthPath}</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Pros and Cons */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-50 rounded-xl p-6">
-                <div>
-                  <h5 className="text-sm font-bold text-emerald-700 mb-3 uppercase tracking-wider">Strategic Advantages</h5>
-                  <ul className="space-y-2">
-                    {career.pros?.map((pro, i) => (
-                      <li key={i} className="text-sm text-gray-700 flex items-start gap-2">
-                        <span className="text-emerald-500 mt-1">•</span> {pro}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h5 className="text-sm font-bold text-rose-700 mb-3 uppercase tracking-wider">Potential Risks</h5>
-                  <ul className="space-y-2">
-                    {career.cons?.map((con, i) => (
-                      <li key={i} className="text-sm text-gray-700 flex items-start gap-2">
-                        <span className="text-rose-500 mt-1">•</span> {con}
-                      </li>
-                    ))}
                   </ul>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

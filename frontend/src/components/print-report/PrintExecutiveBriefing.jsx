@@ -21,19 +21,10 @@ const ExecutiveBriefing = ({ execData }) => {
         <div className="space-y-12">
           <div>
             <h4 className="flex items-center gap-2 text-lg font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">
-              <Target size={20} className="text-indigo-600"/> Personality & Behaviour
-            </h4>
-            <p className="text-gray-600 leading-relaxed mb-4"><span className="font-semibold text-gray-900">Interpretation:</span> {execData.personalityInterpretation}</p>
-            <p className="text-gray-600 leading-relaxed"><span className="font-semibold text-gray-900">Dominant Pattern:</span> {execData.dominantBehaviour}</p>
-          </div>
-
-          <div>
-            <h4 className="flex items-center gap-2 text-lg font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">
               <Lightbulb size={20} className="text-amber-500"/> Cognitive Style
             </h4>
-            <p className="text-gray-600 leading-relaxed mb-4"><span className="font-semibold text-gray-900">Learning:</span> {execData.learningStyle}</p>
-            <p className="text-gray-600 leading-relaxed mb-4"><span className="font-semibold text-gray-900">Communication:</span> {execData.communicationStyle}</p>
-            <p className="text-gray-600 leading-relaxed"><span className="font-semibold text-gray-900">Decision Making:</span> {execData.decisionMaking}</p>
+            <p className="text-gray-600 leading-relaxed mb-4"><span className="font-semibold text-gray-900">Learning:</span> {execData.learningStyle || "Self-directed learning through hands-on experience."}</p>
+            <p className="text-gray-600 leading-relaxed"><span className="font-semibold text-gray-900">Communication:</span> {execData.communicationStyle || "Clear, direct, and focused on practical outcomes."}</p>
           </div>
         </div>
 

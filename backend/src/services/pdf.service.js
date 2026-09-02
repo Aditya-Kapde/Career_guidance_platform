@@ -2,15 +2,21 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
 
-export const generatePremiumPDF = async () => {
+export const generatePremiumPDF = async (reportId) => {
   let browser;
   try {
     console.log("[PDF Service] Launching Headless Chrome...");
-    browser = await puppeteer.launch({
+    const browserOptions = {
       headless: 'new',
-      executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-web-security']
-    });
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    };
+    
+    // Only specify executablePath if explicitly set in environment, otherwise use bundled Chromium
+    if (process.env.PUPPETEER_EXECUTABLE_PATH) {
+      browserOptions.executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
+    }
+
+    browser = await puppeteer.launch(browserOptions);
 
     const page = await browser.newPage();
     
@@ -20,8 +26,9 @@ export const generatePremiumPDF = async () => {
     // Listen to console logs for debugging
     page.on('console', msg => console.log(`[Frontend Log]: ${msg.text()}`));
 
-    console.log("[PDF Service] Navigating to Report Print URL...");
-    await page.goto('http://localhost:5173/report-print', { waitUntil: 'networkidle0', timeout: 60000 });
+    console.log(`[PDF Service] Navigating to Report Print URL for ID: ${reportId}...`);
+    const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+    await page.goto(`${clientUrl}/report-print?id=${reportId}`, { waitUntil: 'networkidle0', timeout: 60000 });
     
     console.log("[PDF Service] Waiting for #report-ready to mount...");
     await page.waitForSelector('#report-ready', { timeout: 30000 });

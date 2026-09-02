@@ -39,6 +39,8 @@ export function AssessmentProvider({ children }) {
   const [selectedQuestions, setSelectedQuestions] = useState([]);
   const [assessmentReport, setAssessmentReport] = useState(null);
 
+  const [reportId, setReportId] = useState(null);
+
   useEffect(() => {
     if (educationLevel) {
       setSelectedQuestions(selectRandomQuestions(QUESTIONS));
@@ -105,6 +107,7 @@ export function AssessmentProvider({ children }) {
     setTraitScores(INITIAL_TRAIT_SCORES);
     setSelectedQuestions([]);
     setAssessmentReport(null);
+    setReportId(null);
   };
 
   const getSelectedOptionsForQuestion = (questionIndex) => {
@@ -145,6 +148,8 @@ export function AssessmentProvider({ children }) {
         selectedQuestions,
         assessmentReport,
         setAssessmentReport,
+        reportId,
+        setReportId,
         selectOption,
         getSelectedOptionsForQuestion,
         getDetailedResponses,

@@ -1,10 +1,11 @@
 import { Router } from 'express';
-import { fetchLatestReport, downloadPdf } from '../controllers/report.controller.js';
+import { fetchReport, downloadPdf } from '../controllers/report.controller.js';
+import { apiRateLimiter } from '../middleware/rateLimiter.js';
 
 const router = Router();
 
 // Routes
-router.get('/latest', fetchLatestReport);
-router.get('/pdf', downloadPdf);
+router.get('/:id', fetchReport);
+router.get('/pdf/:id', apiRateLimiter, downloadPdf);
 
 export default router;

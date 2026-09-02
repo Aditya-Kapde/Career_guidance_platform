@@ -58,8 +58,8 @@ export const buildReport = (assessmentInput, aiReport, engineCareers) => {
     analytics: {}, // Placeholder, will be populated below
     aiInsights: {
       summary: aiReport?.executiveSummary?.profileSummary || aiReport?.summary || "",
-      closingMessage: aiReport?.closingMessage || "",
-      insightsList: aiReport?.aiInsights || []
+      closingMessage: aiReport?.aiInsights?.closingMessage || aiReport?.closingMessage || "",
+      insightsList: aiReport?.aiInsights?.insightsList || aiReport?.aiInsights || []
     },
     // New Advanced Phase 6 fields
     executiveSummaryData: aiReport?.executiveSummary || null,

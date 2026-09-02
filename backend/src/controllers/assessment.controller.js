@@ -1,7 +1,7 @@
 import { calculateCareerMatches, evaluateResponses } from '../services/careerEngine.service.js';
 import { generateCareerReport, getGroqClient } from '../services/groq.service.js';
 import { buildReport } from '../services/report/reportBuilder.js';
-import { saveLatestReport } from '../services/report/reportStore.js';
+import { saveReport } from '../services/report/reportStore.js';
 
 export const startAssessment = async (req, res) => {
   res.status(200).json({ message: "Assessment controller placeholder" });
@@ -27,16 +27,31 @@ export const analyzeAssessment = async (req, res) => {
       iqScore = evaluation.iqScore;
     }
 
-    // Validation checks
-    if (
-    !educationLevel ||
-    !traitScores ||
-    Object.keys(traitScores).length === 0
-) {
-    return res.status(400).json({
-        error: "Invalid assessment payload."
-    });
-}
+    // Strict Input Validation & Type Checking
+    if (!educationLevel || typeof educationLevel !== 'string' || educationLevel.length > 50) {
+      return res.status(400).json({ error: "Invalid education level provided." });
+    }
+
+    if (!traitScores || typeof traitScores !== 'object' || Array.isArray(traitScores) || Object.keys(traitScores).length === 0) {
+      return res.status(400).json({ error: "Invalid trait scores payload." });
+    }
+
+    // Sanitize traitScores: ensure all keys are strings and values are numbers between 0 and 100
+    const sanitizedTraitScores = {};
+    for (const [key, value] of Object.entries(traitScores)) {
+      if (typeof key !== 'string' || key.length > 50) continue;
+      const numValue = Number(value);
+      if (!isNaN(numValue) && numValue >= 0 && numValue <= 100) {
+        sanitizedTraitScores[key.trim().replace(/[^a-zA-Z0-9 _-]/g, '')] = numValue;
+      }
+    }
+
+    if (Object.keys(sanitizedTraitScores).length === 0) {
+      return res.status(400).json({ error: "No valid trait scores found." });
+    }
+
+    // Update traitScores to sanitized version for safety down the line
+    traitScores = sanitizedTraitScores;
 
     // 1. Calculate top 4 matches using the deterministic Compatibility Engine (Source of Truth)
     const topCareers = calculateCareerMatches(traitScores);
@@ -74,9 +89,9 @@ export const analyzeAssessment = async (req, res) => {
       };
       
       const unifiedReport = buildReport({ educationLevel, responses, traitScores, iqScore }, fallbackReport, topCareers);
-      saveLatestReport(unifiedReport);
+      const reportId = saveReport(unifiedReport);
 
-      return res.status(200).json(fallbackReport);
+      return res.status(200).json({ ...fallbackReport, reportId });
     }
 
     // 3. Call Groq service to generate personalized explanations
@@ -94,10 +109,11 @@ export const analyzeAssessment = async (req, res) => {
     }
     
     const unifiedReport = buildReport({ educationLevel, responses, traitScores, iqScore }, aiReport, topCareers);
-    saveLatestReport(unifiedReport);
+    const reportId = saveReport(unifiedReport);
 
     return res.status(200).json({
       success: true,
+      reportId,
       educationLevel,
       traitScores,
       iqScore,

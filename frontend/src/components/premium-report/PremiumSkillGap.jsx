@@ -20,7 +20,6 @@ const PremiumSkillGap = ({ skillGapAnalysis }) => {
               <th className="p-4 border-b-2 border-gray-900 text-sm font-bold text-gray-900 uppercase tracking-wider">Priority</th>
               <th className="p-4 border-b-2 border-gray-900 text-sm font-bold text-gray-900 uppercase tracking-wider">Difficulty</th>
               <th className="p-4 border-b-2 border-gray-900 text-sm font-bold text-gray-900 uppercase tracking-wider">Est. Time</th>
-              <th className="p-4 border-b-2 border-gray-900 text-sm font-bold text-gray-900 uppercase tracking-wider">Recommended Resources</th>
             </tr>
           </thead>
           <tbody className="text-sm text-gray-700">
@@ -39,7 +38,6 @@ const PremiumSkillGap = ({ skillGapAnalysis }) => {
                 </td>
                 <td className="p-4">{gap.difficulty}</td>
                 <td className="p-4 font-mono text-xs">{gap.estimatedTime}</td>
-                <td className="p-4 italic text-gray-600">{gap.recommendedResources}</td>
               </tr>
             ))}
           </tbody>

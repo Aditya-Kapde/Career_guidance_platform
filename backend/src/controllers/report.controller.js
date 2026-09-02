@@ -1,22 +1,22 @@
-  import { getLatestReport } from '../services/report/reportStore.js';
+  import { getReport } from '../services/report/reportStore.js';
   import { generatePremiumPDF } from '../services/pdf.service.js';
 
   /**
-   * Controller endpoint to retrieve the most recently generated report.
-   * Exposes: GET /api/report/latest
-   * Note: This is a temporary endpoint until an assessment ID based system is in place.
+   * Controller endpoint to retrieve a report by ID.
+   * Exposes: GET /api/report/:id
    */
-  export const fetchLatestReport = async (req, res) => {
+  export const fetchReport = async (req, res) => {
     try {
-      const report = getLatestReport();
+      const { id } = req.params;
+      const report = getReport(id);
       
       if (!report) {
-        return res.status(404).json({ error: "No report found. Please complete an assessment first." });
+        return res.status(404).json({ error: "Report not found or has expired." });
       }
 
       return res.status(200).json(report);
     } catch (error) {
-      console.error("Error in fetchLatestReport controller:", error);
+      console.error("Error in fetchReport controller:", error);
       return res.status(500).json({ 
         error: "An unexpected error occurred while retrieving the report." 
       });
@@ -25,16 +25,17 @@
 
   /**
    * Controller endpoint to generate and download the premium PDF report using Puppeteer.
-   * Exposes: GET /api/report/pdf
+   * Exposes: GET /api/report/pdf/:id
    */
   export const downloadPdf = async (req, res) => {
     try {
-      const report = getLatestReport();
+      const { id } = req.params;
+      const report = getReport(id);
       if (!report) {
-        return res.status(404).json({ error: "No report found. Please complete an assessment first." });
+        return res.status(404).json({ error: "Report not found or has expired." });
       }
 
-      let pdfBuffer = await generatePremiumPDF();
+      let pdfBuffer = await generatePremiumPDF(id);
       pdfBuffer = Buffer.from(pdfBuffer);
       
       res.set({

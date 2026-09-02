@@ -39,7 +39,7 @@ const CareerComparison = ({ comparison }) => {
         <div>
           <h2 className="text-xs font-bold tracking-widest text-indigo-600 uppercase mb-3">Chapter 04 • Career Pathways</h2>
           <h3 className="text-4xl font-extrabold text-slate-900 tracking-tight mb-2">Dimensional Career Comparison</h3>
-          <p className="text-slate-500 text-lg">A side-by-side evaluation of your top career pathways across 10 critical dimensions.</p>
+          <p className="text-slate-500 text-lg">A side-by-side evaluation of your top career pathways across key dimensions.</p>
         </div>
         
         {/* Legend */}
@@ -80,14 +80,9 @@ const CareerComparison = ({ comparison }) => {
             {[
               { key: 'salary', label: 'Salary Potential' },
               { key: 'difficulty', label: 'Learning Difficulty' },
-              { key: 'educationLength', label: 'Education Length' },
-              { key: 'competition', label: 'Competition' },
               { key: 'jobStability', label: 'Job Stability' },
               { key: 'remoteWork', label: 'Remote Viability' },
-              { key: 'aiResistance', label: 'AI Resistance' },
-              { key: 'creativity', label: 'Creativity Required' },
-              { key: 'leadership', label: 'Leadership Focus' },
-              { key: 'entrepreneurial', label: 'Entrepreneurial' }
+              { key: 'futureScope', label: 'Future Scope' }
             ].map((row, i) => (
               <tr key={i} className="border-b border-slate-100 hover:bg-slate-50/50 transition-colors">
                 <td className="p-4 font-semibold text-slate-800 bg-white sticky left-0 text-left flex items-center gap-3">

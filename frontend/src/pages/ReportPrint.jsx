@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import api from '../services/api';
 
 import PrintHero from '../components/print-report/PrintHero';
@@ -16,14 +17,22 @@ import PrintClosing from '../components/print-report/PrintClosing';
 
 const ReportPrint = () => {
   const [searchParams] = useSearchParams();
+  const reportId = searchParams.get('id');
+  
   const [reportData, setReportData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchReport = async () => {
+      if (!reportId) {
+        setError("Missing report ID. Cannot generate PDF.");
+        setLoading(false);
+        return;
+      }
+
       try {
-        const response = await api.get('/api/report/latest');
+        const response = await api.get(`/api/report/${reportId}`);
         setReportData(response);
         setLoading(false);
       } catch (err) {
@@ -34,7 +43,7 @@ const ReportPrint = () => {
     };
 
     fetchReport();
-  }, []);
+  }, [reportId]);
 
   // Set __REPORT_READY__ for Puppeteer once data is loaded and DOM is mounted
   useEffect(() => {
