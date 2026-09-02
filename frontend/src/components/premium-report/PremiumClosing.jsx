@@ -2,6 +2,8 @@ import React from 'react';
 import { Lightbulb, Compass } from 'lucide-react';
 
 const PremiumClosing = ({ aiInsights, closingMessage }) => {
+  if (!aiInsights || aiInsights.length === 0) return null;
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto print:break-before-page">
       <div className="mb-12">

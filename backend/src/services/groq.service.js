@@ -55,26 +55,17 @@ You MUST return a valid JSON object matching the following structure EXACTLY:
 {
   "executiveSummary": {
     "profileSummary": "High-level summary of the student.",
-    "personalityInterpretation": "...",
-    "dominantBehaviour": "...",
     "learningStyle": "...",
     "communicationStyle": "...",
-    "decisionMaking": "...",
     "biggestStrength": "...",
-    "biggestDevelopmentOpportunity": "...",
-    "readiness": "...",
-    "confidenceLevel": "..."
+    "biggestDevelopmentOpportunity": "..."
   },
   "traitAnalysis": [
     {
       "trait": "Name of trait",
       "interpretation": "What the score means",
-      "realWorldImpact": "...",
-      "advantages": "...",
-      "limitations": "...",
-      "improvements": "...",
       "careerRelevance": "..."
-    } // Generate for top 4 traits
+    } // Generate for top 3 traits only
   ],
   "topCareers": [
     {
@@ -82,21 +73,9 @@ You MUST return a valid JSON object matching the following structure EXACTLY:
       "career": "Career Name 1",
       "score": 95,
       "matchReason": "Deep, evidence-based reason why this career matches",
-      "requiredEducation": "...",
       "personalityFit": "...",
-      "industries": ["...", "..."],
-      "remoteOpportunities": "...",
-      "entrepreneurshipScore": "High/Med/Low",
       "globalDemand": "...",
-      "requiredCertifications": ["...", "..."],
-      "aiImpact": "...",
-      "salaryProgression": "...",
-      "workEnvironment": "...",
-      "pros": ["...", "..."],
-      "cons": ["...", "..."],
-      "whoShouldAvoid": "...",
-      "typicalDay": "...",
-      "growthPath": "..."
+      "aiImpact": "..."
     } // For all 4 careers provided in the prompt
   ],
   "careerComparison": [
@@ -104,16 +83,9 @@ You MUST return a valid JSON object matching the following structure EXACTLY:
       "career": "Career Name",
       "salary": "High/Med/Low",
       "difficulty": "High/Med/Low",
-      "educationLength": "Short/Med/Long",
       "futureScope": "...",
-      "aiResistance": "...",
-      "creativity": "...",
-      "leadership": "...",
-      "communication": "...",
-      "jobStability": "...",
-      "competition": "...",
-      "remoteWork": "Yes/No",
-      "entrepreneurial": "High/Med/Low"
+      "remoteWork": "Yes/No/Hybrid",
+      "jobStability": "High/Med/Low"
     } // For all 4 careers
   ],
   "swot": {
@@ -123,37 +95,30 @@ You MUST return a valid JSON object matching the following structure EXACTLY:
     "threats": ["...", "...", "..."]
   },
   "actionPlan": [
-    { "phase": "30 Days", "skills": "...", "books": "...", "courses": "...", "projects": "...", "habits": "...", "competitions": "...", "certifications": "..." },
-    { "phase": "90 Days", "skills": "...", "books": "...", "courses": "...", "projects": "...", "habits": "...", "competitions": "...", "certifications": "..." },
-    { "phase": "6 Months", "skills": "...", "books": "...", "courses": "...", "projects": "...", "habits": "...", "competitions": "...", "certifications": "..." },
-    { "phase": "1 Year", "skills": "...", "books": "...", "courses": "...", "projects": "...", "habits": "...", "competitions": "...", "certifications": "..." },
-    { "phase": "3 Years", "skills": "...", "books": "...", "courses": "...", "projects": "...", "habits": "...", "competitions": "...", "certifications": "..." }
+    { "phase": "30 Days", "skills": "...", "courses": "...", "projects": "...", "habits": "..." },
+    { "phase": "6 Months", "skills": "...", "courses": "...", "projects": "...", "habits": "..." },
+    { "phase": "1 Year", "skills": "...", "courses": "...", "projects": "...", "habits": "..." }
   ],
   "learningStrategy": {
     "howTheyLearnBest": "...",
-    "recommendations": ["watch videos", "read books", "build projects", "join communities", "learn alone", "learn in groups"] // keep only the ones that apply
+    "recommendations": ["watch videos", "read books", "build projects", "join communities"] 
   },
   "parentGuidance": {
     "howToSupport": "...",
     "whatNotToForce": "...",
-    "extracurriculars": "...",
-    "howToMotivate": "...",
-    "avoidBurnout": "...",
-    "evaluateProgress": "..."
+    "howToMotivate": "..."
   },
   "skillGapAnalysis": [
-    { "skill": "...", "targetLevel": "...", "priority": "High/Med/Low", "difficulty": "...", "estimatedTime": "...", "recommendedResources": "..." } // Top 4 skills
+    { "skill": "...", "targetLevel": "...", "priority": "High/Med/Low", "difficulty": "Hard/Med/Easy", "estimatedTime": "X months" } // Top 3 skills
   ],
   "resourceRecommendations": [
     { "type": "Book", "name": "...", "explanation": "..." },
-    { "type": "YouTube Channel", "name": "...", "explanation": "..." },
-    { "type": "Course", "name": "...", "explanation": "..." } // Provide 6-8 varied resources
+    { "type": "Course", "name": "...", "explanation": "..." } // Provide 3-4 varied resources
   ],
-  "aiInsights": [
-    "Insight 1 (e.g. You naturally communicate ideas well...)",
-    "Insight 2 (e.g. Your low analytical score suggests...)" // 3-4 insights
-  ],
-  "closingMessage": "A professional, inspiring closing statement."
+  "aiInsights": {
+    "insightsList": ["Insight 1", "Insight 2"],
+    "closingMessage": "A professional, inspiring closing statement."
+  }
 }
 
 Ensure the output is clean, valid JSON, containing only the JSON structure.
@@ -168,7 +133,6 @@ Ensure the output is clean, valid JSON, containing only the JSON structure.
         { role: 'system', content: SYSTEM_PROMPT },
         { role: 'user', content: userPrompt }
       ],
-      response_format: { type: "json_object" },
       max_tokens: 6000,
       temperature: 0.3
     });
@@ -190,6 +154,8 @@ Ensure the output is clean, valid JSON, containing only the JSON structure.
         content = match[0];
       }
     }
+
+    console.log("Raw LLM Output before parsing:", content);
 
     return JSON.parse(content);
   } catch (error) {

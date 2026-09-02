@@ -29,20 +29,6 @@ const TraitDeepDive = ({ traits }) => {
               <div className="md:col-span-8 space-y-8">
                 <div>
                   <h5 className="text-sm font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500"></span> Advantages
-                  </h5>
-                  <p className="text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-xl">{trait.advantages}</p>
-                </div>
-                
-                <div>
-                  <h5 className="text-sm font-bold text-gray-900 mb-2 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-rose-500"></span> Limitations
-                  </h5>
-                  <p className="text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-xl">{trait.limitations}</p>
-                </div>
-
-                <div>
-                  <h5 className="text-sm font-bold text-gray-900 mb-2 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-indigo-500"></span> Career Relevance
                   </h5>
                   <p className="text-gray-600 leading-relaxed bg-indigo-50/50 p-4 rounded-xl border border-indigo-100/50">{trait.careerRelevance}</p>

@@ -7,7 +7,7 @@ import api from '../services/api';
 
 export default function Loading() {
   const navigate = useNavigate();
-  const { educationLevel, responses, traitScores, getDetailedResponses, setAssessmentReport } = useAssessment();
+  const { educationLevel, responses, traitScores, getDetailedResponses, setAssessmentReport, setReportId } = useAssessment();
   const [status, setStatus] = useState('loading'); // 'loading' | 'error'
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -22,6 +22,7 @@ export default function Loading() {
       };
       
       const response = await api.post('/api/assessment/analyze', payload);
+      setReportId(response.reportId);
       setAssessmentReport(response.report || response);
       navigate('/results');
     } catch (err) {
