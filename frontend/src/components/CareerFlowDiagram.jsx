@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { 
   ReactFlow, 
   Background, 
   BackgroundVariant,
-  MiniMap, 
   ReactFlowProvider,
   useNodesState,
   useEdgesState,
-  useReactFlow
+  useReactFlow,
+  MarkerType
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import api from '../services/api';
@@ -15,97 +15,77 @@ import { useAssessment } from '../context/AssessmentContext';
 import FlowNode from './FlowNode';
 import FlowLegend from './FlowLegend';
 import FlowControls from './FlowControls';
-import { Compass, Info } from 'lucide-react';
+import { GitBranch, Info, Filter } from 'lucide-react';
 
 const nodeTypes = { careerNode: FlowNode };
 
 const LEVEL_VALUES = {
   'class-8': 1,
-  'class-9': 2,
-  'class-10': 3,
-  'puc': 4,
-  'diploma': 5,
-  'undergraduate': 6
+  'class-9': 1,
+  'class-10': 2,
+  'puc': 3,
+  'diploma': 3,
+  'undergraduate': 5
 };
 
-// Inner component to access useReactFlow hook
 function FlowDiagramContent({ careerId }) {
   const { educationLevel } = useAssessment();
-  const [nodes, setNodes, onNodesChange] = useNodesState([]);
-  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const [rawData, setRawData] = useState({ nodes: [], edges: [] });
+  const [selectedStream, setSelectedStream] = useState('all');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [isInteractive, setIsInteractive] = useState(true);
   const { fitView } = useReactFlow();
 
-  const getLayoutedElements = (rawNodes, rawEdges) => {
-    // 1. Calculate layers/levels
-    const incoming = {};
-    const adj = {};
-    rawNodes.forEach(n => {
-      incoming[n.id] = 0;
-      adj[n.id] = [];
-    });
-    rawEdges.forEach(e => {
-      if (incoming[e.target] !== undefined) {
-        incoming[e.target]++;
-      }
-      if (adj[e.source] !== undefined) {
-        adj[e.source].push(e.target);
+  const [nodes, setNodes, onNodesChange] = useNodesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+
+  // Extract available streams for filtering
+  const availableStreams = useMemo(() => {
+    const streams = new Set(['all']);
+    rawData.nodes.forEach(n => {
+      if (n.stream && n.stream !== 'Core') {
+        streams.add(n.stream);
       }
     });
+    return Array.from(streams);
+  }, [rawData.nodes]);
 
-    // Find root nodes
-    let queue = rawNodes.filter(n => incoming[n.id] === 0).map(n => ({ id: n.id, level: 0 }));
-    const levels = {};
-    const levelGroups = {};
-
-    if (queue.length === 0 && rawNodes.length > 0) {
-      queue = [{ id: rawNodes[0].id, level: 0 }];
-    }
-
-    while (queue.length > 0) {
-      const { id, level } = queue.shift();
-      if (levels[id] !== undefined && levels[id] >= level) continue;
-      levels[id] = level;
-      if (!levelGroups[level]) {
-        levelGroups[level] = [];
-      }
-      if (!levelGroups[level].includes(id)) {
-        levelGroups[level].push(id);
-      }
-      adj[id].forEach(child => {
-        queue.push({ id: child, level: level + 1 });
-      });
-    }
-
-    rawNodes.forEach(n => {
-      if (levels[n.id] === undefined) {
-        levels[n.id] = 0;
-        if (!levelGroups[0]) levelGroups[0] = [];
-        levelGroups[0].push(n.id);
-      }
+  // Layout calculations
+  const getLayoutedElements = (rawNodes, rawEdges, activeStream) => {
+    // Filter nodes if a specific stream is chosen
+    const filteredNodes = rawNodes.filter(n => {
+      if (activeStream === 'all') return true;
+      return !n.stream || n.stream === 'Core' || n.stream === activeStream;
     });
 
-    const xSpacing = 240;
-    const ySpacing = 135;
+    const filteredNodeIds = new Set(filteredNodes.map(n => n.id));
+    const filteredEdges = rawEdges.filter(e => 
+      filteredNodeIds.has(e.source) && filteredNodeIds.has(e.target)
+    );
 
-    // 2. Personalization checks & coordinate mapping
-    const userLevelVal = LEVEL_VALUES[educationLevel] || 6; // Default to undergrad
+    // Group by level for structured tiered branching
+    const levelMap = {};
+    filteredNodes.forEach(node => {
+      const lvl = node.level || 1;
+      if (!levelMap[lvl]) levelMap[lvl] = [];
+      levelMap[lvl].push(node);
+    });
 
-    const layoutedNodes = rawNodes.map(node => {
-      let status = 'future';
+    const userLevelVal = LEVEL_VALUES[educationLevel] || 2;
+    const xSpacing = 280;
+    const ySpacing = 160;
 
-      // Status assignment
-      if (userLevelVal === 1 || userLevelVal === 2) {
-        if (node.level < 3) {
-          status = 'completed';
-        } else if (node.level === 3) {
-          status = 'current';
-        } else {
-          status = 'future';
-        }
-      } else {
+    const layoutedNodes = [];
+
+    Object.keys(levelMap).sort((a, b) => Number(a) - Number(b)).forEach((lvlKey) => {
+      const lvl = Number(lvlKey);
+      const group = levelMap[lvl];
+      const count = group.length;
+
+      group.forEach((node, index) => {
+        let status = 'future';
+
         if (node.level < userLevelVal) {
           status = 'completed';
         } else if (node.level === userLevelVal) {
@@ -113,34 +93,31 @@ function FlowDiagramContent({ careerId }) {
         } else {
           status = 'future';
         }
-      }
 
-      const lvl = levels[node.id] || 0;
-      const group = levelGroups[lvl] || [node.id];
-      const index = group.indexOf(node.id);
-      const totalInLevel = group.length;
+        // Center nodes in each tier horizontally
+        const x = (index - (count - 1) / 2) * xSpacing + 500;
+        const y = (lvl - 1) * ySpacing + 40;
 
-      const x = (index - (totalInLevel - 1) / 2) * xSpacing + 250;
-      const y = lvl * ySpacing + 50;
-
-      return {
-        id: node.id,
-        type: 'careerNode',
-        position: { x, y },
-        data: {
-          label: node.label,
-          type: node.type,
-          status
-        }
-      };
+        layoutedNodes.push({
+          id: node.id,
+          type: 'careerNode',
+          position: { x, y },
+          data: {
+            label: node.label,
+            type: node.type || 'education',
+            stream: node.stream,
+            status
+          }
+        });
+      });
     });
 
-    // 3. Style edges
-    const layoutedEdges = rawEdges.map(edge => {
-      const sourceNode = layoutedNodes.find(n => n.id === edge.source);
-      const targetNode = layoutedNodes.find(n => n.id === edge.target);
+    const layoutedEdges = filteredEdges.map((edge) => {
+      const sourceNode = layoutedNodes.find((n) => n.id === edge.source);
+      const targetNode = layoutedNodes.find((n) => n.id === edge.target);
 
-      let strokeColor = '#e2e8f0'; // slate-200
+      let strokeColor = '#94A3B8';
+      let strokeWidth = 2;
       let animated = false;
 
       if (sourceNode && targetNode) {
@@ -148,13 +125,16 @@ function FlowDiagramContent({ careerId }) {
         const targetStatus = targetNode.data.status;
 
         if (sourceStatus === 'completed' && targetStatus === 'completed') {
-          strokeColor = '#10b981'; // emerald-500
+          strokeColor = '#10B981';
+          strokeWidth = 2.5;
           animated = true;
         } else if (sourceStatus === 'completed' && targetStatus === 'current') {
-          strokeColor = '#6366f1'; // indigo-500
+          strokeColor = '#4F46E5';
+          strokeWidth = 2.5;
           animated = true;
         } else if (sourceStatus === 'current') {
-          strokeColor = '#6366f1';
+          strokeColor = '#4F46E5';
+          strokeWidth = 2.5;
           animated = true;
         }
       }
@@ -163,8 +143,15 @@ function FlowDiagramContent({ careerId }) {
         id: `${edge.source}-${edge.target}`,
         source: edge.source,
         target: edge.target,
+        type: 'smoothstep',
         animated,
-        style: { stroke: strokeColor, strokeWidth: 2.5 }
+        style: { stroke: strokeColor, strokeWidth },
+        markerEnd: {
+          type: MarkerType.ArrowClosed,
+          width: 14,
+          height: 14,
+          color: strokeColor
+        }
       };
     });
 
@@ -178,20 +165,20 @@ function FlowDiagramContent({ careerId }) {
 
     api.get(`/api/flow-tree/${careerId}`)
       .then((res) => {
-        if (isMounted && res) {
-          const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(res.nodes, res.edges);
-          setNodes(layoutedNodes);
-          setEdges(layoutedEdges);
+        if (isMounted && res && res.nodes) {
+          setRawData({ nodes: res.nodes, edges: res.edges || [] });
+          const { nodes: lNodes, edges: lEdges } = getLayoutedElements(res.nodes, res.edges || [], 'all');
+          setNodes(lNodes);
+          setEdges(lEdges);
           setLoading(false);
-          // Wait briefly for canvas nodes to register before fitting view
           setTimeout(() => {
             if (isMounted) fitView({ padding: 0.15, duration: 400 });
-          }, 100);
+          }, 120);
         }
       })
       .catch((err) => {
         if (isMounted) {
-          console.error("Error loading career flow tree:", err);
+          console.error('Error loading career flow tree:', err);
           setError(true);
           setLoading(false);
         }
@@ -202,45 +189,84 @@ function FlowDiagramContent({ careerId }) {
     };
   }, [careerId, educationLevel]);
 
+  const handleStreamChange = (stream) => {
+    setSelectedStream(stream);
+    const { nodes: lNodes, edges: lEdges } = getLayoutedElements(rawData.nodes, rawData.edges, stream);
+    setNodes(lNodes);
+    setEdges(lEdges);
+    setTimeout(() => {
+      fitView({ padding: 0.15, duration: 400 });
+    }, 80);
+  };
+
   if (loading) {
     return (
-      <div className="w-full h-[400px] flex flex-col items-center justify-center bg-slate-50/50 rounded-2xl border border-slate-100">
-        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-indigo-600 mb-2"></div>
-        <p className="text-xs text-slate-550 font-semibold">Generating path decision tree...</p>
+      <div className="w-full h-[500px] flex flex-col items-center justify-center bg-slate-50/50 rounded-2xl border border-slate-100">
+        <div className="animate-spin rounded-full h-9 w-9 border-2 border-indigo-600 border-t-transparent mb-3" />
+        <p className="text-xs text-slate-500 font-semibold">Synthesizing full multi-branch decision flow tree...</p>
       </div>
     );
   }
 
   if (error || nodes.length === 0) {
     return (
-      <div className="w-full h-[300px] flex flex-col items-center justify-center bg-slate-50/50 rounded-2xl border border-slate-100 px-6 text-center">
+      <div className="w-full h-[320px] flex flex-col items-center justify-center bg-slate-50/50 rounded-2xl border border-slate-100 px-6 text-center">
         <Info className="w-8 h-8 text-slate-400 mb-2" />
-        <p className="text-xs text-slate-500 font-bold">Flow tree visualization is not available for this pathway yet.</p>
+        <p className="text-xs text-slate-500 font-bold">Decision tree visualization is not available for this pathway yet.</p>
       </div>
     );
   }
 
   return (
-    <div className="w-full flex flex-col gap-4">
-      {/* Title Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+    <div className="w-full flex flex-col gap-5">
+      {/* Title & Controls Bar */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h3 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
-            <Compass className="w-4 h-4 text-indigo-600" />
-            Alternative Career Decision Flow
+          <div className="flex items-center gap-2 mb-1">
+            <GitBranch className="w-5 h-5 text-indigo-600" />
+            <span className="text-[11px] font-bold tracking-widest text-indigo-600 uppercase">
+              Comprehensive Career Decision Map
+            </span>
+          </div>
+          <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+            Decision Trees & Branching Routes
           </h3>
-          <p className="text-[11px] text-slate-500 mt-0.5">
-            Interactive map displaying alternative branch pathways leading to this profession.
+          <p className="text-xs sm:text-sm text-slate-500 mt-0.5 max-w-3xl">
+            Detailed academic pathways starting from middle school (Class 8/9/10), through multiple 11th & 12th streams, competitive entrance exams, premier degrees, and real-world career advancements.
           </p>
         </div>
+
         <FlowControls 
           isInteractive={isInteractive} 
-          onToggleInteractive={() => setIsInteractive(prev => !prev)} 
+          onToggleInteractive={() => setIsInteractive((prev) => !prev)} 
         />
       </div>
 
-      {/* React Flow Container */}
-      <div className="w-full h-[460px] bg-slate-50/30 rounded-2xl border border-slate-200/80 overflow-hidden relative shadow-inner">
+      {/* Stream Filter Tabs */}
+      {availableStreams.length > 1 && (
+        <div className="flex items-center gap-2 overflow-x-auto pb-1">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1 shrink-0 mr-1">
+            <Filter className="w-3.5 h-3.5" /> Filter Track:
+          </span>
+          {availableStreams.map((stream) => (
+            <button
+              key={stream}
+              type="button"
+              onClick={() => handleStreamChange(stream)}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 cursor-pointer ${
+                selectedStream === stream
+                  ? 'bg-indigo-600 text-white shadow-sm shadow-indigo-200'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
+              }`}
+            >
+              {stream === 'all' ? 'All Pathways & Streams' : stream}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* Interactive Flow Canvas */}
+      <div className="w-full h-[640px] sm:h-[720px] bg-slate-50/80 rounded-3xl border border-slate-200/90 overflow-hidden relative shadow-inner">
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -255,24 +281,14 @@ function FlowDiagramContent({ careerId }) {
           panOnDrag={isInteractive}
           zoomOnScroll={isInteractive}
           zoomOnDoubleClick={isInteractive}
-          maxZoom={1.5}
-          minZoom={0.5}
+          maxZoom={1.6}
+          minZoom={0.3}
+          proOptions={{ hideAttribution: true }}
         >
-          <Background variant={BackgroundVariant.Dots} gap={16} size={1} color="#cbd5e1" />
-          <MiniMap 
-            nodeColor={(n) => {
-              if (n.data?.status === 'completed') return '#10b981';
-              if (n.data?.status === 'current') return '#4f46e5';
-              return '#e2e8f0';
-            }} 
-            style={{ borderRadius: '12px', border: '1px solid #f1f5f9' }} 
-            zoomable
-            pannable
-          />
+          <Background variant={BackgroundVariant.Dots} gap={20} size={1.2} color="#cbd5e1" />
         </ReactFlow>
       </div>
 
-      {/* Legend Footer */}
       <div className="flex justify-start">
         <FlowLegend />
       </div>
@@ -280,12 +296,10 @@ function FlowDiagramContent({ careerId }) {
   );
 }
 
-// Main wrapping component to supply ReactFlowProvider
 export default function CareerFlowDiagram({ careerId }) {
   return (
     <ReactFlowProvider>
-      <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 mb-8 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-soft-sm border border-slate-200/80 neu-flat mb-8 relative overflow-hidden">
         <FlowDiagramContent careerId={careerId} />
       </div>
     </ReactFlowProvider>

@@ -1,18 +1,24 @@
 import React from 'react';
+import { GraduationCap, ShieldCheck } from 'lucide-react';
 
-const ReportFooter = () => {
+export default function ReportFooter() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-100 mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="text-sm text-gray-500">
-          © {new Date().getFullYear()} AI Career Guidance Platform. All rights reserved.
+    <footer className="mt-16 pt-8 border-t border-slate-200/80 text-center space-y-3 pb-8">
+      <div className="flex items-center justify-center gap-2 text-slate-900 font-extrabold text-sm">
+        <div className="w-6 h-6 rounded-lg bg-indigo-600 text-white flex items-center justify-center">
+          <GraduationCap className="w-3.5 h-3.5" />
         </div>
-        <div className="flex gap-6">
-          <span className="text-sm text-gray-400">Generated securely</span>
-        </div>
+        <span>PathFinder AI • Personal Career Intelligence Platform</span>
       </div>
+
+      <div className="flex items-center justify-center gap-2 text-xs text-slate-500">
+        <ShieldCheck className="w-4 h-4 text-emerald-600" />
+        <span>Calculated via deterministic psychometric engines & Groq Llama 3 models.</span>
+      </div>
+
+      <p className="text-[11px] text-slate-400 max-w-md mx-auto">
+        This document provides personalized career and academic guidance. Final career decisions should consider individual circumstances, academic performance, and personal counsel.
+      </p>
     </footer>
   );
-};
-
-export default ReportFooter;
+}

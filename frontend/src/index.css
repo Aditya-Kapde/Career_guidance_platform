@@ -1,59 +1,157 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --color-brand-light: #EEF2FF;
-  --color-brand: #6366F1;
-  --color-brand-dark: #4F46E5;
-  --color-brand-purple: #8B5CF6;
-  --color-brand-purple-dark: #7C3AED;
-  --border-radius-xl-card: 1.5rem;
-  --font-sans: 'Inter', sans-serif;
+  --color-brand-50: #EEF2FF;
+  --color-brand-100: #E0E7FF;
+  --color-brand-200: #C7D2FE;
+  --color-brand-300: #A5B4FC;
+  --color-brand-400: #818CF8;
+  --color-brand-500: #6366F1;
+  --color-brand-600: #4F46E5;
+  --color-brand-700: #4338CA;
+  --color-brand-800: #3730A3;
+  --color-brand-900: #312E81;
+  --color-brand-950: #1E1B4B;
+
+  --color-surface-bg: #F8FAFC;
+  --color-surface-card: #FFFFFF;
+  --color-surface-muted: #F1F5F9;
+  --color-surface-border: #E2E8F0;
+
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  --shadow-soft-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --shadow-soft-md: 0 4px 12px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  --shadow-soft-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  --shadow-soft-xl: 0 20px 32px -6px rgba(0, 0, 0, 0.07), 0 8px 16px -4px rgba(0, 0, 0, 0.03);
+  
+  --shadow-neu-flat: 4px 4px 12px #e6ebf1, -4px -4px 12px #ffffff;
+  --shadow-neu-inset: inset 2px 2px 5px #e2e8f0, inset -2px -2px 5px #ffffff;
+  --shadow-neu-raised: 6px 6px 16px #e6ebf1, -6px -6px 16px #ffffff;
+  --shadow-neu-accent: 0 10px 25px -5px rgba(79, 70, 229, 0.25);
 }
 
-@utility glassmorphism {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-@utility glassmorphism-dark {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Custom base body styling */
+/* Base Document Styling */
 html, body {
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(243, 244, 246, 1) 0, transparent 50%), 
-    radial-gradient(at 50% 0%, rgba(238, 242, 255, 1) 0, transparent 50%), 
-    radial-gradient(at 100% 0%, rgba(245, 243, 255, 1) 0, transparent 50%);
-  background-attachment: fixed;
-  background-color: #f8fafc; /* bg-slate-50 equivalent */
-  color: #020617; /* text-slate-950 equivalent */
-  font-family: 'Inter', sans-serif;
+  background-color: #F8FAFC;
+  color: #0F172A;
+  font-family: var(--font-sans);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
 }
 
-/* Premium Document Print Mode (Used by Puppeteer Backend Generator) */
+/* Subtle background ambiance */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 600px;
+  background: radial-gradient(circle at 50% -10%, rgba(99, 102, 241, 0.06) 0%, rgba(248, 250, 252, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Utility Classes for Soft Neumorphic & Surface Design */
+@utility neu-flat {
+  background: #FFFFFF;
+  box-shadow: 4px 4px 14px #eaeff6, -4px -4px 14px #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+@utility neu-inset {
+  background: #F8FAFC;
+  box-shadow: inset 2px 2px 6px #e2e8f0, inset -2px -2px 6px #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+@utility neu-raised {
+  background: #FFFFFF;
+  box-shadow: 6px 6px 20px #e4eaf3, -6px -6px 20px #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+@utility neu-accent {
+  box-shadow: 0 10px 25px -4px rgba(79, 70, 229, 0.25), 0 4px 10px -2px rgba(79, 70, 229, 0.15);
+}
+
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+}
+
+@utility glass-dark {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Focus Ring Accessibility */
+*:focus-visible {
+  outline: 2px solid #4F46E5;
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(0.98); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* Premium Document Print Mode */
 .print-mode {
   background: white !important;
+  color: #0f172a !important;
 }
 
 @media print {
   @page {
     size: A4 portrait;
-    margin: 10mm;
+    margin: 10mm 8mm;
   }
 
-  /* Force explicit text and background colors & Prevent container collapse */
-  html, body, #root, main, .report-container {
-    background-color: #ffffff !important;
-    color: #0f172a !important; /* Slate 900 */
+  html, body, #root, main, .print-mode {
+    background: #ffffff !important;
+    color: #0f172a !important;
     height: auto !important;
     min-height: auto !important;
     overflow: visible !important;
@@ -61,50 +159,34 @@ html, body {
     print-color-adjust: exact !important;
   }
 
-  /* Ensure all text elements are explicitly dark and readable */
-  h1, h2, h3, h4, h5, h6, p, span, li, td, th, div {
-    color: #0f172a !important;
-    text-shadow: none !important;
+  .no-print, aside, nav, button, header, .no-print-area {
+    display: none !important;
   }
 
-  /* Force explicit heights on Recharts containers during print */
+  .print-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+
+  .print-avoid-break, .print\:break-inside-avoid {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
   .recharts-responsive-container {
-    min-height: 320px !important;
-    height: 320px !important;
+    min-height: 280px !important;
+    height: 280px !important;
     width: 100% !important;
     display: block !important;
     visibility: visible !important;
   }
 
-  .recharts-wrapper, .recharts-surface {
+  .recharts-wrapper, .recharts-surface, svg {
     overflow: visible !important;
     visibility: visible !important;
-  }
-
-  /* Force card backgrounds to render with light borders and Relax page break rules */
-  .report-card, section, div[class*="bg-"] {
-    background-color: #f8fafc !important; /* Slate 50 */
-    border: 1px solid #e2e8f0 !important; /* Slate 200 */
-    box-shadow: none !important;
-    break-inside: auto !important;
-    page-break-inside: auto !important;
-    margin-bottom: 1.5rem !important;
-  }
-
-  /* Keep individual chart blocks intact without creating blank leading pages */
-  .chart-container, .recharts-wrapper, svg {
-    break-inside: avoid !important;
     page-break-inside: avoid !important;
-  }
-
-  /* Ensure SVG paths and chart fills are visible */
-  svg path, svg circle, svg rect {
+    break-inside: avoid !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
-  }
-
-  /* Hide interactive UI elements */
-  .no-print, nav, button, header .download-btn {
-    display: none !important;
   }
 }

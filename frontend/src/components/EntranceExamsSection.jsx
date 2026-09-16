@@ -1,37 +1,40 @@
 import React from 'react';
-import { BookOpen, HelpCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { BookOpen } from 'lucide-react';
+import Badge from './ui/Badge';
 
-export default function EntranceExamsSection({
-  entranceExams = [
-    "JEE Main",
-    "JEE Advanced",
-    "GATE (for Postgraduate/PSUs)",
-    "State-level Engineering Entrances"
-  ]
-}) {
+export default function EntranceExamsSection({ entranceExams = [] }) {
+  if (!entranceExams || entranceExams.length === 0) return null;
+
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 mb-8 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50/30 rounded-full blur-2xl pointer-events-none" />
+    <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/80 shadow-soft-sm neu-flat space-y-4">
+      <div className="flex items-center gap-2.5">
+        <div className="w-8 h-8 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600">
+          <BookOpen className="w-4 h-4 stroke-[2.2]" />
+        </div>
+        <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight">
+          Entrance Exams & Criteria
+        </h3>
+      </div>
 
-      <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 relative z-10">
-        <BookOpen className="w-5 h-5 text-indigo-600" />
-        Key Entrance Examinations
-      </h2>
-      
-      <div className="grid grid-cols-1 gap-3 relative z-10">
-        {entranceExams.map((exam, idx) => (
-          <motion.div 
-            key={idx}
-            whileHover={{ x: 2 }}
-            className="p-3.5 bg-slate-50/50 hover:bg-slate-50 rounded-xl border border-slate-100 flex items-center gap-3 transition-colors"
-          >
-            <div className="bg-indigo-50 text-indigo-600 p-1.5 rounded-lg border border-indigo-100/50 shrink-0">
-              <HelpCircle className="w-4 h-4" />
+      <div className="space-y-2.5 pt-1">
+        {entranceExams.map((exam, idx) => {
+          const isObj = typeof exam === 'object';
+          const title = isObj ? exam.name || exam.exam : exam;
+          const desc = isObj ? exam.description || exam.level : null;
+
+          return (
+            <div key={idx} className="p-3 rounded-2xl bg-amber-50/40 border border-amber-100/70 text-xs">
+              <span className="font-bold text-slate-900 block">
+                {title}
+              </span>
+              {desc && (
+                <span className="text-slate-500 text-[11px] block mt-0.5">
+                  {desc}
+                </span>
+              )}
             </div>
-            <span className="text-slate-700 font-extrabold text-xs md:text-sm leading-snug">{exam}</span>
-          </motion.div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

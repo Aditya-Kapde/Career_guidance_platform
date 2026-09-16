@@ -1,40 +1,58 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { TrendingUp } from 'lucide-react';
+import Badge from './ui/Badge';
 
-export default function CareerProgressionSection({
-  careerProgression = [
-    {
-      stage: "Junior Civil Engineer",
-      duration: "1-2 years",
-      responsibilities: "Assisting senior engineers, performing calculations, and daily site supervision."
-    },
-    {
-      stage: "Assistant Engineer",
-      duration: "2-5 years",
-      responsibilities: "Managing structural design sub-sections and supervising site operations."
-    }
-  ]
-}) {
+export default function CareerProgressionSection({ careerProgression = [] }) {
+  if (!careerProgression || careerProgression.length === 0) return null;
+
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 mb-8">
-      <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-        <ArrowUpRight className="w-5 h-5 text-indigo-600" />
-        Career Progression Pathways
-      </h2>
-      <div className="relative border-l border-indigo-100 ml-4 pl-6 space-y-6">
-        {careerProgression.map((prog, idx) => (
-          <div key={idx} className="relative">
-            {/* Dot */}
-            <span className="absolute -left-[30px] top-1.5 bg-indigo-50 border-2 border-indigo-500 w-4 h-4 rounded-full flex items-center justify-center shadow-sm" />
-            <div>
-              <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                <h3 className="font-bold text-slate-900 text-sm md:text-base">{prog.stage}</h3>
-                <span className="text-xs text-slate-450 bg-slate-100 px-2 py-0.5 rounded font-bold">{prog.duration}</span>
+    <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-soft-sm neu-flat space-y-6">
+      <div className="flex items-center gap-2.5">
+        <div className="w-8 h-8 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
+          <TrendingUp className="w-4 h-4 stroke-[2.2]" />
+        </div>
+        <div>
+          <p className="text-[11px] font-bold tracking-widest text-indigo-600 uppercase">
+            Trajectory
+          </p>
+          <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
+            Career Role Progression
+          </h3>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-2">
+        {careerProgression.map((step, idx) => {
+          const isObj = typeof step === 'object';
+          const role = isObj ? step.stage || step.role || step.title : String(step);
+          const yoe = isObj ? step.duration || step.experience || step.years : null;
+          const desc = isObj ? step.responsibilities || step.description : null;
+
+          return (
+            <div key={idx} className="p-4 rounded-2xl bg-slate-50 border border-slate-200/60 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[11px] font-bold text-indigo-600">
+                  STAGE {String(idx + 1).padStart(2, '0')}
+                </span>
+                {yoe && (
+                  <Badge variant="slate" size="sm">
+                    {yoe}
+                  </Badge>
+                )}
               </div>
-              <p className="text-slate-600 text-xs md:text-sm leading-relaxed">{prog.responsibilities}</p>
+
+              <h4 className="font-bold text-sm text-slate-900 leading-tight">
+                {role}
+              </h4>
+
+              {desc && (
+                <p className="text-xs text-slate-500 leading-relaxed pt-1">
+                  {desc}
+                </p>
+              )}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

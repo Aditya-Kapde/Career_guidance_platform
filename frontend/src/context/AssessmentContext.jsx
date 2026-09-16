@@ -21,35 +21,91 @@ const INITIAL_TRAIT_SCORES = {
   learningStyle: 0
 };
 
+const getStored = (key, fallback) => {
+  try {
+    const item = localStorage.getItem(`pathfinder_${key}`);
+    if (item === null || item === undefined) return fallback;
+    return JSON.parse(item);
+  } catch (err) {
+    console.warn(`Error reading pathfinder_${key} from localStorage:`, err);
+    return fallback;
+  }
+};
+
+const setStored = (key, value) => {
+  try {
+    if (value === null || value === undefined) {
+      localStorage.removeItem(`pathfinder_${key}`);
+    } else {
+      localStorage.setItem(`pathfinder_${key}`, JSON.stringify(value));
+    }
+  } catch (err) {
+    console.warn(`Error writing pathfinder_${key} to localStorage:`, err);
+  }
+};
+
 const AssessmentContext = createContext(null);
 
 const selectRandomQuestions = (allQuestions) => {
   if (!allQuestions || allQuestions.length === 0) return [];
-
-  // Return all available questions shuffled for the full expanded assessment (up to 40)
+  // Return shuffled questions for assessment (up to 40)
   const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, 40);
 };
 
 export function AssessmentProvider({ children }) {
-  const [educationLevel, setEducationLevel] = useState(null);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [responses, setResponses] = useState({}); // e.g., { 0: [1], 1: [0, 2] }
-  const [traitScores, setTraitScores] = useState(INITIAL_TRAIT_SCORES);
-  const [selectedQuestions, setSelectedQuestions] = useState([]);
-  const [assessmentReport, setAssessmentReport] = useState(null);
+  const [educationLevel, setEducationLevel] = useState(() => getStored('educationLevel', null));
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(() => getStored('currentQuestionIndex', 0));
+  const [responses, setResponses] = useState(() => getStored('responses', {}));
+  const [traitScores, setTraitScores] = useState(() => getStored('traitScores', INITIAL_TRAIT_SCORES));
+  const [selectedQuestions, setSelectedQuestions] = useState(() => getStored('selectedQuestions', []));
+  const [assessmentReport, setAssessmentReport] = useState(() => getStored('assessmentReport', null));
+  const [reportId, setReportId] = useState(() => getStored('reportId', null));
 
-  const [reportId, setReportId] = useState(null);
-
+  // Sync state to localStorage whenever values change
   useEffect(() => {
-    if (educationLevel) {
-      setSelectedQuestions(selectRandomQuestions(QUESTIONS));
-    } else {
-      setSelectedQuestions([]);
-    }
+    setStored('educationLevel', educationLevel);
   }, [educationLevel]);
 
   useEffect(() => {
+    setStored('currentQuestionIndex', currentQuestionIndex);
+  }, [currentQuestionIndex]);
+
+  useEffect(() => {
+    setStored('responses', responses);
+  }, [responses]);
+
+  useEffect(() => {
+    setStored('traitScores', traitScores);
+  }, [traitScores]);
+
+  useEffect(() => {
+    setStored('selectedQuestions', selectedQuestions);
+  }, [selectedQuestions]);
+
+  useEffect(() => {
+    setStored('assessmentReport', assessmentReport);
+  }, [assessmentReport]);
+
+  useEffect(() => {
+    setStored('reportId', reportId);
+  }, [reportId]);
+
+  // If educationLevel is chosen and no questions are selected yet, pick them
+  useEffect(() => {
+    if (educationLevel) {
+      setSelectedQuestions((prev) => {
+        if (prev && prev.length > 0) return prev;
+        return selectRandomQuestions(QUESTIONS);
+      });
+    }
+  }, [educationLevel]);
+
+  // Recalculate trait scores dynamically from responses & selected questions
+  useEffect(() => {
+    if (!selectedQuestions || selectedQuestions.length === 0) return;
+    if (Object.keys(responses).length === 0) return;
+
     const newScores = { ...INITIAL_TRAIT_SCORES };
     
     Object.keys(responses).forEach((qIdxStr) => {
@@ -108,6 +164,19 @@ export function AssessmentProvider({ children }) {
     setSelectedQuestions([]);
     setAssessmentReport(null);
     setReportId(null);
+
+    // Clear all localStorage keys
+    [
+      'educationLevel',
+      'currentQuestionIndex',
+      'responses',
+      'traitScores',
+      'selectedQuestions',
+      'assessmentReport',
+      'reportId'
+    ].forEach((k) => {
+      localStorage.removeItem(`pathfinder_${k}`);
+    });
   };
 
   const getSelectedOptionsForQuestion = (questionIndex) => {

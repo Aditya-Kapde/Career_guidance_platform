@@ -1,46 +1,77 @@
 import React from 'react';
-import { Target, TrendingUp, AlertTriangle, Lightbulb } from 'lucide-react';
+import { Target, TrendingUp, AlertTriangle, Lightbulb, CheckCircle2 } from 'lucide-react';
 
-const ExecutiveBriefing = ({ execData }) => {
-  if (!execData) return null;
+const PrintExecutiveBriefing = ({ summary }) => {
+  if (!summary) return null;
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-b border-gray-100 print:break-after-page print:pt-10">
-      <div className="mb-12">
-        <h2 className="text-sm font-bold tracking-widest text-indigo-600 uppercase mb-2">Chapter 01</h2>
-        <h3 className="text-3xl font-bold text-gray-900 tracking-tight">Executive Briefing</h3>
-      </div>
-
-      <div className="prose prose-lg text-gray-600 mb-16 leading-relaxed max-w-none">
-        <p className="text-2xl font-light text-gray-900 leading-snug border-l-4 border-indigo-600 pl-6">
-          {execData.profileSummary}
+    <section className="w-full max-w-[760px] mx-auto px-6 py-10 border-b border-slate-200/80 bg-white print:break-after-page">
+      <div className="mb-6">
+        <span className="text-[10px] font-bold tracking-widest text-indigo-600 uppercase block mb-1">
+          Chapter 01
+        </span>
+        <h2 className="text-2xl font-black text-slate-900 tracking-tight">
+          Executive Aptitude Briefing
+        </h2>
+        <p className="text-xs text-slate-500 mt-1">
+          Synthesized behavioral observations and primary cognitive archetype.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-        <div className="space-y-12">
-          <div>
-            <h4 className="flex items-center gap-2 text-lg font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">
-              <Lightbulb size={20} className="text-amber-500"/> Cognitive Style
-            </h4>
-            <p className="text-gray-600 leading-relaxed mb-4"><span className="font-semibold text-gray-900">Learning:</span> {execData.learningStyle || "Self-directed learning through hands-on experience."}</p>
-            <p className="text-gray-600 leading-relaxed"><span className="font-semibold text-gray-900">Communication:</span> {execData.communicationStyle || "Clear, direct, and focused on practical outcomes."}</p>
+      {/* Main Quote / Profile Summary */}
+      <div className="p-5 bg-slate-50/90 rounded-2xl border-l-4 border-indigo-600 border border-slate-200/60 mb-8">
+        <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+          "{summary.profileSummary || summary}"
+        </p>
+      </div>
+
+      {/* 2-Column Symmetrical Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Left: Cognitive & Communication */}
+        <div className="p-5 bg-white rounded-2xl border border-slate-200/80 space-y-4">
+          <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
+            <Lightbulb className="w-4 h-4 text-amber-500" />
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-800">
+              Cognitive & Learning Pattern
+            </h3>
+          </div>
+          
+          <div className="space-y-3 text-xs">
+            <div>
+              <span className="font-bold text-slate-700 block mb-0.5">Learning Modality:</span>
+              <p className="text-slate-600 leading-relaxed">
+                {summary.learningStyle || "Self-directed, structured conceptual absorption through real-world applications."}
+              </p>
+            </div>
+            <div>
+              <span className="font-bold text-slate-700 block mb-0.5">Communication Profile:</span>
+              <p className="text-slate-600 leading-relaxed">
+                {summary.communicationStyle || "Clear, analytical, and focused on practical collaboration and goal delivery."}
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="space-y-6">
-          <div className="bg-indigo-50/50 rounded-2xl p-8 border border-indigo-100/50 print:break-inside-avoid">
-            <h4 className="flex items-center gap-2 text-sm font-bold text-indigo-900 uppercase tracking-widest mb-4">
-              <TrendingUp size={16} /> Key Finding / Strength
-            </h4>
-            <p className="text-gray-800 font-medium leading-relaxed">{execData.biggestStrength}</p>
+        {/* Right: Key Strength & Development Area */}
+        <div className="space-y-4">
+          <div className="p-4 bg-emerald-50/70 rounded-2xl border border-emerald-200/80 space-y-1.5">
+            <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-900 uppercase tracking-wider">
+              <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Core Anchor Strength</span>
+            </div>
+            <p className="text-xs text-emerald-950 font-medium leading-relaxed">
+              {summary.biggestStrength || "Demonstrates strong foundational problem-solving and structured cognitive agility."}
+            </p>
           </div>
 
-          <div className="bg-rose-50/50 rounded-2xl p-8 border border-rose-100/50 print:break-inside-avoid">
-            <h4 className="flex items-center gap-2 text-sm font-bold text-rose-900 uppercase tracking-widest mb-4">
-              <AlertTriangle size={16} /> Risk / Development Area
-            </h4>
-            <p className="text-gray-800 font-medium leading-relaxed">{execData.biggestDevelopmentOpportunity}</p>
+          <div className="p-4 bg-rose-50/70 rounded-2xl border border-rose-200/80 space-y-1.5">
+            <div className="flex items-center gap-1.5 text-xs font-bold text-rose-900 uppercase tracking-wider">
+              <AlertTriangle className="w-3.5 h-3.5 text-rose-600" />
+              <span>Primary Development Opportunity</span>
+            </div>
+            <p className="text-xs text-rose-950 font-medium leading-relaxed">
+              {summary.biggestDevelopmentOpportunity || "Expanding tolerance for open-ended ambiguity and building high-tempo decision habits."}
+            </p>
           </div>
         </div>
       </div>
@@ -48,4 +79,4 @@ const ExecutiveBriefing = ({ execData }) => {
   );
 };
 
-export default ExecutiveBriefing;
+export default PrintExecutiveBriefing;

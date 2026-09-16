@@ -1,55 +1,40 @@
 import React from 'react';
-import { School, MapPin, Award } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { School } from 'lucide-react';
+import Badge from './ui/Badge';
 
-export default function TopCollegesSection({
-  topColleges = [
-    {
-      name: "Indian Institute of Technology (IIT) Bombay",
-      location: "Mumbai, India",
-      rank: "Top Tier National Institute"
-    },
-    {
-      name: "Indian Institute of Technology (IIT) Delhi",
-      location: "New Delhi, India",
-      rank: "Top Tier National Institute"
-    }
-  ]
-}) {
+export default function TopCollegesSection({ topColleges = [] }) {
+  if (!topColleges || topColleges.length === 0) return null;
+
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 mb-8 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-24 h-24 bg-sky-50/30 rounded-full blur-2xl pointer-events-none" />
+    <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/80 shadow-soft-sm neu-flat space-y-4">
+      <div className="flex items-center gap-2.5">
+        <div className="w-8 h-8 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600">
+          <School className="w-4 h-4 stroke-[2.2]" />
+        </div>
+        <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight">
+          Premier Academic Institutions
+        </h3>
+      </div>
 
-      <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 relative z-10">
-        <School className="w-5 h-5 text-indigo-600" />
-        Top Higher Education Institutes
-      </h2>
-      
-      <div className="space-y-4 relative z-10">
-        {topColleges.map((college, idx) => (
-          <motion.div 
-            key={idx}
-            whileHover={{ y: -2 }}
-            className="p-4 bg-slate-50/50 hover:bg-white rounded-xl border border-slate-100 flex flex-col justify-between shadow-sm transition-all"
-          >
-            <div>
-              <h3 className="font-extrabold text-slate-800 text-xs md:text-sm leading-snug mb-1.5 flex items-start gap-1.5">
-                <School className="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" />
-                {college.name}
-              </h3>
-              <div className="flex items-center gap-1 text-slate-400 text-[10px] md:text-xs font-semibold mb-3">
-                <MapPin className="w-3.5 h-3.5 text-slate-300" />
-                <span>{college.location}</span>
-              </div>
-            </div>
-            <div>
-              <span className="bg-emerald-50 text-emerald-600 text-[10px] px-2.5 py-0.5 rounded-full border border-emerald-100 font-bold inline-flex items-center gap-1">
-                <Award className="w-3 h-3" />
-                {college.rank}
+      <div className="space-y-2.5 pt-1">
+        {topColleges.map((college, idx) => {
+          const isObj = typeof college === 'object';
+          const name = isObj ? college.name || college.college : college;
+          const loc = isObj ? college.location : null;
+
+          return (
+            <div key={idx} className="p-3 rounded-2xl bg-emerald-50/40 border border-emerald-100/70 text-xs">
+              <span className="font-bold text-slate-900 block">
+                {name}
               </span>
+              {loc && (
+                <span className="text-slate-500 text-[11px] block mt-0.5">
+                  {loc}
+                </span>
+              )}
             </div>
-          </motion.div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

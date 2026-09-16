@@ -1,36 +1,26 @@
 import React from 'react';
-import { Building2, Globe } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Building2 } from 'lucide-react';
+import Badge from './ui/Badge';
 
-export default function IndustriesSection({
-  industries = [
-    "Real Estate & Urban Development",
-    "Infrastructure & Transportation (Roadways, Railways, Airports)",
-    "Water Resource Management & Environmental Engineering",
-    "Government Sector & Public Works Departments (PWD, NHAI, CPWD)"
-  ]
-}) {
+export default function IndustriesSection({ industries = [] }) {
+  if (!industries || industries.length === 0) return null;
+
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 mb-8 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-50/30 rounded-full blur-2xl pointer-events-none" />
+    <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/80 shadow-soft-sm neu-flat space-y-4">
+      <div className="flex items-center gap-2.5">
+        <div className="w-8 h-8 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600">
+          <Building2 className="w-4 h-4 stroke-[2.2]" />
+        </div>
+        <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight">
+          Hiring Industries
+        </h3>
+      </div>
 
-      <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 relative z-10">
-        <Building2 className="w-5 h-5 text-indigo-600" />
-        Primary Industries & Sectors
-      </h2>
-      
-      <div className="grid grid-cols-1 gap-3 relative z-10">
-        {industries.map((industry, idx) => (
-          <motion.div 
-            key={idx}
-            whileHover={{ x: 2 }}
-            className="p-3.5 bg-slate-50/50 hover:bg-slate-50 rounded-xl border border-slate-100 flex items-center gap-3 transition-colors"
-          >
-            <div className="bg-emerald-50 text-emerald-600 p-1.5 rounded-lg border border-emerald-100/50 shrink-0">
-              <Globe className="w-4 h-4" />
-            </div>
-            <span className="text-slate-700 text-xs md:text-sm font-extrabold leading-normal">{industry}</span>
-          </motion.div>
+      <div className="flex flex-wrap gap-2 pt-1">
+        {industries.map((ind, idx) => (
+          <Badge key={idx} variant="blue" size="md">
+            {ind}
+          </Badge>
         ))}
       </div>
     </div>

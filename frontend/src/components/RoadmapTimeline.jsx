@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, Tag, CheckCircle2, Circle, ChevronDown, ChevronUp, Milestone } from 'lucide-react';
+import { Calendar, Tag, CheckCircle2, Circle, ChevronDown, ChevronUp, Milestone, Sparkles } from 'lucide-react';
+import Badge from './ui/Badge';
+import ProgressBar from './ui/ProgressBar';
 
 const STAGE_ORDER = ['class9', 'class10', 'class11_12', 'diploma', 'undergraduate'];
 
@@ -14,11 +16,10 @@ const STAGE_LABELS = {
 
 export default function RoadmapTimeline({
   roadmaps = {},
-  educationLevel = "class-9"
+  educationLevel = "undergraduate"
 }) {
-  // Map educationLevel to active stage key
   const getStageKey = (edu) => {
-    if (!edu) return 'class9';
+    if (!edu) return 'undergraduate';
     switch (edu.toLowerCase()) {
       case 'class-8':
       case 'class-9':
@@ -35,77 +36,69 @@ export default function RoadmapTimeline({
       case 'undergraduate':
         return 'undergraduate';
       default:
-        return 'class9';
+        return 'undergraduate';
     }
   };
 
   const currentStage = getStageKey(educationLevel);
-  const currentStageIndex = STAGE_ORDER.indexOf(currentStage);
+  const currentStageIndex = Math.max(0, STAGE_ORDER.indexOf(currentStage));
 
-  // Accordion open/close state. Initialize current stage as open.
   const [expandedStages, setExpandedStages] = useState({
     [currentStage]: true
   });
 
-  // Expand the active stage automatically if educationLevel updates
   useEffect(() => {
-    setExpandedStages(prev => ({
+    setExpandedStages((prev) => ({
       ...prev,
       [currentStage]: true
     }));
   }, [currentStage]);
 
   const toggleStage = (stage) => {
-    setExpandedStages(prev => ({
+    setExpandedStages((prev) => ({
       ...prev,
       [stage]: !prev[stage]
     }));
   };
 
-  // Scroll to current stage header on load
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const el = document.getElementById(`stage-${currentStage}`);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }, 600);
-    return () => clearTimeout(timer);
-  }, [currentStage]);
-
-  // Calculations for progress indicator
   const totalStages = STAGE_ORDER.length;
-  const completedCount = currentStageIndex; // e.g. if index is 2, 2 stages (0 and 1) are complete
-  const progressPercent = (completedCount / totalStages) * 100;
+  const completedCount = currentStageIndex;
+  const progressPercent = Math.round((completedCount / totalStages) * 100);
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 mb-8">
-      <h2 className="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
-        <Milestone className="w-5 h-5 text-indigo-600" />
-        Interactive Career Roadmap
-      </h2>
-      <p className="text-xs md:text-sm text-slate-500 mb-6">
-        Personalized path based on your current education level: <span className="font-bold text-indigo-600 uppercase">{educationLevel ? educationLevel.replace('-', ' ') : 'Class 9'}</span>
-      </p>
+    <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-soft-sm neu-flat space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <Milestone className="w-5 h-5 text-indigo-600" />
+            <span className="text-[11px] font-bold tracking-widest text-indigo-600 uppercase">
+              Chronological Roadmap
+            </span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+            Education & Skill Progression
+          </h2>
+          <p className="text-xs text-slate-500 mt-0.5">
+            Active level: <strong className="text-slate-800 uppercase">{educationLevel ? educationLevel.replace('-', ' ') : 'Undergraduate'}</strong>
+          </p>
+        </div>
 
-      {/* Progress Indicator */}
-      <div className="mb-8 p-4 bg-slate-50/50 rounded-xl border border-slate-100">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Roadmap Progress</span>
-          <span className="text-xs font-bold text-slate-500">
-            {completedCount} of {totalStages} Stages Cleared ({Math.round(progressPercent)}%)
-          </span>
-        </div>
-        <div className="w-full bg-slate-150 h-2.5 rounded-full overflow-hidden">
-          <div 
-            className="h-full bg-emerald-500 rounded-full transition-all duration-500" 
-            style={{ width: `${progressPercent}%` }}
-          />
-        </div>
+        <Badge variant="indigo" size="sm">
+          {completedCount} / {totalStages} Stages Cleared
+        </Badge>
       </div>
 
-      {/* Stages Timeline List */}
-      <div className="space-y-6">
+      {/* Progress Track */}
+      <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/60 space-y-2">
+        <div className="flex justify-between text-xs font-semibold text-slate-700">
+          <span>Overall Progression</span>
+          <span className="font-mono text-indigo-600 font-bold">{progressPercent}%</span>
+        </div>
+        <ProgressBar value={progressPercent} variant="gradient" size="sm" />
+      </div>
+
+      {/* Stages Accordion List */}
+      <div className="space-y-4">
         {STAGE_ORDER.map((stageKey, idx) => {
           const isCompleted = idx < currentStageIndex;
           const isCurrent = idx === currentStageIndex;
@@ -113,119 +106,108 @@ export default function RoadmapTimeline({
           const steps = roadmaps[stageKey] || [];
           const isOpen = !!expandedStages[stageKey];
 
-          // Determine stage color theme classes
-          let bgHeader = "bg-slate-50/50 hover:bg-slate-100/50";
-          let textTitle = "text-slate-850";
-          
-          if (isCurrent) {
-            bgHeader = "bg-indigo-50/20 hover:bg-indigo-50/40";
-            textTitle = "text-indigo-900 font-extrabold";
-          } else if (isCompleted) {
-            bgHeader = "bg-emerald-50/10 hover:bg-emerald-50/20";
-            textTitle = "text-slate-700";
-          } else if (isUpcoming) {
-            textTitle = "text-slate-400";
-          }
-
           return (
-            <div 
-              key={stageKey} 
-              id={`stage-${stageKey}`}
-              className={`rounded-xl border transition-all overflow-hidden ${
-                isCurrent 
-                  ? "shadow-md ring-2 ring-indigo-500/10 border-indigo-200" 
-                  : "border-slate-150 shadow-sm"
+            <div
+              key={stageKey}
+              className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                isCurrent
+                  ? 'border-indigo-200 bg-indigo-50/20 shadow-soft-sm ring-1 ring-indigo-500/20'
+                  : isCompleted
+                  ? 'border-emerald-200/60 bg-white'
+                  : 'border-slate-200/80 bg-white'
               }`}
             >
-              {/* Accordion Header */}
+              {/* Accordion Trigger Header */}
               <button
+                type="button"
                 onClick={() => toggleStage(stageKey)}
-                className={`w-full p-4 flex items-center justify-between text-left transition-colors cursor-pointer ${bgHeader}`}
+                className="w-full p-4 sm:p-5 flex items-center justify-between text-left transition-colors cursor-pointer hover:bg-slate-50/80"
               >
-                <div className="flex items-center gap-3">
-                  {/* Status Indicator Icon */}
+                <div className="flex items-center gap-3.5">
                   {isCompleted ? (
-                    <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
+                    <div className="w-7 h-7 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
+                      <CheckCircle2 className="w-4 h-4" />
+                    </div>
                   ) : isCurrent ? (
-                    <span className="w-5 h-5 rounded-full border-2 border-indigo-500 flex items-center justify-center shrink-0">
-                      <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse" />
-                    </span>
+                    <div className="w-7 h-7 rounded-full bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 shrink-0">
+                      <span className="w-2.5 h-2.5 rounded-full bg-indigo-600 animate-pulse" />
+                    </div>
                   ) : (
-                    <Circle className="w-5 h-5 text-slate-300 shrink-0" />
+                    <div className="w-7 h-7 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-300 shrink-0">
+                      <Circle className="w-4 h-4" />
+                    </div>
                   )}
 
                   <div>
-                    <h3 className={`text-sm md:text-base font-bold ${textTitle}`}>
+                    <h3 className={`text-sm sm:text-base font-bold ${
+                      isCurrent ? 'text-indigo-950 font-extrabold' : isCompleted ? 'text-slate-800' : 'text-slate-500'
+                    }`}>
                       {STAGE_LABELS[stageKey]}
                     </h3>
-                    <span className="text-[10px] uppercase font-bold tracking-wider">
-                      {isCompleted && <span className="text-emerald-600">Completed</span>}
-                      {isCurrent && <span className="text-indigo-600 font-bold">Current Stage</span>}
-                      {isUpcoming && <span className="text-slate-400">Upcoming</span>}
+                    <span className="text-[10px] font-bold uppercase tracking-wider">
+                      {isCompleted && <span className="text-emerald-600">Completed Milestone</span>}
+                      {isCurrent && <span className="text-indigo-600">Active Academic Stage</span>}
+                      {isUpcoming && <span className="text-slate-400">Future Milestone</span>}
                     </span>
                   </div>
                 </div>
-                
-                <div className="text-slate-400 p-1 hover:text-slate-650">
+
+                <div className="text-slate-400 p-1">
                   {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </div>
               </button>
 
-              {/* Accordion Steps List */}
+              {/* Steps Timeline Details */}
               <AnimatePresence initial={false}>
                 {isOpen && (
                   <motion.div
                     initial={{ height: 0 }}
-                    animate={{ height: "auto" }}
+                    animate={{ height: 'auto' }}
                     exit={{ height: 0 }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    transition={{ duration: 0.2 }}
                     className="border-t border-slate-100 bg-white"
                   >
-                    <div className="p-4 space-y-6">
+                    <div className="p-5 sm:p-6 space-y-6">
                       {steps.length > 0 ? (
-                        steps.map((step, stepIdx) => (
-                          <div 
-                            key={stepIdx} 
-                            className={`pl-4 border-l-2 relative ${
-                              isCurrent 
-                                ? "border-indigo-400" 
-                                : isCompleted 
-                                ? "border-emerald-400" 
-                                : "border-slate-200"
+                        steps.map((step, sIdx) => (
+                          <div
+                            key={sIdx}
+                            className={`pl-4 border-l-2 relative space-y-1.5 ${
+                              isCurrent ? 'border-indigo-400' : isCompleted ? 'border-emerald-400' : 'border-slate-200'
                             }`}
                           >
-                            {/* Step Marker Dot */}
-                            <span className={`absolute -left-[5px] top-1.5 w-2 h-2 rounded-full ${
-                              isCurrent 
-                                ? "bg-indigo-500" 
-                                : isCompleted 
-                                ? "bg-emerald-500" 
-                                : "bg-slate-300"
-                            }`} />
+                            <span
+                              className={`absolute -left-[5px] top-1.5 w-2 h-2 rounded-full ${
+                                isCurrent ? 'bg-indigo-600' : isCompleted ? 'bg-emerald-500' : 'bg-slate-300'
+                              }`}
+                            />
 
-                            <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                              <h4 className="font-bold text-slate-800 text-sm md:text-base">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <h4 className="font-bold text-slate-900 text-sm sm:text-base">
                                 {step.title}
                               </h4>
-                              <span className="text-[10px] bg-slate-100 text-slate-500 border border-slate-200 px-2 py-0.5 rounded font-bold flex items-center gap-1">
-                                <Tag className="w-2.5 h-2.5" />
-                                {step.type}
-                              </span>
+                              {step.type && (
+                                <Badge variant="slate" size="sm">
+                                  {step.type}
+                                </Badge>
+                              )}
                             </div>
 
-                            <p className="text-slate-600 text-xs md:text-sm leading-relaxed mb-2">
+                            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                               {step.description}
                             </p>
 
-                            <div className="flex items-center gap-1 text-slate-400 text-[10px] md:text-xs font-semibold">
-                              <Calendar className="w-3.5 h-3.5" />
-                              <span>Duration: {step.duration}</span>
-                            </div>
+                            {step.duration && (
+                              <div className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-400 pt-1">
+                                <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                                <span>Duration: {step.duration}</span>
+                              </div>
+                            )}
                           </div>
                         ))
                       ) : (
-                        <p className="text-center text-xs text-slate-400 py-2">
-                          No specific milestones recorded for this stage.
+                        <p className="text-xs text-slate-400 text-center py-2">
+                          Standard curriculum & self-study milestone track.
                         </p>
                       )}
                     </div>

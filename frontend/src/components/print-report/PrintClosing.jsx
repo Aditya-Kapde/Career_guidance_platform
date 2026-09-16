@@ -1,39 +1,50 @@
 import React from 'react';
-import { Lightbulb, Compass } from 'lucide-react';
+import { Lightbulb, Compass, Sparkles, CheckCircle2 } from 'lucide-react';
 
-const PremiumClosing = ({ aiInsights, closingMessage }) => {
+const PrintClosing = ({ aiInsights, closingMessage }) => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto print:break-before-page">
-      <div className="mb-12">
-        <h2 className="text-sm font-bold tracking-widest text-indigo-600 uppercase mb-2">Conclusion</h2>
-        <h3 className="text-3xl font-bold text-gray-900 tracking-tight">Final AI Insights</h3>
+    <section className="w-full max-w-[760px] mx-auto px-6 py-12 bg-white print:break-before-page">
+      <div className="mb-6">
+        <span className="text-[10px] font-bold tracking-widest text-indigo-600 uppercase block mb-1">
+          Final Synthesis
+        </span>
+        <h2 className="text-2xl font-black text-slate-900 tracking-tight">
+          Strategic Career Intelligence Takeaways
+        </h2>
       </div>
 
       {aiInsights && aiInsights.length > 0 && (
-        <div className="space-y-6 mb-16">
+        <div className="space-y-3 mb-8">
           {aiInsights.map((insight, i) => (
-            <div key={i} className="flex gap-4 p-6 bg-indigo-50/50 rounded-2xl border border-indigo-100 print:break-inside-avoid">
-              <Lightbulb className="text-indigo-500 shrink-0" size={24} />
-              <p className="text-indigo-900 font-medium leading-relaxed">{insight}</p>
+            <div key={i} className="flex items-start gap-3 p-4 bg-indigo-50/70 rounded-2xl border border-indigo-100/90 print:break-inside-avoid">
+              <Lightbulb className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" />
+              <p className="text-xs text-indigo-950 font-medium leading-relaxed">{insight}</p>
             </div>
           ))}
         </div>
       )}
 
       {closingMessage && (
-        <div className="relative p-12 bg-gray-900 rounded-3xl text-center print:break-inside-avoid">
-          
-          <Compass className="text-indigo-400 mx-auto mb-6 opacity-80" size={48} />
-          <p className="relative z-10 text-xl md:text-2xl text-white font-medium leading-relaxed max-w-3xl mx-auto">
+        <div className="p-8 bg-slate-900 text-white rounded-3xl text-center print:break-inside-avoid relative overflow-hidden mb-8">
+          <Compass className="w-8 h-8 text-indigo-400 mx-auto mb-4 opacity-90" />
+          <blockquote className="text-base sm:text-lg font-medium leading-relaxed max-w-2xl mx-auto italic text-slate-100">
             "{closingMessage}"
-          </p>
-          <div className="mt-8 text-gray-400 text-sm font-bold tracking-widest uppercase">
-            End of Report
-          </div>
+          </blockquote>
         </div>
       )}
+
+      {/* Official Verification Sign-off */}
+      <div className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="flex items-center gap-2">
+          <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+          <span>PathFinder AI • Autonomous Cognitive & Psychometric Profiling System</span>
+        </div>
+        <div className="font-mono text-[10px]">
+          END OF DOCUMENT
+        </div>
+      </div>
     </section>
   );
 };
 
-export default PremiumClosing;
+export default PrintClosing;

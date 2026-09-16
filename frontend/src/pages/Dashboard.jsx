@@ -1,156 +1,203 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Cpu, Compass, BookOpen, Award, ArrowLeft, Play, Sparkles, LogOut } from 'lucide-react';
+import { 
+  Sparkles, 
+  Compass, 
+  Award, 
+  BookOpen, 
+  ArrowRight, 
+  Play, 
+  Cpu, 
+  FileText, 
+  CheckCircle2, 
+  Layers, 
+  GraduationCap 
+} from 'lucide-react';
+import { useAssessment } from '../context/AssessmentContext';
+import AppShell from '../components/layout/AppShell';
+import Card from '../components/ui/Card';
+import SoftCard from '../components/ui/SoftCard';
+import Button from '../components/ui/Button';
+import Badge from '../components/ui/Badge';
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const { educationLevel, reportId, assessmentReport } = useAssessment();
 
   const modules = [
     {
       icon: Compass,
-      title: "Interests & Passions",
-      desc: "Identify what activities and industries excite you most.",
-      status: "Ready",
-      color: "from-blue-500 to-indigo-500"
+      title: 'Psychometric Aptitude',
+      desc: '15-dimension psychometric evaluation covering logic, risk, curiosity, and collaboration.',
+      status: educationLevel ? 'Active' : 'Ready',
+      statusVariant: educationLevel ? 'emerald' : 'indigo'
     },
     {
       icon: Award,
-      title: "Skills & Strengths",
-      desc: "Evaluate your technical, soft, and analytical skills.",
-      status: "Ready",
-      color: "from-indigo-500 to-purple-500"
+      title: 'Deterministic Matching',
+      desc: 'Mathematical cosine-weighted compatibility scoring against standardized career profiles.',
+      status: 'Ready',
+      statusVariant: 'indigo'
     },
     {
       icon: BookOpen,
-      title: "Work Style Preference",
-      desc: "Find what working environment aligns with your lifestyle.",
-      status: "Ready",
-      color: "from-purple-500 to-pink-500"
+      title: 'AI Synthesis & Roadmaps',
+      desc: 'Generative academic guidance, learning style profiling, and interactive roadmap diagrams.',
+      status: 'Ready',
+      statusVariant: 'purple'
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
-  };
-
   return (
-    <div className="min-h-screen pb-12">
-      {/* Dynamic Header Banner */}
-      <div className="bg-gradient-to-r from-indigo-900 via-indigo-950 to-purple-950 text-white py-12 px-6 shadow-lg shadow-indigo-900/10">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div>
-            <button 
-              onClick={() => navigate('/')} 
-              className="inline-flex items-center text-xs font-semibold text-indigo-200 hover:text-white transition-colors mb-4 bg-white/10 hover:bg-white/15 px-3 py-1.5 rounded-full"
-            >
-              <ArrowLeft className="w-3.5 h-3.5 mr-1" />
-              Onboarding
-            </button>
-            <h1 className="text-3xl md:text-4xl font-extrabold flex items-center gap-2.5">
-              Career Guide Dashboard <Sparkles className="w-7 h-7 text-indigo-400 animate-pulse" />
-            </h1>
-            <p className="text-indigo-200/80 text-sm md:text-base mt-2 max-w-xl">
-              Complete your student profiling module. Our AI model will process your responses to recommend matching fields and pathways.
-            </p>
-          </div>
-          <div className="flex items-center space-x-2 bg-indigo-900/60 p-2.5 rounded-xl border border-indigo-700/30">
-            <div className="p-2 bg-indigo-500/20 rounded-lg text-indigo-400">
-              <Cpu className="w-6 h-6 animate-pulse" />
+    <AppShell title="Student Overview" subtitle="Personal career evaluation hub">
+      <div className="space-y-8 max-w-6xl mx-auto">
+        
+        {/* Welcome & Primary Action Card */}
+        <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200/80 shadow-soft-sm neu-flat relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-50/70 rounded-full blur-3xl pointer-events-none -z-0" />
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8 space-y-4 text-left">
+              <div className="flex items-center gap-2">
+                <Badge variant="indigo" size="md" icon={Sparkles}>
+                  CAREER INTELLIGENCE ENGINE
+                </Badge>
+                <Badge variant="slate" size="sm">
+                  v2.0 Architecture
+                </Badge>
+              </div>
+
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+                {reportId || assessmentReport 
+                  ? 'Your Career Intelligence Report is Ready'
+                  : 'Start Your Personal Aptitude Assessment'
+                }
+              </h2>
+
+              <p className="text-sm sm:text-base text-slate-600 max-w-xl leading-relaxed">
+                {reportId || assessmentReport
+                  ? 'Explore your calculated readiness scores, top matching pathways, trait radar, and AI study recommendations.'
+                  : 'Take our ~10 minute evaluation. Our engine will map your strengths to personalized graduation roadmaps and industry opportunities.'
+                }
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                {reportId || assessmentReport ? (
+                  <Button
+                    size="lg"
+                    variant="primary"
+                    icon={FileText}
+                    onClick={() => navigate('/report')}
+                  >
+                    View Official Report
+                  </Button>
+                ) : (
+                  <Button
+                    size="lg"
+                    variant="primary"
+                    icon={Play}
+                    onClick={() => navigate('/assessment')}
+                  >
+                    Launch Assessment
+                  </Button>
+                )}
+
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  onClick={() => navigate('/assessment')}
+                >
+                  {educationLevel ? 'Update Assessment' : 'Select Stream'}
+                </Button>
+              </div>
             </div>
-            <div>
-              <p className="text-xs text-indigo-300">Model Provider</p>
-              <p className="text-sm font-bold text-white">Groq AI (Llama 3)</p>
+
+            {/* Right System Info Panel */}
+            <div className="lg:col-span-4 p-5 rounded-2xl bg-slate-50 border border-slate-200/80 neu-inset space-y-3">
+              <div className="flex items-center gap-2.5 pb-2 border-b border-slate-200/60">
+                <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center">
+                  <Cpu className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-slate-900 block leading-tight">Groq AI Engine</span>
+                  <span className="text-[10px] text-slate-400 block">Llama 3 70B Parameter Model</span>
+                </div>
+              </div>
+
+              <div className="space-y-2 text-xs text-slate-600">
+                <div className="flex items-center justify-between">
+                  <span>Evaluation Type:</span>
+                  <strong className="text-slate-900">Psychometric + Cognitive</strong>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Current Level:</span>
+                  <strong className="text-indigo-600 uppercase">
+                    {educationLevel ? educationLevel.replace('-', ' ') : 'Not Selected'}
+                  </strong>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Report Status:</span>
+                  <strong className={reportId ? 'text-emerald-600 font-bold' : 'text-slate-500'}>
+                    {reportId ? 'Analyzed' : 'Pending'}
+                  </strong>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Main Core Layout */}
-      <main className="max-w-4xl mx-auto px-6 mt-8">
-        {/* Prominent Action Call Card */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="bg-white rounded-xl-card p-8 shadow-xl shadow-slate-100 border border-slate-150 mb-8 relative overflow-hidden"
-        >
-          {/* Subtle colorful aura */}
-          <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-indigo-300/30 to-purple-300/30 rounded-full blur-3xl" />
-          
-          <div className="relative z-10">
-            <span className="bg-indigo-50 text-indigo-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-              Core Assessment
-            </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mt-3">
-              Full AI Career Evaluation
-            </h2>
-            <p className="text-slate-600 mt-2 max-w-xl text-sm md:text-base">
-              Take the complete 15-question assessment. The report includes career matching rankings, key growth skills, and custom degree pathways.
+        {/* Modular Assessment Pillars */}
+        <div>
+          <div className="mb-4">
+            <h3 className="text-lg font-bold text-slate-900 tracking-tight">
+              Platform Intelligence Modules
+            </h3>
+            <p className="text-xs text-slate-500">
+              Core components that synthesize your personalized career report.
             </p>
-            <button
-              onClick={() => navigate('/assessment')}
-              className="mt-6 inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-indigo-200 hover:shadow-indigo-300 transition-all transform hover:-translate-y-0.5"
-            >
-              <Play className="w-5 h-5 fill-current" />
-              <span>Launch Assessment</span>
-            </button>
           </div>
-        </motion.div>
 
-        {/* Modular Grid Title */}
-        <h3 className="text-lg font-bold text-slate-800 mb-4">
-          Assessment Breakdowns
-        </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {modules.map((mod, idx) => {
+              const Icon = mod.icon;
+              return (
+                <Card key={idx} hover className="neu-flat border-slate-200/80 p-6 flex flex-col justify-between space-y-4">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
+                        <Icon className="w-5 h-5 stroke-[2]" />
+                      </div>
+                      <Badge variant={mod.statusVariant} size="sm">
+                        {mod.status}
+                      </Badge>
+                    </div>
 
-        {/* Cards Grid */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-        >
-          {modules.map((mod, idx) => {
-            const ModIcon = mod.icon;
-            return (
-              <motion.div
-                key={idx}
-                variants={itemVariants}
-                className="glassmorphism rounded-xl-card p-6 shadow-md hover:shadow-lg transition-all border border-slate-100 hover:border-slate-200 group"
-              >
-                <div className={`p-3 bg-gradient-to-br ${mod.color} rounded-xl text-white inline-flex mb-4 group-hover:scale-105 transition-transform`}>
-                  <ModIcon className="w-6 h-6" />
-                </div>
-                <h4 className="font-bold text-slate-900 text-lg mb-1">{mod.title}</h4>
-                <p className="text-slate-500 text-xs leading-relaxed mb-4">{mod.desc}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-full">
-                    {mod.status}
-                  </span>
-                  <button 
-                    onClick={() => alert(`Starting component: ${mod.title}`)}
-                    className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition-colors"
-                  >
-                    Configure
-                  </button>
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-      </main>
-    </div>
+                    <h4 className="text-base font-bold text-slate-900">
+                      {mod.title}
+                    </h4>
+
+                    <p className="text-xs text-slate-500 leading-relaxed">
+                      {mod.desc}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span className="text-slate-400 font-medium">Automatic Engine</span>
+                    <button
+                      onClick={() => navigate('/assessment')}
+                      className="text-indigo-600 font-bold hover:text-indigo-800 flex items-center gap-1 cursor-pointer"
+                    >
+                      <span>Explore</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </AppShell>
   );
 }

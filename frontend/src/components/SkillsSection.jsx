@@ -1,58 +1,61 @@
 import React from 'react';
 import { Award, Zap } from 'lucide-react';
-import { motion } from 'framer-motion';
+import Badge from './ui/Badge';
+import ProgressBar from './ui/ProgressBar';
 
-export default function SkillsSection({
-  skills = [
-    { name: "Structural Analysis & Design", level: "Expert" },
-    { name: "Geotechnical & Soil Mechanics", level: "Advanced" },
-    { name: "Project Estimation & Budgeting", level: "Advanced" },
-    { name: "Land Surveying & GIS Mapping", level: "Advanced" }
-  ]
-}) {
-  const getProgressWidth = (level) => {
+export default function SkillsSection({ skills = [] }) {
+  if (!skills || skills.length === 0) return null;
+
+  const getLevelValue = (level) => {
     switch (level?.toLowerCase()) {
-      case 'expert': return 'w-full bg-gradient-to-r from-emerald-400 to-teal-500 shadow-sm shadow-emerald-500/20';
-      case 'advanced': return 'w-4/5 bg-gradient-to-r from-indigo-400 to-purple-500 shadow-sm shadow-indigo-500/20';
-      case 'intermediate': return 'w-3/5 bg-gradient-to-r from-amber-400 to-orange-500 shadow-sm shadow-amber-500/20';
-      default: return 'w-2/5 bg-slate-400';
+      case 'expert': return 95;
+      case 'advanced': return 80;
+      case 'intermediate': return 65;
+      default: return 50;
+    }
+  };
+
+  const getBadgeVariant = (level) => {
+    switch (level?.toLowerCase()) {
+      case 'expert': return 'emerald';
+      case 'advanced': return 'indigo';
+      case 'intermediate': return 'amber';
+      default: return 'slate';
     }
   };
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 mb-8 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-50/30 rounded-full blur-2xl pointer-events-none" />
-      
-      <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 relative z-10">
-        <Award className="w-5 h-5 text-indigo-600" />
-        Core Competencies & Skills
-      </h2>
-      
-      <div className="space-y-5 relative z-10">
-        {skills.map((skill, idx) => (
-          <motion.div 
-            key={idx}
-            whileHover={{ x: 2 }}
-            className="flex flex-col p-3.5 bg-slate-50/50 hover:bg-slate-50 rounded-xl border border-slate-100 transition-colors"
-          >
-            <div className="flex justify-between items-center mb-2.5">
-              <span className="font-extrabold text-slate-800 text-sm flex items-center gap-1.5">
-                <Zap className="w-3.5 h-3.5 text-indigo-500" />
-                {skill.name}
-              </span>
-              <span className={`text-[10px] px-2 py-0.5 rounded font-extrabold border ${
-                skill.level?.toLowerCase() === 'expert' 
-                  ? 'bg-emerald-50 text-emerald-600 border-emerald-100'
-                  : skill.level?.toLowerCase() === 'advanced'
-                  ? 'bg-indigo-50 text-indigo-600 border-indigo-100'
-                  : 'bg-amber-50 text-amber-600 border-amber-100'
-              }`}>{skill.level}</span>
+    <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/80 shadow-soft-sm neu-flat space-y-4">
+      <div className="flex items-center gap-2.5">
+        <div className="w-8 h-8 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
+          <Award className="w-4 h-4 stroke-[2.2]" />
+        </div>
+        <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight">
+          Required Competencies
+        </h3>
+      </div>
+
+      <div className="space-y-3.5 pt-1">
+        {skills.map((skill, idx) => {
+          const val = getLevelValue(skill.level);
+          const badgeVar = getBadgeVariant(skill.level);
+
+          return (
+            <div key={idx} className="p-3.5 rounded-2xl bg-slate-50 border border-slate-100 space-y-2">
+              <div className="flex items-center justify-between text-xs">
+                <span className="font-bold text-slate-800 flex items-center gap-1.5">
+                  <Zap className="w-3 h-3 text-indigo-600" />
+                  {skill.name}
+                </span>
+                <Badge variant={badgeVar} size="sm">
+                  {skill.level || 'Standard'}
+                </Badge>
+              </div>
+
+              <ProgressBar value={val} variant={badgeVar === 'emerald' ? 'emerald' : 'indigo'} size="sm" />
             </div>
-            <div className="w-full bg-slate-200/60 h-2 rounded-full overflow-hidden">
-              <div className={`h-full rounded-full transition-all duration-500 ${getProgressWidth(skill.level)}`} />
-            </div>
-          </motion.div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

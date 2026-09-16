@@ -2,148 +2,157 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import PatternTile from './PatternTile';
+import Badge from './ui/Badge';
 
-export default function QuestionCard({ question, selectedOptions, onSelectOption }) {
+export default function QuestionCard({ question, selectedOptions = [], onSelectOption }) {
+  if (!question) return null;
+
   const isMultiple = (question.questionType || question.type) === 'multiple';
+  const categoryName = question.category ? question.category.replace(/_/g, ' ') : null;
 
   return (
     <div className="w-full">
-      {/* Category Badge */}
-      {question.category && (
-        <div className="mb-4">
-          <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-bold rounded-full uppercase tracking-wider border border-indigo-200 shadow-sm">
-            {question.category.replace(/_/g, ' ')}
-          </span>
-        </div>
-      )}
+      {/* Category Badge & Question Type */}
+      <div className="flex items-center justify-between gap-3 mb-4">
+        {categoryName ? (
+          <Badge variant="indigo" size="sm">
+            {categoryName}
+          </Badge>
+        ) : (
+          <Badge variant="slate" size="sm">
+            Aptitude Assessment
+          </Badge>
+        )}
 
-      {/* Question Graphic */}
+        {isMultiple && (
+          <span className="text-[11px] font-semibold text-slate-400">
+            Select all that apply
+          </span>
+        )}
+      </div>
+
+      {/* Optional Question Image Graphic */}
       {(question.questionImage || question.svgComponent) && (
-        <div className="mb-6 w-full max-w-md mx-auto aspect-video bg-slate-50 rounded-xl border border-slate-200 overflow-hidden flex items-center justify-center relative">
+        <div className="mb-6 w-full max-w-md mx-auto aspect-video bg-slate-50/80 rounded-2xl border border-slate-200/80 overflow-hidden flex items-center justify-center relative p-3">
           {question.questionImage ? (
-            <img 
-              src={question.questionImage} 
-              alt="Question illustration" 
+            <img
+              src={question.questionImage}
+              alt="Question scenario illustration"
               className="w-full h-full object-contain z-10"
-              onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+                if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
+              }}
             />
           ) : (
             <div className="z-10">{question.svgComponent}</div>
           )}
-          {/* Placeholder/Fallback */}
-          <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-sm flex-col space-y-2" style={question.questionImage ? {display: 'none'} : {}}>
-            <svg className="w-8 h-8 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span>Image placeholder</span>
+          <div
+            className="absolute inset-0 flex items-center justify-center text-slate-400 text-xs flex-col space-y-1"
+            style={question.questionImage ? { display: 'none' } : {}}
+          >
+            <span>Illustration</span>
           </div>
         </div>
       )}
 
-      {/* Pattern Grid Graphic */}
+      {/* Pattern Matrix Graphic for Cognitive Questions */}
       {(question.type === 'pattern' || question.questionType === 'pattern') && question.patternTiles && (
-        <div className="mb-6 w-full max-w-xs md:max-w-sm mx-auto aspect-square bg-slate-50/50 rounded-xl border border-slate-200 p-3 md:p-4">
-          <div className="w-full h-full grid grid-cols-3 gap-2 md:gap-3">
+        <div className="mb-6 w-full max-w-xs md:max-w-sm mx-auto aspect-square bg-slate-50 rounded-2xl border border-slate-200/90 p-3 md:p-4 neu-inset">
+          <div className="w-full h-full grid grid-cols-3 gap-2.5 md:gap-3">
             {question.patternTiles.map((tile, idx) => (
-              <div 
-                key={idx} 
-                className={`aspect-square rounded-lg overflow-hidden transition-all ${
-                  tile.isMissing 
-                    ? '' 
-                    : 'border border-slate-200 bg-white shadow-sm'
+              <div
+                key={idx}
+                className={`aspect-square rounded-xl overflow-hidden transition-all ${
+                  tile.isMissing
+                    ? 'border-2 border-dashed border-indigo-300 bg-indigo-50/40 flex items-center justify-center text-indigo-400 font-bold text-lg'
+                    : 'border border-slate-200 bg-white shadow-soft-sm'
                 }`}
               >
-                <PatternTile tile={tile} />
+                {tile.isMissing ? '?' : <PatternTile tile={tile} />}
               </div>
             ))}
           </div>
         </div>
       )}
 
-      {/* Question Headline */}
-      <h2 className="text-xl md:text-2xl font-bold text-slate-900 leading-snug mb-6">
+      {/* Question Text Headline */}
+      <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug tracking-tight mb-6">
         {question.question || question.text}
       </h2>
 
-      {/* Choice Card Stack */}
-      <div className="space-y-4">
-        {question.options.map((option, index) => {
+      {/* Options Stack */}
+      <div className="space-y-3">
+        {question.options && question.options.map((option, index) => {
           const isSelected = selectedOptions.includes(index);
+          const optionText = typeof option === 'string' ? option : option.text || option.label || `Option ${index + 1}`;
 
           return (
-            <button
+            <motion.button
               key={index}
+              type="button"
+              whileHover={{ scale: 1.008 }}
+              whileTap={{ scale: 0.992 }}
               onClick={() => onSelectOption(index)}
-              className="w-full text-left focus:outline-none transition-all duration-200"
+              className={`
+                w-full text-left p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer focus:outline-none flex items-center justify-between gap-4
+                ${isSelected
+                  ? 'bg-indigo-50/80 border-indigo-600/90 shadow-md shadow-indigo-100/50 ring-1 ring-indigo-600/30 neu-flat'
+                  : 'bg-white border-slate-200/80 hover:border-slate-300 hover:bg-slate-50/70 shadow-soft-sm'
+                }
+              `}
             >
-              <div
-                className={`relative p-5 rounded-xl border flex items-center justify-between transition-all cursor-pointer ${
-                  isSelected
-                    ? 'border-indigo-600 bg-indigo-50/40 shadow-md shadow-indigo-100/30'
-                    : 'border-slate-200 bg-white/70 hover:border-slate-350 hover:bg-white'
-                }`}
-              >
-                <div className="flex items-center space-x-4 pr-6">
-                  {/* Selection dot/box */}
-                  <div
-                    className={`w-6 h-6 flex items-center justify-center rounded-lg border transition-all ${
-                      isSelected
-                        ? 'border-indigo-600 bg-indigo-600 text-white'
-                        : 'border-slate-300 bg-white'
-                    } ${!isMultiple ? 'rounded-full' : ''}`}
-                  >
-                    {isSelected && <Check className="w-4 h-4 stroke-[3]" />}
-                  </div>
-                  
-                  {/* Option Text and/or Graphic */}
-                  <div className="flex flex-col space-y-2">
-                    {option.image && (
-                      <div className="w-24 h-24 bg-white rounded border border-slate-200 flex items-center justify-center overflow-hidden p-1 shadow-sm relative">
-                        <img 
-                          src={option.image} 
-                          alt={option.text || `Option ${option.id}`} 
-                          className="max-w-full max-h-full object-contain z-10"
-                          onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center text-slate-300" style={{display: 'none'}}>
-                          <svg className="w-6 h-6 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                          </svg>
-                        </div>
-                      </div>
-                    )}
-                    {option.patternTile && (
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-lg border border-slate-200 flex items-center justify-center overflow-hidden shadow-sm shrink-0">
-                        <PatternTile tile={option.patternTile} />
-                      </div>
-                    )}
-                    {(typeof option === 'object' && option.text) && (
-                      <span className={`font-semibold text-slate-800 text-sm md:text-base ${
-                        isSelected ? 'text-indigo-950 font-bold' : ''
-                      }`}>
-                        {option.text}
-                      </span>
-                    )}
-                    {typeof option === 'string' && (
-                      <span className={`font-semibold text-slate-800 text-sm md:text-base ${
-                        isSelected ? 'text-indigo-950 font-bold' : ''
-                      }`}>
-                        {option}
-                      </span>
-                    )}
-                  </div>
+              <div className="flex items-center gap-3.5 min-w-0">
+                {/* Soft Custom Check / Radio Indicator */}
+                <div
+                  className={`
+                    w-5 h-5 rounded-lg border flex items-center justify-center shrink-0 transition-all duration-200
+                    ${isSelected
+                      ? 'bg-indigo-600 border-indigo-600 text-white shadow-xs'
+                      : 'border-slate-300 bg-white'
+                    }
+                    ${!isMultiple ? 'rounded-full' : 'rounded-md'}
+                  `}
+                >
+                  {isSelected && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                 </div>
+
+                {/* Pattern Graphic Option if exists */}
+                {option.patternTile && (
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-xl border border-slate-200 flex items-center justify-center overflow-hidden shadow-soft-sm shrink-0">
+                    <PatternTile tile={option.patternTile} />
+                  </div>
+                )}
+
+                {/* Image Option if exists */}
+                {option.image && (
+                  <div className="w-16 h-16 bg-white rounded-xl border border-slate-200 flex items-center justify-center overflow-hidden p-1 shadow-soft-sm shrink-0">
+                    <img
+                      src={option.image}
+                      alt={optionText}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                )}
+
+                {/* Option Text */}
+                <span className={`text-sm sm:text-base font-semibold leading-relaxed transition-colors ${
+                  isSelected ? 'text-indigo-950 font-bold' : 'text-slate-700'
+                }`}>
+                  {optionText}
+                </span>
               </div>
-            </button>
+
+              {/* Selection key badge */}
+              <span className={`text-[11px] font-mono px-2 py-0.5 rounded-md border text-slate-400 shrink-0 hidden sm:inline-block ${
+                isSelected ? 'border-indigo-200 bg-indigo-100 text-indigo-700 font-bold' : 'border-slate-200 bg-slate-50'
+              }`}>
+                {String.fromCharCode(65 + index)}
+              </span>
+            </motion.button>
           );
         })}
       </div>
-      
-      {isMultiple && (
-        <p className="text-xs text-slate-400 mt-4 text-center">
-          * You can select multiple options for this question.
-        </p>
-      )}
     </div>
   );
 }

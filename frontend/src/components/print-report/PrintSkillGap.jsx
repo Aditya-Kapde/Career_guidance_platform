@@ -1,45 +1,67 @@
 import React from 'react';
 
-const PremiumSkillGap = ({ skillGapAnalysis }) => {
+const PrintSkillGap = ({ skillGapAnalysis }) => {
   if (!skillGapAnalysis || skillGapAnalysis.length === 0) return null;
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-[90rem] mx-auto border-b border-gray-100 print:break-before-page">
-      <div className="mb-12 max-w-5xl mx-auto">
-        <h2 className="text-sm font-bold tracking-widest text-indigo-600 uppercase mb-2">Chapter 07</h2>
-        <h3 className="text-3xl font-bold text-gray-900 tracking-tight">Skill Gap Matrix</h3>
-        <p className="text-gray-500 mt-4 text-lg">Analysis of specific competencies required for your targeted careers and your current baseline.</p>
+    <section className="w-full max-w-[760px] mx-auto px-6 py-10 border-b border-slate-200/80 bg-white print:break-after-page">
+      <div className="mb-6">
+        <span className="text-[10px] font-bold tracking-widest text-indigo-600 uppercase block mb-1">
+          Chapter 07
+        </span>
+        <h2 className="text-2xl font-black text-slate-900 tracking-tight">
+          Executive Skill Gap Matrix
+        </h2>
+        <p className="text-xs text-slate-500 mt-1">
+          Competency readiness analysis comparing student baseline against target industry proficiency requirements.
+        </p>
       </div>
 
-      <div className="overflow-visible pb-8">
-        <table className="w-full text-left border-collapse">
+      <div className="rounded-2xl border border-slate-200 overflow-hidden bg-white print:break-inside-avoid">
+        <table className="w-full text-left border-collapse text-xs">
           <thead>
-            <tr>
-              <th className="p-4 border-b-2 border-gray-900 text-sm font-bold text-gray-900 uppercase tracking-wider">Skill Requirement</th>
-              <th className="p-4 border-b-2 border-gray-900 text-sm font-bold text-gray-900 uppercase tracking-wider">Target Level</th>
-              <th className="p-4 border-b-2 border-gray-900 text-sm font-bold text-gray-900 uppercase tracking-wider">Priority</th>
-              <th className="p-4 border-b-2 border-gray-900 text-sm font-bold text-gray-900 uppercase tracking-wider">Difficulty</th>
-              <th className="p-4 border-b-2 border-gray-900 text-sm font-bold text-gray-900 uppercase tracking-wider">Est. Time</th>
-              <th className="p-4 border-b-2 border-gray-900 text-sm font-bold text-gray-900 uppercase tracking-wider">Recommended Resources</th>
+            <tr className="bg-slate-900 text-white">
+              <th className="p-3 font-bold uppercase tracking-wider text-[10px] text-slate-300">
+                Core Competency
+              </th>
+              <th className="p-3 font-bold uppercase tracking-wider text-[10px] text-slate-300">
+                Target Proficiency
+              </th>
+              <th className="p-3 font-bold uppercase tracking-wider text-[10px] text-slate-300">
+                Priority
+              </th>
+              <th className="p-3 font-bold uppercase tracking-wider text-[10px] text-slate-300">
+                Est. Time
+              </th>
+              <th className="p-3 font-bold uppercase tracking-wider text-[10px] text-slate-300">
+                Recommended Resources
+              </th>
             </tr>
           </thead>
-          <tbody className="text-sm text-gray-700">
-            {skillGapAnalysis.map((gap, i) => (
-              <tr key={i} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                <td className="p-4 font-bold text-gray-900 bg-white sticky left-0">{gap.skill}</td>
-                <td className="p-4">{gap.targetLevel}</td>
-                <td className="p-4">
-                  <span className={`inline-block px-2 py-1 rounded text-xs font-bold ${
-                    gap.priority?.toLowerCase() === 'high' ? 'bg-rose-100 text-rose-800' :
-                    gap.priority?.toLowerCase() === 'medium' ? 'bg-amber-100 text-amber-800' :
-                    'bg-emerald-100 text-emerald-800'
+          <tbody className="divide-y divide-slate-100 text-slate-700">
+            {skillGapAnalysis.slice(0, 6).map((gap, i) => (
+              <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                <td className="p-3 font-bold text-slate-900 text-[11px]">
+                  {gap.skill}
+                </td>
+                <td className="p-3 font-medium text-[11px] text-slate-600">
+                  {gap.targetLevel || "Proficient"}
+                </td>
+                <td className="p-3">
+                  <span className={`inline-block px-2 py-0.5 rounded-md text-[9px] font-black uppercase ${
+                    gap.priority?.toLowerCase() === 'high' ? 'bg-rose-50 text-rose-700 border border-rose-200' :
+                    gap.priority?.toLowerCase() === 'medium' ? 'bg-amber-50 text-amber-700 border border-amber-200' :
+                    'bg-emerald-50 text-emerald-700 border border-emerald-200'
                   }`}>
-                    {gap.priority}
+                    {gap.priority || "Medium"}
                   </span>
                 </td>
-                <td className="p-4">{gap.difficulty}</td>
-                <td className="p-4 font-mono text-xs">{gap.estimatedTime}</td>
-                <td className="p-4 italic text-gray-600">{gap.recommendedResources}</td>
+                <td className="p-3 font-mono text-[10px] text-slate-500">
+                  {gap.estimatedTime || "3-6 Mos"}
+                </td>
+                <td className="p-3 text-[11px] text-slate-600 italic">
+                  {gap.recommendedResources || "Interactive Lab / Projects"}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -49,4 +71,4 @@ const PremiumSkillGap = ({ skillGapAnalysis }) => {
   );
 };
 
-export default PremiumSkillGap;
+export default PrintSkillGap;
