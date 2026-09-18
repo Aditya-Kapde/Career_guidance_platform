@@ -1,228 +1,213 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
 import questionsData from '../data/questions.json';
 
-const QUESTIONS = questionsData.questions;
+const ALL_QUESTIONS = questionsData.questions || [];
+const IMMUTABLE_QUESTION_IDS = ALL_QUESTIONS.map((q) => q.id);
 
-const INITIAL_TRAIT_SCORES = {
-  logicalThinking: 0,
-  problemSolving: 0,
-  creativity: 0,
-  leadership: 0,
-  communication: 0,
-  curiosity: 0,
-  teamwork: 0,
-  decisionMaking: 0,
-  adaptability: 0,
-  planning: 0,
-  attentionToDetail: 0,
-  riskTaking: 0,
-  analyticalThinking: 0,
-  empathy: 0,
-  learningStyle: 0
-};
+const STORAGE_KEY = 'pathfinder_assessment_session';
 
-const getStored = (key, fallback) => {
+const getInitialSession = () => {
   try {
-    const item = localStorage.getItem(`pathfinder_${key}`);
-    if (item === null || item === undefined) return fallback;
-    return JSON.parse(item);
-  } catch (err) {
-    console.warn(`Error reading pathfinder_${key} from localStorage:`, err);
-    return fallback;
-  }
-};
-
-const setStored = (key, value) => {
-  try {
-    if (value === null || value === undefined) {
-      localStorage.removeItem(`pathfinder_${key}`);
-    } else {
-      localStorage.setItem(`pathfinder_${key}`, JSON.stringify(value));
+    const raw = sessionStorage.getItem(STORAGE_KEY) || localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (parsed && typeof parsed === 'object') {
+      return parsed;
     }
   } catch (err) {
-    console.warn(`Error writing pathfinder_${key} to localStorage:`, err);
+    console.warn('Error reading assessment session from storage:', err);
+  }
+  return null;
+};
+
+const persistSession = (session) => {
+  try {
+    if (!session) {
+      sessionStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(STORAGE_KEY);
+    } else {
+      const serialized = JSON.stringify(session);
+      sessionStorage.setItem(STORAGE_KEY, serialized);
+      localStorage.setItem(STORAGE_KEY, serialized);
+    }
+  } catch (err) {
+    console.warn('Error writing assessment session to storage:', err);
   }
 };
 
 const AssessmentContext = createContext(null);
 
-const selectRandomQuestions = (allQuestions) => {
-  if (!allQuestions || allQuestions.length === 0) return [];
-  // Return shuffled questions for assessment (up to 40)
-  const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, 40);
-};
-
 export function AssessmentProvider({ children }) {
-  const [educationLevel, setEducationLevel] = useState(() => getStored('educationLevel', null));
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(() => getStored('currentQuestionIndex', 0));
-  const [responses, setResponses] = useState(() => getStored('responses', {}));
-  const [traitScores, setTraitScores] = useState(() => getStored('traitScores', INITIAL_TRAIT_SCORES));
-  const [selectedQuestions, setSelectedQuestions] = useState(() => getStored('selectedQuestions', []));
-  const [assessmentReport, setAssessmentReport] = useState(() => getStored('assessmentReport', null));
-  const [reportId, setReportId] = useState(() => getStored('reportId', null));
+  const initialSession = useMemo(() => getInitialSession(), []);
 
-  // Sync state to localStorage whenever values change
-  useEffect(() => {
-    setStored('educationLevel', educationLevel);
+  const [educationLevel, setEducationLevelState] = useState(() => initialSession?.educationLevel || null);
+  const [currentQuestionId, setCurrentQuestionId] = useState(() => {
+    if (initialSession?.currentQuestionId && IMMUTABLE_QUESTION_IDS.includes(initialSession.currentQuestionId)) {
+      return initialSession.currentQuestionId;
+    }
+    return IMMUTABLE_QUESTION_IDS[0] || null;
+  });
+  const [answers, setAnswers] = useState(() => initialSession?.answers || {});
+  const [assessmentReport, setAssessmentReport] = useState(() => initialSession?.assessmentReport || null);
+  const [reportId, setReportId] = useState(() => initialSession?.reportId || null);
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  // Filter questions for the selected education stage if applicable, or full canonical sequence
+  const activeQuestions = useMemo(() => {
+    if (!educationLevel) return ALL_QUESTIONS;
+    return ALL_QUESTIONS.filter((q) => {
+      if (!q.educationLevels || q.educationLevels.length === 0) return true;
+      return q.educationLevels.includes(educationLevel);
+    });
   }, [educationLevel]);
 
-  useEffect(() => {
-    setStored('currentQuestionIndex', currentQuestionIndex);
-  }, [currentQuestionIndex]);
+  const activeQuestionIds = useMemo(() => {
+    return activeQuestions.map((q) => q.id);
+  }, [activeQuestions]);
 
-  useEffect(() => {
-    setStored('responses', responses);
-  }, [responses]);
+  // Current Question Index derived safely from currentQuestionId
+  const currentQuestionIndex = useMemo(() => {
+    if (!currentQuestionId) return 0;
+    const idx = activeQuestionIds.indexOf(currentQuestionId);
+    return idx >= 0 ? idx : 0;
+  }, [currentQuestionId, activeQuestionIds]);
 
-  useEffect(() => {
-    setStored('traitScores', traitScores);
-  }, [traitScores]);
+  const currentQuestion = useMemo(() => {
+    if (!currentQuestionId) return activeQuestions[0] || null;
+    return activeQuestions.find((q) => q.id === currentQuestionId) || activeQuestions[0] || null;
+  }, [currentQuestionId, activeQuestions]);
 
+  // Sync state to storage
   useEffect(() => {
-    setStored('selectedQuestions', selectedQuestions);
-  }, [selectedQuestions]);
-
-  useEffect(() => {
-    setStored('assessmentReport', assessmentReport);
-  }, [assessmentReport]);
-
-  useEffect(() => {
-    setStored('reportId', reportId);
-  }, [reportId]);
-
-  // If educationLevel is chosen and no questions are selected yet, pick them
-  useEffect(() => {
-    if (educationLevel) {
-      setSelectedQuestions((prev) => {
-        if (prev && prev.length > 0) return prev;
-        return selectRandomQuestions(QUESTIONS);
+    if (educationLevel || Object.keys(answers).length > 0 || reportId || assessmentReport) {
+      persistSession({
+        educationLevel,
+        currentQuestionId,
+        answers,
+        assessmentReport,
+        reportId,
+        updatedAt: new Date().toISOString()
       });
     }
-  }, [educationLevel]);
+  }, [educationLevel, currentQuestionId, answers, assessmentReport, reportId]);
 
-  // Recalculate trait scores dynamically from responses & selected questions
-  useEffect(() => {
-    if (!selectedQuestions || selectedQuestions.length === 0) return;
-    if (Object.keys(responses).length === 0) return;
+  const setEducationLevel = useCallback((level) => {
+    setEducationLevelState(level);
+    if (level && activeQuestionIds.length > 0) {
+      setCurrentQuestionId((prev) => (activeQuestionIds.includes(prev) ? prev : activeQuestionIds[0]));
+    }
+  }, [activeQuestionIds]);
 
-    const newScores = { ...INITIAL_TRAIT_SCORES };
-    
-    Object.keys(responses).forEach((qIdxStr) => {
-      const qIdx = parseInt(qIdxStr, 10);
-      const question = selectedQuestions[qIdx];
-      if (!question) return;
+  // Option selection keyed strictly by questionId
+  const selectOption = useCallback((qId, optionId, isMultiple = false) => {
+    if (!qId || !optionId) return;
 
-      const selectedOptionIndexes = responses[qIdx] || [];
-      selectedOptionIndexes.forEach((optIdx) => {
-        const option = question.options[optIdx];
-        if (option && option.traitScores) {
-          Object.keys(option.traitScores).forEach((trait) => {
-            if (trait in newScores) {
-              newScores[trait] += option.traitScores[trait];
-            }
-          });
-        }
-      });
-    });
-
-    setTraitScores(newScores);
-  }, [responses, selectedQuestions]);
-  
-  const selectOption = (questionIndex, optionIndex, isMultipleChoice) => {
-    setResponses((prev) => {
-      const currentSelections = prev[questionIndex] || [];
-      if (isMultipleChoice) {
-        if (currentSelections.includes(optionIndex)) {
-          // Remove if already selected
-          return {
-            ...prev,
-            [questionIndex]: currentSelections.filter((i) => i !== optionIndex),
-          };
-        } else {
-          // Add to selections
-          return {
-            ...prev,
-            [questionIndex]: [...currentSelections, optionIndex],
-          };
-        }
-      } else {
-        // Single choice - replace selection
+    setAnswers((prev) => {
+      const currentSelected = prev[qId] || [];
+      if (isMultiple) {
+        const next = currentSelected.includes(optionId)
+          ? currentSelected.filter((id) => id !== optionId)
+          : [...currentSelected, optionId];
         return {
           ...prev,
-          [questionIndex]: [optionIndex],
+          [qId]: next
+        };
+      } else {
+        return {
+          ...prev,
+          [qId]: [optionId]
         };
       }
     });
-  };
+  }, []);
 
-  const resetAssessment = () => {
-    setEducationLevel(null);
-    setCurrentQuestionIndex(0);
-    setResponses({});
-    setTraitScores(INITIAL_TRAIT_SCORES);
-    setSelectedQuestions([]);
-    setAssessmentReport(null);
-    setReportId(null);
+  const getSelectedOptionsForQuestionId = useCallback((qId) => {
+    if (!qId) return [];
+    return answers[qId] || [];
+  }, [answers]);
 
-    // Clear all localStorage keys
-    [
-      'educationLevel',
-      'currentQuestionIndex',
-      'responses',
-      'traitScores',
-      'selectedQuestions',
-      'assessmentReport',
-      'reportId'
-    ].forEach((k) => {
-      localStorage.removeItem(`pathfinder_${k}`);
-    });
-  };
+  const goToNextQuestion = useCallback(() => {
+    if (isNavigating) return false;
+    setIsNavigating(true);
 
-  const getSelectedOptionsForQuestion = (questionIndex) => {
-    return responses[questionIndex] || [];
-  };
+    const nextIdx = currentQuestionIndex + 1;
+    if (nextIdx < activeQuestionIds.length) {
+      const nextId = activeQuestionIds[nextIdx];
+      setCurrentQuestionId(nextId);
+    }
 
-  const getDetailedResponses = () => {
+    setTimeout(() => setIsNavigating(false), 150);
+    return nextIdx >= activeQuestionIds.length; // returns true if reached the end
+  }, [currentQuestionIndex, activeQuestionIds, isNavigating]);
+
+  const goToPrevQuestion = useCallback(() => {
+    if (isNavigating) return;
+    setIsNavigating(true);
+
+    if (currentQuestionIndex > 0) {
+      const prevId = activeQuestionIds[currentQuestionIndex - 1];
+      setCurrentQuestionId(prevId);
+    } else {
+      // Return to education level selection
+      setEducationLevelState(null);
+    }
+
+    setTimeout(() => setIsNavigating(false), 150);
+  }, [currentQuestionIndex, activeQuestionIds, isNavigating]);
+
+  const goToQuestionById = useCallback((qId) => {
+    if (activeQuestionIds.includes(qId)) {
+      setCurrentQuestionId(qId);
+    }
+  }, [activeQuestionIds]);
+
+  const getDetailedResponses = useCallback(() => {
     const detailed = [];
-    Object.keys(responses).forEach((qIdxStr) => {
-      const qIdx = parseInt(qIdxStr, 10);
-      const question = selectedQuestions[qIdx];
-      if (!question) return;
-
-      const selectedOptionIndexes = responses[qIdx] || [];
-      selectedOptionIndexes.forEach((optIdx) => {
-        const option = question.options[optIdx];
-        if (option) {
+    Object.entries(answers).forEach(([qId, optionIds]) => {
+      if (Array.isArray(optionIds)) {
+        optionIds.forEach((optId) => {
           detailed.push({
-            questionId: question.id,
-            selectedOptionId: option.id
+            questionId: qId,
+            selectedOptionId: optId
           });
-        }
-      });
+        });
+      }
     });
     return detailed;
-  };
+  }, [answers]);
+
+  const resetAssessment = useCallback(() => {
+    setEducationLevelState(null);
+    setCurrentQuestionId(IMMUTABLE_QUESTION_IDS[0] || null);
+    setAnswers({});
+    setAssessmentReport(null);
+    setReportId(null);
+    persistSession(null);
+  }, []);
 
   return (
     <AssessmentContext.Provider
       value={{
         educationLevel,
         setEducationLevel,
+        currentQuestionId,
         currentQuestionIndex,
-        setCurrentQuestionIndex,
-        responses,
-        setResponses,
-        traitScores,
-        selectedQuestions,
+        currentQuestion,
+        totalQuestions: activeQuestions.length,
+        selectedQuestions: activeQuestions,
+        answers,
+        selectOption,
+        getSelectedOptionsForQuestionId,
+        goToNextQuestion,
+        goToPrevQuestion,
+        goToQuestionById,
+        getDetailedResponses,
+        resetAssessment,
         assessmentReport,
         setAssessmentReport,
         reportId,
         setReportId,
-        selectOption,
-        getSelectedOptionsForQuestion,
-        getDetailedResponses,
-        resetAssessment,
+        isNavigating
       }}
     >
       {children}

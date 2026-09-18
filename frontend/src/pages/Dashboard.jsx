@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
@@ -8,13 +8,16 @@ import {
   BookOpen, 
   ArrowRight, 
   Play, 
-  Cpu, 
   FileText, 
   CheckCircle2, 
   Layers, 
-  GraduationCap 
+  GraduationCap,
+  Calendar,
+  LogIn
 } from 'lucide-react';
 import { useAssessment } from '../context/AssessmentContext';
+import { useAuth } from '../context/AuthContext';
+import reportApi from '../services/reportApi';
 import AppShell from '../components/layout/AppShell';
 import Card from '../components/ui/Card';
 import SoftCard from '../components/ui/SoftCard';
@@ -23,7 +26,31 @@ import Badge from '../components/ui/Badge';
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const { educationLevel, reportId, assessmentReport } = useAssessment();
+  const { educationLevel, reportId, assessmentReport, answers } = useAssessment();
+  const { user, isAuthenticated } = useAuth();
+
+  const [savedReports, setSavedReports] = useState([]);
+  const [loadingReports, setLoadingReports] = useState(false);
+
+  const hasActiveSession = educationLevel && Object.keys(answers).length > 0;
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      setLoadingReports(true);
+      reportApi.getUserReports()
+        .then((res) => {
+          if (res && res.reports) {
+            setSavedReports(res.reports);
+          }
+        })
+        .catch((err) => {
+          console.warn('Could not load user reports:', err);
+        })
+        .finally(() => {
+          setLoadingReports(false);
+        });
+    }
+  }, [isAuthenticated]);
 
   const modules = [
     {
@@ -50,7 +77,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <AppShell title="Student Overview" subtitle="Personal career evaluation hub">
+    <AppShell title="Student Overview" subtitle="Personal career guidance hub">
       <div className="space-y-8 max-w-6xl mx-auto">
         
         {/* Welcome & Primary Action Card */}
@@ -59,26 +86,27 @@ export default function Dashboard() {
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4 text-left">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <Badge variant="indigo" size="md" icon={Sparkles}>
-                  CAREER INTELLIGENCE ENGINE
+                  CAREER GUIDANCE ENGINE
                 </Badge>
-                <Badge variant="slate" size="sm">
-                  v2.0 Architecture
-                </Badge>
+                {isAuthenticated && (
+                  <Badge variant="emerald" size="sm">
+                    Student Account Verified
+                  </Badge>
+                )}
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-tight">
-                {reportId || assessmentReport 
-                  ? 'Your Career Intelligence Report is Ready'
-                  : 'Start Your Personal Aptitude Assessment'
-                }
+                {isAuthenticated ? `Welcome back, ${user?.name}` : 'Welcome to PathFinder AI'}
               </h2>
 
               <p className="text-sm sm:text-base text-slate-600 max-w-xl leading-relaxed">
                 {reportId || assessmentReport
-                  ? 'Explore your calculated readiness scores, top matching pathways, trait radar, and AI study recommendations.'
-                  : 'Take our ~10 minute evaluation. Our engine will map your strengths to personalized graduation roadmaps and industry opportunities.'
+                  ? 'Explore your calculated readiness scores, top matching pathways, trait radar, and personalized study recommendations.'
+                  : hasActiveSession
+                  ? 'You have an active assessment in progress. Resume where you left off or view personalized career roadmaps.'
+                  : 'Take our ~10 minute evaluation. Our deterministic engine maps your psychometric profile to verified graduation roadmaps.'
                 }
               </p>
 
@@ -90,7 +118,16 @@ export default function Dashboard() {
                     icon={FileText}
                     onClick={() => navigate('/report')}
                   >
-                    View Official Report
+                    View Active Report
+                  </Button>
+                ) : hasActiveSession ? (
+                  <Button
+                    size="lg"
+                    variant="primary"
+                    icon={Play}
+                    onClick={() => navigate('/assessment')}
+                  >
+                    Resume Assessment
                   </Button>
                 ) : (
                   <Button
@@ -99,103 +136,115 @@ export default function Dashboard() {
                     icon={Play}
                     onClick={() => navigate('/assessment')}
                   >
-                    Launch Assessment
+                    Start Assessment
                   </Button>
                 )}
 
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  onClick={() => navigate('/assessment')}
-                >
-                  {educationLevel ? 'Update Assessment' : 'Select Stream'}
-                </Button>
+                {!isAuthenticated && (
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    icon={LogIn}
+                    onClick={() => navigate('/login')}
+                  >
+                    Sign In to Save Progress
+                  </Button>
+                )}
               </div>
             </div>
 
-            {/* Right System Info Panel */}
-            <div className="lg:col-span-4 p-5 rounded-2xl bg-slate-50 border border-slate-200/80 neu-inset space-y-3">
-              <div className="flex items-center gap-2.5 pb-2 border-b border-slate-200/60">
-                <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center">
-                  <Cpu className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="text-xs font-bold text-slate-900 block leading-tight">Groq AI Engine</span>
-                  <span className="text-[10px] text-slate-400 block">Llama 3 70B Parameter Model</span>
-                </div>
-              </div>
-
-              <div className="space-y-2 text-xs text-slate-600">
+            <div className="lg:col-span-4 flex justify-center">
+              <div className="w-full max-w-xs p-5 bg-gradient-to-br from-indigo-600 to-indigo-800 text-white rounded-2xl shadow-lg shadow-indigo-200/50 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span>Evaluation Type:</span>
-                  <strong className="text-slate-900">Psychometric + Cognitive</strong>
+                  <span className="text-xs uppercase font-mono tracking-wider text-indigo-200">Session Status</span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
                 </div>
-                <div className="flex items-center justify-between">
-                  <span>Current Level:</span>
-                  <strong className="text-indigo-600 uppercase">
-                    {educationLevel ? educationLevel.replace('-', ' ') : 'Not Selected'}
-                  </strong>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>Report Status:</span>
-                  <strong className={reportId ? 'text-emerald-600 font-bold' : 'text-slate-500'}>
-                    {reportId ? 'Analyzed' : 'Pending'}
-                  </strong>
-                </div>
+                <h4 className="text-lg font-bold">
+                  {educationLevel ? educationLevel.replace('-', ' ').toUpperCase() : 'Ready to Start'}
+                </h4>
+                <p className="text-xs text-indigo-100 leading-relaxed">
+                  {hasActiveSession 
+                    ? `${Object.keys(answers).length} questions completed in current session.`
+                    : '15 trait dimensions ready for evaluation.'
+                  }
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Modular Assessment Pillars */}
-        <div>
-          <div className="mb-4">
-            <h3 className="text-lg font-bold text-slate-900 tracking-tight">
-              Platform Intelligence Modules
+        {/* Saved User Reports History (if authenticated) */}
+        {isAuthenticated && savedReports.length > 0 && (
+          <div className="space-y-4 text-left">
+            <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <FileText className="w-5 h-5 text-indigo-600" />
+              <span>Your Saved Career Reports</span>
             </h3>
-            <p className="text-xs text-slate-500">
-              Core components that synthesize your personalized career report.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {modules.map((mod, idx) => {
-              const Icon = mod.icon;
-              return (
-                <Card key={idx} hover className="neu-flat border-slate-200/80 p-6 flex flex-col justify-between space-y-4">
-                  <div className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {savedReports.map((rep) => {
+                const dateStr = rep.savedAt ? new Date(rep.savedAt).toLocaleDateString() : 'Recent';
+                const topCareer = rep.topCareerRecommendations?.[0]?.career || 'Career Report';
+                const level = rep.assessmentMetadata?.educationLevel || 'Undergraduate';
+
+                return (
+                  <div
+                    key={rep.id}
+                    onClick={() => navigate(`/report?id=${rep.id}`)}
+                    className="p-5 bg-white rounded-2xl border border-slate-200/80 shadow-soft-sm hover:shadow-soft-md hover:border-indigo-300 transition-all cursor-pointer space-y-3 neu-flat"
+                  >
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
-                        <Icon className="w-5 h-5 stroke-[2]" />
-                      </div>
-                      <Badge variant={mod.statusVariant} size="sm">
-                        {mod.status}
+                      <Badge variant="indigo" size="sm">
+                        {level.replace('-', ' ').toUpperCase()}
                       </Badge>
+                      <span className="text-[11px] text-slate-400 flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        {dateStr}
+                      </span>
                     </div>
 
-                    <h4 className="text-base font-bold text-slate-900">
-                      {mod.title}
-                    </h4>
+                    <div>
+                      <h4 className="font-bold text-slate-900 text-base">{topCareer}</h4>
+                      <p className="text-xs text-slate-500 line-clamp-1">
+                        {rep.aiInsights?.summary || 'Psychometric profile analysis.'}
+                      </p>
+                    </div>
 
-                    <p className="text-xs text-slate-500 leading-relaxed">
-                      {mod.desc}
-                    </p>
+                    <div className="flex items-center justify-end text-xs font-semibold text-indigo-600">
+                      <span>View Report &rarr;</span>
+                    </div>
                   </div>
-
-                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                    <span className="text-slate-400 font-medium">Automatic Engine</span>
-                    <button
-                      onClick={() => navigate('/assessment')}
-                      className="text-indigo-600 font-bold hover:text-indigo-800 flex items-center gap-1 cursor-pointer"
-                    >
-                      <span>Explore</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </Card>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
+        )}
+
+        {/* System Methodology Modules */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {modules.map((m, idx) => {
+            const Icon = m.icon;
+            return (
+              <div 
+                key={idx}
+                className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-soft-sm text-left flex flex-col justify-between space-y-4 neu-flat"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <Badge variant={m.statusVariant} size="sm">
+                    {m.status}
+                  </Badge>
+                </div>
+
+                <div className="space-y-1">
+                  <h4 className="font-bold text-base text-slate-900">{m.title}</h4>
+                  <p className="text-xs text-slate-500 leading-relaxed">{m.desc}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </AppShell>

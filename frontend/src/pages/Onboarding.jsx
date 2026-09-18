@@ -13,16 +13,20 @@ import {
   ShieldCheck, 
   Layers, 
   Clock, 
-  Target 
+  Target,
+  LogIn,
+  UserCheck
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Badge from '../components/ui/Badge';
 import Card from '../components/ui/Card';
 import SoftCard from '../components/ui/SoftCard';
 import assessmentApi from '../services/assessmentApi';
+import { useAuth } from '../context/AuthContext';
 
 export default function Onboarding() {
   const navigate = useNavigate();
+  const { user, isAuthenticated } = useAuth();
   const [backendStatus, setBackendStatus] = useState('checking'); // 'checking' | 'connected' | 'offline'
 
   useEffect(() => {
@@ -73,20 +77,38 @@ export default function Onboarding() {
               PathFinder <span className="text-indigo-600">AI</span>
             </span>
             <span className="text-[11px] font-medium text-slate-400 block tracking-tight">
-              Personal Career Intelligence
+              Personal Career Guidance
             </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <div className="hidden sm:flex items-center gap-2 text-xs text-slate-500 bg-white px-3 py-1.5 rounded-full border border-slate-200/80 shadow-soft-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>AI Career Engine Active</span>
+            <span className={`w-2 h-2 rounded-full ${backendStatus === 'offline' ? 'bg-amber-500' : 'bg-emerald-500'} animate-pulse`} />
+            <span>{backendStatus === 'offline' ? 'Offline Mode' : 'Engine Ready'}</span>
           </div>
+
+          {isAuthenticated ? (
+            <button
+              onClick={() => navigate('/dashboard')}
+              className="flex items-center gap-2 text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-3.5 py-1.5 rounded-lg hover:bg-indigo-100 transition-colors cursor-pointer"
+            >
+              <UserCheck className="w-3.5 h-3.5" />
+              <span>{user?.name || 'Dashboard'}</span>
+            </button>
+          ) : (
+            <button
+              onClick={() => navigate('/login')}
+              className="flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-indigo-600 bg-white border border-slate-200 px-3.5 py-1.5 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer"
+            >
+              <LogIn className="w-3.5 h-3.5" />
+              <span>Sign In</span>
+            </button>
+          )}
 
           <button
             onClick={() => navigate('/dashboard')}
-            className="text-xs font-bold text-slate-600 hover:text-indigo-600 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer"
+            className="text-xs font-bold text-slate-600 hover:text-indigo-600 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer hidden md:inline-block"
           >
             Dashboard
           </button>
@@ -106,7 +128,7 @@ export default function Onboarding() {
               className="inline-flex"
             >
               <Badge variant="indigo" size="md" icon={Sparkles}>
-                PERSONAL CAREER INTELLIGENCE
+                STUDENT CAREER GUIDANCE
               </Badge>
             </motion.div>
 
@@ -160,12 +182,12 @@ export default function Onboarding() {
               className="pt-6 grid grid-cols-3 gap-3 border-t border-slate-200/70"
             >
               <div>
-                <span className="text-xl font-black text-slate-900 block leading-tight">15+</span>
-                <span className="text-[11px] text-slate-500 font-medium">Core Traits Analyzed</span>
+                <span className="text-xl font-black text-slate-900 block leading-tight">15</span>
+                <span className="text-[11px] text-slate-500 font-medium">Core Traits Evaluated</span>
               </div>
               <div>
-                <span className="text-xl font-black text-slate-900 block leading-tight">100%</span>
-                <span className="text-[11px] text-slate-500 font-medium">Deterministic Match</span>
+                <span className="text-xl font-black text-slate-900 block leading-tight">20+</span>
+                <span className="text-[11px] text-slate-500 font-medium">Verified Roadmaps</span>
               </div>
               <div>
                 <span className="text-xl font-black text-slate-900 block leading-tight">Groq AI</span>
@@ -174,7 +196,7 @@ export default function Onboarding() {
             </motion.div>
           </div>
 
-          {/* Right Column: Abstract Career Intelligence Visual */}
+          {/* Right Column: Sample Report Preview Visual */}
           <div className="lg:col-span-6 relative flex items-center justify-center">
             {/* Background subtle glow rings */}
             <div className="absolute w-80 h-80 rounded-full bg-indigo-200/50 blur-3xl -z-10" />
@@ -182,7 +204,13 @@ export default function Onboarding() {
 
             {/* Interactive Visual Container */}
             <div className="w-full max-w-md space-y-4">
-              {/* Top Trait Alignment Preview Card */}
+              <div className="flex items-center justify-end">
+                <span className="text-[10px] font-mono font-bold px-2.5 py-1 bg-indigo-50 border border-indigo-200 text-indigo-700 rounded-full uppercase tracking-wider">
+                  Sample Report Preview
+                </span>
+              </div>
+
+              {/* Trait Alignment Preview Card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -195,27 +223,27 @@ export default function Onboarding() {
                       <TrendingUp className="w-4 h-4" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-slate-900">Career Readiness Score</h4>
-                      <p className="text-[10px] text-slate-400">High Foundational Alignment</p>
+                      <h4 className="text-xs font-bold text-slate-900">Career Readiness Indicator</h4>
+                      <p className="text-[10px] text-slate-400">Sample Evaluation Breakdown</p>
                     </div>
                   </div>
                   <Badge variant="emerald" size="sm">
-                    88 / 100
+                    High Alignment
                   </Badge>
                 </div>
 
-                {/* Progress Mini Track */}
+                {/* Progress Track */}
                 <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden mb-3">
-                  <div className="bg-emerald-500 h-full rounded-full w-[88%]" />
+                  <div className="bg-emerald-500 h-full rounded-full w-[85%]" />
                 </div>
 
                 <div className="flex items-center justify-between text-[11px] text-slate-500">
-                  <span className="font-semibold text-slate-700">Analytical & Logical Fit</span>
-                  <span className="text-emerald-600 font-bold">Top 5% Match</span>
+                  <span className="font-semibold text-slate-700">Analytical & Logical Reasoning</span>
+                  <span className="text-emerald-600 font-bold">Top Alignment</span>
                 </div>
               </motion.div>
 
-              {/* Middle Floating Career Matching Node */}
+              {/* Career Matching Node Preview */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -227,7 +255,7 @@ export default function Onboarding() {
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[10px] font-bold uppercase text-indigo-600 tracking-wider">Top Match</span>
                     <span className="text-xs font-black text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full border border-indigo-100">
-                      94%
+                      Sample
                     </span>
                   </div>
                   <p className="text-sm font-bold text-slate-900 leading-tight mb-1">
@@ -243,90 +271,64 @@ export default function Onboarding() {
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[10px] font-bold uppercase text-purple-600 tracking-wider">Alternative</span>
                     <span className="text-xs font-black text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full border border-purple-100">
-                      89%
+                      Sample
                     </span>
                   </div>
                   <p className="text-sm font-bold text-slate-900 leading-tight mb-1">
-                    Data Scientist
+                    Civil Engineer
                   </p>
                   <p className="text-[11px] text-slate-400">
-                    Strong pattern & statistical mastery
+                    High spatial & structural design fit
                   </p>
                 </div>
               </motion.div>
 
-              {/* Bottom AI Insights Preview */}
+              {/* AI Insights Preview */}
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="bg-gradient-to-r from-indigo-900 to-indigo-950 text-white rounded-2xl p-4 shadow-soft-lg flex items-center justify-between gap-4 border border-indigo-800/40"
+                className="bg-gradient-to-r from-indigo-900 to-indigo-950 text-white rounded-2xl p-4.5 shadow-soft-md space-y-2 border border-indigo-800/80"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-indigo-500/30 border border-indigo-400/30 flex items-center justify-center text-indigo-300 shrink-0">
-                    <Sparkles className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold block text-white">AI Personalization Ready</span>
-                    <span className="text-[10px] text-indigo-200 block">Personalized study advice & roadmaps</span>
-                  </div>
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-3.5 h-3.5 text-indigo-300 animate-pulse" />
+                  <span className="text-[10px] font-bold tracking-wider text-indigo-200 uppercase">
+                    AI Guidance Preview
+                  </span>
                 </div>
-
-                <span className="text-[11px] font-bold text-indigo-300 bg-white/10 px-2.5 py-1 rounded-lg shrink-0">
-                  Llama 3 Powered
-                </span>
+                <p className="text-xs text-indigo-100 leading-relaxed font-normal">
+                  "Your strong spatial problem solving and analytical structure point towards high compatibility with structural engineering and software systems."
+                </p>
               </motion.div>
             </div>
           </div>
         </div>
-
-        {/* Feature Pillars Grid */}
-        <section className="mt-16 md:mt-20 pt-10 border-t border-slate-200/70">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featurePillars.map((pillar, idx) => {
-              const Icon = pillar.icon;
-              return (
-                <Card key={idx} hover className="neu-flat border-slate-200/80 p-6">
-                  <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mb-4">
-                    <Icon className="w-5 h-5 stroke-[2]" />
-                  </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-1.5">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </Card>
-              );
-            })}
-          </div>
-        </section>
       </main>
 
-      {/* Footer */}
-      <footer className="w-full max-w-7xl mx-auto px-6 py-6 border-t border-slate-200/70 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <div>
-          <span>© {new Date().getFullYear()} PathFinder AI Career Platform. All student data processed deterministically.</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <span className="text-slate-400">Server Status:</span>
-          {backendStatus === 'connected' ? (
-            <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-600">
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              API Connected
-            </span>
-          ) : backendStatus === 'checking' ? (
-            <span className="inline-flex items-center gap-1.5 font-semibold text-amber-500">
-              <span className="w-2 h-2 rounded-full bg-amber-500 animate-ping" />
-              Connecting...
-            </span>
-          ) : (
-            <span className="inline-flex items-center gap-1.5 font-semibold text-slate-400">
-              <span className="w-2 h-2 rounded-full bg-slate-400" />
-              Local Mock Ready
-            </span>
-          )}
+      {/* Feature Value Cards Section */}
+      <footer className="w-full max-w-7xl mx-auto px-6 py-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {featurePillars.map((feature, idx) => {
+            const Icon = feature.icon;
+            return (
+              <div 
+                key={idx}
+                className="bg-white/80 backdrop-blur-xs rounded-2xl p-6 border border-slate-200/80 shadow-soft-sm hover:shadow-soft-md transition-all text-left flex flex-col justify-between space-y-3"
+              >
+                <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100/80 flex items-center justify-center text-indigo-600">
+                  <Icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
+                    {feature.title}
+                  </h3>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </footer>
     </div>

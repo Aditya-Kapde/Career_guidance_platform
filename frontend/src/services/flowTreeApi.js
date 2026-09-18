@@ -2,7 +2,8 @@ import api from './api';
 
 export const flowTreeApi = {
   getFlowTreeByCareerId: async (careerId) => {
-    return api.get(`/api/flow-tree/${careerId}`);
+    const res = await api.get(`/api/flow-tree/${careerId}`);
+    return res.data;
   }
 };
 

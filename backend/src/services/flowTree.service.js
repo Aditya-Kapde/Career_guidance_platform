@@ -8,12 +8,77 @@ const __dirname = path.dirname(__filename);
 
 /**
  * Domain-specific templates for generating highly detailed, multi-stream branching decision trees.
- * Every template starts from Class 8/9 -> Class 10 -> 3-4 High School Streams -> Entrance Exams/Portfolios ->
+ * Every template starts from Class 8/9 -> Class 10 -> High School Streams -> Entrance Exams ->
  * Degrees -> Internships & Certifications -> Entry Role -> Senior Role -> Executive Leadership.
  */
 const DOMAIN_PROFILES = {
+  // Core Engineering Domain (Civil, Mechanical, Structural, Architecture)
+  engineering: {
+    careerIds: ['civil-engineer', 'mechanical-engineer', 'architect'],
+    matches: ['civil-engineer', 'mechanical-engineer', 'architect', 'civil', 'structural', 'mechanical'],
+    middleSchool: 'Middle School (Class 8 & 9: Math, Physics & Technical Drawing Aptitude)',
+    class10: 'Complete Class 10 Boards (Science & Mathematics Foundation)',
+    streams: [
+      { id: 'stream-pcm', label: 'Science Track (PCM - Physics, Chemistry & Mathematics)', stream: 'Engineering Track' },
+      { id: 'stream-diploma-core', label: 'Polytechnic Diploma in Core Engineering (3-Yr)', stream: 'Diploma Track' },
+      { id: 'stream-pcmb', label: 'Science Track (PCMB - Physics, Chemistry, Math & Biology)', stream: 'Applied Technical Track' }
+    ],
+    entrances: [
+      { id: 'ent-jee', label: 'National / State Entrances (JEE Main & Adv / BITSAT / State CET)', stream: 'Engineering Track' },
+      { id: 'ent-lateral-eng', label: 'State Lateral Entry Exam (Direct 2nd-Year B.Tech / B.E.)', stream: 'Diploma Track' },
+      { id: 'ent-nata', label: 'Architecture & Design Entrances (NATA / JEE Paper 2 / CUET)', stream: 'Applied Technical Track' }
+    ],
+    degrees: [
+      { id: 'deg-btech-eng', label: 'B.Tech / B.E. in Civil / Mechanical / Architectural Engineering', stream: 'Engineering Track' },
+      { id: 'deg-barch', label: 'B.Arch (Bachelor of Architecture - 5 Year Program)', stream: 'Applied Technical Track' },
+      { id: 'deg-btech-lat', label: 'B.Tech / B.E. via Lateral Entry Specialization', stream: 'Diploma Track' }
+    ],
+    experience: [
+      { id: 'cert-cad-sim', label: 'Professional CAD, BIM & Simulation Tools (AutoCAD, Revit, STAAD.Pro, SolidWorks)' },
+      { id: 'internship', label: 'Site / Plant / Structural Design Engineering Internship (6 Months)' }
+    ],
+    roles: (title) => [
+      { id: 'role-entry', label: `Graduate Engineer Trainee / Junior ${title}` },
+      { id: 'role-senior', label: `Senior ${title} / Project Lead Engineer` },
+      { id: 'role-lead', label: `Chief Project Engineer / Director of Operations / Partner` }
+    ]
+  },
+
+  // Tech, Software & AI Domain (Strictly Software, Data, AI, Cloud, Cybersecurity)
+  tech: {
+    careerIds: ['software-engineer', 'data-scientist', 'cloud-engineer', 'cybersecurity-analyst', 'ai-engineer'],
+    matches: ['software', 'data-scientist', 'cloud', 'cybersecurity', 'ai-engineer', 'developer'],
+    middleSchool: 'Middle School (Class 8 & 9: Math, Logic & Basic Coding / Scratch)',
+    class10: 'Complete Class 10 Boards (Science & Mathematics Focus)',
+    streams: [
+      { id: 'stream-science-pcm', label: 'Science Track (PCM + Computer Science / IP)', stream: 'Engineering Track' },
+      { id: 'stream-commerce-cs', label: 'Commerce Track with Mathematics & Computers', stream: 'Applied Computing Track' },
+      { id: 'stream-diploma-cs', label: 'Polytechnic Diploma in Computer Science / IT (3-Yr)', stream: 'Diploma Track' }
+    ],
+    entrances: [
+      { id: 'ent-jee', label: 'National / State Entrances (JEE Main & Adv / BITSAT / CET)', stream: 'Engineering Track' },
+      { id: 'ent-cuet-bca', label: 'University Entrance Tests (CUET / IPU CET / NIMCET Prep)', stream: 'Applied Computing Track' },
+      { id: 'ent-lateral', label: 'State Lateral Entry Exam (Direct 2nd-Year B.Tech CS/IT)', stream: 'Diploma Track' }
+    ],
+    degrees: [
+      { id: 'deg-btech', label: 'B.Tech / B.E. in Computer Science / AI / Related Specialization', stream: 'Engineering Track' },
+      { id: 'deg-bca', label: 'BCA (Bachelor of Computer Applications) + MCA Pathway', stream: 'Applied Computing Track' },
+      { id: 'deg-bsc-cs', label: 'B.Sc in Computer Science / Data Science / Applied Math', stream: 'Applied Computing Track' }
+    ],
+    experience: [
+      { id: 'cert-cloud-git', label: 'Cloud & Domain Certifications + Open-Source Contributions' },
+      { id: 'internship', label: 'Software Engineering / Tech Associate Internship' }
+    ],
+    roles: (title) => [
+      { id: 'role-entry', label: `Associate / Junior ${title}` },
+      { id: 'role-senior', label: `Senior ${title} / Tech Lead` },
+      { id: 'role-lead', label: `Principal Architect / VP of Engineering / CTO` }
+    ]
+  },
+
   // Creative & Design Domain
   creative: {
+    careerIds: ['ux-designer', 'graphic-designer'],
     matches: ['graphic', 'design', 'ui', 'ux', 'fashion', 'animat', 'interior', 'visual', 'art'],
     middleSchool: 'Middle School (Class 8 & 9: Visual Arts, Sketching & Creative Aptitude)',
     class10: 'Complete Class 10 Boards (Foundational Academic Milestone)',
@@ -45,41 +110,10 @@ const DOMAIN_PROFILES = {
     ]
   },
 
-  // Tech, Software & AI Domain
-  tech: {
-    matches: ['software', 'data', 'cloud', 'cyber', 'ai', 'devops', 'web', 'machine', 'engineer', 'developer', 'computer'],
-    middleSchool: 'Middle School (Class 8 & 9: Math, Logic & Basic Coding / Scratch)',
-    class10: 'Complete Class 10 Boards (Science & Mathematics Focus)',
-    streams: [
-      { id: 'stream-science-pcm', label: 'Science Track (PCM + Computer Science / IP)', stream: 'Engineering Track' },
-      { id: 'stream-commerce-cs', label: 'Commerce Track with Mathematics & Computers', stream: 'Applied Computing Track' },
-      { id: 'stream-science-gen', label: 'General Science Track (Physics, Chemistry, Biology & Math)', stream: 'Multidisciplinary Tech' },
-      { id: 'stream-diploma-cs', label: 'Polytechnic Diploma in Computer Science / IT (3-Yr)', stream: 'Diploma Track' }
-    ],
-    entrances: [
-      { id: 'ent-jee', label: 'National / State Entrances (JEE Main & Adv / BITSAT / CET)', stream: 'Engineering Track' },
-      { id: 'ent-cuet-bca', label: 'University Entrance Tests (CUET / IPU CET / NIMCET Prep)', stream: 'Applied Computing Track' },
-      { id: 'ent-lateral', label: 'State Lateral Entry Exam (Direct 2nd-Year B.Tech)', stream: 'Diploma Track' }
-    ],
-    degrees: [
-      { id: 'deg-btech', label: 'B.Tech / B.E. in Computer Science / AI / Related Specialization', stream: 'Engineering Track' },
-      { id: 'deg-bca', label: 'BCA (Bachelor of Computer Applications) + MCA Pathway', stream: 'Applied Computing Track' },
-      { id: 'deg-bsc-cs', label: 'B.Sc in Computer Science / Data Science / Applied Math', stream: 'Multidisciplinary Tech' }
-    ],
-    experience: [
-      { id: 'cert-cloud-git', label: 'Cloud & Domain Certifications + Open-Source Contributions' },
-      { id: 'internship', label: 'Software Engineering / Tech Associate Internship' }
-    ],
-    roles: (title) => [
-      { id: 'role-entry', label: `Associate / Junior ${title}` },
-      { id: 'role-senior', label: `Senior ${title} / Tech Lead` },
-      { id: 'role-lead', label: `Principal Architect / VP of Engineering / CTO` }
-    ]
-  },
-
   // Healthcare & Medicine Domain
   medical: {
-    matches: ['doctor', 'nurse', 'pharm', 'medical', 'biotech', 'physio', 'dental', 'health', 'surgeon'],
+    careerIds: ['doctor', 'psychologist'],
+    matches: ['doctor', 'nurse', 'pharm', 'medical', 'biotech', 'physio', 'dental', 'health', 'surgeon', 'psychologist'],
     middleSchool: 'Middle School (Class 8 & 9: Biology & Environmental Science Basics)',
     class10: 'Complete Class 10 Boards (Biology & Natural Sciences)',
     streams: [
@@ -90,27 +124,28 @@ const DOMAIN_PROFILES = {
     entrances: [
       { id: 'ent-neet-ug', label: 'National Eligibility Entrance Test (NEET UG)', stream: 'Clinical Medicine Track' },
       { id: 'ent-biotech', label: 'Biotech / Allied Health Entrance Exams (CUET / State Entrances)', stream: 'Biomedical & Research Track' },
-      { id: 'ent-paramedical', label: 'State Paramedical & Nursing Aptitude Tests', stream: 'Allied Health Track' }
+      { id: 'ent-paramedical', label: 'State Paramedical & Psychology Aptitude Tests', stream: 'Allied Health Track' }
     ],
     degrees: [
       { id: 'deg-mbbs', label: 'MBBS / BDS Professional Degree Program', stream: 'Clinical Medicine Track' },
       { id: 'deg-biotech', label: 'B.Sc / B.Tech in Biotechnology / Biomedical Sciences', stream: 'Biomedical & Research Track' },
-      { id: 'deg-allied', label: 'B.Pharm / B.Sc Nursing / BPT (Physiotherapy)', stream: 'Allied Health Track' }
+      { id: 'deg-allied', label: 'BA/B.Sc Psychology / B.Pharm / Allied Health Program', stream: 'Allied Health Track' }
     ],
     experience: [
-      { id: 'cert-clinical', label: 'Post-Graduate Specialty Exam (NEET-PG / USMLE / Fellowships)' },
+      { id: 'cert-clinical', label: 'Post-Graduate Specialty Exam (NEET-PG / RCI License / Fellowships)' },
       { id: 'internship', label: 'Mandatory 1-Year Hospital Rotational Clinical Residency' }
     ],
     roles: (title) => [
       { id: 'role-entry', label: `Resident Doctor / Junior ${title}` },
-      { id: 'role-senior', label: `Senior Consultant / Specialist Physician` },
-      { id: 'role-lead', label: `Medical Director / Chief of Medicine / Department Head` }
+      { id: 'role-senior', label: `Senior Consultant / Specialist Practitioner` },
+      { id: 'role-lead', label: `Medical Director / Department Head / Chief Practitioner` }
     ]
   },
 
   // Business, Finance & Management Domain
   business: {
-    matches: ['chartered', 'accountant', 'finance', 'market', 'business', 'manage', 'consult', 'product', 'bank', 'econom'],
+    careerIds: ['chartered-accountant', 'financial-analyst', 'investment-banker', 'business-analyst', 'entrepreneur', 'digital-marketer'],
+    matches: ['chartered', 'accountant', 'finance', 'market', 'business', 'manage', 'consult', 'product', 'bank', 'econom', 'entrepreneur', 'marketer'],
     middleSchool: 'Middle School (Class 8 & 9: Mathematics, Economics & Communication)',
     class10: 'Complete Class 10 Boards (Social Science & Mathematics)',
     streams: [
@@ -142,7 +177,8 @@ const DOMAIN_PROFILES = {
 
   // Law, Civil Services & Governance Domain
   law: {
-    matches: ['law', 'advocate', 'legal', 'judge', 'civil', 'ias', 'ips', 'policy', 'governance'],
+    careerIds: ['lawyer'],
+    matches: ['lawyer', 'advocate', 'legal', 'judge', 'ias', 'ips', 'policy', 'governance'],
     middleSchool: 'Middle School (Class 8 & 9: Social Studies, Debating & Critical Reading)',
     class10: 'Complete Class 10 Boards (Foundational Humanities & Ethics)',
     streams: [
@@ -168,16 +204,57 @@ const DOMAIN_PROFILES = {
       { id: 'role-senior', label: `Senior Legal Counsel / Partner` },
       { id: 'role-lead', label: `General Counsel / Senior Advocate / High Court Judge` }
     ]
+  },
+
+  // Education Domain
+  education: {
+    careerIds: ['teacher'],
+    matches: ['teacher', 'educator', 'professor', 'pedagogy'],
+    middleSchool: 'Middle School (Class 8 & 9: Foundational Academics & Peer Tutoring)',
+    class10: 'Complete Class 10 Boards (Academic Excellence)',
+    streams: [
+      { id: 'stream-arts-edu', label: 'Humanities & Languages Stream', stream: 'Humanities Track' },
+      { id: 'stream-science-edu', label: 'Science Track (PCM / PCB Focus)', stream: 'STEM Education Track' },
+      { id: 'stream-commerce-edu', label: 'Commerce & Economics Stream', stream: 'Commerce Education Track' }
+    ],
+    entrances: [
+      { id: 'ent-cuet-edu', label: 'Central University Entrance Test (CUET UG/PG)', stream: 'Humanities Track' },
+      { id: 'ent-bed', label: 'State / National B.Ed Entrance Examinations', stream: 'STEM Education Track' }
+    ],
+    degrees: [
+      { id: 'deg-ba-bed', label: 'Integrated 4-Year B.A. B.Ed / B.Sc. B.Ed Program', stream: 'Humanities Track' },
+      { id: 'deg-bsc-bed', label: 'Bachelor of Science (B.Sc) followed by 2-Year B.Ed', stream: 'STEM Education Track' },
+      { id: 'deg-med', label: 'Master of Education (M.Ed) / Master of Arts (M.A.)', stream: 'Commerce Education Track' }
+    ],
+    experience: [
+      { id: 'cert-tet', label: 'Central Teacher Eligibility Test (CTET / State TET / NET Prep)' },
+      { id: 'internship', label: 'School Classroom Teaching Practice & Curriculum Internship' }
+    ],
+    roles: (title) => [
+      { id: 'role-entry', label: `Assistant / Primary School ${title}` },
+      { id: 'role-senior', label: `Senior Secondary ${title} / Department Head` },
+      { id: 'role-lead', label: `Principal / Academic Director / Education Dean` }
+    ]
   }
 };
 
 /**
- * Finds matching domain profile or creates an intelligent generalized profile.
+ * Finds matching domain profile with exact careerId resolution.
  */
 const getDomainProfile = (careerId, title) => {
-  const query = `${careerId} ${title}`.toLowerCase();
-  for (const [key, profile] of Object.entries(DOMAIN_PROFILES)) {
-    if (profile.matches.some(m => query.includes(m))) {
+  const normId = (careerId || '').toLowerCase().trim();
+
+  // 1. Direct careerId matching (Highest Precedence)
+  for (const [, profile] of Object.entries(DOMAIN_PROFILES)) {
+    if (profile.careerIds && profile.careerIds.includes(normId)) {
+      return profile;
+    }
+  }
+
+  // 2. Exact keyword / token matching
+  const tokens = `${normId} ${(title || '').toLowerCase()}`.split(/[\s-_]+/);
+  for (const [, profile] of Object.entries(DOMAIN_PROFILES)) {
+    if (profile.matches.some(m => tokens.includes(m))) {
       return profile;
     }
   }
@@ -261,16 +338,17 @@ export const generateDynamicBranchingTree = (careerId, roadmap) => {
     nodes.push({
       id: ent.id,
       label: ent.label,
-      type: 'entrance-exam',
+      type: 'exam',
       level: 4,
       stream: ent.stream
     });
-    // Connect corresponding stream to entrance
-    const correspondingStream = profile.streams[idx] || profile.streams[0];
-    edges.push({ source: correspondingStream.id, target: ent.id });
+    const parentStream = profile.streams[idx % profile.streams.length];
+    if (parentStream) {
+      edges.push({ source: parentStream.id, target: ent.id });
+    }
   });
 
-  // 5. Level 5: Undergraduate Degrees & Higher Education
+  // 5. Level 5: Degrees & Higher Education
   profile.degrees.forEach((deg, idx) => {
     nodes.push({
       id: deg.id,
@@ -279,66 +357,61 @@ export const generateDynamicBranchingTree = (careerId, roadmap) => {
       level: 5,
       stream: deg.stream
     });
-    // Connect entrance exam to degree
-    const correspondingEntrance = profile.entrances[idx] || profile.entrances[0];
-    edges.push({ source: correspondingEntrance.id, target: deg.id });
+    const parentEntrance = profile.entrances[idx % profile.entrances.length];
+    if (parentEntrance) {
+      edges.push({ source: parentEntrance.id, target: deg.id });
+    }
   });
-
-  // If there is a lateral entry diploma entrance, connect it to first degree
-  const lateralEnt = profile.entrances.find(e => e.id.includes('lateral') || e.stream === 'Vocational Track');
-  if (lateralEnt && profile.degrees[0]) {
-    edges.push({ source: lateralEnt.id, target: profile.degrees[0].id });
-  }
 
   // 6. Level 6: Certifications & Internships
   profile.experience.forEach((exp, idx) => {
     nodes.push({
       id: exp.id,
       label: exp.label,
-      type: idx === 0 ? 'certification' : 'internship',
+      type: 'certification',
       level: 6,
       stream: 'Core'
     });
-    // Connect all degrees to experience nodes
+    // Link from all degrees to certifications/internships
     profile.degrees.forEach((deg) => {
       edges.push({ source: deg.id, target: exp.id });
     });
   });
 
-  // 7. Levels 7, 8, 9: Career Progression Roles
+  // 7. Level 7-9: Career Progression Roles
   const roles = profile.roles(title);
   roles.forEach((r, idx) => {
-    const roleLevel = 7 + idx;
     nodes.push({
       id: r.id,
       label: r.label,
-      type: idx === 0 ? 'job' : idx === 1 ? 'job' : 'promotion',
-      level: roleLevel,
+      type: 'role',
+      level: 7 + idx,
       stream: 'Core'
     });
-
-    if (idx === 0) {
-      // Connect experience nodes to entry role
-      profile.experience.forEach((exp) => {
-        edges.push({ source: exp.id, target: r.id });
-      });
-    } else {
-      // Connect previous role to current role
-      edges.push({ source: roles[idx - 1].id, target: r.id });
-    }
   });
 
-  return { id: careerId, nodes, edges };
+  // Connect experience to Entry Role
+  profile.experience.forEach((exp) => {
+    edges.push({ source: exp.id, target: roles[0].id });
+  });
+
+  // Connect Roles sequentially
+  for (let i = 0; i < roles.length - 1; i++) {
+    edges.push({ source: roles[i].id, target: roles[i + 1].id });
+  }
+
+  return {
+    careerId,
+    title,
+    nodes,
+    edges,
+    summary: `Structured multi-pathway career progression roadmap for ${title}.`
+  };
 };
 
-/**
- * Retrieves the flow tree for a given career ID.
- * 
- * @param {string} careerId - Kebab-case career ID (e.g. 'graphic-designer')
- * @returns {Object|null} The flow tree object or null if not found
- */
-export const getFlowTreeById = (careerId) => {
-  if (!careerId) return null;
+export const getFlowTreeForCareer = (careerId) => {
   const roadmap = getRoadmapById(careerId);
   return generateDynamicBranchingTree(careerId, roadmap);
 };
+
+export const getFlowTreeById = getFlowTreeForCareer;

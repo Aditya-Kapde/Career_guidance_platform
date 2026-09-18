@@ -153,21 +153,9 @@
       "AWS"
     ],
     "certifications": [
-      {
-        "name": "AWS Certified Developer",
-        "issuingBody": "Amazon Web Services",
-        "description": "Validates technical expertise in developing and maintaining applications on AWS."
-      },
-      {
-        "name": "Oracle Certified Professional Java SE",
-        "issuingBody": "Oracle",
-        "description": "Demonstrates deep knowledge of Java programming language and APIs."
-      },
-      {
-        "name": "Certified Kubernetes Administrator (CKA)",
-        "issuingBody": "Cloud Native Computing Foundation (CNCF)",
-        "description": "Verifies ability to configure and manage production-grade Kubernetes clusters."
-      }
+      "AWS Certified Solutions Architect",
+      "Meta Front-End / Back-End Developer",
+      "Oracle Certified Java Professional"
     ],
     "topColleges": [
       {
@@ -389,21 +377,9 @@
       "Kaggle"
     ],
     "certifications": [
-      {
-        "name": "IBM Data Science Professional Certificate",
-        "issuingBody": "IBM",
-        "description": "Comprehensive introduction to data science, data analysis, and Python libraries."
-      },
-      {
-        "name": "Microsoft Certified: Power BI Data Analyst Associate",
-        "issuingBody": "Microsoft",
-        "description": "Verifies competence in processing, analyzing, and visualizing data using Power BI."
-      },
-      {
-        "name": "Google Data Analytics Professional Certificate",
-        "issuingBody": "Google",
-        "description": "Foundational certificate covering data cleaning, analysis, and visualization."
-      }
+      "Google Data Analytics Professional Certificate",
+      "IBM Data Science Professional Certificate",
+      "TensorFlow Developer Certificate"
     ],
     "topColleges": [
       {
@@ -623,21 +599,9 @@
       "Ansible"
     ],
     "certifications": [
-      {
-        "name": "AWS Certified Solutions Architect - Associate",
-        "issuingBody": "Amazon Web Services",
-        "description": "Verifies ability to design and deploy secure and robust applications on AWS technologies."
-      },
-      {
-        "name": "Microsoft Certified: Azure Administrator Associate",
-        "issuingBody": "Microsoft",
-        "description": "Demonstrates capabilities in managing cloud services, including storage, security, and networking."
-      },
-      {
-        "name": "Associate Cloud Engineer",
-        "issuingBody": "Google Cloud",
-        "description": "Validates ability to deploy applications, monitor operations, and manage enterprise Google Cloud assets."
-      }
+      "AWS Certified Solutions Architect",
+      "Google Cloud Certified Professional Cloud Architect",
+      "Microsoft Certified: Azure Solutions Architect Expert"
     ],
     "topColleges": [
       {
@@ -857,21 +821,9 @@
       "Kali Linux"
     ],
     "certifications": [
-      {
-        "name": "Certified Ethical Hacker (CEH)",
-        "issuingBody": "EC-Council",
-        "description": "Validates credentials in finding vulnerabilities in target systems using hacker tools."
-      },
-      {
-        "name": "CompTIA Security+",
-        "issuingBody": "CompTIA",
-        "description": "Establish core security knowledge required for IT security roles."
-      },
-      {
-        "name": "Certified Information Systems Security Professional (CISSP)",
-        "issuingBody": "(ISC)²",
-        "description": "Elite certification proving deep design, implementation, and management capabilities in cybersecurity."
-      }
+      "CompTIA Security+",
+      "Certified Information Systems Security Professional (CISSP)",
+      "Certified Ethical Hacker (CEH)"
     ],
     "topColleges": [
       {
@@ -1091,21 +1043,9 @@
       "Google Colab"
     ],
     "certifications": [
-      {
-        "name": "TensorFlow Developer Certificate",
-        "issuingBody": "Google (TensorFlow Network)",
-        "description": "Validates entry-level competence in building models and deploying deep learning tools."
-      },
-      {
-        "name": "DeepLearning.AI Deep Learning Specialization",
-        "issuingBody": "DeepLearning.AI",
-        "description": "Demonstrates mastery of building convolutional neural networks, sequence models, and AI architectures."
-      },
-      {
-        "name": "Google Cloud Professional Machine Learning Engineer",
-        "issuingBody": "Google Cloud",
-        "description": "Proves capabilities to build, train, deploy, and scale machine learning models on GCP infrastructure."
-      }
+      "DeepLearning.AI TensorFlow Developer",
+      "AWS Certified Machine Learning - Specialty",
+      "Microsoft Certified: Azure AI Engineer Associate"
     ],
     "topColleges": [
       {
@@ -1324,21 +1264,9 @@
       "Electronic Health Record Software"
     ],
     "certifications": [
-      {
-        "name": "Registration with National Medical Commission (NMC)",
-        "issuingBody": "NMC / State Medical Council",
-        "description": "Mandatory license required to practice medicine in India."
-      },
-      {
-        "name": "Advanced Cardiovascular Life Support (ACLS)",
-        "issuingBody": "American Heart Association (AHA)",
-        "description": "Standard medical credential validating capability in managing cardiac emergencies."
-      },
-      {
-        "name": "Membership/Fellowship of Royal Colleges (MRCP/MRCS)",
-        "issuingBody": "Royal Colleges (UK)",
-        "description": "Prestigious international medical post-graduate qualification recognized globally."
-      }
+      "USMLE / PLAB Registration",
+      "Advanced Cardiac Life Support (ACLS)",
+      "Board Certification in Specialized Medical Discipline"
     ],
     "topColleges": [
       {
@@ -1559,21 +1487,9 @@
       "Legal Case Management Systems"
     ],
     "certifications": [
-      {
-        "name": "Certificate of Practice (COP)",
-        "issuingBody": "Bar Council of India (BCI)",
-        "description": "Mandatory national certification required to practice law in Indian courts."
-      },
-      {
-        "name": "Diploma in Intellectual Property Rights (IPR)",
-        "issuingBody": "Indian Law Institute (ILI) / Reputed University",
-        "description": "Specialized legal credential focused on patent, copyright, and trademark compliance."
-      },
-      {
-        "name": "Certified Corporate Secretary (CS) - Parallel",
-        "issuingBody": "ICSI",
-        "description": "Dual credential combining corporate secretary qualifications with corporate law specialization."
-      }
+      "All India Bar Examination (AIBE)",
+      "Certified Information Privacy Professional (CIPP)",
+      "Corporate Law & Governance Specialization"
     ],
     "topColleges": [
       {
@@ -1792,21 +1708,9 @@
       "Kahoot! / Mentimeter"
     ],
     "certifications": [
-      {
-        "name": "CTET Certificate (Central Teacher Eligibility Test)",
-        "issuingBody": "CBSE",
-        "description": "Compulsory certificate proving eligibility to teach in central government schools (KVS, NVS)."
-      },
-      {
-        "name": "Cambridge International TKT (Teaching Knowledge Test)",
-        "issuingBody": "Cambridge English",
-        "description": "International certification validating teaching methodology and English language instruction."
-      },
-      {
-        "name": "B.Ed. Certification",
-        "issuingBody": "NCTE Recognized University",
-        "description": "Mandatory degree certification to teach in middle and high schools in India."
-      }
+      "CTET / State TET Certification",
+      "Cambridge International Diploma in Teaching & Learning",
+      "Google Certified Educator"
     ],
     "topColleges": [
       {
@@ -2024,21 +1928,9 @@
       "Therapy Worksheet Toolkits"
     ],
     "certifications": [
-      {
-        "name": "RCI Clinical Psychologist License",
-        "issuingBody": "Rehabilitation Council of India (RCI)",
-        "description": "Mandatory national license required to practice as a Clinical Psychologist and write diagnostics in India."
-      },
-      {
-        "name": "Certified Cognitive Behavioral Therapist (CBT)",
-        "issuingBody": "Beck Institute / Reputed Institution",
-        "description": "Validates specialized training in cognitive behavioral therapy protocols."
-      },
-      {
-        "name": "Certified Counseling Practitioner",
-        "issuingBody": "Counseling Association / Board",
-        "description": "Verifies clinical knowledge and ethics in counseling settings."
-      }
+      "RCI Licensed Clinical Psychologist Certification",
+      "National Certified Counselor (NCC)",
+      "Cognitive Behavioral Therapy (CBT) Practitioner Certificate"
     ],
     "topColleges": [
       {
@@ -2257,21 +2149,9 @@
       "3ds Max"
     ],
     "certifications": [
-      {
-        "name": "Council of Architecture (CoA) License",
-        "issuingBody": "Council of Architecture, India",
-        "description": "Mandatory statutory license required to use the title Architect and seal construction blueprints in India."
-      },
-      {
-        "name": "IGBC AP (Indian Green Building Council Accredited Professional)",
-        "issuingBody": "CII-IGBC",
-        "description": "Validates credentials in designing environmentally sustainable, green buildings in India."
-      },
-      {
-        "name": "Autodesk Certified Professional (Revit / AutoCAD)",
-        "issuingBody": "Autodesk",
-        "description": "Proves expert capabilities in using Autodesk BIM tools for architectural production."
-      }
+      "Council of Architecture (CoA) Registration",
+      "LEED AP Building Design + Construction",
+      "Autodesk Certified Professional: Revit for Architectural Design"
     ],
     "topColleges": [
       {
@@ -2490,21 +2370,9 @@
       "CaseWare (Audit Management)"
     ],
     "certifications": [
-      {
-        "name": "ICAI Membership (ACA / FCA)",
-        "issuingBody": "The Institute of Chartered Accountants of India",
-        "description": "Mandatory national qualification required to practice as an auditor and certify statements in India."
-      },
-      {
-        "name": "DISA (Diploma in Information System Audit)",
-        "issuingBody": "ICAI",
-        "description": "Specialized qualification certifying competence in auditing computer security and database operations."
-      },
-      {
-        "name": "Certified Internal Auditor (CIA)",
-        "issuingBody": "Institute of Internal Auditors (IIA), USA",
-        "description": "Globally respected certification for specialists in internal auditing systems."
-      }
+      "ICAI Chartered Accountant Credential",
+      "Certified Public Accountant (CPA)",
+      "Certified Management Accountant (CMA)"
     ],
     "topColleges": [
       {
@@ -2723,21 +2591,9 @@
       "Tableau"
     ],
     "certifications": [
-      {
-        "name": "CFA Charterholder (Chartered Financial Analyst)",
-        "issuingBody": "CFA Institute, USA",
-        "description": "Elite international finance credential validating portfolio management and investment analysis expertise."
-      },
-      {
-        "name": "Financial Risk Manager (FRM)",
-        "issuingBody": "GARP (Global Association of Risk Professionals)",
-        "description": "Global certification verifying capabilities in risk measurement and management."
-      },
-      {
-        "name": "NISM Research Analyst Certification",
-        "issuingBody": "NISM (National Institute of Securities Markets)",
-        "description": "Mandatory regulatory certification to act as a research analyst in India."
-      }
+      "Chartered Financial Analyst (CFA Level 1/2/3)",
+      "Financial Modeling and Valuation Analyst (FMVA)",
+      "Bloomberg Market Concepts (BMC)"
     ],
     "topColleges": [
       {
@@ -2956,21 +2812,9 @@
       "Virtual Data Rooms (VDR)"
     ],
     "certifications": [
-      {
-        "name": "CFA Charter",
-        "issuingBody": "CFA Institute, USA",
-        "description": "Highly respected global finance designation, essential for senior investment advisory roles."
-      },
-      {
-        "name": "NISM Series VIII: Equity Derivatives",
-        "issuingBody": "NISM",
-        "description": "Indian regulatory certification required for trading and advisory positions in derivatives markets."
-      },
-      {
-        "name": "Financial Modeling and Valuation Analyst (FMVA)",
-        "issuingBody": "Corporate Finance Institute (CFI)",
-        "description": "Practical skill-based certification validating Excel and financial modeling capabilities."
-      }
+      "Chartered Financial Analyst (CFA)",
+      "FINRA Series 79 & Series 63 Licensing",
+      "Financial Modeling & M&A Valuation Certification"
     ],
     "topColleges": [
       {
@@ -3189,21 +3033,9 @@
       "Tableau / Power BI"
     ],
     "certifications": [
-      {
-        "name": "Certified Business Analysis Professional (CBAP)",
-        "issuingBody": "IIBA (International Institute of Business Analysis)",
-        "description": "Elite global credential verifying extensive capabilities in requirements modeling and business consultancy."
-      },
-      {
-        "name": "PMI Agile Certified Practitioner (PMI-ACP)",
-        "issuingBody": "Project Management Institute (PMI)",
-        "description": "Validates knowledge of agile principles, scrum frameworks, and kanban systems."
-      },
-      {
-        "name": "Certified Scrum Product Owner (CSPO)",
-        "issuingBody": "Scrum Alliance",
-        "description": "Demonstrates competency in backlog grooming, product scoping, and agile release management."
-      }
+      "Certified Business Analysis Professional (CBAP / IIBA-CCBA)",
+      "PMI Professional in Business Analysis (PMI-PBA)",
+      "Tableau / Microsoft Power BI Data Analyst Associate"
     ],
     "topColleges": [
       {
@@ -3420,21 +3252,9 @@
       "LinkedIn Premium"
     ],
     "certifications": [
-      {
-        "name": "Incubator Completion Certificate",
-        "issuingBody": "Y Combinator / IIT Incubation Cell",
-        "description": "Validates completion of a structural business development and accelerator curriculum."
-      },
-      {
-        "name": "Advanced Program in Entrepreneurship",
-        "issuingBody": "IIM Bangalore (NSRCEL) / Premier Institute",
-        "description": "Specialized executive academic program focused on scaling and operations."
-      },
-      {
-        "name": "Project Management Professional (PMP)",
-        "issuingBody": "PMI",
-        "description": "Demonstrates capability to manage resources, schedule milestones, and handle stakeholders."
-      }
+      "Stanford / Harvard Executive Leadership & Venture Capital Credential",
+      "Y Combinator Startup School Certified Alum",
+      "Agile Certified Practitioner (PMI-ACP)"
     ],
     "topColleges": [
       {
@@ -3653,21 +3473,9 @@
       "Adobe Photoshop"
     ],
     "certifications": [
-      {
-        "name": "Google UX Design Professional Certificate",
-        "issuingBody": "Google (via Coursera)",
-        "description": "Foundational training program covering user research, Figma prototyping, and design portfolios."
-      },
-      {
-        "name": "Interaction Design Specialist Certification",
-        "issuingBody": "Interaction Design Foundation (IxDF)",
-        "description": "Validates deep theoretical understanding of user psychology, mobile design, and accessibility rules."
-      },
-      {
-        "name": "Nielsen Norman Group (NN/g) UX Certification",
-        "issuingBody": "Nielsen Norman Group",
-        "description": "Elite international design certification proving high-level competence in usability testing and UX strategy."
-      }
+      "Nielsen Norman Group UX Master Certified",
+      "Google UX Design Professional Certificate",
+      "Interaction Design Foundation (IxDF) Certified Specialist"
     ],
     "topColleges": [
       {
@@ -3887,21 +3695,9 @@
       "Canva"
     ],
     "certifications": [
-      {
-        "name": "Adobe Certified Professional in Graphic Design",
-        "issuingBody": "Adobe Certification Board",
-        "description": "Proves expert capabilities in using Adobe Illustrator and Photoshop for visual media creation."
-      },
-      {
-        "name": "Specialized Typography Certification",
-        "issuingBody": "California Institute of the Arts (Calarts)",
-        "description": "Validates expert capabilities in grid dynamics, typeface selection, and letter spacing rules."
-      },
-      {
-        "name": "Graphic Design Specialization",
-        "issuingBody": "Coursera / University Partner",
-        "description": "Demonstrates completion of coursework in visual communications, branding, and history of design."
-      }
+      "Adobe Certified Professional (Illustrator & Photoshop)",
+      "CalArts Graphic Design Specialization",
+      "Design Thinking Practitioner (IDEO)"
     ],
     "topColleges": [
       {
@@ -4121,21 +3917,9 @@
       "CNC Programming Software"
     ],
     "certifications": [
-      {
-        "name": "Certified SolidWorks Professional (CSWP)",
-        "issuingBody": "Dassault Systèmes",
-        "description": "Validates advanced capabilities to design complex parts and assembly configurations in SolidWorks."
-      },
-      {
-        "name": "GATE Qualified Certificate",
-        "issuingBody": "IITs / IISc",
-        "description": "Critical credential for securing junior engineer roles in Public Sector Undertakings (PSUs) like NTPC, BHEL, and IOCL."
-      },
-      {
-        "name": "HVAC System Design Certification",
-        "issuingBody": "ISHRAE / ASHRAE",
-        "description": "Specialized certificate verifying design capabilities for heating, ventilation, and air conditioning systems."
-      }
+      "Autodesk Certified Professional: Inventor / Fusion 360",
+      "SolidWorks CSWA / CSWP Professional",
+      "Six Sigma Green / Black Belt Certification"
     ],
     "topColleges": [
       {
@@ -4359,21 +4143,10 @@
       "MATLAB"
     ],
     "certifications": [
-      {
-        "name": "GATE Qualified",
-        "issuingBody": "IITs / IISc",
-        "description": "Graduate Aptitude Test in Engineering qualification, critical for PSU recruitments and post-graduate studies in India."
-      },
-      {
-        "name": "Chartered Engineer (India)",
-        "issuingBody": "Institution of Engineers (India)",
-        "description": "Professional engineering certification validating competency and practice standards in India."
-      },
-      {
-        "name": "Project Management Professional (PMP)",
-        "issuingBody": "Project Management Institute (PMI)",
-        "description": "Global certification verifying capabilities in leading and managing infrastructure projects."
-      }
+      "AutoCAD Civil 3D Certified Professional",
+      "STAAD.Pro & ETABS Structural Design Certification",
+      "LEED Green Associate (USGBC / IGBC)",
+      "Project Management Professional (PMP)"
     ],
     "topColleges": [
       {
@@ -4592,21 +4365,9 @@
       "Canva / Figma"
     ],
     "certifications": [
-      {
-        "name": "Google Ads Search Certification",
-        "issuingBody": "Google Academy",
-        "description": "Proves expert competency in designing, running, and measuring search engine campaigns."
-      },
-      {
-        "name": "HubSpot Inbound Marketing Certification",
-        "issuingBody": "HubSpot Academy",
-        "description": "Validates core skills in content marketing, lead generation, and customer nurturing workflows."
-      },
-      {
-        "name": "Meta Certified Digital Marketing Associate",
-        "issuingBody": "Meta",
-        "description": "Demonstrates baseline skills in advertising on Facebook, Instagram, and Messenger apps."
-      }
+      "Google Ads & Analytics Certified Professional",
+      "Meta Certified Digital Marketing Associate",
+      "HubSpot Inbound Marketing & Content Marketing Certification"
     ],
     "topColleges": [
       {

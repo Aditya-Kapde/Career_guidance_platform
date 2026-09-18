@@ -1,12 +1,11 @@
 import { Router } from 'express';
-import { startAssessment, submitAssessment, analyzeAssessment } from '../controllers/assessment.controller.js';
+import { analyzeAssessment, getQuestions } from '../controllers/assessment.controller.js';
 import { apiRateLimiter } from '../middleware/rateLimiter.js';
+import { optionalAuth } from '../middleware/auth.middleware.js';
 
 const router = Router();
 
-// Routes
-router.get('/start', startAssessment);
-router.post('/submit', submitAssessment);
-router.post('/analyze', apiRateLimiter, analyzeAssessment);
+router.get('/questions', getQuestions);
+router.post('/analyze', apiRateLimiter, optionalAuth, analyzeAssessment);
 
 export default router;

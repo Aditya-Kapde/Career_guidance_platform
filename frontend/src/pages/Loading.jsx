@@ -1,34 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   BrainCircuit, 
   Sparkles, 
   CheckCircle2, 
-  Circle, 
   RotateCcw, 
-  AlertCircle, 
-  Compass, 
-  Cpu 
+  AlertCircle
 } from 'lucide-react';
 import { useAssessment } from '../context/AssessmentContext';
 import assessmentApi from '../services/assessmentApi';
 import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
 
 const ANALYSIS_STEPS = [
-  { id: 'responses', label: 'Understanding your responses' },
-  { id: 'traits', label: 'Mapping your core traits & aptitude' },
-  { id: 'matching', label: 'Finding compatible career paths' },
-  { id: 'insights', label: 'Preparing personalized AI insights' }
+  { id: 'responses', label: 'Validating response integrity' },
+  { id: 'traits', label: 'Evaluating 15 psychometric dimensions' },
+  { id: 'matching', label: 'Computing deterministic career alignment' },
+  { id: 'insights', label: 'Synthesizing verified graduation roadmaps' }
 ];
 
 export default function Loading() {
   const navigate = useNavigate();
   const { 
     educationLevel, 
-    responses, 
-    traitScores, 
     getDetailedResponses, 
     setAssessmentReport, 
     setReportId 
@@ -37,8 +31,8 @@ export default function Loading() {
   const [status, setStatus] = useState('loading'); // 'loading' | 'error'
   const [errorMsg, setErrorMsg] = useState('');
   const [activeStepIndex, setActiveStepIndex] = useState(0);
+  const executionRef = useRef(false);
 
-  // Progressive step animation timer
   useEffect(() => {
     if (status !== 'loading') return;
 
@@ -49,7 +43,7 @@ export default function Loading() {
         }
         return prev;
       });
-    }, 1400);
+    }, 1100);
 
     return () => clearInterval(interval);
   }, [status]);
@@ -60,10 +54,14 @@ export default function Loading() {
     setActiveStepIndex(0);
 
     try {
+      const detailedResponses = getDetailedResponses();
+      if (!detailedResponses || detailedResponses.length === 0) {
+        throw new Error('No assessment responses found. Please complete the questions first.');
+      }
+
       const payload = {
-        educationLevel,
-        responses: getDetailedResponses ? getDetailedResponses() : responses,
-        traitScores
+        educationLevel: educationLevel || 'undergraduate',
+        responses: detailedResponses
       };
 
       const response = await assessmentApi.analyzeAssessment(payload);
@@ -74,10 +72,9 @@ export default function Loading() {
       setReportId(newReportId);
       setAssessmentReport(reportPayload);
 
-      // Smooth slight delay so user can absorb the complete analysis checklist
       setTimeout(() => {
         navigate('/report');
-      }, 1000);
+      }, 800);
 
     } catch (err) {
       console.error('Analysis API execution failed:', err);
@@ -85,142 +82,125 @@ export default function Loading() {
       setErrorMsg(
         err.userMessage || 
         err.response?.data?.error || 
-        'Unable to connect to the career matching engine. Please ensure the backend server is running.'
+        err.message || 
+        'We could not generate a reliable report from this assessment. Please retry the analysis.'
       );
     }
   };
 
   useEffect(() => {
-    if (!educationLevel || !traitScores) {
-      navigate('/');
+    if (!educationLevel) {
+      navigate('/assessment');
       return;
     }
-    performAnalysis();
-  }, []);
+    if (!executionRef.current) {
+      executionRef.current = true;
+      performAnalysis();
+    }
+  }, [educationLevel]);
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-6 relative overflow-hidden text-slate-900 select-none">
-      {/* Background radial ambiance */}
-      <div className="absolute w-[500px] h-[500px] bg-indigo-200/40 rounded-full blur-3xl -z-10 animate-pulse-soft" />
-      <div className="absolute w-[350px] h-[350px] bg-purple-200/30 rounded-full blur-2xl -z-10 translate-x-24 translate-y-24" />
+    <div className="min-h-screen bg-slate-50 flex flex-col justify-center items-center px-4 sm:px-6 relative overflow-hidden">
+      {/* Ambient background glow */}
+      <div className="absolute w-96 h-96 bg-indigo-100/50 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      {status === 'loading' ? (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          className="w-full max-w-md bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-soft-xl neu-flat text-center space-y-8 relative z-10"
-        >
-          {/* Animated Core Node Visual */}
-          <div className="relative w-28 h-28 mx-auto flex items-center justify-center">
-            {/* Pulsing orbital ring */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 10, ease: 'linear' }}
-              className="absolute inset-0 rounded-full border-2 border-dashed border-indigo-300 opacity-60"
-            />
-            {/* Outer soft glow */}
-            <div className="absolute inset-2 rounded-full bg-indigo-50 animate-ping opacity-25" />
-
-            {/* Core Badge */}
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-800 text-white flex items-center justify-center shadow-lg shadow-indigo-300 relative z-10">
-              <BrainCircuit className="w-8 h-8 stroke-[1.75]" />
+      <div className="w-full max-w-md mx-auto text-center">
+        {status === 'loading' ? (
+          <div className="space-y-8">
+            {/* Animated Icon Container */}
+            <div className="relative w-24 h-24 mx-auto flex items-center justify-center">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
+                className="absolute inset-0 rounded-full border-2 border-dashed border-indigo-400"
+              />
+              <div className="w-16 h-16 rounded-2xl bg-indigo-600 text-white flex items-center justify-center shadow-lg shadow-indigo-200">
+                <BrainCircuit className="w-8 h-8 animate-pulse" />
+              </div>
             </div>
 
-            {/* Sparkle badge */}
-            <motion.div
-              animate={{ y: [-2, 2, -2], rotate: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 2.5, ease: 'easeInOut' }}
-              className="absolute -top-1 -right-1 w-7 h-7 rounded-lg bg-white border border-indigo-100 shadow-md flex items-center justify-center text-indigo-600 z-20"
-            >
-              <Sparkles className="w-4 h-4 fill-indigo-100" />
-            </motion.div>
+            {/* Headline */}
+            <div className="space-y-2">
+              <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">
+                Synthesizing Your Career Profile
+              </h2>
+              <p className="text-sm text-slate-500 max-w-xs mx-auto">
+                Processing psychometric metrics against standardized career compatibility models.
+              </p>
+            </div>
+
+            {/* Progress Checklist */}
+            <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-soft-sm text-left space-y-3.5">
+              {ANALYSIS_STEPS.map((step, idx) => {
+                const isDone = idx < activeStepIndex;
+                const isCurrent = idx === activeStepIndex;
+
+                return (
+                  <div
+                    key={step.id}
+                    className={`flex items-center gap-3 transition-colors ${
+                      isDone
+                        ? 'text-indigo-950 font-semibold'
+                        : isCurrent
+                        ? 'text-indigo-600 font-bold'
+                        : 'text-slate-400'
+                    }`}
+                  >
+                    <div className="w-5 h-5 flex items-center justify-center shrink-0">
+                      {isDone ? (
+                        <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                      ) : isCurrent ? (
+                        <motion.div
+                          animate={{ scale: [1, 1.25, 1] }}
+                          transition={{ duration: 1, repeat: Infinity }}
+                          className="w-2.5 h-2.5 rounded-full bg-indigo-600"
+                        />
+                      ) : (
+                        <div className="w-2 h-2 rounded-full bg-slate-300" />
+                      )}
+                    </div>
+                    <span className="text-xs sm:text-sm">{step.label}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
+        ) : (
+          /* Error State */
+          <div className="bg-white rounded-3xl p-8 border border-rose-100 shadow-soft-md space-y-6 text-center">
+            <div className="w-14 h-14 mx-auto rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center">
+              <AlertCircle className="w-7 h-7" />
+            </div>
 
-          {/* Heading */}
-          <div className="space-y-2">
-            <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">
-              Analyzing Your Profile
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-xs mx-auto">
-              Our deterministic engine and Groq AI are synthesizing your 15-dimension personality matrix.
-            </p>
+            <div className="space-y-2">
+              <h3 className="text-xl font-bold text-slate-900">
+                Evaluation Interrupted
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                {errorMsg}
+              </p>
+            </div>
+
+            <div className="pt-2 flex flex-col gap-3">
+              <Button
+                variant="primary"
+                size="md"
+                icon={RotateCcw}
+                onClick={performAnalysis}
+              >
+                Retry Analysis
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => navigate('/assessment')}
+              >
+                Return to Assessment
+              </Button>
+            </div>
           </div>
-
-          {/* Progressive Analysis Checklist */}
-          <div className="space-y-3 text-left pt-2">
-            {ANALYSIS_STEPS.map((step, idx) => {
-              const isCompleted = idx < activeStepIndex;
-              const isCurrent = idx === activeStepIndex;
-
-              return (
-                <div
-                  key={step.id}
-                  className={`flex items-center gap-3 p-3 rounded-xl border transition-all duration-300 ${
-                    isCompleted
-                      ? 'bg-emerald-50/70 border-emerald-200/80 text-emerald-900'
-                      : isCurrent
-                      ? 'bg-indigo-50/80 border-indigo-200 text-indigo-950 shadow-xs'
-                      : 'bg-slate-50/50 border-slate-100 text-slate-400 opacity-60'
-                  }`}
-                >
-                  {isCompleted ? (
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  ) : isCurrent ? (
-                    <div className="w-4 h-4 rounded-full border-2 border-indigo-600 border-t-transparent animate-spin shrink-0" />
-                  ) : (
-                    <Circle className="w-4 h-4 text-slate-300 shrink-0" />
-                  )}
-
-                  <span className={`text-xs font-semibold ${isCompleted ? 'line-through opacity-80' : ''}`}>
-                    {step.label}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-        </motion.div>
-      ) : (
-        /* Polished Error & Retry State */
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="w-full max-w-md bg-white rounded-3xl p-8 sm:p-10 border border-rose-200/80 shadow-soft-xl text-center space-y-6 relative z-10 neu-flat"
-        >
-          <div className="w-16 h-16 rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mx-auto shadow-sm">
-            <AlertCircle className="w-8 h-8 stroke-[1.75]" />
-          </div>
-
-          <div className="space-y-2">
-            <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">
-              Analysis Failed
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              {errorMsg}
-            </p>
-          </div>
-
-          <div className="pt-2 space-y-3">
-            <Button
-              variant="primary"
-              size="lg"
-              icon={RotateCcw}
-              onClick={performAnalysis}
-              fullWidth
-            >
-              Retry Profile Analysis
-            </Button>
-
-            <button
-              type="button"
-              onClick={() => navigate('/assessment')}
-              className="text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors"
-            >
-              Return to Assessment
-            </button>
-          </div>
-        </motion.div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

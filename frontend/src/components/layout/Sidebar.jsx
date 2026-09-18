@@ -1,18 +1,16 @@
 import React from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { 
-  Compass, 
   GraduationCap, 
   FileText, 
-  GitFork, 
   Sparkles, 
   LayoutDashboard,
-  HelpCircle,
   RotateCcw,
-  User,
-  ChevronRight
+  LogIn,
+  LogOut
 } from 'lucide-react';
 import { useAssessment } from '../../context/AssessmentContext';
+import { useAuth } from '../../context/AuthContext';
 import Avatar from '../ui/Avatar';
 import Badge from '../ui/Badge';
 
@@ -20,6 +18,7 @@ export default function Sidebar({ className = '' }) {
   const navigate = useNavigate();
   const location = useLocation();
   const { educationLevel, reportId, assessmentReport, resetAssessment } = useAssessment();
+  const { user, isAuthenticated, logout } = useAuth();
 
   const navItems = [
     {
@@ -51,7 +50,7 @@ export default function Sidebar({ className = '' }) {
   ];
 
   const handleReset = () => {
-    if (window.confirm('Reset all assessment progress and start fresh?')) {
+    if (window.confirm('Reset current assessment session and start fresh?')) {
       resetAssessment();
       navigate('/');
     }
@@ -71,7 +70,7 @@ export default function Sidebar({ className = '' }) {
                 PathFinder <span className="text-indigo-600">AI</span>
               </span>
               <span className="text-[11px] font-medium text-slate-400 block tracking-tight">
-                Career Intelligence
+                Career Guidance
               </span>
             </div>
           </NavLink>
@@ -117,39 +116,49 @@ export default function Sidebar({ className = '' }) {
 
       {/* Bottom Profile & Actions */}
       <div className="p-4 border-t border-slate-100 space-y-3">
-        {/* Active Stage Indicator */}
+        {/* Active Profile Indicator */}
         <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between">
           <div className="flex items-center gap-2.5 overflow-hidden">
-            <Avatar name="Student Profile" size="sm" status={educationLevel ? 'online' : 'offline'} />
+            <Avatar name={user ? user.name : 'Student'} size="sm" status={isAuthenticated ? 'online' : 'offline'} />
             <div className="truncate">
               <span className="text-xs font-bold text-slate-800 block truncate">
-                {educationLevel ? educationLevel.replace('-', ' ').toUpperCase() : 'Guest Student'}
+                {isAuthenticated ? user.name : (educationLevel ? educationLevel.replace('-', ' ').toUpperCase() : 'Guest Student')}
               </span>
               <span className="text-[10px] text-slate-400 block truncate">
-                {reportId ? 'Report Analyzed' : educationLevel ? 'Assessment Active' : 'Not Started'}
+                {isAuthenticated ? user.email : (educationLevel ? 'Assessment Active' : 'Not Signed In')}
               </span>
             </div>
           </div>
         </div>
 
-        {/* Action Buttons */}
+        {/* Action Controls */}
         <div className="flex items-center justify-between gap-2 pt-1">
           <button
             onClick={handleReset}
             className="flex-1 py-1.5 px-2 text-[11px] font-semibold text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors flex items-center justify-center gap-1 cursor-pointer"
-            title="Reset assessment and start fresh"
+            title="Reset current session"
           >
             <RotateCcw className="w-3 h-3" />
             <span>Reset</span>
           </button>
           
-          <button
-            onClick={() => navigate('/')}
-            className="flex-1 py-1.5 px-2 text-[11px] font-semibold text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors flex items-center justify-center gap-1 cursor-pointer"
-          >
-            <Compass className="w-3 h-3" />
-            <span>Home</span>
-          </button>
+          {isAuthenticated ? (
+            <button
+              onClick={() => logout()}
+              className="flex-1 py-1.5 px-2 text-[11px] font-semibold text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors flex items-center justify-center gap-1 cursor-pointer"
+            >
+              <LogOut className="w-3 h-3" />
+              <span>Logout</span>
+            </button>
+          ) : (
+            <button
+              onClick={() => navigate('/login')}
+              className="flex-1 py-1.5 px-2 text-[11px] font-semibold text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors flex items-center justify-center gap-1 cursor-pointer"
+            >
+              <LogIn className="w-3 h-3" />
+              <span>Sign In</span>
+            </button>
+          )}
         </div>
       </div>
     </aside>

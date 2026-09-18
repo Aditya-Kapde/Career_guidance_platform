@@ -1,67 +1,95 @@
 import { generateAnalytics } from './analytics.service.js';
 import { generateRoadmaps } from './roadmap.service.js';
-import { getCurrentTimestamp, generateConfidenceScore } from './report.utils.js';
+import { getCurrentTimestamp } from './report.utils.js';
+
+export const REPORT_VERSIONS = {
+  assessmentVersion: '2.0.0',
+  scoringVersion: '2.0.0',
+  careerLibraryVersion: '2.0.0',
+  reportPromptVersion: '2.0.0'
+};
 
 /**
- * Transforms assessment inputs and AI outputs into a standardized Unified Report Object.
- * This acts as the single source of truth for downstream features like analytics, roadmaps, and PDFs.
+ * Transforms assessment inputs and AI outputs into a standardized Canonical Report Object.
+ * Acts as the validated single source of truth for downstream features (UI, Analytics, Roadmaps, PDF).
  * 
- * @param {Object} assessmentInput - The original payload (educationLevel, responses, traitScores)
- * @param {Object} aiReport - The generated AI analysis or fallback analysis
- * @param {Array<Object>} engineCareers - Top career matches from the deterministic engine
- * @returns {import('./report.types.js').UnifiedReport}
+ * @param {Object} params
+ * @param {string} params.educationLevel
+ * @param {Array<Object>} params.responses
+ * @param {Object} params.rawScores
+ * @param {Object} params.normalizedScores
+ * @param {number} [params.iqScore]
+ * @param {string} [params.userId]
+ * @param {Object} aiReport - AI analysis or deterministic fallback
+ * @param {Array<Object>} engineCareers - Top career matches from deterministic engine
+ * @returns {Object} Canonical validated report
  */
-export const buildReport = (assessmentInput, aiReport, engineCareers) => {
-  // Combine careers from AI and engine, utilizing the AI descriptions if available
-  const topCareerRecommendations = (aiReport?.topCareers || engineCareers).map(career => {
-    const engineMatch = engineCareers.find(c => c.career.toLowerCase() === career.career.toLowerCase());
+export const buildReport = ({ educationLevel, responses, rawScores, normalizedScores, iqScore, userId }, aiReport, engineCareers) => {
+  const topCareerRecommendations = (engineCareers || []).map((engineCareer, idx) => {
+    const aiCareer = aiReport?.topCareers?.find(
+      c => (c.id && c.id === engineCareer.id) || (c.career && c.career.toLowerCase() === engineCareer.career.toLowerCase())
+    );
+
     return {
-      id: career.id || (engineMatch ? engineMatch.id : null),
-      career: career.career,
-      score: career.score || (engineMatch ? engineMatch.score : null),
-      reason: career.matchReason || career.reason || (engineMatch ? engineMatch.description : null),
-      // Advanced deep dive fields
-      // Advanced deep dive fields
-      requiredEducation: career.requiredEducation || null,
-      personalityFit: career.personalityFit || null,
-      industries: career.industries || [],
-      remoteOpportunities: career.remoteOpportunities || null,
-      entrepreneurshipScore: career.entrepreneurshipScore || null,
-      globalDemand: career.globalDemand || null,
-      requiredCertifications: career.requiredCertifications || [],
-      aiImpact: career.aiImpact || null,
-      salaryProgression: career.salaryProgression || null,
-      workEnvironment: career.workEnvironment || null,
-      pros: career.pros || [],
-      cons: career.cons || [],
-      whoShouldAvoid: career.whoShouldAvoid || null,
-      typicalDay: career.typicalDay || null,
-      growthPath: career.growthPath || null
+      id: engineCareer.id,
+      career: engineCareer.career,
+      score: engineCareer.score,
+      description: engineCareer.description,
+      matchReason: aiCareer?.matchReason || aiCareer?.reason || engineCareer.description,
+      requiredEducation: aiCareer?.requiredEducation || null,
+      personalityFit: aiCareer?.personalityFit || null,
+      industries: aiCareer?.industries || [],
+      remoteOpportunities: aiCareer?.remoteOpportunities || null,
+      entrepreneurshipScore: aiCareer?.entrepreneurshipScore || null,
+      globalDemand: aiCareer?.globalDemand || null,
+      requiredCertifications: aiCareer?.requiredCertifications || [],
+      aiImpact: aiCareer?.aiImpact || null,
+      salaryProgression: aiCareer?.salaryProgression || null,
+      workEnvironment: aiCareer?.workEnvironment || null,
+      pros: aiCareer?.pros || [],
+      cons: aiCareer?.cons || [],
+      whoShouldAvoid: aiCareer?.whoShouldAvoid || null,
+      typicalDay: aiCareer?.typicalDay || null,
+      growthPath: aiCareer?.growthPath || null
     };
   });
 
+  const raw = rawScores || {};
+  const normalized = normalizedScores || {};
+
   const report = {
-    student: {}, // Placeholder for future user profile integration
+    userId: userId || null,
+    versions: REPORT_VERSIONS,
     assessmentMetadata: {
-      educationLevel: assessmentInput.educationLevel || "Unknown",
+      educationLevel: educationLevel || 'undergraduate',
+      completedQuestionsCount: Array.isArray(responses) ? responses.length : 0,
+      assessmentVersion: REPORT_VERSIONS.assessmentVersion
     },
-    traitScores: assessmentInput.traitScores || {},
-    iqScore: assessmentInput.iqScore,
-    dominantTraits: extractDominantTraits(assessmentInput.traitScores),
-    careerCompatibility: {}, // Placeholder for broader compatibility metrics
+    rawScores: raw,
+    normalizedScores: normalized,
+    traitScores: normalized, // backward compatibility
+    iqScore: iqScore !== undefined ? iqScore : 0,
+    dominantTraits: extractDominantTraits(normalized),
     topCareerRecommendations,
-    // Provide fallbacks if old schema was generated
-    strengths: aiReport?.swot?.strengths || aiReport?.strengths || [],
-    developmentAreas: aiReport?.swot?.weaknesses || aiReport?.skillsToDevelop || [],
-    studyRecommendations: aiReport?.learningStrategy?.recommendations || aiReport?.studyTips || [],
+    strengths: aiReport?.swot?.strengths || aiReport?.strengths || [
+      'Logical structure formulation and methodical problem breakdown.',
+      'Aptitude for specialized domain skill acquisition.'
+    ],
+    developmentAreas: aiReport?.swot?.weaknesses || aiReport?.skillsToDevelop || [
+      'Public presentation and multi-stakeholder technical communication.',
+      'Hands-on portfolio projects and specialized technical certifications.'
+    ],
+    studyRecommendations: aiReport?.learningStrategy?.recommendations || aiReport?.studyTips || [
+      'Establish a weekly structured milestone calendar.',
+      'Deconstruct complex domain challenges into testable mini-projects.'
+    ],
     careerRoadmaps: generateRoadmaps(topCareerRecommendations),
-    analytics: {}, // Placeholder, will be populated below
+    analytics: {},
     aiInsights: {
-      summary: aiReport?.executiveSummary?.profileSummary || aiReport?.summary || "",
-      closingMessage: aiReport?.aiInsights?.closingMessage || aiReport?.closingMessage || "",
+      summary: aiReport?.executiveSummary?.profileSummary || aiReport?.summary || 'Comprehensive psychometric analysis mapped against standardized career competencies.',
+      closingMessage: aiReport?.aiInsights?.closingMessage || aiReport?.closingMessage || 'Focus on your core traits while systematically addressing identified development areas.',
       insightsList: aiReport?.aiInsights?.insightsList || aiReport?.aiInsights || []
     },
-    // New Advanced Phase 6 fields
     executiveSummaryData: aiReport?.executiveSummary || null,
     traitAnalysisDeep: aiReport?.traitAnalysis || null,
     careerComparison: aiReport?.careerComparison || null,
@@ -71,7 +99,6 @@ export const buildReport = (assessmentInput, aiReport, engineCareers) => {
     parentGuidance: aiReport?.parentGuidance || null,
     skillGapAnalysis: aiReport?.skillGapAnalysis || null,
     resourceRecommendations: aiReport?.resourceRecommendations || null,
-    confidenceScore: generateConfidenceScore(),
     generatedAt: getCurrentTimestamp()
   };
 
@@ -80,11 +107,6 @@ export const buildReport = (assessmentInput, aiReport, engineCareers) => {
   return report;
 };
 
-/**
- * Helper to extract top traits from the traitScores object.
- * @param {Object} scores 
- * @returns {Array<string>}
- */
 const extractDominantTraits = (scores = {}) => {
   return Object.entries(scores)
     .sort(([, a], [, b]) => b - a)

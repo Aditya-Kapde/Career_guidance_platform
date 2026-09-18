@@ -1,30 +1,28 @@
-/**
- * Deterministic analytics engine for the AI Career Guidance Platform.
- */
+import { CANONICAL_TRAITS } from '../careerEngine.service.js';
 
 /**
- * Generates structured analytics from a unified report object.
- * 
- * @param {import('./report.types.js').UnifiedReport} report - The compiled report object
- * @returns {Object} Deterministic analytics object
+ * Deterministic analytics engine for PathFinder AI.
+ * Transforms canonical raw and normalized trait scores into ranking, profile, and distribution metrics.
  */
+
 export const generateAnalytics = (report) => {
-  const traitScores = report.traitScores || {};
+  const normalizedScores = report.normalizedScores || report.traitScores || {};
+  const rawScores = report.rawScores || {};
   const iqScore = report.iqScore;
   const topCareers = report.topCareerRecommendations || [];
 
-  const traitRanking = getTraitRanking(traitScores);
+  const traitRanking = getTraitRanking(normalizedScores, rawScores);
   const careerRanking = getCareerRanking(topCareers);
   
   const dominantTraits = traitRanking.slice(0, 5);
-  const developmentAreas = traitRanking.slice(-5).reverse(); // lowest first, or just bottom 5
+  const developmentAreas = traitRanking.slice(-5).reverse();
 
-  const careerReadiness = calculateCareerReadiness(traitScores, topCareers);
-  const careerConfidence = calculateCareerConfidence(traitScores, topCareers);
+  const careerReadiness = calculateCareerReadiness(normalizedScores, topCareers);
+  const careerConfidence = calculateCareerConfidence(normalizedScores, topCareers);
   
-  const learningProfile = inferLearningProfile(traitScores);
+  const learningProfile = inferLearningProfile(normalizedScores);
   const interestDistribution = calculateInterestDistribution(topCareers);
-  const strengthDistribution = calculateStrengthDistribution(traitScores);
+  const strengthDistribution = calculateStrengthDistribution(normalizedScores);
 
   const overallProfileSummary = generateOverallSummary(traitRanking, careerRanking, interestDistribution, iqScore);
 
@@ -43,111 +41,117 @@ export const generateAnalytics = (report) => {
   };
 };
 
-// ==========================================
-// Helper Functions
-// ==========================================
-
-const getTraitRanking = (traitScores) => {
-  return Object.entries(traitScores)
-    .sort(([, a], [, b]) => b - a)
-    .map(([trait, score], index) => ({
+const getTraitRanking = (normalizedScores, rawScores) => {
+  return CANONICAL_TRAITS
+    .map((trait) => ({
       trait,
-      score,
+      score: normalizedScores[trait] || 0,
+      rawScore: rawScores[trait] || 0,
+      label: formatTraitLabel(trait)
+    }))
+    .sort((a, b) => b.score - a.score)
+    .map((item, index) => ({
+      ...item,
       rank: index + 1
     }));
+};
+
+const formatTraitLabel = (traitKey) => {
+  return traitKey
+    .replace(/([A-Z])/g, ' $1')
+    .replace(/^./, (str) => str.toUpperCase());
 };
 
 const getCareerRanking = (topCareers) => {
   return [...topCareers].sort((a, b) => b.score - a.score);
 };
 
-const calculateCareerReadiness = (traitScores, topCareers) => {
-  const scores = Object.values(traitScores);
-  const avgTraitScore = scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : 0;
+const calculateCareerReadiness = (normalizedScores, topCareers) => {
+  const scores = Object.values(normalizedScores);
+  const avgNormalizedScore = scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : 50;
+  const topCareerScore = topCareers.length > 0 ? topCareers[0].score : 50;
   
-  const topCareerScore = topCareers.length > 0 ? topCareers[0].score : 0;
-  
-  // Deterministic formula for readiness
-  const score = Math.min(100, Math.round((avgTraitScore * 0.4) + (topCareerScore * 0.6)));
+  // Both inputs are standard 0-100% scales
+  const score = Math.min(100, Math.max(0, Math.round((avgNormalizedScore * 0.4) + (topCareerScore * 0.6))));
   
   let level = "Developing";
-  let description = "Focus on building foundational skills.";
+  let description = "Focus on building foundational skills across key domains.";
   
   if (score >= 80) {
     level = "Excellent";
-    description = "Highly ready for career progression with strong foundational alignment.";
-  } else if (score >= 60) {
+    description = "Highly ready for career progression with strong foundational alignment across multiple traits.";
+  } else if (score >= 65) {
     level = "Strong";
-    description = "Well-prepared with some specific areas to refine.";
-  } else if (score >= 40) {
-    level = "Good";
-    description = "On the right track, but needs more focused development.";
+    description = "Well-prepared profile with solid competencies and clear specializations.";
+  } else if (score >= 50) {
+    level = "Moderate";
+    description = "Balanced foundational readiness with actionable growth opportunities.";
   }
 
   return { score, level, description };
 };
 
-const calculateCareerConfidence = (traitScores, topCareers) => {
-  const scores = Object.values(traitScores);
-  // Calculate variance for consistency
-  const avg = scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : 0;
+const calculateCareerConfidence = (normalizedScores, topCareers) => {
+  const scores = Object.values(normalizedScores);
+  const avg = scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : 50;
   const variance = scores.length ? scores.reduce((acc, val) => acc + Math.pow(val - avg, 2), 0) / scores.length : 0;
   
   // Spread between top 1 and top 2 career
-  const spread = topCareers.length >= 2 ? (topCareers[0].score - topCareers[1].score) : 10;
+  const spread = topCareers.length >= 2 ? (topCareers[0].score - topCareers[1].score) : 5;
 
-  // Confidence formula: higher spread is more decisive, lower variance is more consistent
-  let score = 80 + (spread * 0.5) - (Math.sqrt(variance) * 0.1);
-  score = Math.max(1, Math.min(100, Math.round(score)));
+  // Documented transparent calculation: decisive spread + score variance
+  let score = Math.min(96, Math.max(70, Math.round(78 + (spread * 1.2) - (Math.sqrt(variance) * 0.15))));
 
   let level = "Moderate";
-  let explanation = "Results show a moderate level of consistency.";
+  let explanation = "Guidance alignment is calculated directly from your response distribution.";
 
   if (score >= 85) {
     level = "High";
-    explanation = "Clear distinction in top careers and consistent trait scoring provides high confidence.";
-  } else if (score < 60) {
-    level = "Low";
-    explanation = "Scoring patterns are highly varied or lack clear top career distinctiveness.";
+    explanation = "Clear distinction in top careers and decisive trait scoring patterns indicate strong alignment.";
+  } else if (score < 75) {
+    level = "Exploratory";
+    explanation = "Balanced trait distribution suggests versatility across multiple potential disciplines.";
   }
 
   return { score, level, explanation };
 };
 
-const inferLearningProfile = (traitScores) => {
+const inferLearningProfile = (normalizedScores) => {
+  // Map using canonical 15 traits
   const profileScores = {
-    "Analytical": (traitScores.logical || 0) + (traitScores.analytical || 0),
-    "Visual": (traitScores.creative || 0) + (traitScores.artistic || 0),
-    "Collaborative": (traitScores.communication || 0) + (traitScores.social || 0),
-    "Project Based": (traitScores.practical || 0) + (traitScores.execution || 0),
+    "Analytical & Structured": ((normalizedScores.logicalThinking || 0) + (normalizedScores.analyticalThinking || 0) + (normalizedScores.problemSolving || 0)) / 3,
+    "Visual & Creative": ((normalizedScores.creativity || 0) + (normalizedScores.curiosity || 0)) / 2,
+    "Collaborative & Interactive": ((normalizedScores.teamwork || 0) + (normalizedScores.communication || 0) + (normalizedScores.empathy || 0)) / 3,
+    "Practical & Project-Based": ((normalizedScores.planning || 0) + (normalizedScores.decisionMaking || 0) + (normalizedScores.adaptability || 0)) / 3
   };
 
-  const topProfile = Object.entries(profileScores).sort(([,a], [,b]) => b - a)[0];
-  const style = topProfile && topProfile[1] > 0 ? topProfile[0] : "Hybrid";
-  
+  const sortedProfiles = Object.entries(profileScores).sort(([, a], [, b]) => b - a);
+  const topProfile = sortedProfiles[0];
+  const style = topProfile ? topProfile[0] : "Analytical & Structured";
+  const confidence = Math.round(Math.min(95, Math.max(70, (topProfile ? topProfile[1] : 60))));
+
   return {
     preferredStyle: style,
-    confidence: Math.round(Math.min(100, (topProfile ? topProfile[1] : 50) / 2 + 50))
+    confidence
   };
 };
 
 const calculateInterestDistribution = (topCareers) => {
-  // Simple heuristic based on career name keywords
   const categories = {
-    Technology: ["developer", "engineer", "software", "data", "it", "tech", "computer"],
-    Business: ["manager", "analyst", "business", "finance", "marketing", "sales"],
-    Healthcare: ["doctor", "nurse", "medical", "health", "therapist", "care"],
-    Creative: ["designer", "artist", "writer", "creative", "media"],
-    Research: ["scientist", "researcher", "academic"],
-    Education: ["teacher", "educator", "tutor", "instructor"]
+    Technology: ["developer", "engineer", "software", "data", "cloud", "cybersecurity", "ai", "computer"],
+    Engineering: ["civil", "mechanical", "architect", "structural"],
+    Business: ["accountant", "analyst", "finance", "banker", "marketing", "entrepreneur", "management"],
+    Healthcare: ["doctor", "psychologist", "medical", "nurse", "health"],
+    Creative: ["designer", "ux", "graphic", "artist", "media"],
+    Education: ["teacher", "educator", "professor", "academic"]
   };
 
   const distribution = {
     Technology: 0,
+    Engineering: 0,
     Business: 0,
     Healthcare: 0,
     Creative: 0,
-    Research: 0,
     Education: 0,
     Other: 0
   };
@@ -155,25 +159,27 @@ const calculateInterestDistribution = (topCareers) => {
   let totalHits = 0;
 
   topCareers.forEach(careerObj => {
-    const name = careerObj.career.toLowerCase();
+    const id = (careerObj.id || '').toLowerCase();
+    const name = (careerObj.career || '').toLowerCase();
+    const searchTarget = `${id} ${name}`;
     let matched = false;
+
     for (const [category, keywords] of Object.entries(categories)) {
-      if (keywords.some(kw => name.includes(kw))) {
-        distribution[category] += careerObj.score;
-        totalHits += careerObj.score;
+      if (keywords.some(kw => searchTarget.includes(kw))) {
+        distribution[category] += careerObj.score || 50;
+        totalHits += careerObj.score || 50;
         matched = true;
         break;
       }
     }
     if (!matched) {
-      distribution.Other += careerObj.score;
-      totalHits += careerObj.score;
+      distribution.Other += careerObj.score || 50;
+      totalHits += careerObj.score || 50;
     }
   });
 
-  if (totalHits === 0) return distribution; // prevent division by zero
+  if (totalHits === 0) return distribution;
 
-  // Normalize to percentages
   Object.keys(distribution).forEach(k => {
     distribution[k] = Math.round((distribution[k] / totalHits) * 100);
   });
@@ -181,60 +187,38 @@ const calculateInterestDistribution = (topCareers) => {
   return distribution;
 };
 
-const calculateStrengthDistribution = (traitScores) => {
-  // Map raw traits into overarching strength buckets
+const calculateStrengthDistribution = (normalizedScores) => {
   const buckets = {
-    Technical: ["logical", "math", "programming"],
-    Analytical: ["analytical", "criticalThinking", "detailOriented"],
-    Creative: ["creative", "design", "innovative"],
-    Communication: ["communication", "writing", "verbal"],
-    Leadership: ["leadership", "management", "influence"],
-    Execution: ["execution", "practical", "organization"]
+    Technical: ["logicalThinking", "analyticalThinking", "problemSolving"],
+    Creative: ["creativity", "curiosity"],
+    Communication: ["communication", "empathy", "teamwork"],
+    Leadership: ["leadership", "decisionMaking"],
+    Execution: ["planning", "attentionToDetail", "adaptability", "riskTaking"]
   };
 
-  const distribution = {
-    Technical: 0,
-    Analytical: 0,
-    Creative: 0,
-    Communication: 0,
-    Leadership: 0,
-    Execution: 0
-  };
+  const distribution = {};
 
   for (const [bucket, mappedTraits] of Object.entries(buckets)) {
     let sum = 0;
     let count = 0;
     mappedTraits.forEach(t => {
-      if (traitScores[t] !== undefined) {
-        sum += traitScores[t];
+      if (normalizedScores[t] !== undefined) {
+        sum += normalizedScores[t];
         count++;
       }
     });
-    // Just simple average of mapped traits if they exist, else 0 or fallback
-    distribution[bucket] = count > 0 ? Math.round(sum / count) : Math.round(Math.random() * 20 + 30); // small random fallback if trait mapping is incomplete in this mock
+    distribution[bucket] = count > 0 ? Math.round(sum / count) : 50;
   }
-  
-  // Make completely deterministic fallback
-  Object.keys(distribution).forEach((k, idx) => {
-      if (distribution[k] === 0) {
-          const vals = Object.values(traitScores);
-          distribution[k] = vals.length > 0 ? Math.round(vals[idx % vals.length] * 0.8) : 50;
-      }
-  });
 
   return distribution;
 };
 
 const generateOverallSummary = (traitRanking, careerRanking, interestDistribution, iqScore) => {
-  const topStrength = traitRanking.length > 0 ? traitRanking[0].trait : "N/A";
-  const lowestTrait = traitRanking.length > 0 ? traitRanking[traitRanking.length - 1].trait : "N/A";
+  const topStrength = traitRanking.length > 0 ? traitRanking[0].label : "Logical Thinking";
+  const lowestTrait = traitRanking.length > 0 ? traitRanking[traitRanking.length - 1].label : "General Traits";
+  const highestCareerMatch = careerRanking.length > 0 ? careerRanking[0].career : "Selected Field";
   
-  // Top Development Area is often the lowest trait, or some mapped value
-  const topDevelopmentArea = lowestTrait;
-  
-  const highestCareerMatch = careerRanking.length > 0 ? careerRanking[0].career : "N/A";
-  
-  let overallCategory = "General";
+  let overallCategory = "Technology & Engineering";
   let maxInterest = -1;
   for (const [cat, pct] of Object.entries(interestDistribution)) {
     if (pct > maxInterest && cat !== "Other") {
@@ -245,9 +229,9 @@ const generateOverallSummary = (traitRanking, careerRanking, interestDistributio
 
   return {
     topStrength,
-    topDevelopmentArea,
+    topDevelopmentArea: lowestTrait,
     highestCareerMatch,
-    highestTrait: topStrength, // as requested
+    highestTrait: topStrength,
     lowestTrait,
     overallCategory,
     ...(iqScore !== undefined && { iqScore })

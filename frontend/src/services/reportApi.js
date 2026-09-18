@@ -2,7 +2,20 @@ import api from './api';
 
 export const reportApi = {
   getReportById: async (reportId) => {
-    return api.get(`/api/report/${reportId}`);
+    const res = await api.get(`/api/report/${reportId}`);
+    return res.data;
+  },
+
+  getUserReports: async () => {
+    const res = await api.get('/api/report/user/me');
+    return res.data;
+  },
+
+  downloadPdfBlob: async (reportId) => {
+    const res = await api.get(`/api/report/pdf/${reportId}`, {
+      responseType: 'blob'
+    });
+    return res.data;
   },
 
   downloadPdfUrl: (reportId) => {

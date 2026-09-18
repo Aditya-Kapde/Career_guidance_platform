@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL || '',
-  withCredentials: false,
+  withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -10,15 +10,13 @@ const api = axios.create({
 });
 
 api.interceptors.response.use(
-  (response) => response.data,
+  (response) => response,
   (error) => {
     const customMessage = 
       error.response?.data?.error || 
       error.response?.data?.message || 
       error.message || 
       'An unexpected network error occurred.';
-    
-    console.error('[API Error]:', customMessage, error);
     
     // Attach clean formatted message
     error.userMessage = customMessage;

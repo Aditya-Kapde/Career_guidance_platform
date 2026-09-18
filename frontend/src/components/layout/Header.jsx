@@ -1,22 +1,19 @@
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { Sparkles, ArrowRight, Download, Menu, RefreshCw, Cpu } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Sparkles, Menu, LogIn, LogOut, User } from 'lucide-react';
 import { useAssessment } from '../../context/AssessmentContext';
+import { useAuth } from '../../context/AuthContext';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
-import reportApi from '../../services/reportApi';
 
 export default function Header({ onOpenMobileMenu, title, subtitle }) {
   const navigate = useNavigate();
-  const location = useLocation();
-  const { educationLevel, reportId } = useAssessment();
+  const { educationLevel } = useAssessment();
+  const { user, isAuthenticated, logout } = useAuth();
 
-  const isReportPage = location.pathname.startsWith('/report');
-
-  const handleDownloadPdf = () => {
-    if (reportId) {
-      window.open(reportApi.downloadPdfUrl(reportId), '_blank');
-    }
+  const handleLogout = async () => {
+    await logout();
+    navigate('/');
   };
 
   return (
@@ -35,7 +32,7 @@ export default function Header({ onOpenMobileMenu, title, subtitle }) {
         {/* Dynamic Title / Breadcrumb */}
         <div>
           <h1 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight leading-tight">
-            {title || 'Career Intelligence Platform'}
+            {title || 'Career Guidance Platform'}
           </h1>
           {subtitle && (
             <p className="text-xs text-slate-400 hidden sm:block">
@@ -53,16 +50,29 @@ export default function Header({ onOpenMobileMenu, title, subtitle }) {
           </Badge>
         )}
 
-        {isReportPage && reportId && (
-          <Button
-            size="sm"
-            variant="secondary"
-            icon={Download}
-            onClick={handleDownloadPdf}
-            className="hidden sm:inline-flex"
+        {isAuthenticated ? (
+          <div className="flex items-center gap-2">
+            <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 bg-slate-100 rounded-lg text-xs font-semibold text-slate-700">
+              <User className="w-3.5 h-3.5 text-indigo-600" />
+              <span>{user?.name}</span>
+            </div>
+            <button
+              onClick={handleLogout}
+              className="text-xs text-slate-500 hover:text-rose-600 hover:bg-rose-50 px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1"
+              title="Sign Out"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Logout</span>
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={() => navigate('/login')}
+            className="flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-indigo-600 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
           >
-            Export PDF
-          </Button>
+            <LogIn className="w-3.5 h-3.5" />
+            <span>Sign In</span>
+          </button>
         )}
 
         {!educationLevel ? (

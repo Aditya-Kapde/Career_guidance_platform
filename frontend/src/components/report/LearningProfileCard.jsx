@@ -1,54 +1,58 @@
 import React from 'react';
-import { BookOpen, Sparkles, CheckCircle2, Award, Zap, BrainCircuit, Users, Hammer, Eye } from 'lucide-react';
+import { BookOpen, Sparkles, CheckCircle2, BrainCircuit, Users, Hammer, Eye } from 'lucide-react';
 import Badge from '../ui/Badge';
 import ProgressBar from '../ui/ProgressBar';
 
 export default function LearningProfileCard({ learningProfile, traitScores = {} }) {
   if (!learningProfile) return null;
 
-  const preferredStyle = learningProfile.preferredStyle || 'Analytical & Visual';
-  const confidence = learningProfile.confidence || 86;
+  const preferredStyle = learningProfile.preferredStyle || 'Analytical & Structured';
+  const confidence = learningProfile.confidence || 85;
 
-  // Extract and normalize modality scores out of 100%
-  const rawAnalytical = (traitScores.logical || 0) + (traitScores.analyticalThinking || 0) + (traitScores.problemSolving || 0);
-  const rawVisual = (traitScores.creativity || 0) + (traitScores.curiosity || 0);
-  const rawCollaborative = (traitScores.teamwork || 0) + (traitScores.communication || 0) + (traitScores.empathy || 0);
-  const rawPractical = (traitScores.planning || 0) + (traitScores.decisionMaking || 0) + (traitScores.adaptability || 0);
+  // Normalized scores out of 100%
+  const normalizedAnalytical = Math.round(
+    ((traitScores.logicalThinking || 0) + (traitScores.analyticalThinking || 0) + (traitScores.problemSolving || 0)) / 3
+  ) || 50;
 
-  const rawMax = Math.max(rawAnalytical, rawVisual, rawCollaborative, rawPractical, 10);
+  const normalizedVisual = Math.round(
+    ((traitScores.creativity || 0) + (traitScores.curiosity || 0)) / 2
+  ) || 50;
 
-  const calcPercentage = (raw) => {
-    if (!raw || raw === 0) return 60;
-    return Math.min(98, Math.max(45, Math.round((raw / rawMax) * 75 + 23)));
-  };
+  const normalizedCollaborative = Math.round(
+    ((traitScores.teamwork || 0) + (traitScores.communication || 0) + (traitScores.empathy || 0)) / 3
+  ) || 50;
+
+  const normalizedPractical = Math.round(
+    ((traitScores.planning || 0) + (traitScores.decisionMaking || 0) + (traitScores.adaptability || 0)) / 3
+  ) || 50;
 
   const styleBreakdown = [
     { 
       label: 'Analytical & Structured', 
       desc: 'Formulas, algorithmic proofs & systematic logic',
       icon: BrainCircuit,
-      rating: calcPercentage(rawAnalytical),
+      rating: Math.min(100, Math.max(20, normalizedAnalytical)),
       variant: 'indigo'
     },
     { 
       label: 'Collaborative & Interactive', 
       desc: 'Peer debriefs, team discussions & workshops',
       icon: Users,
-      rating: calcPercentage(rawCollaborative),
+      rating: Math.min(100, Math.max(20, normalizedCollaborative)),
       variant: 'purple'
     },
     { 
       label: 'Visual & Conceptual', 
       desc: 'Architecture diagrams, mental models & flowcharts',
       icon: Eye,
-      rating: calcPercentage(rawVisual),
+      rating: Math.min(100, Math.max(20, normalizedVisual)),
       variant: 'emerald'
     },
     { 
       label: 'Practical & Project-Based', 
       desc: 'Hands-on builds, case studies & active sandboxes',
       icon: Hammer,
-      rating: calcPercentage(rawPractical),
+      rating: Math.min(100, Math.max(20, normalizedPractical)),
       variant: 'amber'
     }
   ];
@@ -59,7 +63,7 @@ export default function LearningProfileCard({ learningProfile, traitScores = {} 
         <div className="flex items-start justify-between gap-4 mb-4">
           <div>
             <p className="text-[11px] font-bold tracking-widest text-indigo-600 uppercase">
-              PEDAGOGICAL STYLE & COGNITIVE RETENTION
+              COGNITIVE RETENTION & STUDY STRATEGY
             </p>
             <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
               Learning Profile
@@ -67,7 +71,7 @@ export default function LearningProfileCard({ learningProfile, traitScores = {} 
           </div>
 
           <Badge variant="indigo" size="sm">
-            {confidence}% Model Confidence
+            {confidence}% Trait Alignment
           </Badge>
         </div>
 
@@ -78,7 +82,7 @@ export default function LearningProfileCard({ learningProfile, traitScores = {} 
               Primary Cognitive Modality
             </span>
             <span className="text-xs font-mono font-bold text-indigo-700 bg-indigo-100/60 px-2 py-0.5 rounded-full">
-              Optimal Track
+              Recommended Track
             </span>
           </div>
 
@@ -91,11 +95,11 @@ export default function LearningProfileCard({ learningProfile, traitScores = {} 
           </p>
         </div>
 
-        {/* Modality Breakdown Out of 100% */}
+        {/* Modality Breakdown */}
         <div className="space-y-4">
           <div className="flex items-center justify-between text-xs font-bold text-slate-400 uppercase tracking-wider">
             <span>Modality Breakdown</span>
-            <span>Rating / 100%</span>
+            <span>Alignment / 100%</span>
           </div>
 
           {styleBreakdown.map((item, idx) => {
@@ -125,7 +129,7 @@ export default function LearningProfileCard({ learningProfile, traitScores = {} 
 
       <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-[11px] text-slate-500">
         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-        <span>Synthesized from cognitive question response patterns & speed.</span>
+        <span>Synthesized from cognitive and behavioral response distributions.</span>
       </div>
     </div>
   );
